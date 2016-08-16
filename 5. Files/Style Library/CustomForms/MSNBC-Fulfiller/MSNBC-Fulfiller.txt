@@ -1,0 +1,242 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/css/style-new-MSNBC-fullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/css/style-MSNBC-fullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/css/responsive-MSNBC-fullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/css/print-MSNBC-fullfiller.css" media="print">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/js/NBCU.MSNBCFulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/MSNBC-Fulfiller/js/NBCU.MSNBCFulfiller.Master.js"></script>
+<div class="wrapper" id="MsnbcRequest-fulfiller">
+    <header class="header">
+        <div class="container-fluid ">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">MSNBC Short Form</h1>
+                <div class="header-right-booked">
+                    <div class="book-id">-</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="subpage-content-container">
+        <section class="content-section">
+            <div class="subpage-content subpage-LF-SummaryEdit" id="MSNBC-LF">
+                <h1 class="page-title">MSNBC SHORT FORM <!--<span class="button-edit" title="Summary">edit</span>--></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Requester </label>
+                                    <div class="display-data1">
+                                        <span class="display-data" id="requesterName">-</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Contact #</label>
+                                    <div class="display-dataform">
+                                        <span class="display-data" id="erMSNBC_contact_value">-</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Email</label>
+                                    <div class="display-dataform">
+                                        <span class="display-data" id="erMSNBCEmail_value">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div id="edMSNBC_showunit">
+                                    <div class="colsshowunit">
+                                        <div class="cols cols-4-5 form-group">
+                                            <label class="label label-display">Network <sub class="mandatory"></sub></label>
+                                            <div class="display-dataform">
+                                                <span id="edMSNBC_Network" class="display-data">
+                                                    -
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3-5 form-group">
+                                            <label class="label label-display">Show Unit <sup class="mandatory">*</sup></label>
+                                            <div class="display-dataform">
+                                                <span id="edMSNBC_showunit_value_1" class="display-data">
+                                                    -
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3-5 form-group">
+                                            <label class="label label-display">
+                                                Budget Code
+                                            </label>
+                                            <div class="display-dataform">
+                                                <span id="edMSNBC_budgetcode_value_1" class="display-data">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="cols form-group">
+                                    <label class="label label-display">
+                                        Air Date
+                                    </label>
+                                    <div class="display-dataform">
+                                        <div class="calendar-erMSNBC-airdate"></div>
+                                        <span class="display-data" id="erMSNBC_txtairdate_value">-</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group form-group-msnbc-tbd">
+                                    <div class="display-data1">
+                                        <input id="erMSNBC-msnbc-shortform-tbd" type="checkbox" disabled>
+                                        Air Date TBD
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-MSNBC-craftEdit" id="MSNBCProducerEditPage">
+                <h1 class="page-title">Producer Edit: <!--<span class="button-edit" title="Craft">edit</span>--></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols-msnbc-edr-producer">
+                                    <div class="cols cols-3 form-group erLF-msnbc-shortform-form-group-open">
+                                        <input type="checkbox" id="edr-openpackage" disabled>
+                                        <label class="label label-checkbox-msnbc">Open/Package</label>
+                                        <div id="msnbc-openpackage" class="show-checkbox-field show-checkbox-field-abs-pos">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-shortform-form-group-vo">
+                                        <input type="checkbox" id="erLF-msnbc-Producer-vosot" disabled>
+                                        <label class="label label-checkbox-msnbc">VO/SOT</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-Producer-shortform-form-group-fixes">
+                                        <input type="checkbox" id="erLF-msnbc-fixes" disabled>
+                                        <label class="label label-checkbox-msnbc">Fixes</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-Producer-shortform-form-group-swebedit">
+                                        <input type="checkbox" id="erLF-msnbc-Producer-webedit" disabled>
+                                        <label class="label label-checkbox-msnbc">Web Edit</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-MSNBC-Editor Edit" id="MSNBCEditorEditPage">
+                <h1 class="page-title">Editor  Edit: <!--<span class="button-edit" title="Craft">edit</span>--></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols-msnbc-edr-producer">
+                                    <div class="cols cols-3 form-group erLF-msnbc-shortform-form-group-open">
+                                        <input type="checkbox" id="erLF-Editor-openpackage" disabled>
+                                        <label class="label label-checkbox-msnbc">Open/Package</label>
+                                        <div id="msnbc-Editor-openpackage" class="show-checkbox-field show-checkbox-field-abs-pos">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-Editor-form-group-vo">
+                                        <input type="checkbox" id="erLF-Editor-vosot" disabled>
+                                        <label class="label label-checkbox-msnbc">VO/SOT</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-Editor-form-group-fixes">
+                                        <input type="checkbox" id="erLF-Editor-fixes" disabled>
+                                        <label class="label label-checkbox-msnbc">Fixes</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols cols-3 form-group erLF-msnbc-Editor-form-group-webedit">
+                                        <input type="checkbox" id="erLF-Editor-webedit" disabled>
+                                        <label class="label label-checkbox-msnbc">Web Edit</label>
+                                        <div class="show-checkbox-field">
+                                            <label class="field-group">How Many</label>
+                                            <div class="field-group">
+                                                <span class="res-howmy">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+								<div class="cols cols-3 form-group edr-msnbc-shortform-location">
+                                    <label class="label label-edr-msnbc-location">Location</label>
+                                    <div class="display-data1 display-data-edr-msnbc-shortform-chekbox">
+                                        <div class="res-location">-</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-room">
+                                    <label class="label label-edr-msnbc-room">Room</label>
+                                    <div class="display-data1 display-data-edr-msnbc-shortform-chekbox">
+                                        <div class="res-room">-</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-6 form-group edr-msnbc-shortform-Comments">
+                                    <label class="label label-edr-msnbc-comments">Comments</label>
+                                    <div class="display-data1 display-data-edr-msnbc-shortform-chekbox">
+                                        <div class="res-Comments">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="button-bottom-next">
+            <span id="btn-print" title="Print" class="button-next">Print</span>
+        </div>
+    </div>
+</div>

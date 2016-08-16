@@ -1,0 +1,34 @@
+#EditRequest-MSNBC .MSNBCNav .navi span{
+	padding-right:28px;
+	}
+#EditRequest-MSNBC .MSNBCNav .navi li.active{
+	background-position:98% center;
+	}	
+.form-container-horizontal .cols .label-checkbox-msnbc{
+	display:inline;
+    margin-left:10px;
+	}	
+.cols-msnbc-edr-producer{
+	padding-left:25px !important;
+    padding-right:0 !important;
+	}	
+.edr-msnbc-shortform-Comments,.edr-msnbc-shortform-room,.edr-msnbc-shortform-location{
+	margin:12px 0;
+	
+	}
+.edr-msnbc-shortform-room .label,.edr-msnbc-shortform-location .label{vertical-align:middle}	
+.textarea-msnbc{
+	width:266px;
+	height:75px;
+	max-width:266px;
+	max-height:75px;
+	min-width:266px;
+	min-height:75px;
+	border: 1px solid #979797;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;		
+	}	
+.msnbc-shortform-txtairdate{
+	width:84%;
+	}		

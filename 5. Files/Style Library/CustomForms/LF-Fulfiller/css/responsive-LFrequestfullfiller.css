@@ -1,0 +1,1084 @@
+﻿@media only screen and (min-width: 0px) and (max-width: 767px) {
+#s4-titlerow {
+	display: none !important;
+}
+#ms-designer-ribbon {
+	display: none;
+}
+#contentBox {
+	min-width: 100%;
+}
+.subpage-content-container {
+	padding: 0 20px;
+	float: left;
+	width: 100%;
+}
+.header .container-fluid {
+	padding: 0 20px;
+}
+.ms-siteicon-a img {
+	max-height: 45px;
+}
+.header-right-booked {
+	position: absolute;
+	text-align: center;
+	right: 0px;
+	top: 20px;
+	margin: 0;
+}
+.button-booked {
+	padding: 0 10px;
+	font-size: 20px;
+}
+.sidebar-header {
+	text-align: left;
+}
+.header .sidebar-header .title {
+	font-size: 20px;
+	margin: 0 0;
+	width: 100%;
+	float: left;
+}
+.sidebar-header {
+	height: 100px;
+}
+.header .ms-siteicon-a {
+	margin: 20px 0 0;
+}
+.show-date-container {
+	display: block;
+	padding: 5px 15px;
+	text-align: left
+}
+.show-date-container .showdate {
+	width: 100%;
+	margin: 5px 0
+}
+.show-date-container .showdate .date-label {
+	width: 141px;
+	font-size: 13px;
+	float: left;
+}
+.show-date-container .showdate .value-field {
+	width: calc(100% - 147px);
+	text-align: right;
+	font-size: 13px;
+	float: right;
+}
+.subpage-content h1.page-title, .page-title {
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #dedede;
+	border-top: 1px solid #dedede;
+	font-size: 15px;
+	margin: 0 -20px 15px;
+	padding: 8px 15px;
+	position: relative;
+	transition: all 0.5s ease-in-out 0s;
+	margin-bottom: 10px;
+	letter-spacing: normal;
+}
+.page-title .button-edit, .page-title .button-edit-rs {
+	margin-left: 0;
+	background: url("/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/icon-edit.png") no-repeat scroll center center / 100% auto;
+	display: inline-block;
+	font-size: 0;
+	height: 30px;
+	width: 30px;
+	vertical-align: top;
+}
+.subpage-content-container .form-container {
+	padding-bottom: 15px !important;
+}
+.page-title .button-edit {
+	vertical-align: middle;
+}
+.sdControl {
+	float: left !important;
+	width: 100% !important;
+}
+.cols {
+	padding: 0 15px;
+}
+.row {
+	margin: 0 -15px;
+}
+.form-container-horizontal .cols .label {
+	width: auto;
+	white-space: normal;
+}
+.form-container-horizontal .cols .display-data1, .form-container-horizontal .cols .display-dataform, .form-container-horizontal .cols .display-data-chekbox, .display-data1-bn {
+	width: 100%;
+	float: left;
+}
+.subpage-content-container .cols-4-5 {
+	width: 100%;
+}
+.subpage-content-container .cols-3-5 {
+	width: 50%;
+}
+.subpage-content.subpage-content-who .cols-6 {
+	width: 100%;
+}
+.subpage-content-who .cols-11 {
+	width: 100%;
+}
+.subpage-content .textbox {
+	margin-top: 5px;
+}
+.label br {
+	display: none;
+}
+.label {
+	width: auto;
+	position: relative;
+}
+.label .mandatory {
+	position: absolute;
+	top: 5px;
+	right: 0;
+}
+.subpage-content-what .cols-3 {
+	width: 50%;
+}
+.subpage-content-what .cols-4 {
+	width: 100%;
+}
+.subpage-content-what .cols-2 {
+	width: 50%;
+}
+#ffShowUnitDiv, #ffTalentDiv {
+	display: none;
+}
+.subpage-content-crewgoing .form-group:first-child {
+	width: 100%;
+}
+.subpage-content-crewgoing .form-group {
+	width: 50%;
+}
+.subpage-content-where-is-shoot .cols-4 {
+	width: 50%;
+}
+.subpage-content-where-is-shoot .cols-3 {
+	width: 50%;
+}
+.subpage-resource-form .cols-11 {
+	width: 100%;
+	float: left;
+}
+.subpage-resource-form .cols-11 .cols-2 {
+	width: 33.33%;
+}
+.subpage-resource-form .cols-3 {
+	width: 100%;
+}
+.subpage-resource-form .cols-6 {
+	width: 100%;
+}
+.subpage-crewinfo .form-group {
+	width: 50%;
+}
+.subpage-crewinfo .form-group:first-child {
+	width: 100%;
+}
+.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer {
+	width: 100% !important;
+}
+.subpage-crewinfo .selectbox {
+	width: 100%;
+}
+.subpage-crewinfo .row-2 .form-group:first-child {
+	display: none;
+}
+.form-container-horizontal .cols .crew-desk {
+	width: 100%;
+}
+.row-6 .cols {
+	width: 100% !important;
+}
+.row-6 .cols .display-fullwidth {
+	width: 100% !important;
+	float: left;
+}
+.subpage-crewinfo .display-fullwidth {
+	width: 100% !important;
+	float: left;
+}
+.revision-box {
+	float: left;
+}
+.table-container {
+	table-layout: auto;
+}
+.button-group-status .display-fullwidth {
+	width: 100% !important;
+}
+.button-group-status .button {
+	margin: 0;
+}
+.buttons-cols {
+	width: 50%;
+	margin-bottom: 10px;
+}
+.button-group-status .label {
+	margin-bottom: 10px;
+}
+.display-pf1 {
+	margin-top: 0 !important;
+}
+.button-remove-app {
+	background: rgba(0, 0, 0, 0) url("/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/icon-cross.png") no-repeat scroll center center / 100% auto;
+	cursor: pointer;
+	font-size: 0;
+	display: inline-block;
+	height: 25px;
+	float: right;
+	width: 25px;
+}
+.button-remove-container {
+	position: absolute;
+	right: 0;
+}
+.display-pf2 {
+	display: none;
+}
+.resource-mobile-view {
+	display: none;
+}
+.subpage-content-container .button-bottom-next {
+	position: fixed !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	background-color: #0b2751 !important;
+}
+.subpage-content-container .button-next {
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	box-shadow: none;
+	display: table-cell;
+	text-align: center;
+	box-shadow: none;
+	line-height: normal;
+	padding: 7px;
+	border-right: 1px solid #fff;
+	vertical-align: middle;
+}
+#LFSummaryEditPage .cols-5.form-group {
+	width: 100%;
+}
+#ff_shootstatus {
+	width: 100%;
+}
+div.textbox {
+	padding: 0 !important;
+}
+#LFSummaryEditPage .form-container-horizontal .cols-11, #LFcraftEditPage .form-container-horizontal .cols-11 {
+	width: 100% !important;
+}
+#edLF_summary_txtairdate_textbox {
+	width: 80% !important;
+}
+.colsshowunit .cols {
+	width: 50%;
+}
+.colsshowunit .cols-3-5 .textbox {
+	width: 100% !important;
+}
+#LFSummaryEditPage .colsshowunit .button-remove-showunit {
+	right: 10px;
+	top: 23px;
+}
+#edLF-summary-airdate {
+	margin-top: 0;
+}
+#LFcraftEditPage #edr-craft-tbd {
+	width: 33.33%;
+}
+#LFLFcraftEditPage #edr-craft-length {
+	width: auto;
+}
+#LFcraftEditPage #edr-craft-versions {
+	width: 66.66%;
+}
+#edr-craft-tbd {
+	padding: 0 15px;
+}
+.edLFcraft-startdate {
+	width: 80% !important;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols {
+	width: 100%;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .display-data1 {
+	float: left;
+	width: auto;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .label {
+	width: 75%;
+	float: left;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(4) .cols-6 {
+	width: 100%;
+}
+#LFProducerEditPage .cols-3-5 {
+	width: auto;
+}
+.add-fullfillment-container .form-group {
+	width: 100%;
+}
+.add-fullfillment-container .form-group .cols-12 .display-dataform {
+	float: left;
+	width: 100%;
+}
+.add-fullfillment-container .form-group .selectbox {
+	width: 100%;
+}
+.add-fullfillment-container .form-group .display-dataform .cols-5, .add-fullfillment-container .form-group .display-dataform .cols-4, .add-fullfillment-container .form-group .display-dataform .cols-2 {
+	padding: 0 15px 0 0;
+}
+.button-blue-container {
+	position: static;
+	margin-top: 15px;
+}
+#LFPostEditPage .cols {
+	width: 100%;
+}
+#LFPostEditPage .row:nth-child(3) .display-data1 {
+	width: auto !important;
+}
+#LFPostEditPage .row:nth-child(3) .label {
+	float: left;
+	white-space: normal;
+	width: 75%;
+}
+.LFFullfilmentPage .button-remove-app {
+	position: relative;
+	z-index: 1;
+	margin-top: -25px;
+}
+#edLF-craft-length {
+	width: auto;
+}
+#edLF-craft-tbd {
+	width: auto;
+}
+#edLF-craft-noofacts {
+	width: auto;
+}
+#LFcraftEditPage .cols-12 .row:nth-child(2) .cols-3, #LFcraftEditPage .cols-12 .row:nth-child(2) .cols-2, #LFcraftEditPage .cols-12 .row:nth-child(2) .cols-1 {
+	width: 100%;
+}
+#LFcraftEditPage .cols-12 .cols-3 {
+	width: 50% !important;
+}
+#LFProducerEditPage .cols-3-5 {
+	width: auto;
+}
+#LFProducerEditPage .cols-4 {
+	width: 100%;
+}
+#LFAssistantEditorEditPage .cols-4 {
+	width: 100%;
+}
+.form-group-business {
+	width: 100% !important;
+}
+.form-group-showunit {
+	width: 50% !important;
+}
+.form-group-budcode {
+	width: 50% !important;
+}
+.colsshowunit .form-group-showunit .textbox {
+	width: 100% !important;
+}
+#erLF_summary_txtairdate_textbox {
+	width: 78% !important
+}
+#LFcraftEditPage #edLF-craft-noofacts {
+	width: 100% !important;
+}
+#LFcraftEditPage #edLF-craft-noofacts .label {
+	vertical-align: middle
+}
+#LFcraftEditPage #edLF-craft-noofacts .display-data1 {
+	width: auto !important
+}
+#edLF-craft-noofacts .display-data1 {
+	float: none;
+	width: 15%;
+}
+#LFcraftEditPage .cols-12 .cols-3.form-group-editdate {
+	width: 100% !important
+}
+.form-group-editdate .display-data1 {
+	width: 100% !important
+}
+#edLF-crash-tbd .display-data1 {
+	width: auto !important;
+	float: none !important
+}
+#LFcraftEditPage .form-group-noofeditors .display-data1 {
+	width: 20%;
+	float: none;
+}
+#LFcraftEditPage .form-group-noofeditors .label {
+	vertical-align: middle !important
+}
+.form-group-desktopeditshifts .display-data1 {
+	width: 20% !important;
+	float: none !important
+}
+.form-group-desktopeditshifts .label {
+	float: none !important;
+	vertical-align: middle !important;
+	padding: 0 !important;
+	margin-bottom: 0 !important
+}
+#edLf-st-screen {
+	width: 78%;
+}
+.form-edLF-LNGF-AssEditor-Edit {
+	width: 100%;
+	float: left;
+}
+.form-edLF-LNGF-AssEditor-Edit .form-group {
+	width: 100%;
+	float: left;
+}
+.LNGF-AssEditor-editor-show {
+	width: 100%;
+	float: left;
+	height: auto;
+}
+.show-LF-lngf-checkbox-assignment {
+	position: static;
+	width: 100%;
+	float: left;
+}
+.form-group-lengthofpiece {
+	width: 65% !important;
+	float: left;
+}
+.form-group-editor-tbd-new {
+	width: auto !important
+}
+.form-group-ass-editor {
+	width: 100% !important;
+	float: left !important
+}
+.subpage-content-container .cols-3-5.form-group-date-needed {
+	width: 100% !important
+}
+.add-fullfillment-container select.selectbox.textbox {
+	margin-left: 9px;
+}
+.additonal-editor .row, .additionalEditorrow .row {
+	position: relative;
+}
+.removebutton-container {
+	position: absolute;
+	width: auto;
+	right: 0;
+	bottom: -5px;
+}
+.removebutton-container .button-remove-app {
+	width: 25px !important
+}
+.addbutton-container2, .add-fullfillment-container .addbutton-container {
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+}
+.form-group-act-length .display-data1 {
+	width: auto;
+	float: none;
+}
+.form-group.form-group-LFSummary-Slug {
+	float: left;
+	width: 100% !important
+}
+#edLF-summary-tbd {
+	width: auto;
+}
+.form-group-sum-airdate {
+	width: 75% !important;
+}
+.form-group-act-length .display-data1, .form-group-postedit-rooms .display-data1, .form-group-postedit-desktop .display-data1, .form-group-postedit-noofeditors .display-data1 {
+	float: none !important;
+	width: 5% !important;
+}
+.form-group-postedit-Finairdate {
+	width: 100% !important;
+}
+.form-group-act-length label, .form-group-postedit-rooms .label, .form-group-postedit-desktop .label, .form-group-postedit-noofeditors .label {
+	width: 25% !important;
+}
+.form-group-act-length .display-data1 input, .form-group-postedit-rooms .display-data1 input, .form-group-postedit-desktop .display-data1 input, .form-group-postedit-noofeditors .display-data1 input, .form-group-postedit-Finairdate .display-data1 input {
+	width: 100%;
+}
+.form-group-postedit-Finairdate .label {
+	margin-bottom: 5px !important
+}
+.form-group-postedit-confirmation .display-data1 {
+	width: 10% !important;
+	float: none !important
+}
+.form-group-post-comments-box {
+	width: 100%;
+	float: left;
+	margin-bottom: 25px;
+}
+#LFPostEditPage .row .form-group-post-comments-box .display-data1 {
+	width: 100% !important;
+	float: left !important;
+}
+.subpage-LF-SummaryEdit {
+	margin-top: 0
+}
+}
+@media only screen and (min-width: 1200px) {
+.showdate {
+	width: 24%;
+}
+.textbox-small {
+	width: 34px;
+	margin-right: 3px;
+	padding: 0 !important;
+	text-align: center;
+}
+.button-blue-container {
+	right: -11%;
+}
+.additonal-editor .sp-peoplepicker-topLevel {
+	width: 100% !important;
+}
+#ERcraftEditPage .cols-4-5 {
+	width: 40%;
+}
+#ERcraftEditPage .cols-11 {
+	width: 100%;
+}
+.edLF_CraftEditComments-div {
+	float: none;
+}
+.header-right-booked .button {
+	margin: 0;
+	padding: 0 15px;
+}
+.form-group-sum-airdate {
+	width: 20% !important;
+}
+#erLF_summary_txtairdate_textbox {
+	width: 77%;
+}
+}
+@media only screen and (min-width: 1300px) {
+.button-blue-container {
+	right: -15px;
+}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+#s4-titlerow {
+	display: none !important;
+}
+.cols {
+	padding: 0 15px;
+}
+.subpage-content-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.row {
+	margin: 0 -15px;
+}
+.subpage-content-container {
+	padding: 0 15px;
+}
+.subpage-content.subpage-content-who .cols-11 {
+	width: 100%;
+}
+.show-date-container {
+	text-align: left;
+}
+.showdate {
+	text-align: center;
+	padding: 0 15px;
+}
+.date-label {
+	width: 100%;
+	float: left;
+}
+.subpage-content.subpage-content-what .form-group, .subpage-content.subpage-content-what #ffShowUnitDiv {
+	width: 33.33%;
+}
+.selectbox-full {
+	display: none;
+}
+.subpage-content.subpage-content-where-is-shoot .form-group {
+	width: 33.33%;
+}
+.subpage-content.subpage-resource-form .display-data1 {
+	float: left !important;
+}
+.subpage-content.subpage-resource-form .display-dataform-description {
+	float: left;
+}
+.subpage-content.subpage-crewinfo .form-container-horizontal .display-data1 {
+	float: left;
+	width: 100%;
+}
+.subpage-content.subpage-crewinfo .display-pf1 .label-producer {
+	display: none !important;
+}
+.button-remove-container .button-remove-app {
+	margin-bottom: 18px;
+}
+.subpage-crewinfo .Employee-Type {
+	width: 100% !important;
+}
+.subpage-crewinfo .label br {
+	display: none !important;
+}
+.display-fullwidth.crew-desk {
+	width: 100% !important;
+	float: left;
+}
+.subpage-crewinfo .selectbox {
+	width: 100% !important;
+}
+#contentBox {
+	margin-right: 0 !important;
+}
+.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer {
+	width: 100% !important;
+}
+}
+@media only screen and (min-width: 990px) and (max-width: 1024px) {
+#s4-titlerow {
+	display: none !important;
+}
+.cols {
+	padding: 0 15px;
+}
+.subpage-content-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.header .sidebar-header .title {
+	font-size: 30px;
+}
+.row {
+	margin: 0 -15px;
+}
+.subpage-content.subpage-content-who .subpage-content-container {
+	padding: 0 15px;
+}
+.subpage-content.subpage-content-who .cols-11 {
+	width: 100%;
+}
+.show-date-container {
+	text-align: left;
+	font-size: 17px;
+}
+.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer {
+	font-size: 13px;
+	width: 100% !important;
+}
+.showdate {
+	text-align: center;
+	padding: 0 15px;
+}
+.date-label {
+	width: 100%;
+	float: left;
+}
+.form-container-horizontal .cols .label {
+	width: auto;
+	float: left;
+	position: relative;
+	white-space: normal;
+}
+.form-container-horizontal .cols .label br {
+	display: none;
+}
+.form-container-horizontal .cols .label .mandatory {
+	position: absolute;
+	right: 0;
+	top: 4px;
+}
+.display-data1 {
+	width: 100% !important;
+	float: left;
+}
+.display-dataform {
+	width: 100% !important;
+	float: left;
+}
+.subpage-content .textbox {
+	margin-top: 0;
+}
+div.textbox {
+	padding: 0 0;
+}
+.subpage-content.subpage-content-what .form-group, .subpage-content.subpage-content-what #ffShowUnitDiv {
+	width: 33.33%;
+}
+.subpage-resource-form .form-group {
+	width: 33.33%;
+}
+.selectbox-full {
+	display: none;
+}
+.subpage-content.subpage-content-where-is-shoot .form-group {
+	width: 33.33%;
+}
+.revision-box {
+	width: 100% !important;
+	float: left;
+}
+.subpage-content.subpage-resource-form .display-data1 {
+	float: left !important;
+}
+.subpage-content.subpage-resource-form .display-dataform-description {
+	float: left;
+}
+.subpage-content.subpage-crewinfo .form-container-horizontal .display-data1 {
+	float: left;
+	width: 100%;
+}
+.subpage-content.subpage-crewinfo .display-pf1 .label-producer {
+	display: none !important;
+}
+.button-remove-container .button-remove-app {
+	margin-bottom: 18px;
+}
+.subpage-crewinfo .Employee-Type {
+	width: 100% !important;
+}
+.subpage-crewinfo .label br {
+	display: none !important;
+}
+.display-fullwidth.crew-desk {
+	width: 100% !important;
+	float: left;
+}
+.subpage-crewinfo .selectbox {
+	width: 100% !important;
+}
+.button-group-status .display-fullwidth {
+	width: 100% !important;
+}
+.button-group-status .button {
+	font-size: 13px;
+}
+#contentBox {
+	margin-right: 0 !important;
+}
+#edLF_summary_txtairdate_textbox, #edLF_craft_startdate_textbox {
+	width: 85%;
+}
+#LFcraftEditPage .cols-11, #LFSummaryEditPage .cols-11 {
+	width: 100%;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .label {
+	width: calc(100% - 20px) !important;
+	float: right !important;
+	padding-right: 0;
+	padding-left: 5px;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .display-data1 {
+	width: 20px !important;
+	float: left !important;
+}
+.add-fullfillment-container .additonal-editor .cols {
+	width: 50%
+}
+#edLF_summary_txtairdate_textbox, #edLF_craft_startdate_textbox {
+	width: 84%;
+}
+.button-blue-container {
+	right: auto;
+	left: 100%;
+	top: 15px
+}
+#LFPostEditPage .form-group {
+	width: 50%;
+}
+#LFPostEditPage .cols-8.form-group {
+	width: 100%;
+}
+#LFPostEditPage .row:nth-child(4) .cols-12 {
+	width: 100%;
+}
+#LFPostEditPage .display-data1 {
+	float: left !important;
+	width: auto !important;
+}
+.form-group-sum-airdate {
+	width: 23% !important
+}
+.subpage-LF-craftEdit {
+	margin-top: 25px;
+}
+.subpage-LF-AssistantEditorEdit {
+	margin-top: 25px;
+}
+.form-group-noofeditors {
+	width: 20% !important;
+}
+.subpage-LF-craftEdit .form-group-noofeditors .label {
+	white-space: nowrap
+}
+.form-gorup-lngf-edit-show .label {
+	line-height: 28px;
+	margin-top: 0
+}
+.form-gorup-lngf-edit-show input {
+	width: 38px !important
+}
+.form-gorup-lngf-edit-show {
+	font-size: 12px;
+}
+#LNGF-FileTape {
+	height: 28px;
+}
+.newFileIngest {
+	margin-top: 5px;
+}
+.LNGF-AssEditor-editor-show {
+	padding: 4px
+}
+.removebutton-container {
+	padding-left: 15px;
+}
+.label-estimated {
+	width: auto !important;
+}
+.LNGF-AssEditor-editor-show {
+	height: auto;
+}
+.edr-producer-form-field input, .edr-LNGF-producer-form-field input {
+	text-align: center;
+	padding: 0;
+}
+.show-lngf-checkbox-assignment, .show-lngf-checkbox-other {
+	width: 100%;
+	float: left;
+}
+.show-lngf-checkbox-assignment .label .mandatory, .show-lngf-checkbox-other .label .mandatory {
+	position: static;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 989px) {
+	
+#s4-titlerow {
+	display: none !important;
+}
+.cols {
+	padding: 0 15px;
+}
+.subpage-content-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.header .sidebar-header .title {
+	font-size: 30px;
+}
+.row {
+	margin: 0 -15px;
+}
+.subpage-content.subpage-content-who .subpage-content-container {
+	padding: 0 15px;
+}
+.subpage-content.subpage-content-who .cols-11 {
+	width: 100%;
+}
+.show-date-container {
+	text-align: left;
+	font-size: 17px;
+}
+.sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer {
+	font-size: 13px;
+	width: 100% !important;
+}
+.showdate {
+	text-align: center;
+	padding: 0 15px;
+}
+.date-label {
+	width: 100%;
+	float: left;
+}
+.form-container-horizontal .cols .label {
+	width: auto;
+	float: left;
+	position: relative;
+	white-space: normal;
+    margin-bottom:5px;
+}
+.form-container-horizontal .cols .label br {
+	display: none;
+}
+.form-container-horizontal .cols .label .mandatory {
+	position: absolute;
+	right: 0;
+	top: 4px;
+}
+.display-data1 {
+	width: 100% !important;
+	float: left;
+}
+.display-dataform {
+	width: 100% !important;
+	float: left;
+}
+.subpage-content .textbox {
+	margin-top: 0;
+}
+div.textbox {
+	padding: 0 0;
+}
+.subpage-content.subpage-content-what .form-group, .subpage-content.subpage-content-what #ffShowUnitDiv {
+	width: 33.33%;
+}
+.subpage-resource-form .form-group {
+	width: 33.33%;
+}
+.selectbox-full {
+	display: none;
+}
+.subpage-content.subpage-content-where-is-shoot .form-group {
+	width: 33.33%;
+}
+.revision-box {
+	width: 100% !important;
+	float: left;
+}
+.subpage-content.subpage-resource-form .display-data1 {
+	float: left !important;
+}
+.subpage-content.subpage-resource-form .display-dataform-description {
+	float: left;
+}
+.subpage-content.subpage-crewinfo .form-container-horizontal .display-data1 {
+	float: left;
+	width: 100%;
+}
+.subpage-content.subpage-crewinfo .display-pf1 .label-producer {
+	display: none !important;
+}
+.button-remove-container .button-remove-app {
+	margin-bottom: 18px;
+}
+.subpage-crewinfo .Employee-Type {
+	width: 100% !important;
+}
+.subpage-crewinfo .label br {
+	display: none !important;
+}
+.display-fullwidth.crew-desk {
+	width: 100% !important;
+	float: left;
+}
+.subpage-crewinfo .selectbox {
+	width: 100% !important;
+}
+.button-group-status .display-fullwidth {
+	width: 100% !important;
+}
+.button-group-status .button {
+	font-size: 13px;
+}
+#contentBox {
+	margin-right: 0 !important;
+}
+#edLF_summary_txtairdate_textbox, #edLF_craft_startdate_textbox {
+	width: 85%;
+}
+#LFcraftEditPage .cols-11, #LFSummaryEditPage .cols-11 {
+	width: 100%;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .label {
+	width: calc(100% - 20px) !important;
+	float: right !important;
+	padding-right: 0;
+	padding-left: 5px;
+}
+#LFcraftEditPage .cols-11 .row:nth-child(3) .cols .display-data1 {
+	width: 20px !important;
+	float: left !important;
+}
+.add-fullfillment-container .additonal-editor .cols {
+	width: 50%
+}
+#edLF_summary_txtairdate_textbox, #edLF_craft_startdate_textbox {
+	width: 84%;
+}
+.button-blue-container {
+	right: auto;
+	left: 100%;
+	top: 15px
+}
+#LFPostEditPage .form-group {
+	width: 50%;
+}
+#LFPostEditPage .cols-8.form-group {
+	width: 100%;
+}
+#LFPostEditPage .row:nth-child(4) .cols-12 {
+	width: 100%;
+}
+#LFPostEditPage .display-data1 {
+	float: left !important;
+	width: auto !important;
+}
+.form-group-sum-airdate {
+	width: 23% !important
+}
+.subpage-LF-craftEdit {
+	margin-top: 25px;
+}
+.subpage-LF-AssistantEditorEdit {
+	margin-top: 25px;
+}
+.form-group-noofeditors {
+	width: 20% !important;
+}
+.subpage-LF-craftEdit .form-group-noofeditors .label {
+	white-space: nowrap
+}
+.form-gorup-lngf-edit-show .label {
+	line-height: 28px;
+	margin-top: 0
+}
+.form-gorup-lngf-edit-show input {
+	width: 38px !important
+}
+.form-gorup-lngf-edit-show {
+	font-size: 12px;
+}
+#LNGF-FileTape {
+	height: 28px;
+}
+.newFileIngest {
+	margin-top: 5px;
+}
+.LNGF-AssEditor-editor-show {
+	padding: 4px
+}
+.removebutton-container {
+	padding-left: 15px;
+}
+.edr-producer-form-field input, .edr-LNGF-producer-form-field input {
+	text-align: center !important;
+	padding: 0 !important;
+}
+.show-lngf-checkbox-assignment, .show-lngf-checkbox-other {
+	width: 100%;
+	float: left;
+}
+.show-lngf-checkbox-assignment .label .mandatory, .show-lngf-checkbox-other .label .mandatory {
+	position: static;
+}
+}

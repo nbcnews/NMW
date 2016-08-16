@@ -1,0 +1,114 @@
+#BureauCamera .footer{
+    position:fixed;
+}
+.BRCform-container-horizontal .form-group {
+    min-height: 0;
+}
+
+.BRCform-container-horizontal .label {
+    float: left;
+    margin: 0;
+}
+
+.BRC-additionrequest {
+    margin: 0;
+    font-style: normal;
+}
+
+.BRC-addbutton-container {
+    width: auto;
+    float: none;
+    display: table-cell;
+    padding-left: 15px;
+}
+
+.BRCform-container-horizontal .BRC-cols-whatpage .label {
+    width: 170px;
+}
+
+.BRCform-container-horizontal .BRC-cols-whatpage .field-input {
+    width: calc(100% - 170px);
+}
+
+.BRC-form-group {
+    margin-bottom: 25px;
+}
+
+.BRC-additionrequest .BRC-addbutton-container {
+    width: 100% !important;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.BRC-Time-container .cols .label {
+    width: 95px;
+    float: left;
+}
+
+.BRC-Time-container .cols .field-input {
+    width: calc(100% - 110px);
+}
+
+.form-container-horizontal .BRC-form-group-shoot .label {
+    float: left;
+}
+
+.BRC-form-group-shoot .sdControl {
+    width: calc(100% - 110px);
+}
+
+.BRC-form-showunit, .BRC-form-budget {
+    padding-right: 0;
+}
+
+    .BRC-form-showunit .label, .BRC-form-budget .label {
+        float: left !important;
+    }
+
+.BRC-cols-showunit {
+    float: left;
+    margin-top: 0;
+}
+
+.BRC-button-remove-showunit {
+    position: relative;
+    cursor:pointer;
+}
+
+.BRC-button-addsu {
+    position: absolute;
+    left: 20px;
+    bottom: -20px;
+    white-space: nowrap;
+}
+
+    .BRC-button-addsu.active {
+        bottom: -12px;
+    }
+.button-remove-sp-bc {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.row-BRC-showunit {
+    margin-bottom: 15px !important;
+}
+
+.BRC-form-group-shoot .shoot-textbox {
+    width: 100%;
+}
+
+.BRC-form-story .field-input, .BRC-form-assignment .field-input {
+    float: none  !important;
+    display: table-cell !important;
+    width:74% !important;
+}
+
+.BRC-button-addsu,.BRC-button-add-app{
+    color: #1c9fd0;
+    cursor: pointer;
+    font-weight: bold;
+}
+.BRC-Time-container .BRC-form-group select.text-box-mini{
+    padding:0 3px;
+}

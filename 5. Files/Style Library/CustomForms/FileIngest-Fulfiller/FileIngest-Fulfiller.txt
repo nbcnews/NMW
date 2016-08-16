@@ -1,0 +1,581 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/style-new-fileingest-fullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/style-fileingest-fullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/responsive-fileingest-fullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/print-fileingest-fullfiller.css" media="print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/css/daterangepicker.css">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/NBCU.FIFulfiller.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/NBCU.FIFulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/NBCU.FIFulfiller.Summary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/NBCU.FIFulfiller.Device.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest-Fulfiller/js/NBCU.FIFulfiller.Additional.js"></script>
+<script>
+    $(function () {
+        $('#btn-print').click(function () {
+            window.print();
+        });
+    });
+</script>
+<div class="wrapper" id="fileIngestFulfiller">
+  <header class="header">
+    <div class="container-fluid ">
+      <div class="sidebar-header"> <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/FileIngest/images/nbc-news-fileingest-logo.png" alt="nbc-news-group-logo.png"></span>
+        <h1 class="title">File Ingest Request</h1>
+        <div class="header-right-booked">
+          <div id="edFIF-header-status" class="button-booked active-New">New</div>
+          <div class="book-id">ER201600622</div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="show-date-container">
+    <div class="showdate"> <span class="date-label">Date Submitted:</span> <span class="value-field" id="er-header-datesubmitted">04/08/16</span> </div>
+    <div class="showdate"> <span class="date-label">Slug:</span> <span class="value-field slugname" id="er-header-slug">Name of Slug here</span> </div>
+    <div class="showdate"> <span class="date-label">Job Status:</span> <span class="value-field" id="er-header-jobstatus">Firm</span> </div>
+    <div class="showdate"> <span class="date-label">Show:</span> <span class="value-field" id="er-header-showimg">TDY/ 7&amp;8</span> </div>
+  </div>
+  <div class="subpage-content-container">
+    <section class="content-section">
+      <div class="subpage-content subpage-FIF-SummaryEdit" id="FIFSummary">
+        <h1 class="page-title">Summary <span title="Summary" class="button-edit">edit</span></h1>
+        <div class="form-container form-container-horizontal">
+          <div class="row">
+            <div class="cols cols-12">
+              <div class="row">
+                <div class="cols cols-4-5 form-group">
+                  <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                  <div class="display-data1">
+                    <div id="FIF_peoplePickerRequesterDiv" class="textbox"></div>
+                    <span class="display-data" id="FIF_requesterName">FirstName LastName (SSO Number)</span>
+                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                  </div>
+                </div>
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Contact #</label>
+                  <div class="display-dataform">
+                    <input type="text" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX" id="FIF_contact_input">
+                    <span class="display-data" id="FIF_contact_value">+1(555) 555-5555</span> </div>
+                </div>
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Email</label>
+                  <div class="display-dataform">
+                    <input type="text" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX" id="FIF_deskphone_input">
+                    <span class="display-data" id="FIF_deskphone_value">+1(555) 555-5555</span> </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cols cols-4-5 form-group">
+                  <label class="label label-display">Producer/ <sup class="mandatory">*</sup><br>
+                    Field Contact</label>
+                  <div class="display-data1">
+                    <div id="FIF_peoplePickerProducerDiv" class="textbox"></div>
+                    <span class="display-data" id="FIF_producerName">FirstName LastName (SSO Number)</span>
+                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                  </div>
+                </div>
+                <div class="cols cols-5 form-group form-group-senior-producer">
+                  <label class="label label-display">Senior Producer/ Approver <sup class="mandatory">*</sup></label>
+                  <div class="display-data1">
+                    <div id="FIF_peoplePickerSeniorProducerDiv" class="textbox"></div>
+                    <span class="display-data" id="FIF_SeniorproducerName">FirstName LastName (SSO Number)</span>
+                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cols cols-3 form-group form-group-slug">
+                  <label class="label label-display">Slug <sup class="mandatory">*</sup></label>
+                  <div class="display-data1">
+                    <input type="text" class="textbox" value="Slug Name example will go here"  placeholder="Slug Name example will go here" id="FIF_slug_input">
+                    <span class="display-data" id="FIF_slugName">Slug Name example will go here</span>
+                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                  </div>
+                </div>
+                <div class="cols cols-2 form-group form-group-airdate-FFIN">
+                  <label class="label label-display">Air Date</label>
+                  <div class="display-data1">
+                    <input type="text" disabled="" id="FIF_airdate_input" class="datepicker textbox">
+                    <span id="fif-airdate" class="icon-datepicker"></span>
+                    <div class="calendar-fif-airdate"></div>
+                    <span class="display-data" id="FIF_airdate">06/08/16</span> </div>
+                </div>
+				<div class="cols  cols-1 form-group FFLN-summary-form-group-tbd">
+					<label class="label label-display">TBD</label>
+                    <div class="display-data1">
+                        <input id="FIF-airdateTBD" type="checkbox" style="display:none">
+                        <span class="display-data data-tbd" id="FIF-airdateTBD_value"></span>
+                    </div>
+                </div>
+				
+                <div class="cols form-group form-group-dateneedby">
+                  <label class="label label-display">Date Needed By</label>
+                  <div class="display-data1">
+                    <input type="text" disabled="" id="FIF_summary_dateneed_input" class="datepicker textbox">
+                    <span id="FIF_summary_dateneed" class="icon-datepicker"></span>
+                    <div class="calendar-fif-summary_dateneed"></div>
+                    <span class="display-data" id="FIF_date_need">06/08/16</span> </div>
+                </div>
+				
+				<div class="cols cols-1 form-group FFsummary-form-group-asap">
+				<label class="label label-display">ASAP</label>
+                    <div class="display-data1">
+                        <input id="FIF_asap" type="checkbox" style="display:none">
+                        <span class="display-data data-tbd" id="FIF_asap_value"></span>
+                    </div>
+                                        
+                                    </div>
+				
+              </div>
+              <div class="row">
+                <div class="cols cols-4-5 form-group">
+                  <label class="label label-display">Workgroup</label>
+                  <div class="display-data1">
+                    <select class="selectbox-full textbox" id="FIF_workgroup_input">
+                      <option></option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>04</option>
+                      <option>06</option>
+                      <option>Peacock Productions</option>
+                    </select>
+                    <span class="display-data" id="FIF_workgroup">TDY 7 &amp; 8</span> </div>
+                </div>
+               <div class="cols cols-3-5 form-group">
+					<label class="label label-display">Show Unit <sup class="mandatory">*</sup></label>
+					<div class="display-dataform">
+						<input id="fif-summary-showunit_0" class="textbox fif_summary_showunit_textbox" value="">
+						<span class="display-data" id="fif_summary_showunit_value_0"></span>
+						<div class="valid-msg valid-msg-error">Showunit and budgetcode is duplicated</div>
+						<div class="valid-msg valid-msg-error">Please complete the required field </div>
+					</div>
+				</div>
+				<div class="cols cols-3-5 form-group">
+					<label class="label label-display"> Budget Code</label>
+					<div class="display-dataform">
+						<input id="fif-summary-budgetcode_0" class="textbox fif_summary_budgetcode_textbox" value="">
+						<span class="display-data" id="fif_summary_budgetcode_value_0"></span>
+					</div>
+				</div>
+
+              </div>
+              <div class="row">
+                <div class="cols cols-4-5 form-group">
+                  <label class="label label-display">Correspondent</label>
+                  <div class="display-data1">
+                    <input type="text" id="FIF_correspondent_input" class="selectbox-full textbox">
+                    <span class="display-data" id="FIF_correspondent">Correspondent Name</span> </div>
+                </div>
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Edit Request ID</label>
+                  <div class="display-data1">
+                    <input type="text" id="FIF_edr_id_input" class="selectbox-full textbox">
+                    <span class="display-data" id="FIF_edr_id">ER20162146</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subpage-content subpage-FIF-devicecamera" id="FIFdevicecamera">
+        <h1 class="page-title">Device and Camera type <span class="button-edit" title="devicecamera">edit</span></h1>
+        <div class="form-container form-container-horizontal">
+          <div class="row">
+            <div class="cols cols-12">
+              <div id="fif_device_camera"> </div>
+              <!--<div class="row">
+                <div class="cols cols-3-5 form-group ">
+                  <label class="label label-display">Device Type </label>
+                  <div class="display-data1">
+                    <select class="selectbox-full fif-DeviceType textbox" id="FIF_DeviceType_input">
+                      <option></option>
+                      <option>(None)</option>
+                      <option>COMPACT FLASH CARD (CF CARD)</option>
+                      <option>HARD DRIVE</option>
+                      <option>MICRO SD CARD</option>
+                      <option>OTHER</option>
+                      <option>P2 CARD</option>
+                      <option>PRODUCER MAILBOX</option>
+                      <option>SD CARD</option>
+                      <option>SXS CARD</option>
+                      <option>THUMB DRIVE</option>
+                      <option>XDCAM DISC</option>
+                    </select>
+                    <span id="FIF_DeviceType" class="display-data">TDY 7 &amp; 8</span> </div>
+                </div>
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Quantity </label>
+                  <div class="display-data1">
+                    <input class="selectbox-full fif-Quantity textbox" type="text" id="FIF_Quantity_input">
+                    <span  class="display-data" id="FIF_Quantity">TDY 7 &amp; 8</span> </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Device Type </label>
+                  <div class="display-data1">
+                    <select class="selectbox-full fif-DeviceType textbox" id="FIF_DeviceType_input">
+                      <option></option>
+                      <option>(None)</option>
+                      <option>COMPACT FLASH CARD (CF CARD)</option>
+                      <option>HARD DRIVE</option>
+                      <option>MICRO SD CARD</option>
+                      <option>OTHER</option>
+                      <option>P2 CARD</option>
+                      <option>PRODUCER MAILBOX</option>
+                      <option>SD CARD</option>
+                      <option>SXS CARD</option>
+                      <option>THUMB DRIVE</option>
+                      <option>XDCAM DISC</option>
+                    </select>
+                    <span id="FIF_DeviceType" class="display-data">TDY 7 &amp; 8</span> </div>
+                </div>
+                <div class="cols cols-3-5 form-group">
+                  <label class="label label-display">Quantity </label>
+                  <div class="display-data1">
+                    <input class="selectbox-full fif-Quantity textbox" type="text" id="FIF_Quantity_input">
+                    <span  class="display-data" id="FIF_Quantity">TDY 7 &amp; 8</span> </div>
+                </div>
+              </div>
+              <div class="addbutton-container FIF-addbutton-container"> <span style="float:left" class="button-add1 button-addDevice"> + add additional device type </span> </div>--> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="cols cols-6 form-group form-group-devices-camera">
+              <label class="label">Camera Type:</label>
+              <div class="display-data1">
+                <div class="box-FIF-camara-type-input textbox">
+                  <h2 class="title-edr-craft-title">  <small class="info-title">Check all that apply</small> </h2>
+                  <div class="form-FLN-camera-type ">
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Canon 5D Mark II and Mark III</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Canon C300 Mark I and Mark II</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Canon XF205(DJ Camera)</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony F3</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony FS7</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony F5</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony F55</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony Various PMW series</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Sony Action Cam</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Panasonic GH4</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Panasonic AJ-PX5000</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Panasonic AJ-PX270</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">Panasonic Vericam</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">GoPro Hero 2</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">GoPro Hero 3</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                      <label class="label label-display">GoPro Hero 4</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" class="checkbx-left otherchange" name="AdditionalRequirements">
+                      <label class="label label-display">Other</label>
+                      <textarea style="display:none;" class="othertxt"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <span  class="display-data" id="FIF_cameratype">Canone 5D Mark II and Mark III, Sony Action Camera, GoPro Hero 4</span> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subpage-content subpage-FIF-addinfo" id="FIFadditionalinfo">
+        <h1 class="page-title">Additional Info <span class="button-edit" title="addinfo">edit</span></h1>
+        <div class="form-container form-container-horizontal">
+          <div class="row">
+            <div class="cols cols-12">
+              <div class="row">
+                <div class="cols cols-6 form-group">
+                  <label class="label label-display">Content Description</label>
+                  <div class="display-data1">
+                    <textarea id="FIF-contentDesc" class="textarea-description textbox"></textarea>
+                    <span id="FIF_cont_desc" class="display-data">Content description filler text</span> </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cols cols-4 form-group">
+                  <label class="label label-display">Crew/Shooter</label>
+                  <div class="display-data1">
+                    <input type="text" id="FIF_crewShooter_input" class="selectbox-full textbox">
+                    <span id="FIF_crewShooter" class="display-data">Doe, John (293242557259)</span> </div>
+                </div>
+                <div class="cols cols-4 form-group form-group-crid">
+                  <label class="label label-display">CRT ID</label>
+                  <div class="display-data1">
+                    <input type="text" id="FIF_crtid_input" class="selectbox-full textbox">
+                    <span id="FIF_crtid" class="display-data">CR201628927</span> </div>
+                </div>
+                <div class="cols cols-4 form-group form-group-add-email">
+                  <label class="label label-display">Additional Emails</label>
+                  <div class="display-data1">
+                    <input type="text" id="FIF_emails_input" class="selectbox-full textbox">
+                    <span id="FIF_emails" class="display-data">email.email@email.com</span> </div>
+                </div>
+              </div>
+              <div class="row">
+              	<div class="cols cols-6 form-group external-data-value">
+                	<label class="label">Need Material consolidated
+to an external hard drive?</label>
+
+<div class="display-data1">
+                                        <div class="textbox ">
+                                        <input type="radio" value="Yes" name="exteranlHD" class="radio"> Yes
+                                        <input type="radio" value="No" name="exteranlHD" class="radio"> No
+                                        </div>
+										
+                    <span class="display-data" id="FIF_harddrive_value"></span> 
+                                    </div>
+                </div>
+                
+                <div style="" class="cols cols-4 form-group">
+                                    <label class="label">
+                                        If YES, workgroup:
+                                    </label>
+                                    <div class="display-data1">
+                                        <select type="text" class="selectbox-full textbox">
+                                            <option></option>
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>04</option>
+                                            <option>06</option>
+                                            <option>Peacock Productions</option>
+                                        </select>
+										<span class="display-data" id="FIF_workgroup_value"></span> 
+                                    </div>
+                                </div>
+              </div>
+			  <div class="row">
+			    <div class="cols cols-4  form-group">
+								<label class="label label-display">Attach instructions :</label>
+								<div class="display-data1">
+								<span class="display-data" id="FIF_attached_file"></span> 
+                                    <input id="getFile" type="file" class="textbox"><br>
+                                    <input id="addFileButton" type="button" value="Upload" class="file-attach ms-heroCommandLink textbox" >
+                                    <small class="browfe-info"></small>
+									</div>
+                                </div>
+                                
+
+                                <div class="cols cols-6  form-group">
+                                    <label class="label label-display">
+                                        Comments:
+                                    </label>
+                                    <div class="display-data1">
+                                        <textarea id="FIF-comments" class="textarea-description textbox"></textarea>
+										<span class="display-data" id="FIF_comments_value" maxlength="1000"></span> 
+                                    </div>
+                                </div>
+			  </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="subpage-content subpage-FIF-addinfo" id="FIFfulfillment">
+        <h1 class="page-title">Fulfillment Section</h1>
+        <div class="form-container form-container-horizontal">
+          <div class="row">
+            <div class="cols cols-12">
+              <div class="row">
+                <div class="cols cols-4 form-group">
+                  <label class="label label-display">Assistant Editor Assigned:</label>
+                  <div class="display-data1">
+                    <select class="selectbox-full" id="FIF_Ful_assedti">
+                      <option>(None)</option>
+                      <option>Danny Barbour</option>
+                      <option>David Gore</option>
+                      <option>Jen Midgette</option>
+                      <option>Joe Andre</option>
+                      <option>Tracey Bosques</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="cols cols-2 form-group">
+                  <label class="label label-display">Status</label>
+                  <div class="display-data1">
+                    <select class="selectbox-full" id="FIF_ful_status">
+                      <option>New</option>
+                      <option>Inprogress</option>
+                      <option>Complete</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cols cols-6 form-group">
+                  <label class="label label-display">Bin Name</label>
+                  <div class="display-data1 display-data1-binname">
+                    <input type="text" id="FIF_bin_input" class="selectbox-full">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cols cols-bluebox-FIF">
+            <h4>File Format:</h4>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mxf</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mov</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mp4</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mts</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.vob</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.avi</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mpg</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.glv</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.asf</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.wmv</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.wav</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.mp3</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_fileformat">
+              <label>.jpeg</label>
+            </div>
+          </div>
+          <div class="cols cols-bluebox-FIF">
+            <h4>Folder Format:</h4>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_folderformat">
+              <label>CONTENTS</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_folderformat">
+              <label>BPAV</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_folderformat">
+              <label>XDROOT</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_folderformat">
+              <label>DCIM</label>
+            </div>
+            <div class="formgroup">
+              <input id="fif_other_format" type="checkbox" name="fif_folderformat">
+              <label>OTHER</label>
+				<div class="otherText" id="otherformatdiv" style="display:none">
+                    <textarea id="othertxt_forlderformat"></textarea>
+                </div>
+            </div>
+            <div class="formgroup formgroup-other">
+              <label class="label-gig">Gig Size:</label>
+              <input type="text" class="selectbox-full" id="fif_gizsize">
+            </div>
+          </div>
+          <div class="cols cols-bluebox-FIF">
+            <h4>Others:</h4>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_others">
+              <label>Vantage</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_others">
+              <label>Prelude</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_others">
+              <label>AMA</label>
+            </div>
+            <div class="formgroup">
+              <input type="checkbox" name="fif_others">
+              <label>Import</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer-version" style="margin-top:15px; float:left; width:100%;"> Created at 6/8/2016 5:08 PM bt Koss, Mitch (78632783)<br>
+        Last modified at 6/8/2016 5:08 PM by Workflow on behalf of Koss, Mitch<br>
+      </p>
+    </section>
+        <div id="valideditsection" class="valid-msg valid-msg-error" style="display: none;">Please save the edit section</div>
+    <div class="button-bottom-next"> <span id="btn-print" title="Print" class="button-next">Print</span> <span id="btn-submit" title="Submit" class="button-next">Submit</span> <span id="btn-cancel" title="Cancel" class="button-next">Cancel</span></div>
+  </div>
+</div>

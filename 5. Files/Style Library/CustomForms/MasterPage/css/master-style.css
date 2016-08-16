@@ -1,0 +1,76 @@
+﻿#s4-titlerow {
+    background-color:#172852;
+    height:77px;
+}
+#s4-titlerow .ms-core-pageTitle,#s4-titlerow .ms-core-pageTitle a {
+    color:#fff;
+    font-size:36px;
+    font-family:Helvetica;
+}
+#s4-titlerow .ms-helperText,#s4-titlerow input.ms-helperText {
+    color:#fff;
+    margin-top:-3px;
+}
+    #s4-titlerow .ms-srch-sb-border {
+        border-color:#fff;
+    }
+    .ms-srch-sb-searchLink, .ms-srch-sb-navLink {
+    background-color: #e6f2fa;
+}
+.user-signin,.header-contact {
+    color:#fff;
+   
+}
+.header-contact {
+    font-size:17px;
+    font-weight:bold;
+    margin-top:53px;
+    font-family:Helvetica;
+}
+#suiteBarLeft {
+    background-color:#172852;
+}
+.ms-core-suiteLink-a:hover {
+    background-color:#2d4d9b;
+}
+.user-signin {
+    font-size:22px;
+
+}
+.ms-breadcrumb-top {
+    display:none;
+}
+.ms-breadcrumb-box {
+    float:left;
+    width:auto;
+    margin:16px 0 0;
+    padding-left:77px;
+    box-sizing:border-box;
+}
+.user-admin-container {
+    text-align:right;
+    float:right;
+    position:relative;
+    top:0;
+}
+#titleAreaBox {
+    width:100%;
+    margin:0;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+#pageTitle {
+   
+}
+#siteIcon {
+    position:relative;
+    top:-5px;
+    line-height:normal;
+    margin:13px 0;
+}
+.ms-siteicon-img {
+    max-width:100px;
+}
+#DeltaPlaceHolderPageTitleInTitleArea span {
+    display:none;
+}

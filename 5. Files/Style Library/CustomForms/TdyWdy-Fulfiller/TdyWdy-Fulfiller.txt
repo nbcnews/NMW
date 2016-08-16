@@ -1,0 +1,228 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/css/style-new-tdywdy-fullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/css/style-tdywdy-fullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/css/responsive-tdywdy-fullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/css/print-tdywdy-fullfiller.css" media="print">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/js/NBCU.TdyWtdyFulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/TdyWdy-Fulfiller/js/NBCU.TdyWtdyFulfiller.Master.js"></script>
+<div class="wrapper" id="tdywdyRequest-fulfiller">
+    <header class="header">
+        <div class="container-fluid ">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Tdy/Wtdy am form</h1>
+                <div class="header-right-booked">
+                    <div class="book-id">-</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="subpage-content-container">
+        <section class="content-section">
+            <div class="subpage-content subpage-LF-SummaryEdit" id="tdywdy-LF">
+                <h1 class="page-title">Tdy/Wtdy am form </h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Requester </label>
+                                    <div class="display-data1">
+                                        <span class="display-data" id="requesterName">-</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Contact #</label>
+                                    <div class="display-dataform">
+                                        <span class="display-data" id="ertdywdy_contact_value">-</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Email</label>
+                                    <div class="display-dataform">
+                                        <span class="display-data" id="ertdywdyEmail_value">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div id="edMSNBC_showunit">
+                                    <div class="colsshowunit">
+                                        <div class="cols cols-4-5 form-group">
+                                            <label class="label label-display">Show Unit <sup class="mandatory">*</sup></label>
+                                            <div class="display-dataform">
+                                                <span edLF_showunit_id_1="" id="edtdywdy_showunit_value_1" class="display-data">
+                                                    -
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="cols form-group">
+                                            <label class="label label-display">
+                                                Air Date
+                                            </label>
+                                            <div class="display-dataform">
+                                                <span class="display-data" id="ertdywdy_txtairdate_value">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3 form-group">
+                                            <label class="label label-display">
+                                                Location of edit
+                                            </label>
+                                            <div class="display-dataform">
+                                                <span class="display-data" id="ertdywdy_txtlocation_value">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-MSNBC-craftEdit" id="MSNBCProducerEditPage">
+                <h1 class="page-title">Craft Editor </h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols cols-3 form-group-craft-editor">
+                                    <div class="row">
+                                        <div class="cols cols-12 form-group-coldopen">
+                                            <label class="label label-craft-editor"> Cold Open:</label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-cold-open">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-updates">
+                                            <label class="label label-craft-editor"> Updates: </label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-Updates">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-pretapes">
+                                            <label class="label label-craft-editor"> Pre-Tapes:</label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-Pre-Tapes">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-5 form-group-craft-editor-2">
+                                    <div class="row">
+                                        <div class="cols cols-12 form-group-revisionBRoll">
+                                            <label class="label label-craft-editor"> Revision to B-Rolls/VO/SOT:</label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-BRolls">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-tease">
+                                            <label class="label label-craft-editor"> Teases/Open Body:</label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-Tease">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-RevisionsSpots">
+                                            <label class="label label-craft-editor"> Revisions to Spots/Tracks:</label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-Spots">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-4 form-group-craft-editor-3">
+                                    <div class="row">
+                                        <div class="cols cols-12 form-group-ShowFixes">
+                                            <label class="label label-craft-editor"> Show Fixes: </label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-ShowFixes">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-CrashPieces">
+                                            <label class="label label-craft-editor"> Crash Pieces: </label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-CrashPieces">-</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="cols cols-12 form-group-NewB-roll">
+                                            <label class="label label-craft-editor">
+                                                New B-roll/VO/SOT:
+                                            </label>
+                                            <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                <span class="res-tdy" id="edr-tdy-wtdy-BrollVO">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editortdy-checkall">
+                    <h4 class="checkall-title">Check all that apply:</h4>
+                    <div class="row">
+                        <div class="cols cols-9 checkbox-edr-tdy-new01">
+                            <div class="row">
+                                <div class="cols cols-4 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Quick Turnaround/Crash</label>
+                                </div>
+                                <div class="cols cols-2 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Music</label>
+                                </div>
+                                <div class="cols cols-3 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Graphics/Stills</label>
+                                </div>
+                                <div class="cols cols-3 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Color Correct</label>
+                                </div>
+
+                                <div class="cols cols-4 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Audio Correct</label>
+                                </div>
+                                <div class="cols cols-2 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Effects</label>
+                                </div>
+                                <div class="cols cols-3 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">Other</label>
+									<div class="otherText" style="display:none">
+                                            <textarea id="othertxt" disabled></textarea>
+                                        </div>
+                                </div>
+                                <div class="cols cols-3 checkbox-form">
+                                    <input type="checkbox" name="editortdyCheck" disabled>
+                                    <label class="label">All of the Above</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <label class="label">Additional Comments</label>
+                            <div class="cols-12 textarea-comment-tdy">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="button-bottom-next">
+            <span id="btn-print" title="Print" class="button-next">Print</span>
+        </div>
+    </div>
+</div>

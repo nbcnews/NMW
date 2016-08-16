@@ -1,0 +1,1731 @@
+﻿<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/normalize.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/style-new.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/editrequest-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/Msnbc-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/tdy-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/tdy-wtdy-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/responsive.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/jquery-ui.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/daterangepicker.css" media="screen">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/mobie-navi.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.EditSummary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.EditCraft.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.EditProducer.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.MSNBCShort.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.TDYWTDY.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.LongSummary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.LongCraft.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.LongProducer.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/NBCU.EditRequest.LongEditor.js"></script>
+
+<div class="popupscreen" title="" id="welcomeScreen" style="display:block">
+    <div class="overlay"></div>
+    <div class="model-form-container">
+        <div class="model-form-group">
+            <h3 class="page-title" style="display:none;">What kind of edit do you need?</h3>
+            <div class="form-group cols cols-12"> <span class="label" title="Edit Request">Edit Request</span> </div>
+            <div class="form-group cols cols-12"> <span class="label" title="Long Form Edit Request">Long Form Edit Request</span> </div>
+            <div class="form-group cols cols-12"> <span class="label" title="MSNBC Short Form Edit Request">MSNBC Short Form</span> </div>
+            <div class="form-group cols cols-12"> <span class="label" title="TDY/WTDY AM Form Edit Request">TDY/WTDY AM Form</span> </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" id="EditRequest">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Edit Request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation edrNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span action="EditSummary" title="Summary">Summary</span></li>
+                    <li class="navi-disable"><span action="EditCraft" title="Craft">Craft Edit</span></li>
+                    <li class="navi-disable"><span action="EditProducer" title="Producer">Producer Edit</span></li>
+                </ul>
+            </nav>
+            <footer class="footer" style="display:none;">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-edr-summary" id="edr-Summary-page" style="display:block">
+                <h1 class="page-title">Summary</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-summary-form-group-requester">
+                                <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                <div class="display-data1-new display-data1-edr-summary-signin" id="edr-summary-requester"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequesterDiv" style="display:none"> </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-summary-form-group-contact">
+                                <label class="label label-display">Contact # <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform-new display-dataform-edr-summary-contact">
+                                    <input type="text" class="textbox" value="" id="edr-summary-contact" placeholder="(XXX) XXX-XXXX" maxlength="21">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-summary-form-group-email">
+                                <label class="label label-display">Email </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-email">
+                                    <input type="text" class="textbox" value="" id="edr-summary-email">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-New button-edit-New-summary">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-summary-form-group-producer-requestor">
+                                <label class="label label-producer-requestor">Producer same as Requestor?</label>
+                                <div class="display-data-chekbox-new display-data-edr-summary-chekbox">
+                                    <select class="selectbox-mini" id="edr-summary-producerasrequestor">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-summary-form-group-producer">
+                                <label class="label label-display label-producer"> Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-producer">
+                                    <div class="display-data" id="ERProducer" style="display:none;"> </div>
+                                    <div class="display-data" id="peoplePickerProducerEDRDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-5 form-group edr-summary-form-group-Senior-producer">
+                                <label class="label label-display label-producer"> Senior Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-senior-Producer">
+                                    <div class="display-data" id="peoplePickerApproverEDRDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-line">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-6 form-group edr-summary-form-group-slug">
+                                <label class="label label-display"> Slug <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-slug">
+                                    <input class="selectbox" type="text" id="edr-summary-slug">
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group">
+                                <div class="row">
+                                    <div class="cols cols-3 edr-summary-form-group-airdate">
+                                        <label class="label label-display"> Air Date</label>
+                                        <div class="display-dataform-new display-dataform-edr-summary-airdate">
+                                            <input class="selectbox ProducerField" type="text" id="edr-summary-txtairdate" disabled>
+                                            <span class="icon-datepicker" id="edr-summary-airdate"></span>
+                                            <div class="calender-conatainer-airdate"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="cols cols-2 edr-summary-form-group-tbd">
+                                        <input type="checkbox" id="edr-summary-airdateTBD">
+                                        TBD
+                                    </div>
+                                    <div class="cols cols-4 edr-summary-form-group-locaton-edit">
+                                        <label class="label label-display"> Location of edit <sup class="mandatory">*</sup> </label>
+                                        <div class="display-dataform-new display-dataform-edr-summary-location">
+                                            <select class="selectbox" id="edr-summary-location-edit">
+                                                <option></option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group">
+                                <div class="row">
+                                    <div class="cols cols-7">
+
+                                        <div class="cols cols-6  edr-summary-form-group-show-unit">
+                                            <label class="label label-display"> Show Unit <sup class="mandatory">*</sup> </label>
+                                            <div class="display-dataform-new display-dataform-edr-summary-showunit">
+                                                <input class="selectbox edr-summary-showunit" network="">
+                                                <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-6  edr-summary-form-group-budget-code">
+                                            <label class="label label-display"> Budget Code </label>
+                                            <div class="display-dataform-new display-dataform-edr-summary-budgetcode">
+                                                <input class="selectbox edr-summary-budgetcode" type="text">
+                                                <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="addbutton-container"> <span class="button-add1 button-budgetcode">+ add budget code</span> </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4 form-group edr-summary-form-group-correspondent">
+                                <label class="label label-display"> Correspondent</label>
+                                <div class="display-dataform-new display-dataform-edr-summary-correspondent">
+                                    <input class="selectbox" type="text" id="edr-summary-correspondent">
+                                </div>
+                            </div>
+
+                            <div class="cols cols-4 form-group edr-summary-form-group-storyname">
+                                <label class="label label-display">
+                                    Story Name <div class="addtional-info-container">
+                                        <span class="icon-info">i</span>
+                                        <div class="additional-info">If Story Name exists in NewsConnect or other system search and include it here, this will help searching later on!</div>
+                                    </div>
+                                </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-storyname">
+                                    <input class="selectbox" type="text" id="edr-summary-storyname">
+                                </div>
+                            </div>
+
+                            <div class="cols cols-4 form-group edr-summary-form-group-attachcrewID">
+                                <label class="label label-display"> Attach Crew Request ID </label>
+                                <div class="display-dataform-new display-dataform-edr-summary-attachcrewID">
+                                    <input class="selectbox" type="text" id="edr-summary-attachcrewID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+
+                        </div>
+                    </div>
+
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group ">
+                                <div class="row">
+                                    <div class="cols  edr-summary-form-group-craft-Edit">
+                                        <label class="label label-display">
+                                            Craft Edit ? <sup class="mandatory">*</sup>
+                                        </label>
+                                        <div class="display-dataform-new">
+                                            <!--<input type="checkbox" id="edr-summary-checkbox-craft-editor-need">-->
+                                            <select id="edr-summary-CraftEditor" class="selectbox-mini">
+                                                <option></option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                    <div class="cols edr-summary-form-group-Producer-Edit">
+                                        <label class="label label-display">
+                                            Producer Edit ? <sup class="mandatory">*</sup>
+                                        </label>
+                                        <div class="display-dataform-new">
+                                            <!--<input type="checkbox" id="edr-summary-checkbox-prodecer-need">-->
+                                            <select id="edr-summary-CraftProducer" class="selectbox-mini">
+                                                <option></option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next button-bottom-static btn-edr">
+                    <span title="Prev" class="button-next button-welcome" action="Welcome">Back</span>
+                    <span title="Next" class="button-next" action="EditCraft">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="edr-Craft-page" style="display:none;">
+                <h1 class="page-title">Craft Edit</h1>
+                <section class="content-section">
+                    <div class="edr-craft-craft-form-container">
+                        <div class="edr-craft-craft-form">
+                            <div class="edr-craft-producer-form-group edr-craft-mobile-fullwidth">
+                                <label class="label label-estimated">Length of Piece:</label>
+                            </div>
+                            <div class="edr-craft-producer-form-group edr-craft-mobile-mints">
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-PieceMinutes" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Minutes</label>
+                            </div>
+                            <div class="edr-craft-producer-form-group edr-craft-mobile-seconds">
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-PieceSeconds" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Seconds</label>
+                            </div>
+                            <div class="edr-craft-producer-form-group-tbd edr-craft-mobile-tbd">
+                                <input type="checkbox" id="edr-Piecetbd">
+                                <label class="label label-tbd">TBD</label>
+                            </div>
+                            <div class="edr-craft-version-form-group edr-craft-mobile-version">
+                                <label class="label label-minutes">
+                                    How Many Versions?
+                                </label>
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-PieceVersions" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edr-craft-producer-form">
+                            <div class="edr-craft-producer-form-group  edr-craft-mobile-fullwidth">
+                                <label class="label label-estimated">
+                                    Craft Edit Time<br>
+                                    Needed:
+                                </label>
+                            </div>
+                            <div class="edr-craft-producer-form-group  edr-craft-mobile-mints">
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-craftDays" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Days</label>
+                            </div>
+                            <div class="edr-craft-producer-form-group edr-craft-mobile-seconds">
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-craftHours" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Hours</label>
+                            </div>
+                            <div class="edr-craft-producer-form-group edr-craft-mobile-version">
+                                <div class="edr-craft-producer-form-field">
+                                    <input type="text" id="edr-craftMinutes" maxlength="3">
+                                </div>
+                                <label class="label label-tbd">Minutes</label>
+                            </div>
+                        </div>
+                        <div class="edr-craft-producer-form">
+                            <div class="edr-craft-startdate-form-group">
+                                <label class="label label-startdate">Edit Start Date:</label>
+                                <div class="edr-craft-startdate-form-field">
+                                    <input type="text" class="edr-summary-startdate" disabled>
+                                    <span class="icon-datepicker" id="edr-summary-start-date"></span>
+                                    <div class="calender-conatainer-edr-summary"></div>
+                                </div>
+                            </div>
+                            <div class="edr-craft-sessionstart-form-group">
+                                <label class="label label-tbd">
+                                    Requested Edit Session Start At:
+                                </label>
+                                <div class="edr-craft-session-form-field">
+                                    <select id="edr-RequestedEditSection" class="selectbox">
+                                        <option></option>
+                                        <option>1 AM</option>
+                                        <option>2 AM</option>
+                                        <option>3 AM</option>
+                                        <option>4 AM</option>
+                                        <option>5 AM</option>
+                                        <option>6 AM</option>
+                                        <option>7 AM</option>
+                                        <option>8 AM</option>
+                                        <option>9 AM</option>
+                                        <option>10 AM</option>
+                                        <option>11 AM</option>
+                                        <option>12 AM</option>
+                                        <option>1 PM</option>
+                                        <option>2 PM</option>
+                                        <option>3 PM</option>
+                                        <option>4 PM</option>
+                                        <option>5 PM</option>
+                                        <option>6 PM</option>
+                                        <option>7 PM</option>
+                                        <option>8 PM</option>
+                                        <option>9 PM</option>
+                                        <option>10 PM</option>
+                                        <option>11 PM</option>
+                                        <option>12 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider-line">
+
+                        <div class="edr-craft-checkall-form">
+                            <h4 class="info-title"><i>Check all that apply</i></h4>
+                            <div class="edr-craft-checkall-form-contaier">
+                                <div class="edr-craft-check-form-group  edr-craft-checkall-form-contaier-odd">
+                                    <label class="label label-checkbox-edit">Is this a crash edit?</label>
+                                    <div class="edr-craft-checkbx-form-field">
+                                        <input type="checkbox" id="edr-IsCrashEdit">
+                                    </div>
+                                </div>
+                                <div class="edr-craft-check-form-group edr-craft-checkall-form-contaier-even">
+                                    <label class="label label-checkbox-edit">Will this be recut for the web?</label>
+                                    <div class="edr-craft-checkbx-form-field">
+                                        <input type="checkbox" id="edr-Isrecut">
+                                    </div>
+                                </div>
+
+                                <div class="edr-craft-check-form-group edr-craft-checkall-form-contaier-odd">
+                                    <label class="label label-checkbox-edit">Was there field-editing?</label>
+                                    <div class="edr-craft-checkbx-form-field">
+                                        <input type="checkbox" id="edr-IsFieldEditing">
+                                    </div>
+                                </div>
+
+                                <div class="edr-craft-check-form-group edr-craft-checkall-form-contaier-even">
+                                    <label class="label label-checkbox-edit">Need edit b-roll/teases/VOs/SOTS?</label>
+                                    <div class="edr-craft-checkbx-form-field">
+                                        <input type="checkbox" id="edr-IsCraftEditBrollTeasesVosSOTS">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="show-edr-craft-checkall-form-container">
+                                <div class="show-check-editedby">
+                                    <label class="label label-checkbox-edit">Edited By:</label>
+                                    <div class="craft-show-editby-field">
+                                        <select id="craft-editby-recutweb" class="selectbox">
+                                            <option></option>
+                                            <option>Producer</option>
+                                            <option>Editor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="show-howmany">
+                                    <label class="label label-checkbox-edit">How Many?</label>
+                                    <div class="craft-show-howmany-field">
+                                        <input type="text" id="craft-edr-howmany" class="textbox-mini" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="edr-craft-additional-requirments">
+                            <div class="box-edr-craft-produer box-edr-craft-checkbox">
+                                <h2 class="title-edr-craft-title">
+                                    Additional Requirements:
+                                    <small class="info-title">Check all that apply</small>
+                                </h2>
+
+                                <div class="form-edr-craft-producer ">
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Music</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Graphics/Stills</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Color Correct</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Audio Correct</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Effects</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">Other</label>
+                                        <textarea class="other-textarea" maxlength="1000"></textarea>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                        <label class="label label-display">All of the Above</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="box-edr-craft-produer box-edr-Sourcematerial-checkbox" style="display:none;">
+                                <h2 class="title-edr-craft-title">
+                                    Source Material (MSNBC Only):
+                                    <small class="info-title">Check all that apply</small>
+                                </h2>
+
+                                <div class="form-edr-craft-producer ">
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">WG01</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">WG06</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">To Be Ingested</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">To Be Shot</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">Restoring From</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">Archives</label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial" id="rad_sourceMaterial">
+                                        <label class="label label-display">Other</label>
+                                        <textarea class="other-textarea" id="ta_sourceMaterial" maxlength="1000"></textarea>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbx-left" name="Sourcematerial">
+                                        <label class="label label-display">All of the Above</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="edr-craft-check-form-group edr-craft-comment-form">
+                                <label class="label label-comment">Comments:</label>
+                                <div class="bnsedr-craftcomment-form-field">
+                                    <textarea class="textarea-comment" id="edr-CraftEditComments" maxlength="1000"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next button-bottom-static btn-edr">
+                    <span title="Back" class="button-next" action="EditSummary">Back</span>
+                    <span title="Next" class="button-next" action="EditProducer">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="edr-Producer-page" style="display:none;">
+                <h1 class="page-title">Producer Edit</h1>
+                <section class="content-section">
+                    <div class="box-edr-producer-produer">
+                        <h4 class="title-edr-producer-producer">What are you editing?</h4>
+                        <div class="form-edr-producer-producer">
+                            <div class="form-group">
+                                <label class="label label-display">Spot</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-Spot" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Rough Cut</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-RoughCut" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Web Piece</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-WebPiece" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">B-Roll/Teases</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-BRollTeases" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Sizzle Reel</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-SizzleReel" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Promos</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-Promos" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Awards</label>
+                                <div class="form-filed-edr-producer">
+                                    <input type="text" value="0" class="edr-producer-textbox" id="edr-Awards" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edr-producer-form-container">
+                        <div class="edr-producer-form">
+                            <div class="edr-producer-form-group  edr-producer-mobile-fullwidth">
+                                <label class="label label-estimated">Length of Piece:</label>
+                            </div>
+                            <div class="edr-producer-form-group edr-producer-mobile-mints">
+                                <div class="edr-producer-form-field">
+                                    <input type="text" id="edr-PE-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Minutes</label>
+                            </div>
+                            <div class="edr-producer-form-group edr-producer-mobile-seconds">
+                                <div class="edr-producer-form-field">
+                                    <input type="text" id="edr-PE-Seconds" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Seconds</label>
+                            </div>
+                            <div class="edr-producer-form-group-tbd edr-producer-mobile-tbd">
+                                <input type="checkbox" id="edr-PE-TBD">
+                                <label class="label label-tbd">TBD</label>
+                            </div>
+                        </div>
+                        <div class="edr-producer-form">
+                            <div class="edr-producer-form-group edr-producer-est-mobile-fullwidth">
+                                <label class="label label-estimated">
+                                    Estimated Producer<br>
+                                    Edit Time:
+                                </label>
+                            </div>
+                            <div class="edr-producer-form-group edr-producer-est-mobile-mints">
+                                <div class="edr-producer-form-field">
+                                    <input type="text" id="edr-PE-ET-Days" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Days</label>
+                            </div>
+                            <div class="edr-producer-form-group edr-producer-est-mobile-mints">
+                                <div class="edr-producer-form-field">
+                                    <input type="text" id="edr-PE-ET-Hours" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Hours</label>
+                            </div>
+                            <div class="edr-producer-form-group-tbd edr-producer-est-mobile-mints">
+                                <div class="edr-producer-form-field">
+                                    <input type="text" id="edr-PE-ET-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-tbd">Minutes</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next  btn-edr">
+                    <span title="Back" class="button-next" action="EditCraft">Back</span>
+                    <span title="Submit" class="button-next successPage" action="EditSubmit">Submit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="wrapper" id="EditRequest-MSNBC" style="display:none">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Edit Request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation MSNBCNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span title="MSNBC SHORT FORM">MSNBC SHORT FORM</span></li>
+                </ul>
+            </nav>
+            <footer class="footer" style="display:none;">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-edr-msnbc-shortform" id="edr-msnbc-shortform-page" style="display:block">
+                <h1 class="page-title">MSNBC SHORT FORM</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-msnbc-shortform-form-group-requester">
+                                <label class="label label-display">Requester</label>
+                                <div class="display-data1-new display-data1-edr-msnbc-shortform-signin"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequester-msnbc-Div" style="display:none"> </div>
+
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-msnbc-shortform-form-group-contact">
+                                <label class="label label-display">Contact # </label>
+                                <div class="display-dataform-new display-dataform-edr-msnbc-shortform-contact">
+                                    <input type="text" class="textbox" value="" id="edr-msnbc-shortform-contact" placeholder="(XXX) XXX-XXXX" maxlength="21">
+                                    <span class="display-data"></span>
+                                    <!--<div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid phone no</div>-->
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-msnbc-shortform-form-group-email">
+                                <label class="label label-display">Email </label>
+                                <div class="display-dataform-new display-dataform-edr-msnbc-shortform-email">
+                                    <input type="text" class="textbox" value="" id="edr-msnbc-shortform-email">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-New button-edr-msnbc-shortform">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-3-5 form-group edr-msnbc-shortform-form-group-producer-requestor">
+                                <label class="label label-edr-msnbc-network">Network</label>
+                                <div class="display-data-chekbox-new display-data-edr-msnbc-shortform-chekbox">
+                                    <input class="selectbox" id="edr-msnbc-shortform-network" type="text" value="MSNBC" disabled>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5  edr-msnbc-shortform-form-group-show-unit">
+                                <label class="label label-display"> Show Unit <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new edr-msnbc-shortform-showunit">
+                                    <select class="selectbox" id="edr-msnbc-shrtfrm-showunit">
+                                        <option></option>
+                                    </select>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5  edr-msnbc-shortform-form-group-budget-code">
+                                <label class="label label-display"> Budget Code </label>
+                                <div class="display-dataform-new display-dataform-edr-msnbc-shortform-budgetcode">
+                                    <input class="selectbox" type="text" id="edr-msnbc-shortform-budgetcode_0">
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-3-5 edr-msnbc-shortform-form-group-airdate">
+                                <label class="label label-display"> Air Date</label>
+                                <div class="display-dataform-new display-dataform-edr-msnbc-shortform-airdate">
+                                    <input type="text" id="edr-msnbc-shortform-txtairdate" class="selectbox msnbc-shortform-txtairdate" disabled>
+                                    <span id="edr-msnbc-shortform-airdate" class="icon-datepicker"></span>
+                                    <div class="calender-conatainer-edr-msnbc-shortform"></div>
+                                </div>
+                            </div>
+                            <div class="cols cols-2 edr-msnbc-shortform-form-group-tbd">
+                                <input type="checkbox" id="edr-msnbc-shortform-tbd">
+                                Air Date TBD
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-line">
+                    <div class="form-container form-container-horizontal">
+                        <h1 class="page-title-sub">Producer Edit:</h1>
+                        <div class="row">
+                            <div class="cols cols-12 cols-msnbc-edr-producer">
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-open">
+                                    <input type="checkbox" id="edr-openpackage">
+                                    <label class="label label-checkbox-msnbc">Open/Package</label>
+
+                                    <div class="show-checkbox-field show-checkbox-field-abs-pos" id="msnbc-openpackage">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-openpackage-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-vo">
+                                    <input type="checkbox" id="edr-msnbc-vosot">
+                                    <label class="label label-checkbox-msnbc">VO/SOT</label>
+                                    <div class="show-checkbox-field">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-vosot-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-fixes">
+                                    <input type="checkbox" id="edr-msnbc-fixes">
+                                    <label class="label label-checkbox-msnbc">Fixes</label>
+
+                                    <div class="show-checkbox-field">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-fixes-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-swebedit">
+                                    <input type="checkbox" id="edr-msnbc-webedit">
+                                    <label class="label label-checkbox-msnbc">Web Edit</label>
+
+                                    <div class="show-checkbox-field">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-webedit-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-line">
+                    <div class="form-container form-container-horizontal">
+                        <h1 class="page-title-sub">Editor Edit:</h1>
+                        <div class="row">
+                            <div class="cols cols-12 cols-msnbc-edr-producer">
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-open">
+                                    <input type="checkbox" id="edr-msnbc-edit-openpackage-editor">
+                                    <label class="label label-checkbox-msnbc">Open/Package</label>
+
+                                    <div class="show-checkbox-field show-checkbox-field-abs-pos" id="msnbc-openpackage-editor">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-openpackage-editor-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-vo">
+                                    <input type="checkbox" id="edr-msnbc-edit-vosot">
+                                    <label class="label label-checkbox-msnbc">VO/SOT</label>
+
+                                    <div class="show-checkbox-field" id="msnbc-vosot-editor">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-vosot-editor-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-fixes">
+                                    <input type="checkbox" id="edr-msnbc-edit-fixes">
+                                    <label class="label label-checkbox-msnbc">Fixes</label>
+                                    <div class="show-checkbox-field" id="msnbc-fixes-editor">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-fixes-editor-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group edr-msnbc-shortform-form-group-swebedit">
+                                    <input type="checkbox" id="edr-msnbc-edit-webedit">
+                                    <label class="label label-checkbox-msnbc">Web Edit</label>
+
+                                    <div class="show-checkbox-field" id="msnbc-webedit-editor">
+                                        <label class="field-group">How Many</label>
+                                        <div class="field-group"><input type="text" class="textbox-mini" id="edr-msnbc-webedit-editor-txt" maxlength="3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+							<div class="cols cols-3 form-group edr-msnbc-shortform-location">
+                                <label class="label label-edr-msnbc-location">Location</label>
+                                <div class="display-data-chekbox-new display-data-edr-msnbc-shortform-chekbox">
+                                    <select id="edr-msnbc-location" class="selectbox">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cols cols-3 form-group edr-msnbc-shortform-room">
+                                <label class="label label-edr-msnbc-room">Room</label>
+                                <div class="display-data-chekbox-new display-data-edr-msnbc-shortform-chekbox">
+                                    <select id="edr-msnbc-room" class="selectbox">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cols cols-12 form-group edr-msnbc-shortform-Comments">
+                                <label class="label label-edr-msnbc-comments">Comments</label>
+                                <div class="display-data-chekbox-new display-data-edr-msnbc-shortform-chekbox">
+                                    <textarea class="textarea-msnbc" id="textarea-msnbc" maxlength="1000"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next  button-bottom-static btn-msnbc">
+                    <span title="Prev" class="button-next button-welcome" action="Welcome">Back</span>
+                    <span title="Submit" class="button-next mscbc-successPage" action="msnbcSubmit">Submit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" id="EditRequest-tdy-wtdy" style="display:none">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Edit Request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation tdyNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span title="Tdy/Wtdy am form">Tdy/Wtdy am form</span></li>
+                </ul>
+            </nav>
+            <footer class="footer" style="display:none">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-edr-tdy-wtdy" id="edr-tdy-wtdy-page" style="display:block">
+                <h1 class="page-title">Tdy/Wtdy am form</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-tdy-wtdy-form-group-requester">
+                                <label class="label label-display">Requester</label>
+                                <div class="display-data1-new display-data1-edr-tdy-wtdy-signin"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequester-tdy-Div" style="display:none"> </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-tdy-wtdy-form-group-contact">
+                                <label class="label label-display">Contact # </label>
+                                <div class="display-dataform-new display-dataform-edr-tdy-wtdy-contact">
+                                    <input type="text" class="textbox" value="" id="edr-tdy-wtdy-contact" placeholder="(XXX) XXX-XXXX" maxlength="21">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-tdy-wtdy-form-group-email">
+                                <label class="label label-display">Email </label>
+                                <div class="display-dataform-new display-dataform-edr-tdy-wtdy-email">
+                                    <input type="text" class="textbox" value="" id="edr-tdy-wtdy-email">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-New button-edr-tdy-wtdy">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <!--<div class="cols cols-3 form-group edr-tdy-wtdy-form-group-producer-requestor">
+                                <label class="label label-edr-tdy-network">Business</label>
+                                <div class="display-data-chekbox-new display-data-edr-tdy-wtdy-business">
+                                    <input type="text" class="selectbox-tdy" id="edr-tdy-wtdy-busiess">
+                                </div>
+                            </div>-->
+                            <div class="cols cols-3  edr-tdy-wtdy-form-group-show-unit">
+                                <label class="label label-display"> Show Unit <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new edr-tdy-wtdy-showunit">
+                                    <input class="selectbox" id="edr-tdy-shrtfrm-showunit">
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3 edr-tdy-amform-form-group-airdate">
+                                <label class="label label-display"> Air Date</label>
+                                <div class="display-dataform-new display-dataform-edr-tdy-amform-airdate">
+                                    <input type="text" id="edr-tdy-amform-txtairdate" class="selectbox tdy-amform-txtairdate" disabled>
+                                    <span id="edr-tdy-amform-airdate" class="icon-datepicker"></span>
+                                    <div class="calender-conatainer-edr-tdy-amform"></div>
+                                </div>
+                            </div>
+							<div class="cols cols-4 edr-tdy-summary-form-group-locaton-edit">
+                                <label class="label label-display"> Location of edit <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-tdy-summary-location">
+                                    <select class="selectbox" id="edr-tdy-summary-location-edit">
+                                        <option></option>
+                                    </select>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="divider-line">
+
+                    <div class="form-container form-container-horizontal">
+                        <h1 class="page-title-sub">Craft Editor</h1>
+                        <div class="row">
+                            <div class="cols cols-10">
+                                <div class="row">
+                                    <div class="cols cols-3 form-group-craft-editor">
+                                        <div class="row">
+                                            <div class="cols cols-12 form-group-coldopen">
+                                                <label class="label label-craft-editor"> Cold Open:</label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-cold-open" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-updates">
+                                                <label class="label label-craft-editor"> Updates: </label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-Updates" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-pretapes">
+                                                <label class="label label-craft-editor"> Pre-Tapes:</label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-Pre-Tapes" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="cols cols-5 form-group-craft-editor-2">
+                                        <div class="row">
+                                            <div class="cols cols-12 form-group-revisionBRoll">
+                                                <label class="label label-craft-editor"> Revision to B-Rolls/VO/SOT:</label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-BRolls" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-tease">
+                                                <label class="label label-craft-editor"> Teases/Open Body:</label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-Tease" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-RevisionsSpots">
+                                                <label class="label label-craft-editor"> Revisions to Spots/Tracks:</label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-Spots" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cols cols-4 form-group-craft-editor-3">
+                                        <div class="row">
+                                            <div class="cols cols-12 form-group-ShowFixes">
+                                                <label class="label label-craft-editor"> Show Fixes: </label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-ShowFixes" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-CrashPieces">
+                                                <label class="label label-craft-editor"> Crash Pieces: </label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-cold-open">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-CrashPieces" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                            <div class="cols cols-12 form-group-NewB-roll">
+                                                <label class="label label-craft-editor">
+                                                    New B-roll/VO/SOT:
+                                                </label>
+                                                <div class="display-dataform-new edr-tdy-wtdy-Pre-Tapes">
+                                                    <input class="selectbox-mini" type="text" id="edr-tdy-wtdy-BrollVO" maxlength="3">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="editortdy-checkall">
+                        <h4 class="checkall-title">Check all that apply:</h4>
+                        <div class="row">
+                            <div class="cols cols-9 checkbox-edr-tdy-new01">
+                                <div class="row">
+                                    <div class="cols cols-4 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Quick Turnaround/Crash</label>
+                                    </div>
+                                    <div class="cols cols-2 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Music</label>
+                                    </div>
+                                    <div class="cols cols-3 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Graphics/Stills</label>
+                                    </div>
+                                    <div class="cols cols-3 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Color Correct</label>
+                                    </div>
+
+                                    <div class="cols cols-4 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Audio Correct</label>
+                                    </div>
+                                    <div class="cols cols-2 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Effects</label>
+                                    </div>
+                                    <div class="cols cols-3 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">Other</label>
+                                        <div class="otherText" style="display:none">
+                                            <input type="text" id="othertxt" />
+                                        </div>
+                                    </div>
+                                    <div class="cols cols-3 checkbox-form">
+                                        <input type="checkbox" name="editortdyCheck">
+                                        <label class="label">All of the Above</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cols cols-12">
+                                <label class="label">Additional Comments</label>
+                                <textarea class="cols-12 textarea-comment-tdy" maxlength="1000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next  button-bottom-static btn-tdy">
+                    <span title="Prev" class="button-next button-welcome" action="Welcome">Back</span>
+                    <span title="Submit" class="button-next tdy-successPage" action="tdySubmit">Submit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" id="EditLongformRequest" style="display:none;">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Edit Request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation edrLNGFNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span action="LongSummary" title="Summary">Summary</span></li>
+                    <li class="navi-disable"><span action="LongCraft" title="Craft Edit">Craft Edit</span></li>
+                    <li class="navi-disable"><span action="LongProducer" title="Producer Edit">Producer Edit</span></li>
+                    <li class="navi-disable"><span action="LongEditor" title="Assistant Editor Edit">Assistant Editor Edit</span></li>
+                </ul>
+            </nav>
+            <footer class="footer" style="display:none">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-edr-LNGF-summary" id="edr-LNGF-Summary-page" style="display:block">
+                <h1 class="page-title">Summary</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-LNGF-summary-form-group-requester">
+                                <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                <div class="display-data1-new display-data1-edr-LNGF-summary-signin"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequesterDiv" style="display:none"> </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-LNGF-summary-form-group-contact">
+                                <label class="label label-display">Contact # <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-contact">
+                                    <input type="text" class="textbox" value="" id="edr-LNGF-summary-contact" placeholder="(XXX) XXX-XXXX" maxlength="21">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group edr-LNGF-summary-form-group-email">
+                                <label class="label label-display">Email </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-email">
+                                    <input type="text" class="textbox" value="" id="edr-LNGF-summary-email">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-New button-edit-New-summary">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-LNGF-summary-form-group-producer-requestor">
+                                <label class="label label-producer-requestor">Producer same as Requestor?</label>
+                                <div class="display-data-chekbox-new display-data-edr-LNGF-summary-chekbox">
+                                    <select class="selectbox-mini" id="edr-LNGF-summary-producerasrequestor">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-LNGF-summary-form-group-producer">
+                                <label class="label label-display label-producer"> Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-producer">
+                                    <div class="display-data" id="LFProduceredr" style="display:none;"> </div>
+                                    <div class="display-data" id="peoplePickerProduceredr_LNGFDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-5 form-group edr-LNGF-summary-form-group-Senior-producer">
+                                <label class="label label-display label-producer"> Senior Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-senior-Producer">
+                                    <div class="display-data" id="peoplePickerSeniorProduceredr_LNGFDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group edr-LNGF-summary-form-group-producer-requestor">
+                                <label class="label label-producer-requestor">Assistant Producer same as Requestor?</label>
+                                <div class="display-data-chekbox-new display-data-edr-LNGF-summary-chekbox">
+                                    <select class="selectbox-mini" id="edr-LNGF-summary-assproducerasrequestor">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-6 form-group edr-LNGF-summary-form-group-producer">
+                                <label class="label label-display label-producer">Assistant Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-assistantproducer">
+                                    <div class="display-data" id="LFAssistantProducer" style="display:none;"> </div>
+                                    <div class="display-data" id="peoplePickerassistantProduceredr_LNGFDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr class="divider-line">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-3 form-group edr-LNGF-summary-form-group-slug">
+                                <label class="label label-display"> Slug <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-slug">
+                                    <input class="selectbox" type="text" id="edr-LNGF-summary-slug">
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+
+                            <div class="cols cols-3 edr-LNGF-summary-form-group-airdate">
+                                <label class="label label-display"> Air Date</label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-airdate">
+                                    <input class="selectbox LNGF-summary-txtairdate" type="text" id="edr-LNGF-summary-txtairdate" disabled>
+                                    <span class="icon-datepicker" id="edr-LNGF-summary-airdate"></span>
+                                    <div class="calender-conatainer-LNGFairdate"></div>
+
+                                </div>
+                            </div>
+                            <div class="cols cols-2 edr-LNGF-summary-form-group-tbd">
+                                <input type="checkbox" id="edr-LNGF-airdate">
+                                TBD
+                            </div>
+							<div class="cols cols-4 edr-LNGF-summary-form-group-locaton-edit">
+                                <label class="label label-display"> Location of edit <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-edr-LNGF-summary-location">
+                                    <select class="selectbox" id="edr-LNGF-summary-location-edit">
+                                        <option></option>
+                                    </select>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group">
+                                <div class="row">
+                                    <div class="cols cols-3  edr-LNGF-summary-form-group-business">
+                                        <label class="label label-display">Business <sup class="mandatory">*</sup> </label>
+                                        <div class="display-dataform-new display-dataform-edr-LNGF-summary-business">
+                                            <input class="selectbox" id="edr-LNGF-summary-business" value="NBC News" disabled>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                    <div class="cols cols-3  edr-LNGF-summary-form-group-show-unit">
+                                        <label class="label label-display"> Show Unit <sup class="mandatory">*</sup> </label>
+                                        <div class="display-dataform-new display-dataform-edr-LNGF-summary-showunit">
+                                            <input class="selectbox" id="edr-LNGF-summary-showunit">
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols cols-4  edr-LNGF-summary-form-group-budget-code">
+                                        <label class="label label-display"> Budget Code </label>
+                                        <div class="display-dataform-new display-dataform-edr-LNGF-summary-budgetcode">
+                                            <input class="selectbox" type="text" id="edr-LNGF-summary-budgetcode_0">
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group ">
+                                <div class="row">
+                                    <div class="cols  edr-LNGF-summary-form-group-craft-Edit">
+                                        <label class="label label-display">
+                                            Craft Edit ? <sup class="mandatory">*</sup>
+                                        </label>
+                                        <div class="display-dataform-new">
+                                            <select class="selectbox-mini" id="edr-LGNF-CDR">
+                                                <option></option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the<br /> required field</div>
+                                        </div>
+                                    </div>
+                                    <div class="cols edr-LNGF-summary-form-group-Producer-Edit">
+                                        <label class="label label-display">
+                                            Producer Edit ? <sup class="mandatory">*</sup>
+                                        </label>
+                                        <div class="display-dataform-new">
+                                            <select class="selectbox-mini" id="edr-LGNF-PDR">
+                                                <option></option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the<br /> required field</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cols edr-LNGF-summary-form-group-Producer-Edit">
+                                        <label class="label label-display">
+                                            Assistant Editor Edit ? <sup class="mandatory">*</sup>
+                                        </label>
+                                        <div class="display-dataform-new">
+                                            <select class="selectbox-mini" id="edr-LGNF-APDR">
+                                                <option></option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the<br /> required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next button-bottom-static btn-edr-LNGF">
+                    <span title="Prev" class="button-next button-welcome" action="Welcome">Back</span>
+                    <span title="Next" class="button-next" action="LongCraft">Next</span>
+                </div>
+            </div>
+
+            <div class="page-section" id="edr-LNGF-Craft-page" style="display:none;">
+                <h1 class="page-title">Craft Edit</h1>
+                <section class="content-section">
+                    <div class="edr-LNGF-craft-craft-form-container">
+                        <div class="edr-LNGF-craft-craft-form">
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-fullwidth">
+                                <label class="label label-estimated">Length of Show:</label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-mints">
+                                <div class="edr-LNGF-craft-producer-form-field ">
+                                    <input type="text" id="edr-LNGF-CE-Length-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Hours</label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-seconds">
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" id="edr-LNGF-CE-Length-Seconds" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Minutes</label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group-tbd edr-LNGF-craft-mobile-tbd">
+                                <input type="checkbox" id="edr-LNGF-length-tbd">
+                                <label class="label label-tbd">TBD</label>
+                            </div>
+                            <div class="edr-LNGF-craft-version-form-group edr-LNGF-craft-mobile-version">
+                                <label class="label label-noofacts">Number of Acts: </label>
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" id="edr-LNGF-CE-Acts" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edr-LNGF-craft-producer-form">
+                            <div class="edr-LNGF-craft-producer-form-group edr-craft-mobile-fullwidth">
+                                <label class="label label-estimated">
+                                    Craft Edit Time<br>
+                                    Needed:
+                                </label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-weeks">
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" class="edr-LGNF-weeks" id="edr-LGNF-weeks" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Weeks</label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-days">
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" class="edr-LGNF-days" id="edr-LGNF-days" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Days</label>
+                            </div>
+                            <div class="edr-LNGF-craft-producer-form-group edr-LNGF-craft-mobile-hours">
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" class="edr-LGNF-hours" id="edr-LGNF-hours" maxlength="3">
+                                </div>
+                                <label class="label label-tbd">Hours</label>
+                            </div>
+                        </div>
+                        <div class="edr-LNGF-craft-producer-form edr-LNGF-craft-producer-form-negative-space">
+                            <div class="edr-LNGF-craft-startdate-form-group">
+                                <label class="label label-startdate">Edit Start Date:</label>
+                                <div class="edr-LNGF-craft-startdate-form-field">
+                                    <input type="text" class="edr-LNGF-craft-startdate" disabled>
+                                    <span class="icon-datepicker" id="edr-LNGF-craft-start-date"></span>
+                                    <div class="calender-conatainer-LNGF-craftairdate"></div>
+                                </div>
+                            </div>
+                            <div class="edr-LNGF-craft-sessionstart-form-group">
+                                <label class="label label-checkbox-edit">Is this  a crash edit?</label>
+                                <div class="edr-LNGF-craft-checkbx-form-field">
+                                    <input type="checkbox" id="edr-LNGF-CE-Crashedit">
+                                </div>
+                            </div>
+
+                            <div class="edr-craft-version-form-group">
+                                <label class="label label-minutes">Number of Editors: </label>
+                                <div class="edr-LNGF-craft-producer-form-field">
+                                    <input type="text" id="edr-LNGF-crafnoofeditor" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="edr-LNGF-craft-producer-form">
+                            <div class="edr-LNGF-craft-startdate-form-group">
+                                <label class="label label-startdate">Number of Desktop <br />Edit Shifts:</label>
+                                <div class="edr-LNGF-craft-startdate-form-field">
+                                    <input type="text" class="edr-LNGF-no-Desktop" maxlength="3">
+                                </div>
+                            </div>
+
+                            <div class="edr-LNGF-craft-startdate-form-group">
+                                <label class="label label-startdate">Estimated Move<br> to Edit Room:</label>
+                                <div class="edr-LNGF-craft-startdate-form-field">
+                                    <input type="text" class="edr-LNGF-estimate-startdate" disabled>
+                                    <span class="icon-datepicker" id="edr-LNGF-summary-start-date-estimate"></span>
+                                    <div class="calender-conatainer-edr-LNGF-estimate"></div>
+                                </div>
+                            </div>
+
+                            <div class="edr-LNGF-craft-startdate-form-group">
+                                <label class="label label-startdate">Date of 1st<br> Screening:</label>
+                                <div class="edr-LNGF-craft-startdate-form-field">
+                                    <input type="text" class="edr-LNGF-craft-start-date-screen" disabled>
+                                    <span class="icon-datepicker" id="edr-LNGF-craft-start-date-screen"></span>
+                                    <div class="calender-conatainer-edr-LNGF-craft-start-date-screen"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edr-LNGF-craft-check-form-group edr-LNGF-craft-comment-form">
+                            <label class="label label-comment">Comments:</label>
+                            <div class="bnsedr-LNGF-craftcomment-form-field">
+                                <textarea class="textarea-comment" id="edr-LNGF-craft-comments" maxlength="1000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next btn-edr-LNGF">
+                    <span title="Back" class="button-next" action="LongSummary">Back</span>
+                    <span title="Next" class="button-next" action="LongProducer">Next</span>
+                </div>
+            </div>
+
+            <div class="page-section" id="edr-LNGF-Producer-page" style="display:none;">
+                <h1 class="page-title">Producer Edit</h1>
+                <section class="content-section">
+                    <div class="box-edr-LNGF-producer-produer">
+                        <h4 class="title-edr-LNGF-producer-producer">What are you editing?</h4>
+                        <div class="form-edr-LNGF-producer-producer">
+                            <div class="form-group">
+                                <label class="label label-display">Spot</label>
+                                <div class="form-filed-edr-LNGF-producer">
+                                    <input type="text" value="0" class="edr-LNGF-producer-textbox" id="edr-LNGF-Spot" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Rough Cut</label>
+                                <div class="form-filed-edr-LNGF-producer">
+                                    <input type="text" value="0" class="edr-LNGF-producer-textbox" id="edr-LNGF-RoughCut" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Web Piece</label>
+                                <div class="form-filed-edr-LNGF-producer">
+                                    <input type="text" value="0" class="edr-LNGF-producer-textbox" id="edr-LNGF-WebPiece" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">B-Roll/Teases</label>
+                                <div class="form-filed-edr-LNGF-producer">
+                                    <input type="text" value="0" class="edr-LNGF-producer-textbox" id="edr-LNGF-BRollTeases" maxlength="3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label label-display">Awards</label>
+                                <div class="form-filed-edr-LNGF-producer">
+                                    <input type="text" value="0" class="edr-LNGF-producer-textbox" id="edr-LNGF-Awards" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edr-LNGF-producer-form-container">
+                        <div class="edr-LNGF-producer-form">
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-fullwidth">
+                                <label class="label label-estimated">Length of Show:</label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-hours">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-PE-length-Hours" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Hours</label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-mints">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-PE-length-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Minutes</label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group-tbd edr-LNGF-producer-mobile-tdb">
+                                <input type="checkbox" id="edr-LNGF-PE-length-tbd">
+                                <label class="label label-tbd">TBD</label>
+                            </div>
+                        </div>
+                        <div class="edr-LNGF-producer-form">
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-fullwidth">
+                                <label class="label label-estimated">
+                                    Estimated Producer<br>
+                                    Edit Time:
+                                </label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-days">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-PE-EP-Days" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Days</label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group edr-LNGF-producer-mobile-hours">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-PE-EP-Hours" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Hours</label>
+                            </div>
+                            <div class="edr-LNGF-producer-form-group-tbd edr-LNGF-producer-mobile-mints">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-PE-EP-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-tbd">Minutes</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next btn-edr-LNGF">
+                    <span title="Back" class="button-next" action="LongCraft">Back</span>
+                    <span title="Next" class="button-next" action="LongEditor">Next</span>
+                </div>
+            </div>
+
+            <div class="page-section" id="edr-LNGF-Assistance-Editor-page" style="display:none;">
+                <h1 class="page-title">Assistant Editor Edit</h1>
+                <section class="content-section">
+                    <div class="box-edr-LNGF-AssEditor-editor">
+                        <h4 class="title-edr-LNGF-AssEditor-Edit">Assignment Needed</h4>
+                        <div class="form-edr-LNGF-AssEditor-Edit">
+                            <div class="form-group">
+                                <div class="form-filed-edr-LNGF-Checkbox">
+                                    <input type="checkbox" class="edr-LNGF-AssEditor-checkbox" id="checkbox-Ingest">
+                                </div>
+                                <label class="label label-display">Ingest</label>
+
+                                <div class="LNGF-AssEditor-editor-show">
+                                    <div class="form-gorup-lngf-edit-show">
+                                        <label class="label">File Or Tape?</label>
+                                        <select id="LNGF-FileTape">
+                                            <option>File</option>
+                                            <option>Tape</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-gorup-lngf-edit-show newFileIngest">
+                                        <a href="/sites/bcast_prodreq/Pages/Home.aspx?Type=FileIngest" title="New File Ingest Request">New File Ingest</a>
+                                    </div>
+                                    <div class="form-gorup-lngf-edit-show">
+                                        <label class="label">How much material do you have to Ingest?</label>
+                                    </div>
+                                    <div class="form-gorup-lngf-edit-show">
+                                        <input type="text" id="LNGF-IngestHours" maxlength="3">
+                                        <label class="label">Hours</label>
+                                    </div>
+                                    <div class="form-gorup-lngf-edit-show">
+                                        <input type="text" id="LNGF-IngestMinutes" maxlength="3">
+                                        <label class="label">Minutes</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-filed-edr-LNGF-Checkbox">
+                                    <input type="checkbox" class="edr-LNGF-AssEditor-RadioCut" maxlength="3">
+                                </div>
+                                <label class="label label-display">Radio Cut</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-filed-edr-LNGF-Checkbox">
+                                    <input type="checkbox" class="edr-LNGF-AssEditor-additionalelement" maxlength="3">
+                                </div>
+                                <label class="label label-display">Additional Elements</label>
+
+                                <div class="show-lngf-checkbox-assignment">
+                                    <label class="label"><sub class="mandatory">*</sub></label>
+                                    <textarea class="lngf-textarea-show" id="txtarea-additional-elemments"></textarea>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="form-filed-edr-LNGF-Checkbox">
+                                    <input type="checkbox" class="edr-LNGF-AssEditor-other">
+                                </div>
+                                <label class="label label-display">Other</label>
+
+                                <div class="show-lngf-checkbox-other">
+                                    <label class="label"><sub class="mandatory">*</sub></label>
+                                    <textarea class="lngf-textarea-show" id="txtarea-other-elemments"></textarea>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edr-LNGF-AssEditor-Edit-form-container">
+                        <div class="edr-LNGF-AssEditor-Edit-form">
+                            <div class="edr-LNGF-AssEditor-Edit-form-group  edr-LNGF-AssEditor-mobile-fullwidth">
+                                <label class="label label-estimated">Length of Show:</label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group  edr-LNGF-AssEditor-mobile-hours">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-AEE-Length-Hours" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Hours</label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group  edr-LNGF-AssEditor-mobile-mints">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-AEE-Length-Minutes" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Minutes</label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group-tbd  edr-LNGF-AssEditor-mobile-tbd">
+                                <input type="checkbox" id="edr-LNGF-ae-length-tbd">
+                                <label class="label label-tbd">TBD</label>
+                            </div>
+                        </div>
+                        <div class="edr-LNGF-AssEditor-Edit-form">
+                            <div class="edr-LNGF-producer-form-group  edr-LNGF-Ass-AssEditor-mobile-fullwidth">
+                                <label class="label label-estimated">
+                                    Asst. Editor Time<br>
+                                    Needed:
+                                </label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-AEE-AssEditor-Days" maxlength="3">
+                                </div>
+                                <label class="label label-minutes">Days</label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group">
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" id="edr-LNGF-AEE-AssEditor-Hours" maxlength="3">
+                                </div>
+                                <label class="label label-seconds">Hours</label>
+                            </div>
+                            <div class="edr-LNGF-AssEditor-Edit-form-group-dateneeded">
+                                <label class="label label-dateneed">Date Needed:</label>
+                                <div class="edr-LNGF-producer-form-field">
+                                    <input type="text" class="edr-LNGF-ass-dateneeded" disabled> <span id="edr-LNGF-ass-date-need" class="icon-datepicker"></span>
+                                    <div class="calender-conatainer-edr-LNGF-assdateneeded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next  btn-edr-LNGF">
+                    <span title="Back" class="button-next" action="LongProducer">Back</span>
+                    <span title="Submit" class="button-next successPage" action="edr-LNGFSubmit">Submit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popupscreen popupscreen-thanks" id="thanksScreen">
+    <div class="overlay"></div>
+    <div class="model-form-container model-form-thanksmsg">
+        <div class="model-form-group">
+            <h3 class="page-title">Thank you for Submitting <span class="thanks-edit-request">an edit</span><span class="thanks-TDY-WTDY-request">TDY/WTDY</span><span class="thanks-MSNBC-request">MSNBC</span> <span class="thanks-Long-Form-Edit-request">Long Form Edit</span>  request.</h3>
+            <span class="emailText">You will receive an email shortly after your request is fulﬁlled.</span>
+            <div class="button-close">Close</div>
+        </div>
+    </div>
+</div>

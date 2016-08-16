@@ -1,0 +1,669 @@
+.header {
+    /*height: 136px;*/
+    width: 100%;
+    background-color: #172852;
+    text-align: center;
+}
+#contentBox{margin-right:0 !important}
+.ms-siteicon-a img {
+    display: inline-block;
+    max-height: 64px;
+    max-width: 180px;
+}
+
+.subpage-content h1.page-title, .page-title {
+    font-size: 18px;
+    margin: 13px 0;
+}
+
+.header .container-fluid {
+    padding: 0 30px;
+}
+
+.container-fluid .header {
+    padding: 0 30px;
+}
+
+.header .ms-siteicon-a {
+    float: left;
+    margin: 36px 0;
+}
+
+.header .sidebar-header {
+    float: left;
+    width: 100%;
+    /*height: auto;*/
+}
+
+.form-container-horizontal .display-dataform {
+    white-space: normal;
+}
+
+.display-dataform-shoot {
+    width: 88% !important;
+}
+
+.header .sidebar-header {
+    border-bottom: none;
+}
+
+    .header .sidebar-header .title {
+        float: none;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        background: none;
+        font-size: 40px;
+        margin: 40px 0;
+        color: #329ace;
+    }
+
+.page-title .button-edit, .page-title .button-edit-rs {
+    text-transform: lowercase;
+    margin-left: 15px;
+}
+
+.header-right-booked {
+    float: right;
+    color: #fff;
+    margin: 40px 0;
+}
+.header-right-booked .button{
+	margin:0;
+	padding:0 15px;
+	font-weight:normal;
+	}
+.button-booked {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #54bb69;
+    line-height: 36px;
+    padding: 0 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.book-id {
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.subpage-content-container {
+    margin-left: 0;
+    padding: 0 60px;
+}
+
+    .subpage-content-container .button-bottom-next {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+.crew-desk {
+    padding-bottom: 10px;
+}
+
+.subpage-content-container .form-container {
+    font-size: 14px;
+    margin: 0;
+    position: relative;
+}
+
+.subpage-content-container .label {
+    line-height: normal;
+}
+
+.subpage-content {
+    width: 100%;
+    float: left;
+}
+
+.row-needs .form-group {
+    margin-top: 25px;
+}
+
+.display-data1 .total-amount {
+    background-color: #21469a;
+    color: #fff;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    width: 70px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.subpage-content-container .form-group {
+    margin: 13px 0 0 0;
+    min-height: 38px;
+}
+
+.subpage-content-container .cols-3-5 {
+    width: 31%;
+}
+
+.subpage-resource-form .form-container-horizontal .label {
+    vertical-align: middle;
+}
+
+.subpage-resource-form .selectbox {
+    width: 70px;
+}
+
+.display-fullwidth {
+    width: 88.68%;
+    display: table-cell;
+}
+
+.selectbox-crewdesk {
+    width: 100%;
+    height: 70px;
+}
+
+.table-container {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #9b9b9b;
+    margin-bottom: 15px;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.tbody {
+    display: table-row-group;
+}
+
+.trow {
+    display: table-row;
+}
+
+.th {
+    padding: 7px;
+    text-align: center;
+    display: table-cell;
+    border-left: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    color: #0b2751;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.td {
+    padding: 7px;
+    height: 40px;
+    display: table-cell;
+    border-left: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.button {
+    font-size: 17px;
+    display: inline-block;
+    line-height: 25px;
+    width: 100%;
+    height: 30px;
+    color: #0b2751;
+    text-align: center;
+    border: 2px solid #0b2751;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.buttons-cols {
+    float: left;
+    padding: 0 10px;
+}
+
+.active-New {
+    background-color: #d2000d;
+    color: #fff;
+}
+
+.button.button-new.active {
+    background-color: #d2000d;
+    color: #fff;
+}
+
+.button.button-rofr.active {
+    background-color: #f7a700;
+    color: #fff;
+}
+
+.button.button-efforting.active {
+    background-color: #f7a700;
+    color: #fff;
+}
+
+.button.button-revised.active {
+    background-color: #d2000d;
+    color: #fff;
+}
+
+.button.button-booking.active {
+    background-color: #4dbb66;
+    color: #fff;
+}
+
+.button.button-cancelled.active {
+    background-color: #d1d1d1;
+    color: #fff;
+}
+
+.show-date-container {
+    width: 100%;
+    color: #0b2751;
+    float: none;
+    display:table;
+    table-layout:fixed;
+    border-bottom: 2px solid #1c9fd0;
+    padding: 16px 60px 10px 60px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.date-label {
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.value-field {
+    font-weight: bold;
+    /*display: inline-block;*/
+    vertical-align: top;
+    text-decoration: underline;
+}
+
+.slugname {
+    text-transform: none;
+}
+
+.showdate {
+    display:table-cell;
+    width: 25%;
+    /*float: left;*/
+}
+.showdate:nth-child(2){
+    text-align:center;
+}
+.showdate:last-child{
+    text-align:right;
+}
+.subpage-content .textbox {
+    margin-top: -6px;
+}
+
+.label-attachment {
+    background: url(/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/icon-attach.png) no-repeat right 5px;
+    padding-right: 20px;
+    padding-bottom:3px;
+}
+
+.subpage-resource-form .label-description {
+    vertical-align: top !important;
+    line-height: 23px;
+}
+
+.display-dataform-description {
+    padding-top: 3px !important;
+}
+
+.button-group {
+    /*padding-top: 55px;
+	padding-bottom: 55px;*/
+}
+
+.subpage-resource-form .display-data1 .total-amount {
+    width: 55px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.value-field img {
+    margin-top: -5px;
+}
+
+.button-remove-app {
+    /*	position: absolute;
+	right: -15px;
+	top: -49px;
+	font-size: 0;*/
+    color: #1c9fd0;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 8px;
+    width: 100%;
+    float: left;
+}
+
+.button-add-app {
+    margin-bottom: 8px;
+}
+
+.label-status {
+    text-align: left;
+}
+
+.button-group-status {
+    /*text-align:center;*/
+    margin: 25px 0;
+}
+
+.revision-box {
+    width: 100% !important;
+    padding-right: 15px;
+}
+
+.attachment-file {
+    color: #000;
+    border: 1px solid #979797;
+    padding: 0 4px;
+    font-size: 11px;
+    margin: 0 10px 5px 0px;
+    float:left;
+}
+
+    .attachment-file:visited {
+        color: #000;
+    }
+    #ff_Attachment{padding-left:10px !important;}
+    .attachment-file:first-child {
+        margin-left: 0;
+    }
+
+.Employee-Type {
+    width: 73.8% !important;
+}
+
+.button-group-status .label {
+    width: 150px;
+    float: left !important;
+}
+
+.button-group-status .display-fullwidth {
+    width: calc(100% - 170px);
+    float: left;
+}
+
+.display-data {
+    display: block;
+}
+
+.cols-6-5 {
+    width: 66%;
+}
+
+.cols-5-5 {
+    width: 34%;
+    padding-left: 15px;
+}
+
+    .cols-5-5 .display-dataform {
+        white-space: nowrap;
+    }
+
+.email-name {
+    color: #000;
+    text-decoration: none;
+}
+
+.button-bottom-next {
+    float: left;
+}
+
+.form-container-horizontal .cols .label-crew-desk-notes {
+    float: left;
+}
+
+.form-container-horizontal .cols .crew-desk {
+    width: calc(100% - 165px);
+    float: left;
+}
+
+.crew-info-container {
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.button-remove-container { /*position:absolute; top:65px; left:100px;*/
+    position: relative;
+    float: left;
+    margin-top: -40px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0px !important;
+    min-height: 0 !important;
+}
+
+.display-pf1 {
+    position: relative;
+    float: left;
+    margin-top: -43px !important;
+    padding-top: 0 !important;
+    z-index: 1;
+    min-height: 0 !important;
+    /*top: -55px;*/
+}
+
+    .display-pf1.active {
+        margin-top: -18px !important;
+    }
+
+.forms-add-conatiner, .colsshowunit {
+    position: relative;
+}
+
+    .forms-add-conatiner .button-remove-talent {
+        position: absolute;
+        right: -25px;
+        top: -5px;
+        margin: 0;
+    }
+
+#ffShowUnitDiv {
+    width: 41.667%;
+    float: left;
+    margin-top: 15px;
+}
+
+.colsshowunit {
+    width: 100%;
+    float: left;
+    min-height: 35px;
+}
+
+#ffTalentDiv .addbutton-container {
+    margin-bottom: 15px;
+}
+
+#ffShowUnitDiv .addbutton-container .button-addsu {
+    padding-left: 25px;
+    float: left;
+}
+
+.colsshowunit .button-remove-showunit {
+    position: absolute;
+    right: -1px;
+    top: -5px;
+}
+
+#ffShowUnitDiv .form-group {
+    min-height: inherit;
+    margin: 0;
+}
+
+.button-edit-rs {
+    background-color: transparent;
+    border: medium none;
+    color: #1c9fd0;
+    cursor: pointer;
+    padding-right: 4px;
+}
+
+div.textbox {
+    border: none;
+    min-height: 28px;
+    height:auto;
+}
+
+    div.textbox .sp-peoplepicker-topLevel {
+        border: 1px solid #979797;
+        border-radius: 3px;
+        font-size: 12px;
+        height: auto;
+        padding: 6px 7px;
+        width: 100% !important;
+    }
+    .sp-peoplepicker-editorInput{min-width:10px !important}
+.subpage-content-where-is-shoot .sdControl {
+    float: none;
+    display: table-cell;
+    width: 100%;
+	padding-bottom:15px !important;
+	position:relative
+	
+}
+.subpage-content-where-is-shoot .sdControl .shoot-textbox{border:1px solid #979797;height:90px; position:relative; padding:3px 10px; float:left; width:100%;}
+#valideditsection.valid-msg {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+    .subpage-content-who {
+        margin-top: 13px;
+    }
+
+    .show-date-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: left;
+        float:none;
+        display:table;
+        /*font-size:15px;*/
+
+    }
+
+    .showdate {
+        display:table-cell;
+        width: 25%;
+    }
+
+    .attachment-file:first-child {
+        margin-left: 0;
+    }
+
+    .showdate:last-child {
+        /*float: right;*/
+        width: auto;
+    }
+
+    .subpage-content-container {
+        padding: 0 30px;
+    }
+
+    .subpage-resource-form .selectbox {
+        width: 100%;
+        padding: 0;
+    }
+
+    #ffTalentDiv .forms-add-conatiner {
+        width: 95%;
+    }
+
+    #ffShowUnitDiv .form-group input {
+        width: 85%;
+    }
+
+    .subpage-content-where-is-shoot .sdControl .shoot-textbox {
+        width: calc(100% - 320px);
+    }
+	
+	.subpage-content-where-is-shoot .sdControl .shoot-textbox{border:1px solid #979797;height:90px; position:relative; padding:3px 10px; float:left; width:100%;}
+}
+
+.ui-multiselect-header ul {
+  font-size: 0.79em !important;
+}
+
+.ui-state-active .ui-icon,.ui-state-default .ui-icon,.ui-state-hover .ui-icon {
+    background-image: url("/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/triangle-small-1-01-512.png") !important;
+    background-size: 100%;
+    background-position: 0 !important;
+    top: 4px;
+    position: relative;
+}
+
+.ui-multiselect-checkboxes label input{
+    margin-right:5px !important;
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url("/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/ui-icons_222222_256x240.png") !important;
+}
+
+#ff_productiontype,#ff_shootstatus,#ff_state-select,#ff_country-select{display:none;}
+.subpage-resource-form{margin-bottom:40px !important;}
+.resourcereason{margin-top:18px !important;}
+#ff_OverrideApproval .selectbox{width:100%;}
+#ff_ResourceDescription{
+    word-break:break-all;
+    word-wrap:break-word;
+}
+#ff_shootstatus{
+    width:75px;
+}
+.sp-peoplepicker-autoFillContainer{
+    z-index:2
+}
+.shoot-selected, .shoot-dropdown{margin-top:0;}
+
+div.ProducerField .sp-peoplepicker-topLevel {
+        border: 1px solid #979797;
+        border-radius: 3px;
+        font-size: 12px;
+        height: 28px;
+        padding: 6px 7px;
+        width: 100% !important;
+    }
+
+.ProducerField {
+    display: none;
+    font-size: 12px;
+    height: 28px;
+    padding: 0 7px;
+    width: 100%;
+    border: 1px solid #979797;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.subpage-content select.textbox{
+    padding-left:0;
+      padding-right:0;
+}
+.crewinfopeoplepicker .ms-entity-resolved{
+    max-width:205px !important;
+}
+/*#ff_peoplePickerResourceDiv_1 .sp-peoplepicker-topLevel
+
+{
+    padding-right:25px !important
+}*/
+/*#ff_peoplePickerResourceDiv_1 .sp-peoplepicker-topLevel .ms-entity-resolved{
+    max-width:205px !important;
+
+}*/
+
+#ff_state-select,#ff_country-select{margin-top:-6px;}
+.form-group-est-cost{margin-top:21px !important;}

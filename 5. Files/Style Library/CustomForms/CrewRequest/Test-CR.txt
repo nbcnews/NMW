@@ -1,0 +1,1266 @@
+﻿<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    var loginName = "";
+    var serverurl = location.protocol + "//" + location.host;
+    var serverPath = serverurl + "/sites/bcast_prodreq/_api/Web/Lists";
+    var email = "";
+    var phoneNo = "";
+    var listId = "968";
+    var editId = "365";
+    function ReadList(url, listName, query) {
+        var results = [];
+        try {
+            $.ajax({
+                url: serverPath + "/GetByTitle('" + listName + "')/items" + query,
+                method: "GET",
+                headers: { "Accept": "application/json; odata=verbose" },
+                async: false,
+                success: function (data) {
+                    results = data.d.results;
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+            return results;
+        } catch (e) {
+            console.log(e.message);
+        }
+    };
+
+    $(function () {
+        $('#emailBTN').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processSendEmails);
+        });
+
+        $('#notemailBTN').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processNotificationEmail);
+        })
+
+        //revBTN
+        $('#revBTN').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processRevEmail);
+        });
+
+        $('#appBTN').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processApprovalEmails);
+        });
+
+        $('#newRequest').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processnewEditRequest);
+        });
+
+        $('#fulfiller').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processfulfillerEditRequest);
+        })
+
+        $('#newFileIngest').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processnewFileIngest);
+        });
+
+        $('#fileIngestComplete').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processCompleteFileIngest);
+        });
+
+        $('#fileIngestRecevied').click(function () {
+            SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processReceivedFileIngest);
+        });
+
+		
+
+        ExecuteOrDelayUntilScriptLoaded(getWebUserData, "sp.js");
+        //$.ajax({
+        //    url: "http://test-samurai.acquiremedia.com/Search/?format=brief&wireInclude=NC&maxReturn=25&query=penn*&scope=all&status=all",
+        //    data: "{}",
+        //    type: "GET",
+        //    contentType: "application/javascript",
+        //    dataType: "json",
+        //    error: function (data) {
+        //        alert("Menu failed!");
+        //    },
+        //    success: function (data) {
+        //        alert("Sucuss");
+        //    }
+        //});
+
+
+        // Check for FileReader API (HTML5) support.
+        if (!window.FileReader) {
+            alert('This browser does not support the FileReader API.');
+        }
+    });
+
+    function nullckeck(value) {
+        var returnVal = "-";
+        if (!!value) {
+            returnVal = value;
+        }
+        return returnVal;
+    }
+
+    function nullDate(value) {
+        var returnVal = "TBD";
+        if (!!value) {
+            returnVal = value;
+        }
+        return returnVal;
+    }
+
+    function getCrewDoc(CRid) {
+        var returnArray = [];
+        try {
+            $.ajax({
+                url: "/sites/bcast_prodreq/_vti_bin/listdata.svc/MWFDocument?$select=Id,AssociatedRequestID,Name,RequestType&$filter=AssociatedRequestID eq '" + CRid + "'",
+                dataType: 'json',
+                processData: false,
+                async: false,
+                success: function (data) {
+                    $.each(data.d.results, function (i, item) {
+                        returnArray.push({
+                            id: item.Id,
+                            CRid: item.AssociatedRequestID,
+                            Name: item.Name
+                        });
+                    });
+                }
+            });
+            return returnArray;
+
+        } catch (e) {
+            console.log(e.message)
+        }
+    }
+
+    function processnewEditRequest() {
+        //var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'ER New'");
+        //var subject = 'New Edit Request Email';
+        //var body = returnVal[0].Content;
+        //var to = [];
+        //var from = 'MTASharePointDEV@nbcuni.com';
+        //to.push(loginName);
+        //var cc = [];
+        //var bcc = [];
+        //sendEmail(from, to, cc, bcc, body, subject);
+        editId = $('#idValEr').val();
+        var editItem = ReadList("", "EditRequest", "?select=ID,Title,EditRequestID,RequestorName,RequestorContact,ProducerName,SeniorProducer,Slug,Business,LocationofEdit,AirDate,Correspondent,PleceMinutes,PleceSeconds,PleceTBD,EditStartDate,RequestedEditSection,CraftEditDays,CraftEditHours,CraftEditMinutes,IsCrashEdit,IsFieldEditing,Isrecut,IsCraftEditBrollTeasesVosSOTS,ERCREditedBy,CraftEditComments,AMMusic,AMGraphicStills,AMColorCorrect,AMAudioCorrect,AMEffects,AMOther,AMAllOfTheAbove,AROtherText&$filter= ID eq '" + editId + "'");
+        $.each(editItem, function (ind, val) {
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'ER New'");
+            var showData = ReadList("", "ER_ShowUnit", "?select=ID,Title,RequestID,AssignedBudgetCode&$filter= RequestID eq '" + editId + "'");
+            var absURL = val.FieldValuesAsText.__deferred.uri.split('_api/');
+            var body = returnVal[0].Content;
+            body = body.replace('##EditRequestID##', nullckeck("<a href='" + absURL[0] + "Pages/Home.aspx?CRID=" + val.Id + "'>" + val.EditRequestID + "</a>"));
+            body = body.replace('##Requestor##', nullckeck(val.RequestorName));
+            body = body.replace('##RequestorPhone##', nullckeck(val.RequestorContact));
+            body = body.replace('##SeniorProducer##', nullckeck(val.SeniorProducer));
+            body = body.replace('##SeniorProducerphone##', '');
+            body = body.replace('##Producer##', nullckeck(val.ProducerName));
+            body = body.replace('##ProducerPhone##', '');
+            body = body.replace('##Slug##', nullckeck(val.Slug));
+            body = body.replace('##Business##', nullckeck(val.Business));
+
+            var showValues = '';
+            var budValues = '';
+            $.each(showData, function (shInd, shVal) {
+                if (shInd == 0) {
+                    showValues += shVal.Title
+                    budValues += shVal.AssignedBudgetCode
+                }
+                else {
+                    showValues += ", " + shVal.Title
+                    budValues += ", " + shVal.AssignedBudgetCode
+                }
+            });
+            body = body.replace('##ShowUnit##', nullckeck(showValues));
+            body = body.replace('##BudgetCode##', nullckeck(budValues));
+            body = body.replace('##EditLocation##', nullckeck(val.LocationofEdit));
+            body = body.replace('##AirDate##', nullDate(val.AirDate));
+            body = body.replace('##Correspondent##', nullckeck(val.Correspondent));
+            var Plece = "Yes";
+            if (val.PleceTBD == "No") {
+                Plece = nullckeck(val.PleceMinutes) + ":" + nullckeck(val.PleceSeconds)
+            }
+            body = body.replace('##LengthOfShot##', Plece);
+            body = body.replace('##EditStartDate##', nullDate(val.EditStartDate));
+            body = body.replace('##EditTimeNeeded##', nullckeck(val.CraftEditDays) + " : " + nullckeck(val.CraftEditHours) + " : " + nullckeck(val.CraftEditMinutes));
+            body = body.replace('##RequestedEditSection##', nullckeck(val.RequestedEditSection));
+            body = body.replace('##IsCrashEdit##', nullckeck(val.IsCrashEdit));
+            body = body.replace('##IsFieldEditing##', nullckeck(val.IsFieldEditing));
+            body = body.replace('##Isrecut##', nullckeck(val.Isrecut));
+            body = body.replace('##IsCraftEditBrollTeasesVosSOTS##', nullckeck(val.IsCraftEditBrollTeasesVosSOTS));
+            body = body.replace('##ERCREditedBy##', nullckeck(val.ERCREditedBy));
+            var addReq = "";
+            if (val.AMMusic == "Yes") {
+                addReq += "Music, "
+            }
+            if (val.AMGraphicStills == "Yes") {
+                addReq += "Graphics/Stills, "
+            }
+            if (val.AMColorCorrect == "Yes") {
+                addReq += "Color Correct, "
+            }
+            if (val.AMAudioCorrect == "Yes") {
+                addReq += "Audio Correct, "
+            }
+            if (val.AMEffects == "Yes") {
+                addReq += "Effects, "
+            }
+            if (val.AMOther == "Yes") {
+                addReq += "Other- ";
+                addReq += nullckeck(val.AROtherText) + ", "
+            }
+            if (val.AMAllOfTheAbove == "Yes") {
+                addReq += "All of the Above"
+            }
+            body = body.replace('##AdditionalRequirement##', nullckeck(val.ERCREditedBy));
+            body = body.replace('##Comments##', nullckeck(val.CraftEditComments));
+            var subject = 'New Edit Request - ' + nullckeck(val.EditRequestID);
+            var to = [];
+            var from = 'MTASharePointDEV@nbcuni.com';
+            to.push(loginName);
+            var cc = [];
+            var bcc = [];
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+    }
+
+    function processfulfillerEditRequest() {
+        //var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'ER Fulfiller'");
+        //var subject = 'Fulfiller Edit Request Email';
+        //var body = returnVal[0].Content;
+        //var to = [];
+        //var from = 'MTASharePointDEV@nbcuni.com';
+        //to.push(loginName);
+        //var cc = [];
+        //var bcc = [];
+        //sendEmail(from, to, cc, bcc, body, subject);
+
+        editId = $('#idValEr').val();
+
+        var editItem = ReadList("", "EditRequest", "?select=ID,Title,RequestorName,RequestorContact,EditRequestID,FFFulfillerComments&$filter= ID eq '" + editId + "'");
+        $.each(editItem, function (ind, val) {
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'ER Fulfiller'");
+            var editorData = ReadList("", "Editor", "?select=ID,Title,EditorAssigned,Room,AssignedFromDate,AssignedFromTime,AssignedFromSec,AssignedToDate,AssignedToTime,AssignedToSec,EditorRequestID&$filter= EditorRequestID eq '" + editId + "'");
+            var body = returnVal[0].Content;
+            var absURL = val.FieldValuesAsText.__deferred.uri.split('_api/');
+            var body = returnVal[0].Content;
+            body = body.replace('##​EditRequestID1##', nullckeck("<a href='" + absURL[0] + "Pages/Home.aspx?CRID=" + val.Id + "'>" + val.EditRequestID + "</a>"));
+            //body = body.replace('##​EditRequestID1##', nullckeck(val.EditRequestID));
+            body = body.replace('##EditRequestID##', nullckeck(val.EditRequestID));
+            body = body.replace('##Requestor##', nullckeck(val.RequestorName));
+            body = body.replace('##RequestorPhone##', nullckeck(val.RequestorContact));
+            body = body.replace('##FulfillerComments##', nullckeck(val.FFFulfillerComments));
+            var editor = "";
+            $.each(editorData, function (editInd, editVal) {
+                editor += '<tr>' +
+                        '<td style="padding: 7px 30px;">' +
+                           '<div style="width: 100%; clear: both;">' +
+                              '<div style="width: 100%; clear: both;">' +
+                                 '<strong>Editor Assigned: </strong>' + nullckeck(editVal.EditorAssigned) + ' </div>' +
+                              '<div style="width: 100%; clear: both;">' +
+                                 '<strong>Room: </strong>' + nullckeck(editVal.Room) + '</div>' +
+                              '<div style="width: 100%; clear: both;">' +
+                                 '<strong>Assigned From:</strong> ' + nullckeck(editVal.AssignedFromDate) + ' ' + nullckeck(editVal.AssignedFromTime) + ' ' + nullckeck(editVal.AssignedFromSec) + ' </div>' +
+                              '<div style="width: 100%; clear: both;">' +
+                                 '<strong>Assigned To: </strong>  ' + nullckeck(editVal.AssignedToDate) + ' ' + nullckeck(editVal.AssignedToTime) + ' ' + nullckeck(editVal.AssignedToSec) + ' </div>' +
+                           '</div>' +
+                        '</td>' +
+                     '</tr>';
+            });
+            body = body.replace('##Editor##', editor);
+            var subject = 'Edit Request ' + nullckeck(val.EditRequestID) + ' has been fulfilled.';
+            var to = [];
+            var from = 'MTASharePointDEV@nbcuni.com';
+            to.push(loginName);
+            var cc = [];
+            var bcc = [];
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+
+    }
+
+    function processApprovalEmails() {
+
+        if ($('#idVal').val() != "") {
+            listId = $('#idVal').val();
+        }
+
+        var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var crewItem = ReadList("", "CrewRequest", "?select=ID,Title,CCEmailKey,requestorKey,EstimatedCost,producerKey,SeniorProducerKey,AssignmentSlug,Country,CrewCity,CrewState,ShootStatus,CrewRequestID,StartDate1,EndDate1,MeetTime,RollTime,DayZone,CrewAddress,Camera,Audio,Utilities,ProductionType,SpecialGear,AudioNeed,SpecialConditions,TransmissionType,Requester,CellPhone,Producer,ProducerCellNumber,Approver&$filter= ID eq '" + listId + "'");
+        $.each(crewItem, function (ind, val) {
+            var showData = ReadList("", "CRT_ShowUnit", "?select=ID,Title,RequestID,AssignedBudgetCode&$filter= RequestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var talentData = ReadList("", "CRT_Talent", "?select=ID,Title,CrewRequestID&$filter= CrewRequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'Approval'");
+
+            var startdate1 = '';
+            var startdate = '';
+            if (nullckeck(val.StartDate1) != "-") {
+                startdate1 = nullckeck(val.StartDate1).split('-');
+                startdate = startdate1[1] + "/" + startdate1[2].split('T')[0];
+            }
+            var endDate1 = '';
+            var enddate = '';
+            if (nullckeck(val.EndDate1) != "-") {
+                endDate1 = nullckeck(val.EndDate1).split('-');
+                enddate = endDate1[1] + "/" + endDate1[2].split('T')[0];
+            }
+            var header = "";
+            if (showData.length > 0) {
+                header += showData[0].Title + " : ";
+            }
+            header += val.AssignmentSlug;
+            if (talentData.length > 0) {
+                header += " (";
+                $.each(talentData, function (talInd, talVal) {
+                    if (talInd == 0) {
+                        header += talVal.Title;
+                    }
+                    else {
+                        header += ' | ' + talVal.Title;
+                    }
+                });
+                header += ") | ";
+            }
+            if (nullckeck(val.ShootStatus) != "-") {
+                header += nullckeck(val.ShootStatus) + " | ";
+            }
+            header += nullckeck(val.CrewRequestID);
+            var body = returnVal[0].Content;
+            //Header Section..
+            body = body.replace('##Header##', header);
+            var today = new Date();
+            //Remove this to get current time, leave this to get time start of day
+            today.setHours(0);
+            today.setMinutes(0);
+            today.setSeconds(0);
+            var currentDateTimestamp = today.getTime();
+            var selectedDateTimestamp = new Date(nullckeck(val.StartDate1)).getTime();
+            //Check if the timestamp is within 24 hours, 24 hours = 60 seconds * 60 minutes * 24 hours * 1000 milliseconds
+            if (Math.abs(currentDateTimestamp - selectedDateTimestamp) <= 60 * 60 * 24 * 1000) {
+                //Within 24 hours
+                body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate + " *Shoot starts within 24hrs*");
+            }
+            else {
+                body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate);
+            }
+            //##dates##
+            //MeetTime,RollTime,DayZone
+            body = body.replace('##meetTime##', nullckeck(val.MeetTime) + " " + nullckeck(val.DayZone));
+            body = body.replace('##rollTime##', nullckeck(val.RollTime) + " " + nullckeck(val.DayZone));
+            //##address##
+            body = body.replace('##address##', nullckeck(val.CrewAddress));
+
+            //##ShootDescription​##
+            //var ShootDescription = '';
+            //$.each(shootDescData, function (SDind, SDval) {
+            //    if (SDind == 0) {
+            //        ShootDescription += "<div style='display:block;'>" + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //    else {
+            //        ShootDescription += "<div style='display:block;'>" + SDval.Title + " | " + nullckeck(SDval.MeetTime) + " | " + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //});
+            body = body.replace('##ShootDescription##', nullckeck(val.ShootDescription));
+            //##budgetCode##
+            body = body.replace('##camera##', nullckeck(val.Camera));
+            body = body.replace('##​audio##', nullckeck(val.Audio));
+            body = body.replace('##utilities##', nullckeck(val.Utilities));
+            body = body.replace('##productionType##', nullckeck(val.ProductionType));
+
+            body = body.replace('##specialGear##', nullckeck(val.SpecialGear));
+            body = body.replace('##audioNeed##', nullckeck(val.AudioNeed));
+            body = body.replace('##specialConditions##', nullckeck(val.SpecialConditions));
+            body = body.replace('##transmissionType##', nullckeck(val.TransmissionType));
+            body = body.replace('##estimatedCost##', nullckeck(val.EstimatedCost));
+            var absURL = val.FieldValuesAsText.__deferred.uri.split('_api/');
+            var appUrl = 'window.open("' + absURL[0] + '/Pages/Approval.aspx?RequestID=' + val.ID + '&Status=Approve", "newwindow", "width=500, height=500"); return false';
+            var rejURL = 'window.open("' + absURL[0] + '/Pages/Approval.aspx?RequestID=' + val.ID + '&Status=Reject", "newwindow", "width=500, height=500"); return false;';
+            body = body.replace('##approve##', "<a target='_blank' href='" + absURL[0] + "/Pages/Approval.aspx?RequestID=" + val.ID + "&Status=Approve' style='color: #ffffff;width:100%; text-decoration:none; height:25px; border-radius:3px; backgroud-color:#52ba69; font-size: 14px; font-weight: bold; letter-spacing: 1px; text-align: center;  padding-top: 0px;padding-bottom: 0px;padding-left:0px;padding-right: 0px;'>Approve</a>");
+            body = body.replace('##reject##', "<a  target='_blank' href='" + absURL[0] + "/Pages/Approval.aspx?RequestID=" + val.ID + "&Status=Reject' style='color: #ffffff;width:100%; text-decoration:none;height:25px; border-radius:3px; backgroud-color:#d0021b; font-size: 14px; font-weight: bold; letter-spacing: 1px; text-align: center; padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;'>Reject</a>");
+            //body = body.replace('##approve##', "<span style='color: #ffffff; border-radius:3px; backgroud-color:#52ba69; font-size: 14px; font-weight: bold; letter-spacing: 1px; text-align: center; display: inline-block; padding: 7px 10px;' onclick='" + appUrl + "'>Approve</span>");
+            //body = body.replace('##reject##', "<span style='color: #ffffff; border-radius:3px; backgroud-color:#d0021b; font-size: 14px; font-weight: bold; letter-spacing: 1px; text-align: center; display: inline-block; padding: 7px 10px;' onclick='" + rejURL + "'>Reject</span>");
+            //EstimatedCost
+            var showUnit = '';
+            $.each(showData, function (showInd, showVal) {
+                if (showInd == 0) {
+                    showUnit += showVal.AssignedBudgetCode;
+                }
+                else {
+                    showUnit += " , " + showVal.AssignedBudgetCode;
+                }
+            });
+            body = body.replace('##budgetCode##', showUnit);
+            body = body.replace('##requestor##', val.Requester + " | " + val.CellPhone1);
+            body = body.replace('##producer##', nullckeck(val.Producer) + " | " + nullckeck(val.ProducerCellNumber));
+            body = body.replace('##seniorProducer##', nullckeck(val.Approver));
+
+            var subject = '[CREW REQ] *APPROVAL REQUIRED* ' + startdate + '--"';
+            if (showData.length > 0) {
+                subject += nullckeck(showData[0].Title) + ':';
+            }
+            subject += nullckeck(val.AssignmentSlug) + '"--';
+            if (nullckeck(val.Country) != "United States of America") {
+                subject += nullckeck(val.Country) + ', ';
+            }
+            subject += nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+
+            //if (val.Country == "United States of America") {
+            //    //subject = '[CREW REQ] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            //else {
+            //    //subject = '[CREW REQ] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.Country) + ', ' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+
+            var from = 'MTASharePointDEV@nbcuni.com';
+            var to = [];
+            if (!!val.CCEmailKey) {
+                var ccEmail = val.CCEmailKey.split(';');
+                $.each(ccEmail, function (ccInd, ccVal) {
+                    if (!!ccVal) {
+                        to.push(ccVal);
+                    }
+                })
+            }
+            if (!!val.requestorKey) {
+                to.push(val.requestorKey);
+            }
+            if (!!val.producerKey) {
+                var ccproducerKey = val.producerKey.split(';');
+                $.each(ccproducerKey, function (ccInd, ccVal) {
+                    if (!!ccVal) {
+                        to.push(ccVal);
+                    }
+                })
+            }
+            if (!!val.SeniorProducerKey) {
+                var ccSeniorProducerKey = val.SeniorProducerKey.split(';');
+                $.each(ccSeniorProducerKey, function (ccInd, ccVal) {
+                    if (!!ccVal) {
+                        to.push(ccVal);
+                    }
+                })
+            }
+            //to.push('i:0#.w|tfayd\\206480712');
+            to.push(loginName);
+            //to.push('i:0#.w|tfayd\\206480713');
+            var cc = [];
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            if (!!returnVal[0].WithInADay) {
+                cc.push(returnVal[0].WithInADay)
+            }
+            var bcc = [];
+            if (!!returnVal[0].bcc) {
+                bcc.push(returnVal[0].bcc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+    }
+
+    function processRevEmail() {
+        //var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'Rev'");
+        //var subject = 'Revision email';
+        //var body = returnVal[0].Content;
+        //var to = [];
+        //var from = 'MTASharePointDEV@nbcuni.com';
+        //to.push(loginName);
+        //var cc = [];
+        //var bcc = [];
+        //sendEmail(from, to, cc, bcc, body, subject);
+
+        if ($('#idVal').val() != "") {
+            listId = $('#idVal').val();
+        }
+
+        var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var crewItem = ReadList("", "CrewRequest", "?select=ID,Title,CCEmailKey,requestorKey,producerKey,SeniorProducerKey,IsThereAnOnsiteProducer,StartDate1,AssignmentSlug,Country,CrewCity,CrewState,ShootStatus,CrewRequestID,EndDate1,MeetTime,RollTime,DayZone,CrewAddress,Producer,ProducerCellNumber,ProductionType,SpecialGear,CrewDeskNotes,PrimaryCameraType,MediaFormat,VideoSpecs,resourcesKey&$filter= ID eq '" + listId + "'");
+        $.each(crewItem, function (ind, val) {
+            var showData = ReadList("", "CRT_ShowUnit", "?select=ID,Title,RequestID,AssignedBudgetCode&$filter= RequestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var talentData = ReadList("", "CRT_Talent", "?select=ID,Title,CrewRequestID&$filter= CrewRequestID eq '" + listId + "'");
+            var resourceData = ReadList("", "CRT_Resource", "?select=ID,Title,CrewRequestID,Resource,ResourceEmail,ResourceEmployeeType,ResourcePhone,ResourceRole&$filter= CrewRequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'Rev'");
+            var crewDocs = getCrewDoc(listId);
+            var reviseData = ReadList("", "CRT_RevisionNotes", "?select=ID,Title,CrewRequestID,RevisedNumber&$filter= CrewRequestID eq '" + listId + "' and RevisedNumber eq 'Revised'");
+
+            var startdate1 = nullckeck(val.StartDate1).split('-');
+            var startdate = startdate1[1] + "/" + startdate1[2].split('T')[0];
+            var endDate1 = nullckeck(val.EndDate1).split('-');
+            var enddate = endDate1[1] + "/" + endDate1[2].split('T')[0];
+
+            var header = "REV #" + reviseData.length + " - ";
+            if (showData.length > 0) {
+                header += nullckeck(showData[0].Title) + " : ";
+            }
+            header += nullckeck(val.AssignmentSlug);
+            if (talentData.length > 0) {
+                header += " (";
+                $.each(talentData, function (talInd, talVal) {
+                    if (talInd == 0) {
+                        header += nullckeck(talVal.Title);
+                    }
+                    else {
+                        header += ' | ' + nullckeck(talVal.Title);
+                    }
+                });
+                header += ") | ";
+            }
+            if (nullckeck(val.ShootStatus) != "-") {
+                header += nullckeck(val.ShootStatus) + " | ";
+            }
+            header += nullckeck(val.CrewRequestID);
+            var body = returnVal[0].Content;
+            //Header Section..
+            body = body.replace('##Header##', header);
+            body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate + " *Shoot starts within 24hrs*");
+            body = body.replace('##meetTime##', nullckeck(val.MeetTime) + " " + nullckeck(val.DayZone));
+            body = body.replace('##rollTime##', nullckeck(val.RollTime) + " " + nullckeck(val.DayZone));
+            //##address##
+            body = body.replace('##address##', nullckeck(val.CrewAddress));
+            //var ShootDescription = '';
+            //$.each(shootDescData, function (SDind, SDval) {
+            //    if (SDind == 0) {
+            //        ShootDescription += "<div style='display:block;'>" + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //    else {
+            //        ShootDescription += "<div style='display:block;'>" + SDval.Title + " | " + nullckeck(SDval.MeetTime) + " | " + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //});
+            ////body = body.replace('##ShootDescription##', ShootDescription);
+            body = body.replace('##​Shoot​Description##', nullckeck(val.ShootDescription))
+            //body = body.replace('##ShootDescription##', nullckeck(val.ShootDescription));
+            //##budgetCode##
+            body = body.replace('##ProductionType##', nullckeck(val.ProductionType));
+            body = body.replace('##specialGear##', nullckeck(val.SpecialGear));
+            body = body.replace('##crewDeskNotes##', nullckeck(val.CrewDeskNotes));
+            var showUnit = '';
+            $.each(showData, function (showInd, showVal) {
+                if (showInd == 0) {
+                    showUnit += showVal.AssignedBudgetCode;
+                }
+                else {
+                    showUnit += " , " + showVal.AssignedBudgetCode;
+                }
+            });
+            body = body.replace('##budgetCode##', showUnit);
+
+            var attachments = '';
+            $.each(crewDocs, function (attInd, attVal) {
+                if (attInd == 0) {
+                    attachments += '<a href="/sites/bcast_prodreq/Style%20Library/' + attVal.Name + '">' + attVal.Name + '</a>';
+                }
+                else {
+                    attachments += " , " + '<a href="/sites/bcast_prodreq/Style%20Library/' + attVal.Name + '">' + attVal.Name + '</a>';
+                }
+            });
+            body = body.replace('##attachments##', attachments);
+
+            //resourceData -- Resource,ResourceEmail,ResourceEmployeeType,ResourcePhone,ResourceRole
+            var resources = '';
+            $.each(resourceData, function (resInd, resVal) {
+                if (resInd == 0) {
+                    resources += "<div style='display:block;'><b>" + nullckeck(resVal.ResourceRole) + "</b>: " + nullckeck(resVal.Title) + "  " + nullckeck(resVal.ResourcePhone) + "  " + nullckeck(resVal.ResourceEmail) + "</div>";
+                }
+                else {
+                    resources += " , " + "<div style='display:block;'><b>" + nullckeck(resVal.ResourceRole) + "</b>: " + nullckeck(resVal.Title) + "  " + nullckeck(resVal.ResourcePhone) + "  " + nullckeck(resVal.ResourceEmail) + "</div>";
+                }
+            });
+            body = body.replace('##Resource##', resources);
+
+            //PrimaryCameraType,MediaFormat,VideoSpecs
+            //body = body.replace('##primaryCamera##', nullckeck(val.PrimaryCameraType));
+            body = body.replace('##pr​imaryCamera##', nullckeck(val.PrimaryCameraType))
+            body = body.replace('##MediaFormat##', nullckeck(val.MediaFormat));
+            body = body.replace('##VideoSpecs##', nullckeck(val.VideoSpecs));
+            body = body.replace('##Producer##', nullckeck(val.Producer) + " | " + nullckeck(val.ProducerCellNumber));
+
+            if (val.IsThereAnOnsiteProducer == "Yes") {
+                body = body.replace('##onsiteProducer##', "Producer on site");
+            }
+            else {
+                body = body.replace('##onsiteProducer##', "Producer not on site");
+            }
+
+            var subject = '[NBC CREW] ' + startdate + '--"';
+            if (showData.length > 0) {
+                subject += nullckeck(showData[0].Title) + ':';
+            }
+            subject += nullckeck(val.AssignmentSlug) + '"--';
+            if (nullckeck(val.Country) != "United States of America") {
+                subject += nullckeck(val.Country) + ', ';
+            }
+            subject += nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+
+            //var subject = '';
+            //if (val.Country == "United States of America") {
+            //    subject = '​[NBC CREW] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            //else {
+            //    subject = '​[NBC CREW] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.Country) + ', ' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            var to = [];
+            var from = 'MTASharePointDEV@nbcuni.com';
+            to.push(loginName);
+
+            if (nullckeck(val.resourcesKey) != "-") {
+                var resourcesplit = val.resourcesKey.split(';');
+                $.each(resourcesplit, function (resInd, resVal) {
+                    if (!!resVal) {
+                        to.push(resVal);
+                    }
+                })
+            }
+
+            var cc = [];
+            if (!!val.requestorKey) {
+                cc.push(val.requestorKey);
+            }
+            if (!!val.producerKey) {
+                cc.push(val.producerKey);
+            }
+            if (!!val.SeniorProducerKey) {
+                cc.push(val.SeniorProducerKey);
+            }
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            if (!!returnVal[0].WithInADay) {
+                cc.push(returnVal[0].WithInADay)
+            }
+            var bcc = [];
+            if (!!returnVal[0].bcc) {
+                bcc.push(returnVal[0].bcc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+    }
+
+    function processNotificationEmail() {
+
+        if ($('#idVal').val() != "") {
+            listId = $('#idVal').val();
+        }
+
+        var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var crewItem = ReadList("", "CrewRequest", "?select=ID,Title,CCEmailKey,requestorKey,producerKey,SeniorProducerKey,IsThereAnOnsiteProducer,StartDate1,AssignmentSlug,Country,CrewCity,CrewState,ShootStatus,CrewRequestID,EndDate1,MeetTime,RollTime,DayZone,CrewAddress,Producer,ProducerCellNumber,ProductionType,SpecialGear,CrewDeskNotes,PrimaryCameraType,MediaFormat,VideoSpecs,resourcesKey&$filter= ID eq '" + listId + "'");
+        $.each(crewItem, function (ind, val) {
+            var showData = ReadList("", "CRT_ShowUnit", "?select=ID,Title,RequestID,AssignedBudgetCode&$filter= RequestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var talentData = ReadList("", "CRT_Talent", "?select=ID,Title,CrewRequestID&$filter= CrewRequestID eq '" + listId + "'");
+            var resourceData = ReadList("", "CRT_Resource", "?select=ID,Title,CrewRequestID,Resource,ResourceEmail,ResourceEmployeeType,ResourcePhone,ResourceRole&$filter= CrewRequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'Notification Email'");
+            var crewDocs = getCrewDoc(listId);
+
+            var startdate1 = nullckeck(val.StartDate1).split('-');
+            var startdate = startdate1[1] + "/" + startdate1[2].split('T')[0];
+            var endDate1 = nullckeck(val.EndDate1).split('-');
+            var enddate = endDate1[1] + "/" + endDate1[2].split('T')[0];
+            var header = "";
+            if (showData.length > 0) {
+                header += nullckeck(showData[0].Title) + ": ";
+            }
+            header += nullckeck(val.AssignmentSlug);
+            if (talentData.length > 0) {
+                header += " (";
+                $.each(talentData, function (talInd, talVal) {
+                    if (talInd == 0) {
+                        header += nullckeck(talVal.Title);
+                    }
+                    else {
+                        header += ' | ' + nullckeck(talVal.Title);
+                    }
+                });
+                header += ") | ";
+            }
+            if (nullckeck(val.ShootStatus) != "-") {
+                header += nullckeck(val.ShootStatus) + " | ";
+            }
+            header += nullckeck(val.CrewRequestID);
+            var body = returnVal[0].Content;
+            //Header Section..
+            body = body.replace('##Header##', header);
+            body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate + " *Shoot starts within 24hrs*");
+            body = body.replace('##meetTime##', nullckeck(val.MeetTime) + " " + nullckeck(val.DayZone));
+            body = body.replace('##rollTime##', nullckeck(val.RollTime) + " " + nullckeck(val.DayZone));
+            //##address##
+            body = body.replace('##address##', nullckeck(val.CrewAddress));
+            //var ShootDescription = '';
+            //$.each(shootDescData, function (SDind, SDval) {
+            //    if (SDind == 0) {
+            //        ShootDescription += "<div style='display:block;'>" + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //    else {
+            //        ShootDescription += "<div style='display:block;'>" + SDval.Title + " | " + nullckeck(SDval.MeetTime) + " | " + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //});
+            //body = body.replace('##ShootDescription##', ShootDescription);
+            body = body.replace('##ShootDescription##', nullckeck(val.ShootDescription));
+            //##budgetCode##
+            body = body.replace('##ProductionType##', nullckeck(val.ProductionType));
+            body = body.replace('##specialGear##', nullckeck(val.SpecialGear));
+            body = body.replace('##crewDeskNotes##', nullckeck(val.CrewDeskNotes));
+            var showUnit = '';
+            $.each(showData, function (showInd, showVal) {
+                if (showInd == 0) {
+                    showUnit += showVal.AssignedBudgetCode;
+                }
+                else {
+                    showUnit += " , " + showVal.AssignedBudgetCode;
+                }
+            });
+            body = body.replace('##budgetCode##', showUnit);
+
+            var attachments = '';
+            $.each(crewDocs, function (attInd, attVal) {
+                if (attInd == 0) {
+                    attachments += '<a href="/sites/bcast_prodreq/Style%20Library/' + attVal.Name + '">' + attVal.Name + '</a>';
+                }
+                else {
+                    attachments += " , " + '<a href="/sites/bcast_prodreq/Style%20Library/' + attVal.Name + '">' + attVal.Name + '</a>';
+                }
+            });
+            body = body.replace('##attachments##', attachments);
+
+            //resourceData -- Resource,ResourceEmail,ResourceEmployeeType,ResourcePhone,ResourceRole
+            var resources = '';
+            $.each(resourceData, function (resInd, resVal) {
+                if (resInd == 0) {
+                    resources += "<div style='display:block;'><b>" + nullckeck(resVal.ResourceRole) + "</b>: " + nullckeck(resVal.Title) + " | " + nullckeck(resVal.ResourcePhone) + " | " + nullckeck(resVal.ResourceEmail) + "</div>";
+                }
+                else {
+                    resources += ", " + "<div style='display:block;'><b>" + nullckeck(resVal.ResourceRole) + "</b>: " + nullckeck(resVal.Title) + " | " + nullckeck(resVal.ResourcePhone) + " | " + nullckeck(resVal.ResourceEmail) + "</div>";
+                }
+            });
+            body = body.replace('##Resource##', resources);
+
+            //PrimaryCameraType,MediaFormat,VideoSpecs
+            body = body.replace('##primaryCamera##', nullckeck(val.PrimaryCameraType));
+            body = body.replace('##MediaFormat##', nullckeck(val.MediaFormat));
+            body = body.replace('##VideoSpecs##', nullckeck(val.VideoSpecs));
+            body = body.replace('##Producer##', nullckeck(val.Producer) + " | " + nullckeck(val.ProducerCellNumber));
+
+            if (val.IsThereAnOnsiteProducer == "Yes") {
+                body = body.replace('##onsiteProducer##', "Producer on site");
+            }
+            else {
+                body = body.replace('##onsiteProducer##', "Producer not on site");
+            }
+
+            var subject = '[NBC CREW] ' + startdate + '--"';
+            if (showData.length > 0) {
+                subject += nullckeck(showData[0].Title) + ':';
+            }
+            subject += nullckeck(val.AssignmentSlug) + '"--';
+            if (nullckeck(val.Country) != "United States of America") {
+                subject += nullckeck(val.Country) + ', ';
+            }
+            subject += nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+
+            //var subject = '';
+            //if (val.Country == "United States of America") {
+            //    subject = '​[NBC CREW] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            //else {
+            //    subject = '​[NBC CREW] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.Country) + ', ' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            var to = [];
+            var from = 'MTASharePointDEV@nbcuni.com';
+            to.push(loginName);
+
+            if (nullckeck(val.resourcesKey) != "-") {
+                var resourcesplit = val.resourcesKey.split(';');
+                $.each(resourcesplit, function (resInd, resVal) {
+                    if (!!resVal) {
+                        to.push(resVal);
+                    }
+                })
+            }
+
+            var cc = [];
+            if (!!val.requestorKey) {
+                cc.push(val.requestorKey);
+            }
+            if (!!val.producerKey) {
+                cc.push(val.producerKey);
+            }
+            if (!!val.SeniorProducerKey) {
+                cc.push(val.SeniorProducerKey);
+            }
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            if (!!returnVal[0].WithInADay) {
+                cc.push(returnVal[0].WithInADay)
+            }
+            var bcc = [];
+            if (!!returnVal[0].bcc) {
+                bcc.push(returnVal[0].bcc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+    }
+
+    function processSendEmails() {
+
+        if ($('#idVal').val() != "") {
+            listId = $('#idVal').val();
+        }
+
+        var weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var crewItem = ReadList("", "CrewRequest", "?select=ID,Title,CCEmailKey,requestorKey,EstimatedCost,producerKey,SeniorProducerKey,AssignmentSlug,Country,CrewCity,CrewState,CrewType,ShootStatus,CrewRequestID,StartDate1,EndDate1,MeetTime,RollTime,DayZone,CrewAddress,Camera,Audio,Utilities,ProductionType,SpecialGear,AudioNeed,SpecialConditions,TransmissionType,Requester,CellPhone,Producer,ProducerCellNumber,Approver&$filter= ID eq '" + listId + "'");
+        $.each(crewItem, function (ind, val) {
+            var showData = ReadList("", "CRT_ShowUnit", "?select=ID,Title,RequestID,AssignedBudgetCode&$filter= RequestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var talentData = ReadList("", "CRT_Talent", "?select=ID,Title,CrewRequestID&$filter= CrewRequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'FYI'");
+
+            var startdate1 = '';
+            var startdate = '';
+            if (nullckeck(val.StartDate1) != "-") {
+                startdate1 = nullckeck(val.StartDate1).split('-');
+                startdate = startdate1[1] + "/" + startdate1[2].split('T')[0];
+            }
+            var endDate1 = '';
+            var enddate = '';
+            if (nullckeck(val.EndDate1) != "-") {
+                endDate1 = nullckeck(val.EndDate1).split('-');
+                enddate = endDate1[1] + "/" + endDate1[2].split('T')[0];
+            }
+            var header = "";
+            if (showData.length > 0) {
+                header += showData[0].Title + " : ";
+            }
+            header += val.AssignmentSlug;
+            if (talentData.length > 0) {
+                header += " (";
+                $.each(talentData, function (talInd, talVal) {
+                    if (talInd == 0) {
+                        header += talVal.Title;
+                    }
+                    else {
+                        header += ' | ' + talVal.Title;
+                    }
+                });
+                header += ") | ";
+            }
+            if (nullckeck(val.ShootStatus) != "-") {
+                header += nullckeck(val.ShootStatus) + " | ";
+            }
+			if(val.CrewType === 'Bureau Camera'){
+				header+= " | ";
+			}
+            header += nullckeck(val.CrewRequestID);
+            var body = returnVal[0].Content;
+            //Header Section..
+            body = body.replace('##Header##', header);
+            var today = new Date();
+            //Remove this to get current time, leave this to get time start of day
+            today.setHours(0);
+            today.setMinutes(0);
+            today.setSeconds(0);
+            var currentDateTimestamp = today.getTime();
+            var selectedDateTimestamp = new Date(nullckeck(val.StartDate1)).getTime();
+            //Check if the timestamp is within 24 hours, 24 hours = 60 seconds * 60 minutes * 24 hours * 1000 milliseconds
+            if (Math.abs(currentDateTimestamp - selectedDateTimestamp) <= 60 * 60 * 24 * 1000) {
+                //Within 24 hours
+                body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate + " *shoot starts within 24hrs*");
+            }
+            else {
+                body = body.replace('##dates##', weekDay[(new Date(nullckeck(val.StartDate1))).getDay()] + " " + startdate + " - " + weekDay[(new Date(nullckeck(val.EndDate1))).getDay()] + " " + enddate);
+            }
+            //##dates##
+            //MeetTime,RollTime,DayZone
+            body = body.replace('##meetTime##', nullckeck(val.MeetTime) + " " + nullckeck(val.DayZone));
+            body = body.replace('##rollTime##', nullckeck(val.RollTime) + " " + nullckeck(val.DayZone));
+            //##address##
+            body = body.replace('##address##', nullckeck(val.CrewAddress));
+
+            //##ShootDescription​##
+            //var ShootDescription = '';
+            //$.each(shootDescData, function (SDind, SDval) {
+            //    if (SDind == 0) {
+            //        ShootDescription += "<div style='display:block;'>" + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //    else {
+            //        ShootDescription += "<div style='display:block;'>" + SDval.Title + " | " + nullckeck(SDval.MeetTime) + " | " + nullckeck(SDval.ShootDescription) + "</div>";
+            //    }
+            //});
+            body = body.replace('##ShootDescription##', nullckeck(val.ShootDescription));
+            //##budgetCode##
+            body = body.replace('##camera##', nullckeck(val.Camera));
+            body = body.replace('##​audio##', nullckeck(val.Audio));
+            body = body.replace('##utilities##', nullckeck(val.Utilities));
+            body = body.replace('##productionType##', nullckeck(val.ProductionType));
+
+            body = body.replace('##specialGear##', nullckeck(val.SpecialGear));
+            body = body.replace('##audioNeed##', nullckeck(val.AudioNeed));
+            body = body.replace('##specialConditions##', nullckeck(val.SpecialConditions));
+            body = body.replace('##transmissionType##', nullckeck(val.TransmissionType));
+            body = body.replace('##estimatedCost##', nullckeck(val.EstimatedCost));
+            //EstimatedCost
+            var showUnit = '';
+            $.each(showData, function (showInd, showVal) {
+                if (showInd == 0) {
+                    showUnit += showVal.AssignedBudgetCode;
+                }
+                else {
+                    showUnit += ", " + showVal.AssignedBudgetCode;
+                }
+            });
+            body = body.replace('##budgetCode##', showUnit);
+            body = body.replace('##requestor##', val.Requester + "  " + val.CellPhone1);
+            body = body.replace('##producer##', nullckeck(val.Producer) + "  " + nullckeck(val.ProducerCellNumber));
+            body = body.replace('##seniorProducer##', nullckeck(val.Approver));
+
+            var subject = '[CREW REQ] ' + startdate + '--"';
+            if (showData.length > 0) {
+                subject += nullckeck(showData[0].Title) + ':';
+            }
+            subject += nullckeck(val.AssignmentSlug) + '"--';
+            if (nullckeck(val.Country) != "United States of America") {
+                subject += nullckeck(val.Country) + ', ';
+            }
+            subject += nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+
+            //if (val.Country == "United States of America") {
+            //    //subject = '[CREW REQ] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+            //else {
+            //    //subject = '[CREW REQ] ' + startdate + '--"' + nullckeck(showData[0].Title) + ':' + nullckeck(val.AssignmentSlug) + '"--' + nullckeck(val.Country) + ', ' + nullckeck(val.CrewCity) + ' city, ' + nullckeck(val.CrewState) + ' | ' + nullckeck(val.ShootStatus);
+            //}
+
+            var from = 'MTASharePointDEV@nbcuni.com';
+            var to = [];
+            if (!!val.CCEmailKey) {
+                var ccEmail = val.CCEmailKey.split(';');
+                $.each(ccEmail, function (ccInd, ccVal) {
+                    if (!!ccVal) {
+                        to.push(ccVal);
+                    }
+                })
+            }
+            if (!!val.requestorKey) {
+                to.push(val.requestorKey);
+            }
+            if (!!val.producerKey) {
+                to.push(val.producerKey);
+            }
+            if (!!val.SeniorProducerKey) {
+                to.push(val.SeniorProducerKey);
+            }
+            //to.push('i:0#.w|tfayd\\206480712');
+            to.push(loginName);
+            //to.push('i:0#.w|tfayd\\206480713');
+            var cc = [];
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            if (!!returnVal[0].WithInADay) {
+                cc.push(returnVal[0].WithInADay)
+            }
+            var bcc = [];
+            if (!!returnVal[0].bcc) {
+                bcc.push(returnVal[0].bcc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+        });
+    }
+
+	function processnewFileIngest(){
+
+        if ($('#idValFI').val() != "") {
+            listId = $('#idValFI').val();
+        }
+
+		 var fileIngestItem = ReadList("", "FileIngest", "?select=AirDate,AirDateTBD,AlternateEmails,AssistantEditor,AttachEditRequestID,BinName,BudgetCode,CameraType,CameraTypeOther,ContentDescription,Correspondent,Created,CrewRequestID,CrewShooter,DateNeededBy,DateNeededByASAP,fiComments,FileFormat,FileIngestID,FIStatus,FolderFormat,FolderFormatOther,GigSize,IngestStatus,IsExternalHardDrive,IsRequestorProducer,MaterialWorkgroup,Modified,NextToBinName,Others,ProducerName,RequestorContact,RequestorEmail,RequestorName,SeniorProducer,ShowUnit,Slug,Title,Workgroup,ID&$filter= ID eq '" + listId + "'");
+        $.each(fileIngestItem, function (ind, val) {
+            var additionalDevicesData = ReadList("", "AdditionalDevices", "?select=ID,Title,DeviceType,Quantity&$filter= fileIngestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'FINew'");
+
+			var body = returnVal[0].Content;
+			var requester = val.RequestorName
+			if (requester.indexOf('(') !== -1) {
+			   requester = requester.slice(0, requester.indexOf('('));
+			}
+			requester = requester.replace(",", "").trim();
+			body = body.replace('##requester##', requester);
+			body = body.replace('##SLUG##', val.Slug.toUpperCase());
+
+			if(additionalDevicesData.length > 0){
+				var additionDevice = '';
+				$.each(additionalDevicesData, function (resInd, resVal) {
+					additionDevice += '</br><b style="width:100%; display:block;  clear:both;">' + nullckeck(resVal.DeviceType) + '</b>';
+				});
+				body = body.replace('##devices##', additionDevice);
+			}
+			else{
+				body = body.replace('##devices##', '-');
+			}
+
+			var serverURL = "/sites/bcast_prodreq"
+			var orderURL = serverURL + "/Pages/home.aspx/#FileIngestGrid_wrapper"
+			body = body.replace('##orderURL##', '<a href="' + orderURL + '" target="_blank" style="color:#0b2751; text-decoration:none"><b>' + orderURL + '</b></a>');
+
+			var subject = 'Ingest Order "'+ val.Slug.toUpperCase() + '" Submitted';
+			var from = 'MTASharePointDEV@nbcuni.com';
+            var to = [];
+			var cc = [];
+			var bcc = [];
+			to.push(loginName);
+			if (!!val.RequestorKey) {
+                to.push(val.RequestorKey);
+            }
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+		});
+	}
+
+	function processReceivedFileIngest(){
+
+        if ($('#idValFI').val() != "") {
+            listId = $('#idValFI').val();
+        }
+
+		 var fileIngestItem = ReadList("", "FileIngest", "?select=AirDate,AirDateTBD,AlternateEmails,AssistantEditor,AttachEditRequestID,BinName,BudgetCode,CameraType,CameraTypeOther,ContentDescription,Correspondent,Created,CrewRequestID,CrewShooter,DateNeededBy,DateNeededByASAP,fiComments,FileFormat,FileIngestID,FIStatus,FolderFormat,FolderFormatOther,GigSize,IngestStatus,IsExternalHardDrive,IsRequestorProducer,MaterialWorkgroup,Modified,NextToBinName,Others,ProducerName,RequestorContact,RequestorEmail,RequestorName,SeniorProducer,ShowUnit,Slug,Title,Workgroup,ID&$filter= ID eq '" + listId + "'");
+        $.each(fileIngestItem, function (ind, val) {
+            var additionalDevicesData = ReadList("", "AdditionalDevices", "?select=ID,Title,DeviceType,Quantity&$filter= fileIngestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'FIMediaReceived'");
+
+			var body = returnVal[0].Content;
+			var requester = val.RequestorName
+			if (requester.indexOf('(') !== -1) {
+			   requester = requester.slice(0, requester.indexOf('('));
+			}
+			var slug = '"'+ val.Slug.toUpperCase() + '".'
+			requester = requester.replace(",", "").trim();
+			body = body.replace('##requester##', requester);
+			body = body.replace('##slug##', slug);
+
+			if(additionalDevicesData.length > 0){
+				var additionDevice = '';
+				$.each(additionalDevicesData, function (resInd, resVal) {
+					additionDevice += '</br><b style="width:100%; display:block;  clear:both;">' + nullckeck(resVal.DeviceType) + '</b>';
+				});
+				body = body.replace('##devices##', additionDevice);
+			}
+			else{
+				body = body.replace('##devices##', '-');
+			}
+			
+			var subject = 'Ingest Order "'+ val.Slug.toUpperCase() +'" Media Received';
+			var from = 'MTASharePointDEV@nbcuni.com';
+            var to = [];
+			var cc = [];
+			var bcc = [];
+			to.push(loginName);
+			if (!!val.RequestorKey) {
+                to.push(val.RequestorKey);
+            }
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+		});
+	}
+
+	function processCompleteFileIngest(){
+	if ($('#idValFI').val() != "") {
+            listId = $('#idValFI').val();
+        }
+
+		 var fileIngestItem = ReadList("", "FileIngest", "?select=AirDate,AirDateTBD,AlternateEmails,AssistantEditor,AttachEditRequestID,BinName,BudgetCode,CameraType,CameraTypeOther,ContentDescription,Correspondent,Created,CrewRequestID,CrewShooter,DateNeededBy,DateNeededByASAP,fiComments,FileFormat,FileIngestID,FIStatus,FolderFormat,FolderFormatOther,GigSize,IngestStatus,IsExternalHardDrive,IsRequestorProducer,MaterialWorkgroup,Modified,NextToBinName,Others,ProducerName,RequestorContact,RequestorEmail,RequestorName,SeniorProducer,ShowUnit,Slug,Title,Workgroup,ID&$filter= ID eq '" + listId + "'");
+        $.each(fileIngestItem, function (ind, val) {
+            var additionalDevicesData = ReadList("", "AdditionalDevices", "?select=ID,Title,DeviceType,Quantity&$filter= fileIngestID eq '" + listId + "'");
+            //var shootDescData = ReadList("", "CRT_ShootDescription", "?select=ID,Title,RequestID,ShootDescription,MeetTime&$filter= RequestID eq '" + listId + "'");
+            var returnVal = ReadList("", "EmailTemplates", "?select=ID,Content,scenario,WithInADay,cc,bcc&$filter= scenario eq 'FICompleted'");
+
+			var body = returnVal[0].Content;
+			var requester = val.RequestorName
+			if (requester.indexOf('(') !== -1) {
+			   requester = requester.slice(0, requester.indexOf('('));
+			}
+			requester = requester.replace(",", "").trim();
+			body = body.replace('##requester##', requester);
+
+			if(additionalDevicesData.length > 0){
+				var additionDevice = '';
+				$.each(additionalDevicesData, function (resInd, resVal) {
+					additionDevice += '<b style="width:100%; display:block;  clear:both;">' + nullckeck(resVal.DeviceType) + '</b></br>';
+				});
+				body = body.replace('##devices##', additionDevice);
+			}
+			else{
+				body = body.replace('##devices##', '-');
+			}
+			
+			var subject = 'Ingest Order "Rummel Archive" Complete';
+			var from = 'MTASharePointDEV@nbcuni.com';
+            var to = [];
+			var cc = [];
+			var bcc = [];
+			cc.push(loginName);
+			if (!!val.RequestorKey) {
+                to.push(val.RequestorKey);
+            }
+            if (!!returnVal[0].cc) {
+                cc.push(returnVal[0].cc)
+            }
+            sendEmail(from, to, cc, bcc, body, subject);
+		});
+	}
+
+    function sendEmail(from, to, cc, bcc, body, subject) {
+        //Get the relative url of the site
+        var siteurl = _spPageContextInfo.webServerRelativeUrl;
+        var urlTemplate = "/sites/bcast_prodreq/_api/SP.Utilities.Utility.SendEmail";
+        $.ajax({
+            contentType: 'application/json',
+            url: urlTemplate,
+            type: "POST",
+            data: JSON.stringify({
+                'properties': {
+                    '__metadata': {
+                        'type': 'SP.Utilities.EmailProperties'
+                    },
+                    'From': from,
+                    'To': {
+                        'results': to
+                    },
+                    'CC': {
+                        'results': cc
+                    },
+                    'BCC': {
+                        'results': bcc
+                    },
+                    'Body': body,
+                    'Subject': subject
+                }
+            }),
+            headers: {
+                "Accept": "application/json;odata=verbose",
+                "content-type": "application/json;odata=verbose",
+                "X-RequestDigest": jQuery("#__REQUESTDIGEST").val()
+            },
+            success: function (data) {
+                alert('Email Sent Successfully');
+            },
+            error: function (err) {
+                alert('Error in sending Email: ' + JSON.stringify(err));
+            }
+        });
+    }
+
+    function getUserProperties(targetUser) {
+
+        // Replace the placeholder value with the target user's credentials.
+        //var targetUser = "domainName\\userName";
+
+        // Get the current client context and PeopleManager instance.
+        var clientContext = new SP.ClientContext.get_current();
+        var peopleManager = new SP.UserProfiles.PeopleManager(clientContext);
+
+        // Get user properties for the target user.
+        // To get the PersonProperties object for the current user, use the
+        // getMyProperties method.
+        personProperties = peopleManager.getPropertiesFor(targetUser);
+
+        // Load the PersonProperties object and send the request.
+        clientContext.load(personProperties);
+        clientContext.executeQueryAsync(onRequestSuccess, onRequestFail);
+    }
+
+    function onRequestSuccess() {
+        //alert(email);
+        phoneNo = personProperties.get_userProfileProperties()['CellPhone'];
+        email = personProperties.get_userProfileProperties()['WorkEmail'];
+        alert(email);
+
+        //// Get a property directly from the PersonProperties object.
+        //var messageText = " \"DisplayName\" property is "
+        //    + personProperties.get_displayName();
+
+        //// Get a property from the UserProfileProperties property.
+        //messageText += "<br />\"Department\" property is "
+        //    + personProperties.get_userProfileProperties()['Department'];
+        //$get("results").innerHTML = messageText;
+    }
+
+    function onRequestFail(sender, args) {
+        alert('fail');
+    }
+
+    function getWebUserData() {
+        SP.SOD.executeFunc('userprofile', 'SP.UserProfiles.PeopleManager', function () {
+            context = new SP.ClientContext.get_current();
+            web = context.get_web();
+            currentUser = web.get_currentUser();
+            currentUser.retrieve();
+
+            peopleManager = new SP.UserProfiles.PeopleManager(context);
+            personProperties = peopleManager.getMyProperties();
+
+            context.load(web);
+            context.load(personProperties);
+
+            context.executeQueryAsync(Function.createDelegate(this, this.onSuccessMethod), Function.createDelegate(this, this.onFailureMethod));
+        });
+    }
+
+    function onSuccessMethod(sender, args) {
+
+        var userObject = web.get_currentUser();
+        loginName = userObject.get_loginName();
+        //loginName = userObject.get_email();
+
+
+        /*requestorname = userObject.get_title();
+        requestoremail1 = userObject.get_email();
+        workphone = personProperties.get_userProfileProperties()['WorkPhone'];
+        mobilephone = personProperties.get_userProfileProperties()['CellPhone'];
+        UserName = personProperties.get_userProfileProperties()['UserName'];
+
+        requestor[0].value = requestorname;
+        requestorcontact[0].value = workphone;
+        requestoremail[0].value = requestoremail1;
+        requestorsso[0].value = UserName;
+        requestorcellphone[0].value = mobilephone;*/
+
+
+    }
+
+    function onFailureMethod(sender, args) {
+        alert('request failed ' + args.get_message() + '\n' + args.get_stackTrace());
+    }
+
+</script>
+
+<b>Crew Request Emails</b>
+<input type="text" id="idVal" />
+<br />
+<br />
+
+<input type="button" value="FYI Email" id="emailBTN" />
+<input type="button" value="Notification Email" id="notemailBTN" />
+<input type="button" value="Revision Email" id="revBTN" />
+<input type="button" value="Approval Email" id="appBTN" />
+<br />
+<br />
+<b>Edit Request</b>
+<input type="text" id="idValEr" />
+<br />
+<br />
+<input type="button" value="New Request" id="newRequest" />
+<input type="button" value="Fulfiller" id="fulfiller" /><br />
+<br />
+<b>FileIngest</b>
+<input type="text" id="idValFI" />
+<br />
+<br />
+<input type="button" value="New Request" id="newFileIngest" />
+<input type="button" value="FileIngest Recevied" id="fileIngestRecevied" />
+<input type="button" value="FileIngest Completed" id="fileIngestComplete" />

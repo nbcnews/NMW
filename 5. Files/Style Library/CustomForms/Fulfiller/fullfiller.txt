@@ -1,0 +1,763 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/style-new.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/css/style-fullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/css/jquery.multiselect.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/css/responsive-fulfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/css/print-fulfiller.css" media="print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/jquery-ui.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/daterangepicker.css">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/jquery.SPServices-0.7.1a.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/mobie-navi.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/jquery.multiselect.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/Fulfiller.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.Who.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.What.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.Where.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.When.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/Fulfiller/js/NBCU.Fulfiller.Resources.js"></script>
+<script>
+    $(function () {
+        $('.icon-print').click(function () {
+            window.print();
+        });
+    });
+</script>
+<!--[if lt IE 9]>
+              <script src="js/html5shiv.min.js"></script>
+        <![endif]-->
+
+<div class="wrapper" id="fulfiller">
+    <header class="header">
+        <div class="container-fluid ">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">crew request</h1>
+                <!--<div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>-->
+
+                <div class="header-right-booked">
+                    <div class="button-booked active-New" id="ff-header-status">New</div>
+                    <div class="book-id">CR#201612335</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="show-date-container">
+        <div class="showdate"> <span class="date-label">Start Date:</span> <span class="value-field" id="ff-header-startdate">04/08/16</span> </div>
+        <div class="showdate"> <span class="date-label">Slug:</span> <span class="value-field slugname" id="ff-header-slug">Name of Slug here</span> </div>
+        <div class="showdate"> <span class="date-label">Shoot Status:</span> <span class="value-field" id="ff-header-shootstatus">Firm</span> </div>
+        <div class="showdate"> <span class="date-label">Show:</span> <span class="value-field" id="ff-header-showimg"> - </span> </div>
+    </div>
+    <div class="subpage-content-container">
+        <section class="content-section">
+            <div class="subpage-content subpage-content-who" id="whoPage">
+                <h1 class="page-title">Who is requesting? <span class="button-edit" title="Who">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-11">
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                    <div class="display-data1">
+                                        <div id="ff_peoplePickerRequesterDiv" class="textbox"></div>
+                                        <span class="display-data" id="ff_Requester">FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                    <div class="display-dataform">
+                                        <input type="text" id="ff_txtMobile" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                        <span class="display-data" id="ff_MobilePhone">+1 (555) 555-5555</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Desk Phone </label>
+                                    <div class="display-dataform">
+                                        <input type="text" id="ff_txtDesk" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                        <span class="display-data" id="ff_DeskPhone">+1 (555) 555-5555</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">
+                                        Producer/ <sup class="mandatory">*</sup><br>
+                                        Field Contact
+                                    </label>
+                                    <div class="display-dataform">
+                                        <div id="ff_peoplePickerProducerDiv" class="textbox"></div>
+                                        <span class="display-data" id="ff_Producer"> FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                    <div class="display-dataform">
+                                        <input type="text" id="ff_txtPMobile" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                        <span class="display-data" id="ff_PMobilePhone">+1 (555) 555-5555</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Desk Phone </label>
+                                    <div class="display-dataform">
+                                        <input type="text" id="ff_txtPDesk" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                        <span class="display-data" id="ff_PDeskPhone">+1 (555) 555-5555</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-6 form-group">
+                                    <label class="label label-display">Senior Producer/ Approver </label>
+                                    <div class="display-dataform">
+                                        <div id="ff_peoplePickerApproverDiv" class="textbox"></div>
+                                        <span class="display-data" id="ff_Approver">FirstName LastName (SSO Number)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subpage-content subpage-content-what" id="whatPage">
+                <h1 class="page-title">What type of crew do you need? <span class="button-edit" title="What">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Production Type <sup class="mandatory">*</sup></label>
+                            <div class="display-dataform">
+                                <select class="selectbox-full" id="ff_productiontype">
+                                    <option></option>
+                                </select>
+                                <span class="display-data" id="ff_ProductionType">Tape-Interview/BRoll</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Story Name </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="Story Name here" id="ff_txtStoryName">
+                                <span class="display-data" id="ff_StoryName">Story Name here</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display">
+                                Assignment Slug<sup class="mandatory">*</sup>
+                                <div class="addtional-info-container">
+                                    <span class="icon-info">i</span>
+                                    <div class="additional-info">Please be specific to this shoot/assignment within your larger story (ex: "Dolphin Trainer, Orlando Sitdown", or "X-Talk Aviation Expert")</div>
+                                </div>
+                            </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="Assignment Slug here">
+                                <span class="display-data" id="ff_AssignmentSlug">Assignment Slug here</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">Shoot Status </label>
+                            <div class="display-dataform">
+                                <select class="selectbox-full" id="ff_shootstatus">
+                                    <option>Firm</option>
+                                    <option>Tent</option>
+                                    <option>CXLD</option>
+                                </select>
+                                <span class="display-data" id="ff_ShootStatus">Firm</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group" id='ffTalentDiv'>
+                            <!--<div class="forms-add-conatiner">
+                                <label class="label label-display">Talent (On Site) </label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="Alexander, P" id="ff_txtTalent_" ff_talentid_="">
+                                    <span class="display-data" id="ff_Talent_" ff_TalentID_="">Alexander, P</span>
+                                </div>
+                            </div>
+                            <div class="addbutton-container"> <span class="button-add1 button-addt">+ add talent</span> </div>-->
+                        </div>
+                        <div id="ffShowUnitDiv"></div>
+                        <!--<<div class="cols cols-3 form-group">
+                            <label class="label label-display">Show Unit </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="NBCNews - Dateline">
+                                <span class="display-data" id="ff_ShowUnit">NBCNews - Dateline</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">Budget Code </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="1234567">
+                                <span class="display-data" id="ff_BudgetCode">1234567</span>
+                            </div>
+                        </div>-->
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">Edit Request Id </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="12345678">
+                                <span class="display-data" id="ff_EditRequestId">12345678</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-content-crewgoing" id="wherePage">
+                <h1 class="page-title">Where is the crew going? <span class="button-edit" title="Where">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Address </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="30 Rockefeller Plaza">
+                                <span class="display-data" id="ff_Address">30 Rockefeller Plaza</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">City, Town or Area </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="New York">
+                                <span class="display-data" id="ff_City">New York</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">State </label>
+                            <div class="display-dataform">
+                                <select id="ff_state-select" class="selectbox-full ">
+                                    <option value=""></option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="NY">-->
+                                <span class="display-data" id="ff_State">NY</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">Zip </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="10112" maxlength="6">
+                                <span class="display-data" id="ff_Zip">10112</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-2 form-group">
+                            <label class="label label-display">Country </label>
+                            <div class="display-dataform">
+                                <select id="ff_country-select" class="selectbox-full ">
+                                    <option value=""></option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="USA">-->
+                                <span class="display-data" id="ff_Country">USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-content-where-is-shoot" id="whenPage">
+                <h1 class="page-title">When is the Shoot? <span class="button-edit" title="When">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-4">
+                            <div class="calender-conatainer"></div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Start Date (inc travel) </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="4-8-16" id="ff_txtStarDate" readonly>
+                                <span class="display-data" id="ff_StartDate">4-8-16</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">End Date (inc travel)</label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="4-11-16" readonly>
+                                <span class="display-data" id="ff_EndDate">4-11-16</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Number of days in shoot </label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="4" readonly>
+                                <span class="display-data" id="ff_Days">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Time Zone </label>
+                            <div class="display-dataform">
+                                <select class="textbox">
+                                    <option value="ET">ET</option>
+                                    <option value="CT">CT</option>
+                                    <option value="MT">MT</option>
+                                    <option selected="" value="PT">PT</option>
+                                    <option value="GMT">GMT</option>
+                                    <option value="AKT">AKT</option>
+                                    <option value="BST">BST</option>
+                                    <option value="MSK">MSK</option>
+                                    <option value="CST(Beljing)">CST(Beljing)</option>
+                                </select>
+                                <span class="display-data" id="ff_TimeZone">PT</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Meet Time</label>
+                            <div class="display-dataform">
+                                <input class="textbox text-box-mini hour-box" type="text" value="00" id="ff-meettime-hr" maxlength="2">
+                                <input class="textbox text-box-mini minite-box" type="text" value="00" id="ff-meettime-min" maxlength="2">
+                                <select class="textbox text-box-mini 12-box" id="ff-meettime-select">
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="8:00 PM(11 PM ET)">-->
+                                <span class="display-data" id="ff_MeetTime">8:00 PM(11 PM ET)</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">Roll Time </label>
+                            <div class="display-dataform">
+                                <input class="textbox text-box-mini hour-box" type="text" value="00" id="ff-rolltime-hr" maxlength="2">
+                                <input class="textbox text-box-mini minite-box" type="text" value="00" id="ff-rolltime-min" maxlength="2">
+                                <select class="textbox text-box-mini 12-box" id="ff-rolltime-select">
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="9:00 PM(12 PM ET)">-->
+                                <span class="display-data" id="ff_RollTime">9:00 PM(12 PM ET)</span>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group">
+                            <label class="label label-display">End Time </label>
+                            <div class="display-dataform">
+                                <input class="textbox text-box-mini hour-box" type="text" value="00" id="ff-endtime-hr" maxlength="2">
+                                <input class="textbox text-box-mini minite-box" type="text" value="00" id="ff-endtime-min" maxlength="2">
+                                <select class="textbox text-box-mini 12-box" id="ff-endtime-select">
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="6:00 PM(9 PM ET)">-->
+                                <span class="display-data" id="ff_EndTime">6:00 PM(9 PM ET)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display">Shoot Description </label>
+                            <div class="field-input cols-11 sdControl">
+                                <textarea class="textbox shoot-textbox descShoot initialdesc" style="margin:2px 0" maxlength="1000"></textarea>
+                                <span class="display-data" id="ff_descShoot"></span>
+                            </div>
+                            <!--<div class="display-dataform display-dataform-shoot">
+                                <textarea class="selectbox-crewdesk textbox" maxlength="1000" >                </textarea>
+                                <span class="display-data" id="ff_ShootDescription"> Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.Filter text for the shoot description. Filter text for the shoot description.</span>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="row row-needs">
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display">Audio Needs<sup class="mandatory">*</sup></label>
+                            <div class="display-dataform">
+                                <select id="ff_audioneed-select" class="textbox">
+                                    <option></option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="+1 (555) 555-5555">-->
+                                <span class="display-data" id="ff_AudioNeeds"></span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display">Special Conditions<sup class="mandatory">*</sup></label>
+                            <div class="display-dataform">
+                                <select id="ff_specialconditions-select" class="textbox">
+                                    <option></option>
+                                </select>
+                                <span class="display-data" id="ff_SpecialConditions"></span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-3-5 form-group">
+                            <label class="label label-display">Transmission Type </label>
+                            <div class="display-dataform">
+                                <select id="ff_transmissiontype-select" class="textbox">
+                                    <option></option>
+                                </select>
+                                <!--<input type="text" class="textbox" value="+1 (555) 555-5555">-->
+                                <span class="display-data" id="ff_TransmissionType"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-resource-form" id="resourcesPage">
+                <h1 class="page-title">What type of resources are needed? <span class="button-edit-rs" title="Resources">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols-11">
+                            <div class="cols cols-2 form-group">
+                                <label class="label label-display">Camera</label>
+                                <div class="display-dataform display-data1">
+                                    <select class="textbox" id="ff_camera-select">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <span class="total-amount display-data" id="ff_Camera">3</span>
+                                </div>
+                            </div>
+                            <div class="cols cols-2 form-group">
+                                <label class="label label-display">Audio</label>
+                                <div class="display-dataform display-data1">
+                                    <select class="textbox" id="ff_audio-select">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <span class="total-amount display-data" id="ff_Audio">2</span>
+                                </div>
+                            </div>
+                            <div class="cols cols-2 form-group">
+                                <label class="label label-display">Utilities</label>
+                                <div class="display-dataform display-data1">
+                                    <select class="textbox" id="ff_utilities-select">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <span class="total-amount display-data" id="ff_Utilities">0</span>
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group form-group-est-cost">
+                                <label class="label label-display">Estimated Cost: </label>
+                                <div class="display-dataform display-data1">
+                                    <span class="display-data" id="ff_EstimatedCost"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-override">
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display">Override Approval Received? <sup class="mandatory">*</sup></label>
+                            <div class="display-data1" id="ff_OverrideApproval">
+                                <select class="selectbox ">
+                                    <option value="Pending">Pending</option>
+                                    <option value="Approved">Approved</option>
+                                    <option value="Rejected">Rejected</option>
+                                </select>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group resourcereason">
+                            <label class="label label-display">Resource Reason<sup class="mandatory">*</sup></label>
+                            <div class="display-dataform">
+                                <select class="textbox" id="ff_reason-select">
+                                    <option></option>
+                                    <option>AUDIO NEEDS</option>
+                                    <option>LOCATION CHALLENGES</option>
+                                    <option>TIME CONSTRAINTS</option>
+                                    <option>SAFETY</option>
+                                    <option>OTHER</option>
+                                </select>
+                                <span class="display-data" id="ff_ResourceReason"></span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-5 form-group">
+                            <label class="label label-description">Resource Description<sup class="mandatory">*</sup></label>
+                            <div class="display-dataform display-dataform-description">
+                                <textarea class="selectbox-crewdesk textbox" id="ff_txtResourceDesc" maxlength="1000">                </textarea>
+                                <span class="display-data" id="ff_ResourceDescription"> Filter text for override description. Filter text for override description. Filter text for override description. Filter text for override description. Filter text for override description. Filter text for override description.</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> </div>
+            </div>
+            <div class="subpage-content subpage-crewinfo">
+                <h1 class="page-title">Crew info <span class="button-edit" title="CrewInfo">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <section class="crew-info-container">
+                        <div class="row">
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer">Resource</label>
+                                <div class="display-data1">
+                                    <div id="ff_peoplePickerResourceDiv_0" class="textbox crewinfopeoplepicker"></div>
+                                    <span class="display-data" id="ff_resource_0">ResourceName </span>
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer">Phone #</label>
+                                <div class="display-data1">
+                                    <input type="text" class="selectbox ProducerField" id="ff_resource_phone_0" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="ff_resourcephone_0"></span>
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer">Email</label>
+                                <div class="display-data1">
+                                    <input type="text" class="selectbox ProducerField" id="ff_resource_email_0">
+                                    <span class="display-data" id="ff_resourcemail_0"></span>
+                                    <div class="valid-msg valid-msg-error">Invalid Email Format.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-2">
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer label-addres" style="visibility:hidden">
+                                    Additional<br>
+                                    Users <span class="icon-info">i</span>
+                                </label>
+
+                                <div class="display-dataform display-dataform-mobile display-pf2" style="display:none">
+                                    <input type="text" class="selectbox">
+                                    <span class="remove-button button-remove-sp"></span>
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer">Role</label>
+                                <div class="display-data1">
+                                    <!--<input type="text" class="selectbox ProducerField" id="ff_resource_role_0">-->
+                                    <select class="textbox" id="ff_resource_role_0">
+                                        <option></option>
+                                        <option>None</option>
+                                        <option>Audio</option>
+                                        <option>Camera</option>
+                                        <option>DJ</option>
+                                        <option>Engineer</option>
+                                        <option>Producer</option>
+                                        <option>Still photographer</option>
+                                        <option>Utility/Grip</option>
+                                    </select>
+                                    <span class="display-data" id="ff_resourcerole_0"></span>
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group">
+                                <label class="label label-display label-producer">Employee Type</label>
+                                <div class="display-data1 Employee-Type">
+                                    <!--<input type="text" class="selectbox ProducerField" id="ff_resource_employeetype_0">-->
+                                    <select class="textbox" id="ff_resource_employeetype_0">
+                                        <option></option>
+                                        <option>None</option>
+                                        <option>Freelancer</option>
+                                        <option>Staff</option>
+                                    </select>
+                                    <span class="display-data" id="ff_resourcetype_0"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                    <div class="row">
+                        <div class="cols cols-4 form-group  display-pf1">
+                            <label class="label label-display label-producer" style="visibility:hidden">
+                                Resource
+                            </label>
+                            <div class="display-dataform">
+                                <span class="button-add-app">+ add additional resource</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-producer">
+                                Primary <sup class="mandatory">*</sup><br>
+                                Camera Type
+                            </label>
+                            <div class="display-data1">
+                                <select type="text" class="selectbox" id="ff_CameraType">
+                                    <optgroup label="FILE">
+                                        <option>Panasonic AJ-PX5000G</option>
+                                        <option>Panasonic AJ-PX270PJ</option>
+                                        <option>Panasonic Varicam 35</option>
+                                        <option>Panasonic Varicam LT</option>
+                                        <option>Cannon C300 Mark ii</option>
+                                        <option>Cannon C300 Mark i</option>
+                                        <option>Cannon EOS 5D Mark iii</option>
+                                        <option>Cannon EOS 5D Mark ii</option>
+                                        <option>Canon EOS-1D</option>
+                                        <option>Canon XF205</option>
+                                        <option>Sony PXW-FS7</option>
+                                        <option>Sony PMW-F3</option>
+                                        <option>Sony PMW-F5</option>
+                                        <option>Sony PMW-F55</option>
+                                        <option>Sony PMW-EX3</option>
+                                    </optgroup>
+                                    <optgroup label="TAPE">
+                                        <option>Sony HDW-F900R</option>
+                                        <option>Sony PDW-F800</option>
+                                        <option>Panasonic AJ-HDX900</option>
+                                        <option>OTHER (Included in notes)</option>
+                                    </optgroup>
+                                </select>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-producer">Media Format <sup class="mandatory">*</sup></label>
+                            <div class="display-data1">
+                                <select type="text" class="selectbox" id="ff_MediaFormat">
+                                    <optgroup label="FILE">
+                                        <option>MicroP2</option>
+                                        <option>P2</option>
+                                        <option>Compact Flash (CF)</option>
+                                        <option>CFast</option>
+                                        <option>Secure Digital (SD)</option>
+                                        <option>SxS</option>
+                                    </optgroup>
+                                    <optgroup label="TAPE">
+                                        <option>HDCam</option>
+                                        <option>XDCam</option>
+                                        <option>DVCProHD</option>
+                                        <option>HDV</option>
+                                        <option>OTHER (Included in notes)</option>
+                                    </optgroup>
+                                </select>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-producer">Video Specs <sup class="mandatory">*</sup></label>
+                            <div class="display-data1">
+                                <select type="text" class="selectbox" id="ff_VideoSpecs">
+                                    <option>1080/60i</option>
+                                    <option>1080/30p</option>
+                                    <option>1080/24p</option>
+                                </select>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display label-crew-desk-notes">Crew Desk Notes </label>
+                            <div class="display-fullwidth crew-desk">
+                                <textarea class="selectbox-crewdesk" id="ff_CrewDeskNotes" maxlength="1000"></textarea>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-6">
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-attachment">Attachments</label>
+                            <div class="display-fullwidth" id="ff_Attachment"> </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-producer">
+                                Crew Desk<br>
+                                Files
+                            </label>
+                            <div class="display-fullwidth">
+                                <div class="display-dataform" style="display:none" id="ff_crewdesk"></div>
+                                <select type="text" class="selectbox-full" id="ff_CrewDesk" multiple="multiple">
+                                    <option>Freelance Camera </option>
+                                    <option>Crew Ratebook</option>
+                                    <option>Technical Specification</option>
+                                    <option>File Name</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="cols cols-4 form-group">
+                            <label class="label label-display label-producer">CC Email</label>
+                            <div class="display-data1">
+                                <div id="ff_peoplePickerCCEmailDiv"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display label-producer">Copy to iNews</label>
+                            <div class="display-fullwidth" id="ff_CopytoiNews">
+                                <label id='ff_CopytoiNews_label1'> {0} {1} {2},{3}</label><br>
+                                <label id='ff_CopytoiNews_label2'> {0} {1}</label><br>
+                                <br>
+                                <div class="news-contact">
+                                    <label id='ff_CopytoiNews_label3'> TDY - {0}</label> <br>
+                                    <label id='ff_CopytoiNews_label4'>
+                                        {0}{1} meet {2} {3}
+                                        at {4}, {5}, {6} for {7}
+                                    </label> <br>
+                                    <label id='ff_CopytoiNews_label5'> {0}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-content-revision">
+                <h1 class="page-title">Revision History</h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="table-container">
+                        <div class="thead">
+                            <div class="th cols-1">#</div>
+                            <div class="th cols-2">Revised by</div>
+                            <div class="th cols-8">Comments</div>
+                            <div class="th cols-2">Date and Time</div>
+                        </div>
+                        <div class="tbody">
+                            <div class="trow">
+                                <div class="td cols-1"></div>
+                                <div class="td cols-2"></div>
+                                <div class="td cols-8"></div>
+                                <div class="td cols-2"></div>
+                            </div>
+                            <div class="trow">
+                                <div class="td cols-1"></div>
+                                <div class="td cols-2"></div>
+                                <div class="td cols-8"></div>
+                                <div class="td cols-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display label-producer">Revision Notes </label>
+                            <div class="display-fullwidth revision-box">
+                                <textarea class="selectbox-crewdesk" id="ff_RevisionNotes" maxlength="1000"></textarea>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 button-group button-group-status">
+                            <label class="label label-display label-status">
+                                Request Status <sup class="mandatory">*</sup> <br>
+                                <small><i>Select the status of request</i></small>
+                            </label>
+                            <div class="display-fullwidth">
+                                <div class="cols-2 buttons-cols"><a class="button button-new active" title="New">New</a></div>
+                                <div class="cols-2 buttons-cols"><a class="button button-rofr" title="Rofr">Rofr</a></div>
+                                <div class="cols-2 buttons-cols"><a class="button button-efforting" title="Efforting">Efforting</a></div>
+                                <div class="cols-2 buttons-cols"><a class="button button-revised" title="Revised">Revised</a></div>
+                                <div class="cols-2 buttons-cols"><a class="button button-booking" title="Booked">Booked</a></div>
+                                <div class="cols-2 buttons-cols"><a class="button button-cancelled" title="Cancelled">Cancelled</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="valideditsection" class="valid-msg valid-msg-error" style="display: none;">Please save the edit section</div>
+        <div class="button-bottom-next"><span id="save" title="Save" class="button-next">Save</span><span id="saverevise" title="Save + Revise" class="button-next">Save + Revise</span><span id="savesend" title="Save + Send" class="button-next">Save + Send</span> </div>
+        <div class="print-button-container">
+            <div class="icon-bottom icon-print"> Print </div>
+            <div class="icon-bottom icon-exit"> Exit </div>
+        </div>
+    </div>
+</div>

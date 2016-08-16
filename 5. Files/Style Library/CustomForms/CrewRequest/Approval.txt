@@ -1,0 +1,161 @@
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(function () {
+		var serverurl = location.protocol + "//" + location.host;
+		var serverPath = serverurl + "/sites/bcast_prodreq/_api/Web/Lists";
+		var listName = "CrewRequest";
+		var loginName = ''
+
+		var userid = _spPageContextInfo.userId;
+		var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/getuserbyid(" + userid + ")";
+		var requestHeaders = { "accept": "application/json;odata=verbose" };
+		$.ajax({
+			url: requestUri,
+			contentType: "application/json;odata=verbose",
+			headers: requestHeaders,
+			success: onSuccess,
+			error: onError
+		});
+		function onSuccess(data, request) {
+			loginName = data.d.Title;
+			showMessage(loginName);
+		}
+
+		function onError(error) {
+			console.log("Error on retrieving current user.");
+		}
+
+        
+    });
+
+	
+	function getData(){
+		var serverurl = location.protocol + "//" + location.host;
+		var serverPath = serverurl + "/sites/bcast_prodreq/_api/Web/Lists";
+		var listName = "CrewRequest";
+		try {
+			$.ajax({
+				url: serverPath + "/GetByTitle('" + listName + "')/items(" + getUrlVars()["RequestID"] + ")",
+				method: "GET",
+				headers: { "Accept": "application/json; odata=verbose" },
+				async: false,
+				success: function (data) {
+					results = data.d;
+					return results;
+				},
+				error: function (data) {
+					console.log(data);
+				}
+			});
+			return results;
+		} catch (e) {
+			console.log(e.message);
+		}
+	}
+
+	function showMessage(loginName){
+		var serverurl = location.protocol + "//" + location.host;
+		var serverPath = serverurl + "/sites/bcast_prodreq/_api/Web/Lists";
+		var listName = "CrewRequest";
+		if (!!getUrlVars()["RequestID"] && !!getUrlVars()["Status"]) {
+			var crewData = getData();
+			var overrideApproval = '';
+			var approveStatus = crewData.Approval === null ? "" : crewData.Approval;
+			if(crewData.Approver === loginName){
+				if (getUrlVars()["Status"] == "Approve") {
+					$('.active-A').show();
+					overrideApproval = 'Approved';
+				}
+				else {
+					$('.active-R').show();
+					overrideApproval = 'Rejected';
+				}
+
+            
+				var data = {
+					__metadata: { 'type': 'SP.Data.CrewRequestListItem' },
+					Approval: getUrlVars()["Status"],
+					OverrideApproval: overrideApproval
+				}
+            
+				$.ajax({
+					url: serverPath + "/GetByTitle('" + listName + "')/items(" + getUrlVars()["RequestID"] + ")",
+					type: "POST",
+					contentType: "application/json;odata=verbose",
+					data: JSON.stringify(data),
+					headers: {
+						"Accept": "application/json;odata=verbose",
+						"X-RequestDigest": $("#__REQUESTDIGEST").val(),
+						"X-HTTP-Method": "MERGE",
+						"If-Match": "*"
+					},
+					async: false,
+					success: function (data) {
+						console.log("Update Sucess");
+						window.close();
+					},
+					error: function (error) {
+						console.log("Update Error");
+						$('.active-A').hide();
+						$('.active-R').hide();
+						$('.noaction').show();
+						$('.actiondone').hide();
+					}
+				});
+			}
+			else {
+				$('.active-A').hide();
+				$('.active-R').hide();
+				$('.noaction').hide();
+				$('.actiondone').show()
+			}
+        }
+        else {
+            $('.active-A').hide();
+            $('.active-R').hide();
+            $('.noaction').show();
+			$('.actiondone').hide();
+        }
+	}
+
+
+    function getUrlVars() {
+        var vars = [], hash;
+        try {
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    function ReadList(url, listName, query) {
+        var serverurl = location.protocol + "//" + location.host
+        var results = [];
+        $.ajax({
+            url: serverurl + "/sites/bcast_prodreq/_api/Web/Lists/GetByTitle('" + listName + "')/items" + query,
+            method: "GET",
+            headers: { "Accept": "application/json; odata=verbose" },
+            async: false,
+            success: function (data) {
+                results = data.d.results;
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+        return results;
+    }
+
+</script>
+
+<h2 class="active-A" style="display:none">Approval is in Progress</h2>
+<h2 class="active-R" style="display:none">Rejection is in Progress</h2>
+<h2 class="noaction" style="display:none">No action to be performed</h2>
+<h2 class="actiondone" style="display:none">You are not authorized person to approve/reject the request</h2>

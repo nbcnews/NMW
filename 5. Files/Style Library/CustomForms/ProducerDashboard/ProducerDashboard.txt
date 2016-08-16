@@ -1,0 +1,727 @@
+<link href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditDashboard/CSS/ui.jqgrid.css" rel="stylesheet" />
+<link href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/jquery-ui.css" rel="stylesheet" />
+<link href="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerDashboard/css/ProducerDashboard.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/daterangepicker.css">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerDashboard/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditDashboard/JS/grid.locale-en.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditDashboard/JS/jquery.jqGrid.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerDashboard/js/ProducerDashboard.js"></script>
+<div class="dashboard-container">
+    <section class="producer-dashborad-navibutton">
+        <ul class="producer-dashborad-navi">
+            <li class="producer-dashboard-newCrewRequest"><span>New <strong>Crew</strong> Request</span></li>
+            <li class="producer-dashboard-newEditRequest"><span>New <strong>Edit</strong> Request</span></li>
+            <li class="producer-dashboard-newFileIngest"><span>New <strong>File Ingest</strong> Request</span></li>
+        </ul>
+    </section>
+    <section class="dashboard-tab-container">
+        <div class="container-fluid">
+            <ul class="dashboard-tab">
+                <li class="tab-li tab-Home active" id="das-Home">Home</li>
+                <li class="tab-li tab-CR" id="das-CR">Crew Requests</li>
+                <li class="tab-li tab-ER" id="das-ER">Edit Request</li>
+                <li class="tab-li tab-FIR" id="das-FIR">File Ingest Requests</li>
+                <li class="tab-li tab-Report" id="das-Report">Reports</li>
+            </ul>
+            <div class="tab-content-container">
+                <div class="tab-content active" id="das-Home-Grid">
+                    <div class="tab-header-container">
+                        <h1 class="grid-title">My Requests</h1>
+                        <div class="edit-Cont">
+                            <div class="dashboard-drp-show">
+                                <div class="cntlHeader">Shows</div>
+                                <span class="navi-dropdwon" id="hierarchy-myrequest">Shows</span>
+                                <div id="show-items-myrequest" class="dropdownnavi dropdownnavi-shows">
+                                    <ul>
+                                        <li><a></a></li>
+                                        <li class="has-sub">
+                                            <a>Today Show</a>
+                                            <ul>
+                                                <li><a> <span class="liStatic"><nobr>TDY -Today 7a & 8a</nobr></span></a></li>
+                                                <li><a> <span class="liStatic"><nobr>TDY - Today 9a & 10a</nobr></span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Nightly News</a></li>
+                                        <li class="has-sub">
+                                            <a>MSNBC DaySide</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Early tdy - Today</span></a></li>
+                                                <li><a><span class="liStatic">First Look</span></a></li>
+                                                <li><a><span class="liStatic">Way Too Early</span></a></li>
+                                                <li><a><span class="liStatic">Morning Joe</span></a></li>
+                                                <li><a><span class="liStatic">Jose Diaz-Balart</span></a></li>
+                                                <li><a><span class="liStatic">Tamron Hall</span></a></li>
+                                                <li><a><span class="liStatic">Andrea Mitchell Reports</span></a></li>
+                                                <li><a><span class="liStatic">Thomas Roberts</span></a></li>
+                                                <li><a><span class="liStatic">Kate Snow</span></a></li>
+                                                <li><a><span class="liStatic">Alex Witt</span></a></li>
+                                                <li><a><span class="liStatic">Melissa Harris-Perry</span></a></li>
+                                                <li><a><span class="liStatic">Your Business</span></a></li>
+                                                <li><a><span class="liStatic">Specials</span></a></li>
+                                                <li><a><span class="liStatic">Politics</span></a></li>
+                                                <li><a><span class="liStatic">MSNBC.COM</span></a></li>
+                                                <li><a><span class="liStatic">Newsforce</span></a></li>
+                                                <li><a><span class="liStatic">Politics Nation</span></a></li>
+                                                <li><a><span class="liStatic">Steve Kornacki</span></a></li>
+                                                <li><a><span class="liStatic">MS-Long Form</span></a></li>
+                                                <li><a><span class="liStatic">Generation to Generation</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">10AM</span></a></li>
+                                                <li><a><span class="liStatic">11AM</span></a></li>
+                                                <li><a><span class="liStatic">12PM</span></a></li>
+                                                <li><a><span class="liStatic">1PM</span></a></li>
+                                                <li><a><span class="liStatic">2PM</span></a></li>
+                                                <li><a><span class="liStatic">3PM</span></a></li>
+                                                <li><a><span class="liStatic">4PM</span></a></li>
+                                                <li><a><span class="liStatic">9AM</span></a></li>
+                                                <li><a><span class="liStatic">AM Joy</span></a></li>
+                                                <li><a><span class="liStatic">Breaking News</span></a></li>
+                                                <li><a><span class="liStatic">The Verge</span></a></li>
+                                                <li><a><span class="liStatic">NewsNation</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ed Show</span></a></li>
+                                                <li><a><span class="liStatic">Z-Now with Alex Wagner</span></a></li>
+                                                <li><a><span class="liStatic">Z-Reid Report</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ronan Farrow</span></a></li>
+                                                <li><a><span class="liStatic">Z-The Cycle</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC Primetime</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">MTP Daily</span></a></li>
+                                                <li><a><span class="liStatic">6PM</span></a></li>
+                                                <li><a><span class="liStatic">Hardball</span></a></li>
+                                                <li><a><span class="liStatic">All In</span></a></li>
+                                                <li><a><span class="liStatic">Rachel Maddow</span></a></li>
+                                                <li><a><span class="liStatic">Last Word</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>NBC News</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">BreakingNews.com</span></a></li>
+                                                <li><a><span class="liStatic">Executive</span></a></li>
+                                                <li><a><span class="liStatic">Marketing/Agency</span></a></li>
+                                                <li><a><span class="liStatic">NBCNews.com</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today - Events</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today.com</span></a></li>
+                                                <li><a><span class="liStatic">z-oldNewsgather/Coverage</span></a></li>
+                                                <li><a><span class="liStatic">z-TBDs</span></a></li>
+                                                <li><a><span class="liStatic">Investigative Unit</span></a></li>
+                                                <li><a><span class="liStatic">Pools</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>Other NBCU</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Bravo</span></a></li>
+                                                <li><a><span class="liStatic">E!</span></a></li>
+                                                <li><a><span class="liStatic">Football Night in America</span></a></li>
+                                                <li><a><span class="liStatic">Late Night</span></a></li>
+                                                <li><a><span class="liStatic">NBC Affiliate</span></a></li>
+                                                <li><a><span class="liStatic">NBC Ent Marketing (Agency)</span></a></li>
+                                                <li><a><span class="liStatic">NBC News Channel</span></a></li>
+                                                <li><a><span class="liStatic">NBC O&O </span></a></li>
+                                                <li><a><span class="liStatic">NBC Sports</span></a></li>
+                                                <li><a><span class="liStatic">Other</span></a></li>
+                                                <li><a><span class="liStatic">Oxygen</span></a></li>
+                                                <li><a><span class="liStatic">Sprout</span></a></li>
+                                                <li><a><span class="liStatic">SyFy</span></a></li>
+                                                <li><a><span class="liStatic">Tonight Show</span></a></li>
+                                                <li><a><span class="liStatic">USA</span></a></li>
+                                                <li><a><span class="liStatic">Weekend Sports</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>News Gathering</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">CVG-NorthEast</span></a></li>
+                                                <li><a><span class="liStatic">CVG-MidWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-South</span></a></li>
+                                                <li><a><span class="liStatic">CVG-SouthWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-WashDC</span></a></li>
+                                                <li><a><span class="liStatic">CVG-West</span></a></li>
+                                                <li><a><span class="liStatic">CVG-Intl</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>LongForm</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Dateline</span></a></li>
+                                                <li><a><span class="liStatic">Peacock Productions</span></a></li>
+                                                <li><a><span class="liStatic">Meredith Vieira</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a> <span class="liStatic">NBC Learn</span></a></li>
+                                        <li><a><span class="liStatic">CNBC</span></a></li>
+                                        <li><a><span class="liStatic">Weather Channel</span></a></li>
+                                        <li><a> <span class="liStatic">Telemundo</span></a></li>
+                                        <li><a><span class="liStatic">Weekend tdy - Today</span></a></li>
+                                        <li><a><span class="liStatic">Weekend Nightly</span></a></li>
+                                        <li><a><span class="liStatic">Rossen</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="button-dashborad button-clear myrequest-clear">Clear Filters</div>
+                        </div>
+                        <div class="dash-form-right">
+                            <div class="dash-header-datepicker">
+                                <div class="dateselect-dashboard myrequest-dateselect">
+                                    <div class="datepicker-select-container"><span class="label-date">Start Range: </span><span class="date-value"> </span></div>
+                                    <div class="datepicker-select-container"><span class="label-date">End Range: </span><span class="date-value"> </span></div>
+                                </div>
+                                <span class="dash-datepicker-icon myrequest-date"> </span>
+                                <div class="calender-container-myrequest"></div>
+                            </div>
+                            <div class="grid-search" id="editgrid-search">
+                                <input type="text" id="myReqgrid-searchItem" class="searchbox" placeholder="search" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordion">
+                        <h3 class="accordion-title accordion-title-mycrew">My Crew Request</h3>
+                        <div class="accordion-content-section accordion-content-my-crew">
+                            <table id="MyCrewGrid" class="display data-table-contanier"></table>
+                            <div id="MyCrewpager"></div>
+                        </div>
+                        <h3 class="accordion-title accordion-title-myedit">My Edit Request</h3>
+                        <div class="accordion-content-section accordion-content-my-edit">
+                            <table id="MyEditGrid" class="display data-table-contanier"></table>
+                            <div id="MyEditpager"></div>
+                        </div>
+                        <h3 class="accordion-title accordion-title-myfileingest">My File Ingest</h3>
+                        <div class="accordion-content-section accordion-content-my-fileingest">
+                            <table id="MyFileIngestGrid" class="display data-table-contanier"></table>
+                            <div id="MyFileIngestpager"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="das-CR-Grid">
+                    <div class="tab-header-container">
+                        <h1 class="grid-title">Crew Requests</h1>
+                        <div class="edit-Cont">
+                            <div class="dashboard-drp-show">
+                                <div class="cntlHeader">Shows</div>
+                                <span class="navi-dropdwon" id="hierarchy-crewrequest">Shows</span>
+                                <div id="show-items-crewrequest" class="dropdownnavi dropdownnavi-shows">
+                                    <ul>
+                                        <li><a></a></li>
+                                        <li class="has-sub">
+                                            <a>Today Show</a>
+                                            <ul>
+                                                <li><a> <span class="liStatic"><nobr>TDY -Today 7a & 8a</nobr></span></a></li>
+                                                <li><a> <span class="liStatic"><nobr>TDY - Today 9a & 10a</nobr></span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Nightly News</a></li>
+                                        <li class="has-sub">
+                                            <a>MSNBC DaySide</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Early tdy - Today</span></a></li>
+                                                <li><a><span class="liStatic">First Look</span></a></li>
+                                                <li><a><span class="liStatic">Way Too Early</span></a></li>
+                                                <li><a><span class="liStatic">Morning Joe</span></a></li>
+                                                <li><a><span class="liStatic">Jose Diaz-Balart</span></a></li>
+                                                <li><a><span class="liStatic">Tamron Hall</span></a></li>
+                                                <li><a><span class="liStatic">Andrea Mitchell Reports</span></a></li>
+                                                <li><a><span class="liStatic">Thomas Roberts</span></a></li>
+                                                <li><a><span class="liStatic">Kate Snow</span></a></li>
+                                                <li><a><span class="liStatic">Alex Witt</span></a></li>
+                                                <li><a><span class="liStatic">Melissa Harris-Perry</span></a></li>
+                                                <li><a><span class="liStatic">Your Business</span></a></li>
+                                                <li><a><span class="liStatic">Specials</span></a></li>
+                                                <li><a><span class="liStatic">Politics</span></a></li>
+                                                <li><a><span class="liStatic">MSNBC.COM</span></a></li>
+                                                <li><a><span class="liStatic">Newsforce</span></a></li>
+                                                <li><a><span class="liStatic">Politics Nation</span></a></li>
+                                                <li><a><span class="liStatic">Steve Kornacki</span></a></li>
+                                                <li><a><span class="liStatic">MS-Long Form</span></a></li>
+                                                <li><a><span class="liStatic">Generation to Generation</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">10AM</span></a></li>
+                                                <li><a><span class="liStatic">11AM</span></a></li>
+                                                <li><a><span class="liStatic">12PM</span></a></li>
+                                                <li><a><span class="liStatic">1PM</span></a></li>
+                                                <li><a><span class="liStatic">2PM</span></a></li>
+                                                <li><a><span class="liStatic">3PM</span></a></li>
+                                                <li><a><span class="liStatic">4PM</span></a></li>
+                                                <li><a><span class="liStatic">9AM</span></a></li>
+                                                <li><a><span class="liStatic">AM Joy</span></a></li>
+                                                <li><a><span class="liStatic">Breaking News</span></a></li>
+                                                <li><a><span class="liStatic">The Verge</span></a></li>
+                                                <li><a><span class="liStatic">NewsNation</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ed Show</span></a></li>
+                                                <li><a><span class="liStatic">Z-Now with Alex Wagner</span></a></li>
+                                                <li><a><span class="liStatic">Z-Reid Report</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ronan Farrow</span></a></li>
+                                                <li><a><span class="liStatic">Z-The Cycle</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC Primetime</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">MTP Daily</span></a></li>
+                                                <li><a><span class="liStatic">6PM</span></a></li>
+                                                <li><a><span class="liStatic">Hardball</span></a></li>
+                                                <li><a><span class="liStatic">All In</span></a></li>
+                                                <li><a><span class="liStatic">Rachel Maddow</span></a></li>
+                                                <li><a><span class="liStatic">Last Word</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>NBC News</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">BreakingNews.com</span></a></li>
+                                                <li><a><span class="liStatic">Executive</span></a></li>
+                                                <li><a><span class="liStatic">Marketing/Agency</span></a></li>
+                                                <li><a><span class="liStatic">NBCNews.com</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today - Events</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today.com</span></a></li>
+                                                <li><a><span class="liStatic">z-oldNewsgather/Coverage</span></a></li>
+                                                <li><a><span class="liStatic">z-TBDs</span></a></li>
+                                                <li><a><span class="liStatic">Investigative Unit</span></a></li>
+                                                <li><a><span class="liStatic">Pools</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>Other NBCU</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Bravo</span></a></li>
+                                                <li><a><span class="liStatic">E!</span></a></li>
+                                                <li><a><span class="liStatic">Football Night in America</span></a></li>
+                                                <li><a><span class="liStatic">Late Night</span></a></li>
+                                                <li><a><span class="liStatic">NBC Affiliate</span></a></li>
+                                                <li><a><span class="liStatic">NBC Ent Marketing (Agency)</span></a></li>
+                                                <li><a><span class="liStatic">NBC News Channel</span></a></li>
+                                                <li><a><span class="liStatic">NBC O&O </span></a></li>
+                                                <li><a><span class="liStatic">NBC Sports</span></a></li>
+                                                <li><a><span class="liStatic">Other</span></a></li>
+                                                <li><a><span class="liStatic">Oxygen</span></a></li>
+                                                <li><a><span class="liStatic">Sprout</span></a></li>
+                                                <li><a><span class="liStatic">SyFy</span></a></li>
+                                                <li><a><span class="liStatic">Tonight Show</span></a></li>
+                                                <li><a><span class="liStatic">USA</span></a></li>
+                                                <li><a><span class="liStatic">Weekend Sports</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>News Gathering</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">CVG-NorthEast</span></a></li>
+                                                <li><a><span class="liStatic">CVG-MidWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-South</span></a></li>
+                                                <li><a><span class="liStatic">CVG-SouthWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-WashDC</span></a></li>
+                                                <li><a><span class="liStatic">CVG-West</span></a></li>
+                                                <li><a><span class="liStatic">CVG-Intl</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>LongForm</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Dateline</span></a></li>
+                                                <li><a><span class="liStatic">Peacock Productions</span></a></li>
+                                                <li><a><span class="liStatic">Meredith Vieira</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a> <span class="liStatic">NBC Learn</span></a></li>
+                                        <li><a><span class="liStatic">CNBC</span></a></li>
+                                        <li><a><span class="liStatic">Weather Channel</span></a></li>
+                                        <li><a> <span class="liStatic">Telemundo</span></a></li>
+                                        <li><a><span class="liStatic">Weekend tdy - Today</span></a></li>
+                                        <li><a><span class="liStatic">Weekend Nightly</span></a></li>
+                                        <li><a><span class="liStatic">Rossen</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="button-dashborad button-clear crewrequest-clear">Clear Filters</div>
+                        </div>
+                        <div class="dash-form-right">
+                            <div class="dash-header-datepicker">
+                                <div class="dateselect-dashboard crewrequest-dateselect">
+                                    <div class="datepicker-select-container"><span class="label-date">Start Range: </span><span class="date-value"> </span></div>
+                                    <div class="datepicker-select-container"><span class="label-date">End Range: </span><span class="date-value"> </span></div>
+                                </div>
+                                <span class="dash-datepicker-icon crewrequest-date"> </span>
+                                <div class="calender-container-crewrequest"></div>
+                            </div>
+                            <div class="grid-search" id="editgrid-search">
+                                <input type="text" id="crewgrid-searchItem" class="searchbox" placeholder="search" />
+                            </div>
+                        </div>
+                    </div>
+                    <table id="CrewGrid" class="display data-table-contanier"></table>
+                    <div id="Crewpager"></div>
+                </div>
+                <div class="tab-content" id="das-ER-Grid">
+                    <div class="tab-header-container">
+                        <h1 class="grid-title">Edit Requests</h1>
+                        <div class="edit-Cont">
+                            <div class="dashboard-drp-show">
+                                <div class="cntlHeader">Shows</div>
+                                <span class="navi-dropdwon" id="hierarchy-editrequest">Shows</span>
+                                <div id="show-items-editrequest" class="dropdownnavi dropdownnavi-shows">
+                                    <ul>
+                                        <li><a></a></li>
+                                        <li class="has-sub">
+                                            <a>Today Show</a>
+                                            <ul>
+                                                <li><a> <span class="liStatic"><nobr>TDY -Today 7a & 8a</nobr></span></a></li>
+                                                <li><a> <span class="liStatic"><nobr>TDY - Today 9a & 10a</nobr></span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Nightly News</a></li>
+                                        <li class="has-sub">
+                                            <a>MSNBC DaySide</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Early tdy - Today</span></a></li>
+                                                <li><a><span class="liStatic">First Look</span></a></li>
+                                                <li><a><span class="liStatic">Way Too Early</span></a></li>
+                                                <li><a><span class="liStatic">Morning Joe</span></a></li>
+                                                <li><a><span class="liStatic">Jose Diaz-Balart</span></a></li>
+                                                <li><a><span class="liStatic">Tamron Hall</span></a></li>
+                                                <li><a><span class="liStatic">Andrea Mitchell Reports</span></a></li>
+                                                <li><a><span class="liStatic">Thomas Roberts</span></a></li>
+                                                <li><a><span class="liStatic">Kate Snow</span></a></li>
+                                                <li><a><span class="liStatic">Alex Witt</span></a></li>
+                                                <li><a><span class="liStatic">Melissa Harris-Perry</span></a></li>
+                                                <li><a><span class="liStatic">Your Business</span></a></li>
+                                                <li><a><span class="liStatic">Specials</span></a></li>
+                                                <li><a><span class="liStatic">Politics</span></a></li>
+                                                <li><a><span class="liStatic">MSNBC.COM</span></a></li>
+                                                <li><a><span class="liStatic">Newsforce</span></a></li>
+                                                <li><a><span class="liStatic">Politics Nation</span></a></li>
+                                                <li><a><span class="liStatic">Steve Kornacki</span></a></li>
+                                                <li><a><span class="liStatic">MS-Long Form</span></a></li>
+                                                <li><a><span class="liStatic">Generation to Generation</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">10AM</span></a></li>
+                                                <li><a><span class="liStatic">11AM</span></a></li>
+                                                <li><a><span class="liStatic">12PM</span></a></li>
+                                                <li><a><span class="liStatic">1PM</span></a></li>
+                                                <li><a><span class="liStatic">2PM</span></a></li>
+                                                <li><a><span class="liStatic">3PM</span></a></li>
+                                                <li><a><span class="liStatic">4PM</span></a></li>
+                                                <li><a><span class="liStatic">9AM</span></a></li>
+                                                <li><a><span class="liStatic">AM Joy</span></a></li>
+                                                <li><a><span class="liStatic">Breaking News</span></a></li>
+                                                <li><a><span class="liStatic">The Verge</span></a></li>
+                                                <li><a><span class="liStatic">NewsNation</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ed Show</span></a></li>
+                                                <li><a><span class="liStatic">Z-Now with Alex Wagner</span></a></li>
+                                                <li><a><span class="liStatic">Z-Reid Report</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ronan Farrow</span></a></li>
+                                                <li><a><span class="liStatic">Z-The Cycle</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC Primetime</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">MTP Daily</span></a></li>
+                                                <li><a><span class="liStatic">6PM</span></a></li>
+                                                <li><a><span class="liStatic">Hardball</span></a></li>
+                                                <li><a><span class="liStatic">All In</span></a></li>
+                                                <li><a><span class="liStatic">Rachel Maddow</span></a></li>
+                                                <li><a><span class="liStatic">Last Word</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>NBC News</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">BreakingNews.com</span></a></li>
+                                                <li><a><span class="liStatic">Executive</span></a></li>
+                                                <li><a><span class="liStatic">Marketing/Agency</span></a></li>
+                                                <li><a><span class="liStatic">NBCNews.com</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today - Events</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today.com</span></a></li>
+                                                <li><a><span class="liStatic">z-oldNewsgather/Coverage</span></a></li>
+                                                <li><a><span class="liStatic">z-TBDs</span></a></li>
+                                                <li><a><span class="liStatic">Investigative Unit</span></a></li>
+                                                <li><a><span class="liStatic">Pools</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>Other NBCU</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Bravo</span></a></li>
+                                                <li><a><span class="liStatic">E!</span></a></li>
+                                                <li><a><span class="liStatic">Football Night in America</span></a></li>
+                                                <li><a><span class="liStatic">Late Night</span></a></li>
+                                                <li><a><span class="liStatic">NBC Affiliate</span></a></li>
+                                                <li><a><span class="liStatic">NBC Ent Marketing (Agency)</span></a></li>
+                                                <li><a><span class="liStatic">NBC News Channel</span></a></li>
+                                                <li><a><span class="liStatic">NBC O&O </span></a></li>
+                                                <li><a><span class="liStatic">NBC Sports</span></a></li>
+                                                <li><a><span class="liStatic">Other</span></a></li>
+                                                <li><a><span class="liStatic">Oxygen</span></a></li>
+                                                <li><a><span class="liStatic">Sprout</span></a></li>
+                                                <li><a><span class="liStatic">SyFy</span></a></li>
+                                                <li><a><span class="liStatic">Tonight Show</span></a></li>
+                                                <li><a><span class="liStatic">USA</span></a></li>
+                                                <li><a><span class="liStatic">Weekend Sports</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>News Gathering</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">CVG-NorthEast</span></a></li>
+                                                <li><a><span class="liStatic">CVG-MidWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-South</span></a></li>
+                                                <li><a><span class="liStatic">CVG-SouthWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-WashDC</span></a></li>
+                                                <li><a><span class="liStatic">CVG-West</span></a></li>
+                                                <li><a><span class="liStatic">CVG-Intl</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>LongForm</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Dateline</span></a></li>
+                                                <li><a><span class="liStatic">Peacock Productions</span></a></li>
+                                                <li><a><span class="liStatic">Meredith Vieira</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a> <span class="liStatic">NBC Learn</span></a></li>
+                                        <li><a><span class="liStatic">CNBC</span></a></li>
+                                        <li><a><span class="liStatic">Weather Channel</span></a></li>
+                                        <li><a> <span class="liStatic">Telemundo</span></a></li>
+                                        <li><a><span class="liStatic">Weekend tdy - Today</span></a></li>
+                                        <li><a><span class="liStatic">Weekend Nightly</span></a></li>
+                                        <li><a><span class="liStatic">Rossen</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="button-dashborad button-clear editrequest-clear">Clear Filters</div>
+                        </div>
+                        <div class="dash-form-right">
+                            <div class="dash-header-datepicker">
+                                <div class="dateselect-dashboard editrequest-dateselect">
+                                    <div class="datepicker-select-container"><span class="label-date">Start Range: </span><span class="date-value"> </span></div>
+                                    <div class="datepicker-select-container"><span class="label-date">End Range: </span><span class="date-value"> </span></div>
+                                </div>
+                                <span class="dash-datepicker-icon editrequest-date"> </span>
+                                <div class="calender-container-editrequest"></div>
+                            </div>
+                            <div class="grid-search" id="editgrid-search">
+                                <input type="text" id="editgrid-searchItem" class="searchbox" placeholder="search" />
+                            </div>
+                        </div>
+                    </div>
+                    <table id="EditGrid" class="display data-table-contanier"></table>
+                    <div id="Editpager"></div>
+                </div>
+                <div class="tab-content" id="das-FIR-Grid">
+                    <div class="tab-header-container">
+                        <h1 class="grid-title">File Ingest Requests</h1>
+                        <div class="edit-Cont">
+                            <div class="dashboard-drp-show">
+                                <div class="cntlHeader">Shows</div>
+                                <span class="navi-dropdwon" id="hierarchy-fileingestrequest">Shows</span>
+                                <div id="show-items-fileingestrequest" class="dropdownnavi dropdownnavi-shows">
+                                    <ul>
+                                        <li><a></a></li>
+                                        <li class="has-sub">
+                                            <a>Today Show</a>
+                                            <ul>
+                                                <li><a> <span class="liStatic"><nobr>TDY -Today 7a & 8a</nobr></span></a></li>
+                                                <li><a> <span class="liStatic"><nobr>TDY - Today 9a & 10a</nobr></span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a>Nightly News</a></li>
+                                        <li class="has-sub">
+                                            <a>MSNBC DaySide</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Early tdy - Today</span></a></li>
+                                                <li><a><span class="liStatic">First Look</span></a></li>
+                                                <li><a><span class="liStatic">Way Too Early</span></a></li>
+                                                <li><a><span class="liStatic">Morning Joe</span></a></li>
+                                                <li><a><span class="liStatic">Jose Diaz-Balart</span></a></li>
+                                                <li><a><span class="liStatic">Tamron Hall</span></a></li>
+                                                <li><a><span class="liStatic">Andrea Mitchell Reports</span></a></li>
+                                                <li><a><span class="liStatic">Thomas Roberts</span></a></li>
+                                                <li><a><span class="liStatic">Kate Snow</span></a></li>
+                                                <li><a><span class="liStatic">Alex Witt</span></a></li>
+                                                <li><a><span class="liStatic">Melissa Harris-Perry</span></a></li>
+                                                <li><a><span class="liStatic">Your Business</span></a></li>
+                                                <li><a><span class="liStatic">Specials</span></a></li>
+                                                <li><a><span class="liStatic">Politics</span></a></li>
+                                                <li><a><span class="liStatic">MSNBC.COM</span></a></li>
+                                                <li><a><span class="liStatic">Newsforce</span></a></li>
+                                                <li><a><span class="liStatic">Politics Nation</span></a></li>
+                                                <li><a><span class="liStatic">Steve Kornacki</span></a></li>
+                                                <li><a><span class="liStatic">MS-Long Form</span></a></li>
+                                                <li><a><span class="liStatic">Generation to Generation</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">10AM</span></a></li>
+                                                <li><a><span class="liStatic">11AM</span></a></li>
+                                                <li><a><span class="liStatic">12PM</span></a></li>
+                                                <li><a><span class="liStatic">1PM</span></a></li>
+                                                <li><a><span class="liStatic">2PM</span></a></li>
+                                                <li><a><span class="liStatic">3PM</span></a></li>
+                                                <li><a><span class="liStatic">4PM</span></a></li>
+                                                <li><a><span class="liStatic">9AM</span></a></li>
+                                                <li><a><span class="liStatic">AM Joy</span></a></li>
+                                                <li><a><span class="liStatic">Breaking News</span></a></li>
+                                                <li><a><span class="liStatic">The Verge</span></a></li>
+                                                <li><a><span class="liStatic">NewsNation</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ed Show</span></a></li>
+                                                <li><a><span class="liStatic">Z-Now with Alex Wagner</span></a></li>
+                                                <li><a><span class="liStatic">Z-Reid Report</span></a></li>
+                                                <li><a><span class="liStatic">Z-Ronan Farrow</span></a></li>
+                                                <li><a><span class="liStatic">Z-The Cycle</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>MSNBC Primetime</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">MTP Daily</span></a></li>
+                                                <li><a><span class="liStatic">6PM</span></a></li>
+                                                <li><a><span class="liStatic">Hardball</span></a></li>
+                                                <li><a><span class="liStatic">All In</span></a></li>
+                                                <li><a><span class="liStatic">Rachel Maddow</span></a></li>
+                                                <li><a><span class="liStatic">Last Word</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>NBC News</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">BreakingNews.com</span></a></li>
+                                                <li><a><span class="liStatic">Executive</span></a></li>
+                                                <li><a><span class="liStatic">Marketing/Agency</span></a></li>
+                                                <li><a><span class="liStatic">NBCNews.com</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today - Events</span></a></li>
+                                                <li><a><span class="liStatic">tdy - Today.com</span></a></li>
+                                                <li><a><span class="liStatic">z-oldNewsgather/Coverage</span></a></li>
+                                                <li><a><span class="liStatic">z-TBDs</span></a></li>
+                                                <li><a><span class="liStatic">Investigative Unit</span></a></li>
+                                                <li><a><span class="liStatic">Pools</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>Other NBCU</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Bravo</span></a></li>
+                                                <li><a><span class="liStatic">E!</span></a></li>
+                                                <li><a><span class="liStatic">Football Night in America</span></a></li>
+                                                <li><a><span class="liStatic">Late Night</span></a></li>
+                                                <li><a><span class="liStatic">NBC Affiliate</span></a></li>
+                                                <li><a><span class="liStatic">NBC Ent Marketing (Agency)</span></a></li>
+                                                <li><a><span class="liStatic">NBC News Channel</span></a></li>
+                                                <li><a><span class="liStatic">NBC O&O </span></a></li>
+                                                <li><a><span class="liStatic">NBC Sports</span></a></li>
+                                                <li><a><span class="liStatic">Other</span></a></li>
+                                                <li><a><span class="liStatic">Oxygen</span></a></li>
+                                                <li><a><span class="liStatic">Sprout</span></a></li>
+                                                <li><a><span class="liStatic">SyFy</span></a></li>
+                                                <li><a><span class="liStatic">Tonight Show</span></a></li>
+                                                <li><a><span class="liStatic">USA</span></a></li>
+                                                <li><a><span class="liStatic">Weekend Sports</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>News Gathering</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">CVG-NorthEast</span></a></li>
+                                                <li><a><span class="liStatic">CVG-MidWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-South</span></a></li>
+                                                <li><a><span class="liStatic">CVG-SouthWest</span></a></li>
+                                                <li><a><span class="liStatic">CVG-WashDC</span></a></li>
+                                                <li><a><span class="liStatic">CVG-West</span></a></li>
+                                                <li><a><span class="liStatic">CVG-Intl</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a>LongForm</a>
+                                            <ul>
+                                                <li><a><span class="liStatic">Dateline</span></a></li>
+                                                <li><a><span class="liStatic">Peacock Productions</span></a></li>
+                                                <li><a><span class="liStatic">Meredith Vieira</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a> <span class="liStatic">NBC Learn</span></a></li>
+                                        <li><a><span class="liStatic">CNBC</span></a></li>
+                                        <li><a><span class="liStatic">Weather Channel</span></a></li>
+                                        <li><a> <span class="liStatic">Telemundo</span></a></li>
+                                        <li><a><span class="liStatic">Weekend tdy - Today</span></a></li>
+                                        <li><a><span class="liStatic">Weekend Nightly</span></a></li>
+                                        <li><a><span class="liStatic">Rossen</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="button-dashborad button-clear firequest-clear">Clear Filters</div>
+                        </div>
+                        <div class="dash-form-right">
+                            <div class="dash-header-datepicker">
+                                <div class="dateselect-dashboard fileIngestrequest-dateselect">
+                                    <div class="datepicker-select-container"><span class="label-date">Start Range: </span><span class="date-value"> </span></div>
+                                    <div class="datepicker-select-container"><span class="label-date">End Range: </span><span class="date-value"> </span></div>
+                                </div>
+                                <span class="dash-datepicker-icon fileIngestrequest-date"> </span>
+                                <div class="calender-container-fileIngestrequest"></div>
+                            </div>
+                            <div class="grid-search" id="editgrid-search">
+                                <input type="text" id="figrid-searchItem" class="searchbox" placeholder="search" />
+                            </div>
+                        </div>
+                    </div>
+                    <table id="FileGrid" class="display data-table-contanier"></table>
+                    <div id="Filepager"></div>
+                </div>
+                <div class="tab-content" id="das-Report-Grid">
+                    <div class="tab-header-container">
+                        <h1 class="grid-title">Reports</h1>
+                        <div class="edit-Cont">
+                            <div class="dashboard-drp-show">
+                            </div>
+                            <div class="button-dashborad button-clear report-clear">Clear Filters</div>
+                        </div>
+                        <div class="dash-form-right">
+                            <div class="dash-header-datepicker">
+                                <div class="dateselect-dashboard reports-dateselect">
+                                    <div class="datepicker-select-container"><span class="label-date">Start Range: </span><span class="date-value"> </span></div>
+                                    <div class="datepicker-select-container"><span class="label-date">End Range: </span><span class="date-value"> </span></div>
+                                </div>
+                                <span class="dash-datepicker-icon reports-date"> </span>
+                                <div class="calender-container-reports"></div>
+                            </div>
+                            <div class="grid-search" id="editgrid-search">
+                                <input type="text" id="reportgrid-searchItem" class="searchbox" placeholder="search" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="accordion-report">
+                        <h3 class="accordion-title accordion-title-msnbc">MSNBC Request</h3>
+                        <div class="accordion-content-section accordion-content-my-msnbc">
+                            <table id="MSNBCGrid" class="display data-table-contanier"></table>
+                            <div id="MSNBCpager"></div>
+                        </div>
+                        <h3 class="accordion-title accordion-title-tdy">TDY/WTDY Request</h3>
+                        <div class="accordion-content-section accordion-content-my-tdy">
+                            <table id="TDYGrid" class="display data-table-contanier"></table>
+                            <div id="TDYpager"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

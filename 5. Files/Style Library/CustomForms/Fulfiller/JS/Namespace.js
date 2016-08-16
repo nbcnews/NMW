@@ -1,0 +1,9 @@
+﻿var NBCU = {};
+NBCU.Fulfiller = function () { };
+NBCU.Fulfiller.Master = function () { };
+NBCU.Fulfiller.Helper = function () { };
+NBCU.Fulfiller.Who = function () { };
+NBCU.Fulfiller.What = function () { };
+NBCU.Fulfiller.When = function () { };
+NBCU.Fulfiller.Where = function () { };
+NBCU.Fulfiller.Resources = function () { };

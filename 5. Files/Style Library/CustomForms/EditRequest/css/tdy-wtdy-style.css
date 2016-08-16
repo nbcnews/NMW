@@ -1,0 +1,56 @@
+#EditRequest-tdy-wtdy .tdyNav .navi span {
+	padding-right: 28px;
+}
+.form-container-horizontal .cols .label-craft-editor {
+	width: 100px;
+	display: inline-block;
+}
+.form-group-craft-editor .display-dataform-new, .form-group-craft-editor-2 .display-dataform-new, .form-group-craft-editor-3 .display-dataform-new {
+	display: inline;
+	color:#0b2751;
+}
+.form-container-horizontal .form-group-craft-editor-2 .label-craft-editor {
+	width: 215px;
+}
+.form-container-horizontal .form-group-craft-editor-3 .label-craft-editor {
+	width: 150px;
+}
+.form-group-craft-editor .form-group-coldopen, .form-group-craft-editor .form-group-updates, .form-group-craft-editor .form-group-pretapes, .form-group-craft-editor-2 .form-group-revisionBRoll, .form-group-craft-editor-2 .form-group-tease, .form-group-craft-editor-2 .form-group-RevisionsSpots, .form-group-craft-editor-3 .form-group-ShowFixes, .form-group-craft-editor-3 .form-group-CrashPieces, .form-group-craft-editor-3 .form-group-NewB-roll {
+	margin-bottom: 8px;
+}
+.checkall-title {
+	font-size: 16px;
+	font-style: italic;
+	color: #0b2751 !important;
+	font-weight: bold;
+}
+#edr-tdy-wtdy-page .divider-line{margin:0}
+.checkbox-form{
+color:#0b2751;
+	float:left;
+	}
+.checkbox-form .label{padding-left:10px; float:none; font-weight:normal;}	
+.editortdy-checkall{
+	width:100%;
+	float:left;
+	}	
+.checkall-title{margin-bottom:18px;}	
+.checkbox-form{
+	margin-bottom:5px;
+	}	
+.textarea-comment-tdy{
+	height:40px;
+	margin-top:15px;
+border: 1px solid #979797;
+border-radius: 3px;
+width:81%;
+display:block !important;
+clear:left;
+	}	
+.tdy-amform-txtairdate{
+	width:84%;
+	}	
+
+#edr-tdy-wtdy-page .content-section{
+    margin-bottom:20px;
+}

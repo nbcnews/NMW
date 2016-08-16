@@ -1,0 +1,789 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/css/style-new-editrequestfullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/css/style-editrequestfullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/css/responsive-editrequestfullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/css/print-editrequestfullfiller.css" media="print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/daterangepicker.css">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/ERFulfiller.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/NBCU.ERFulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/NBCU.ERFulfiller.Summary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/NBCU.ERFulfiller.Craft.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ER-Fulfiller/js/NBCU.ERFulfiller.Producer.js"></script>
+<script>
+    $(function () {
+        $('#btn-print').click(function () {
+            window.print();
+        });
+    });
+</script>
+
+<div class="wrapper" id="editRequest-fulfiller">
+    <header class="header">
+        <div class="container-fluid ">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Edit request</h1>
+                <div class="header-right-booked">
+                    <div class="button-booked active-New" id="edrf-header-status">NEW</div>
+                    <div class="book-id">ER201612335</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="show-date-container">
+        <div class="showdate"> <span class="date-label">Edit Start Date:</span> <span class="value-field" id="er-header-startdate">04/08/16</span> </div>
+        <div class="showdate"> <span class="date-label">Slug:</span> <span class="value-field slugname" id="er-header-slug">Name of Slug here</span> </div>
+        <div class="showdate"> <span class="date-label">Request Status:</span> <span class="value-field" id="er-header-shootstatus">Firm</span> </div>
+        <div class="showdate"> <span class="date-label">Show:</span> <span class="value-field" id="er-header-showimg">TDY/ 7&amp;8</span> </div>
+    </div>
+    <div class="subpage-content-container">
+        <section class="content-section">
+            <div class="subpage-content subpage-ER-SummaryEdit" id="ERSummaryEditPage">
+                <h1 class="page-title">Summary <span class="button-edit" title="Summary">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-11">
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                    <div class="display-data1 mandatoryallignment">
+                                        <div id="erqf_peoplePickerRequesterDiv" class="textbox"></div>
+                                        <span class="display-data" id="edrf_Requester_value">FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Contact #</label>
+                                    <div class="display-dataform">
+                                        <input type="text" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX" id="edrf_contact_textbox">
+                                        <span class="display-data" id="edrf_contact_value">+1 (555) 555-5555</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group">
+                                    <label class="label label-display">Email</label>
+                                    <div class="display-dataform">
+                                        <input type="text" class="textbox" id="edrf_email_textbox">
+                                        <span class="display-data" id="edrf_email_value"></span>
+                                        <div class="valid-msg valid-msg-error">Invalid Email Format.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">
+                                        Producer/ <sup class="mandatory">*</sup><br>
+                                        Field Contact
+                                    </label>
+                                    <div class="display-dataform mandatoryallignment">
+                                        <div id="edrf_peoplePickerProducerDiv" class="textbox"></div>
+                                        <span class="display-data" id="edrf_Producer_value"> FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-6 form-group ERF-form-group-seniorproducer">
+                                    <label class="label label-display">
+                                        Senior Producer/Approver <sup class="mandatory">*</sup>
+                                    </label>
+                                    <div class="display-dataform mandatoryallignment">
+                                        <div id="edrf_SeniorProducerDiv" class="textbox"></div>
+                                        <span class="display-data" id="edrf_SeniorProducer_value"> FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-3-5 form-group ERF-form-group-slug">
+                                    <label class="label label-display">
+                                        Slug <sup class="mandatory">*</sup>
+                                    </label>
+                                    <div class="display-dataform mandatoryallignment">
+                                        <input type="text" id="edrf_summary_slug_textbox" class="textbox">
+                                        <span class="display-data" id="edrf_summary_slugname_value"> Slug Name example will go here</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group ERF-form-group-airdate">
+                                    <label class="label label-display">
+                                        Air Date
+                                    </label>
+                                    <div class="display-dataform">
+                                        <input type="text" disabled="" id="edrf_summary_txtairdate_textbox" class="textbox ProducerField">
+                                        <span id="edrf-summary-airdate" class="icon-datepicker"></span>
+                                        <div class="calendar-edrf-summary-airdate"></div>
+                                        <span class="display-data" id="edrf_summary_txtairdate_value">06/08/16</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-2-5 form-group ERF-formgroup-tbd01">
+                                    <label class="label label-display">TBD</label>
+                                    <div class="display-data1">
+                                        <input id="edrf-summary-airdateTBD" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf-summary-airdateTBD_value">No</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="cols cols-3-5 form-group ERF-form-group-location">
+                                    <label class="label label-display">
+                                        Location of Edit
+                                    </label>
+                                    <div class="display-dataform">
+                                        <select id="edrf_summary_location_edit" class="textbox">
+                                            <optgroup label="Bureau Location">
+                                                <option></option>
+                                                <option id="1">30 Rock</option>
+                                                <option id="2">Chicago</option>
+                                                <option id="3">London</option>
+                                                <option id="4">Los Angeles</option>
+                                                <option id="5">Washington</option>
+                                                <option id="6">Miami</option>
+                                            </optgroup>
+                                        </select>
+                                        <span class="display-data" id="edrf_summary_location_edit_value">Location</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="edrf_showunit" class="row">
+
+                            </div>
+
+                            <div class="row row-showunit">
+                                <div class="cols cols-4 form-group edr-summary-form-group-storyname">
+                                    <label class="label label-display">
+                                        Story Name <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">If Story Name exists in NewsConnect or other system search and include it here, this will help searching later on!</div>
+                                        </div>
+                                    </label>
+                                    <div class="display-dataform display-dataform-edr-summary-storyname">
+                                        <input type="text" id="edrf-summary-storyname" class="textbox ui-autocomplete-input" autocomplete="off">
+                                        <span class="display-data" id="edrf-summary-storyname_value"></span>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-4 form-group edr-summary-form-group-attachcrewID">
+                                    <label class="label label-display"> Attach Crew Request ID </label>
+                                    <div class="display-dataform display-dataform-edr-summary-attachcrewID">
+                                        <input type="text" id="edr-summary-attachcrewID" class="textbox">
+                                        <span class="display-data" id="edr-summary-attachcrewID_value"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--<div class="cols cols-4-5 form-group">
+                                <label class="label label-display">
+                                    Show Unit <sup class="mandatory">*</sup>
+                                </label>
+                                <div class="display-dataform mandatoryallignment">
+                                    <input id="edrf-summary-showunit" class="textbox edrf_summary_showunit_textbox">
+                                    <span class="display-data" id="edrf_summary_showunit_value">TDY 7a & 8a</span>
+                                    <div class="valid-msg valid-msg-error">Showunit and budgetcode is duplicated</div>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field </div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">
+                                    Budget Code
+                                </label>
+                                <div class="display-dataform">
+                                    <input id="edrf-summary-budgetcode" class="textbox edrf_summary_budgetcode_textbox">
+                                    <span class="display-data" id="edrf_summary_budgetcode_value">1234567</span>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subpage-content subpage-ER-craftEdit" id="ERcraftEditPage">
+                <h1 class="page-title">Craft Edit <span class="button-edit" title="Craft">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-11">
+                            <div class="row">
+                                <div class="cols cols-3-5 form-group" id="edr-craft-length">
+                                    <label class="label label-display">Length of Piece </label>
+                                    <div class="display-data1">
+                                        <div class="textbox">
+                                            <input id="edrf-PieceMinutes" type="text" maxlength="3" class="textbox textbox-small">minutes <input id="edrf-PieceSeconds" type="text" maxlength="3" class="textbox-small">seconds
+                                        </div>
+                                        <span class="display-data" id="edrf_length_time_value">
+                                            6 minute<span class="singular-hide">s</span> 30 second<span class="singular-hide">
+                                                s<span></span>
+                                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-2-5 form-group" id="edr-craft-tbd">
+                                    <label class="label label-display">TBD</label>
+                                    <div class="display-data1">
+                                        <input id="edrf-Piecetbd" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf_tbd_value">No</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group" id="edr-craft-versions">
+                                    <label class="label label-display">How many Versions? </label>
+                                    <div class="display-data1">
+                                        <input id="edr-howmany-textbox" type="text" maxlength="3" class="textbox textbox-small">
+                                        <span class="display-data" id="edrf_howmany_value">3</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group" style="padding-right:0">
+                                    <label class="label label-display">Craft Edit time needed</label>
+                                    <div class="display-data1">
+                                        <div class="textbox">
+                                            <input id="edrf_PieceDays_textbox" type="text" maxlength="3" class="textbox-small">days <input id="edrf_PieceHrs_textbox" type="text" maxlength="3" class="textbox-small">hours <input id="edrf_PieceMin_textbox" type="text" maxlength="3" class="textbox-small">mintues
+                                        </div>
+                                        <span class="display-data" id="edrf_craftedit-time_value">1 day<span class="singular-hide">s</span> 2 hour<span class="singular-hide">s</span> 3 minute<span class="singular-hide">s</span></span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group" style="padding-right:0">
+                                    <label class="label label-display">Edit Start Date</label>
+                                    <div class="display-data1">
+
+                                        <input class="edrfcraft-startdate textbox" type="text" disabled="" id="edrf_craft_startdate_textbox">
+                                        <span id="edrf-summary-start-date" class="icon-datepicker"></span>
+                                        <div class="calender-conatainer-edrf-craft"></div>
+                                        <span class="display-data" id="edrf_craft_startdate_value">6/8/16</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group" style="padding-right:0">
+                                    <label class="label label-display">Requested Edit Session Start at</label>
+                                    <div class="display-data1">
+                                        <select class="textbox" id="edrf-RequestedEditSection">
+										<option></option>
+                                            <option>1 AM</option>
+                                            <option>2 AM</option>
+                                            <option>3 AM</option>
+                                            <option>4 AM</option>
+                                            <option>5 AM</option>
+                                            <option>6 AM</option>
+                                            <option>7 AM</option>
+                                            <option>8 AM</option>
+                                            <option>9 AM</option>
+                                            <option>10 AM</option>
+                                            <option>11 AM</option>
+                                            <option>12 AM</option>
+                                            <option>1 PM</option>
+                                            <option>2 PM</option>
+                                            <option>3 PM</option>
+                                            <option>4 PM</option>
+                                            <option>5 PM</option>
+                                            <option>6 PM</option>
+                                            <option>7 PM</option>
+                                            <option>8 PM</option>
+                                            <option>9 PM</option>
+                                            <option>10 PM</option>
+                                            <option>11 PM</option>
+                                            <option>12 PM</option>
+                                        </select>
+                                        <span class="display-data" id="edrf_RequestedEditSection_value">6/8/16</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-crashedit">
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">Is this a crash edit?</label>
+                                    <div class="display-data1">
+                                        <input id="edrf-IsCrashEdit" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf_edittime_value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">
+                                        Will this be recut for the web?
+                                    </label>
+                                    <div class="display-data1">
+                                        <input id="edrf-Isrecut" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf_recutweb_value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">
+                                        Was there field-editing?
+                                    </label>
+                                    <div class="display-data1">
+                                        <input id="edrf_IsFieldEditing_textbox" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf_IsFieldEditing_value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">
+                                        Need edit b-roll/teases/VOs/SOTS?
+                                    </label>
+                                    <div class="display-data1">
+                                        <input id="edrf_IsCraftEditBrollTeasesVosSOTS_textbox" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edrf_IsCraftEditBrollTeasesVosSOTS_textbox_value">Yes</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row row-additionalreq">
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Additional Requirements: </label>
+                                    <div class="display-data1 display-additionalrequirments">
+                                        <div class="form-edr-craft-producer" style="display:none">
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Music</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Graphics/Stills</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Color Correct</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Audio Correct</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Effects</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">Other</label>
+                                                <textarea class="other-textarea" maxlength="1000" style="display:none"></textarea>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="AdditionalRequirements">
+                                                <label class="label label-display">All of the Above</label>
+
+                                            </div>
+                                        </div>
+                                        <!--<input id="edrf_addRequirements-textbox" type="text" class="textbox">-->
+                                        <span class="display-data" id="edrf_addRequirements-value">Music, Graphics/Stills/Effect</span>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-4 form-group shwunit-msnbc">
+                                    <label class="label label-display"> Source Material <br />(MSNBC Only): </label>
+                                    <div class="display-data1 display-sourcematerial">
+                                        <div class="box-edr-craft-produer box-edr-Sourcematerial-checkbox" style="display:none;">
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_wg01" name="Sourcematerial">
+                                                <label class="label label-display">WG01</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_wg06" name="Sourcematerial">
+                                                <label class="label label-display">WG06</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_tobeingested" name="Sourcematerial">
+                                                <label class="label label-display">To Be Ingested</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_tobeshot" name="Sourcematerial">
+                                                <label class="label label-display">To Be Shot</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_restoringfrom" name="Sourcematerial">
+                                                <label class="label label-display">Restoring From</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" id="edr_archives" name="Sourcematerial">
+                                                <label class="label label-display">Archives</label>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="Sourcematerial" id="edr_other">
+                                                <label class="label label-display">Other</label>
+                                                <textarea class="other-textarea-sourcematerial" id="ta_sourceMaterial" maxlength="1000"></textarea>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" class="checkbx-left" name="Sourcematerial" id="edr_alloftheabove">
+                                                <label class="label label-display">All of the Above</label>
+                                            </div>
+
+                                        </div>
+                                        <span class="display-data" id="edrf_sourcematerial-value"></span>
+                                    </div>
+
+                                </div>
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Comments: </label>
+                                    <div class="display-data1">
+                                        <textarea maxlength="1000" id="edrf_CraftEditComments" class="textarea-comment textbox"></textarea>
+                                        <span class="display-data" id="edrf_CraftEditComments_value"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-ER-ProducerEdit" id="ERProducerEditPage">
+                <h1 class="page-title">Producer Edit <span class="button-edit" title="Producer">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display">What are you editing?</label>
+                            <div class="display-data1">
+                                <div class="box-edr-producer-produer" style="display:none">
+                                    <div class="form-edr-producer-producer">
+                                        <div class="form-group">
+                                            <label class="label label-display">Spot</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-Spot" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Rough Cut</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-RoughCut" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Web Piece</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-WebPiece" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">B-Roll/Teases</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-BRollTeases" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Sizzle Reel</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-SizzleReel" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Promos</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-Promos" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Awards</label>
+                                            <div class="form-filed-edr-producer">
+                                                <input type="text" value="0" class="edr-producer-textbox" id="edr-Awards" maxlength="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="display-data" id="edrf_addRequirements_value">Spot 1,Rough Cut 4, Web Piece 6</span>
+                            </div>
+                        </div>
+                        <div style="padding-right:0" class="cols cols-3-5 form-group">
+                            <label class="label label-display">Length of Piece </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input type="text" class="textbox-small" maxlength="3" id="edr_producer_PieceMinutes_textbox">minute<span class="singular-hide">s</sapn> <input type="text" class="textbox-small" maxlength="3" id="edr-producer-PieceSeconds">second<span class="singular-hide">s</span>
+                                </div>
+                                <span id="edr_producer_PieceMinutes_value" class="display-data">6 minute<span class="singular-hide">s</span> 30 second<span class="singular-hide">s</span></span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div style="padding-left:0" class="cols cols-1-5 form-group" id="edr-producers-tbd-new">
+                            <label class="label label-display">TBD</label>
+                            <div class="display-data1">
+                                <input type="checkbox" id="edrf_producer_Piecetbd_textbox" style="display:none">
+                                <span id="edrf_producer_Piecetbd_value" class="display-data">No</span>
+                            </div>
+                        </div>
+
+                        <div style="padding-right:0" class="cols cols-4-5 form-group">
+                            <label class="label label-display">Craft Edit time needed </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input id="edr_producer_crafttimedays_textbox" type="text" maxlength="3" class="textbox-small">days <input id="edr_producer_crafttimehrs_textbox" type="text" maxlength="3" class="textbox-small">hours <input id="edr_producer_crafttimemin_textbox" type="text" maxlength="3" class="textbox-small">mintue<span class="singular-hide">s</span>
+                                </div>
+                                <span id="edr_producer_crafttime_value" class="display-data">1 day 2 hours 3 minutes</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-ER-fullfilment" id="ERFullfilmentPage">
+                <h1 class="page-title">Fulfillment section <span class="button-edit" title="Fulfillment">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="add-fullfillment-container">
+                        <div class="additonal-editor">
+                            <div class="row row-fulfilement-editor">
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Editor Assigned:</label>
+                                    <div class="display-dataform">
+                                        <div id="edrf_editor_ff_assign_textbox_0" class="textbox"></div>
+                                        <span class="display-data" id="edrf_editor_ff_assign_value_0">Editor Name </span>
+                                    </div>
+
+                                </div>
+
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Room</label>
+                                    <div class="display-dataform">
+                                        <select type="text" class="selectbox textbox" id="edrf_ff_room_textbox_0">
+                                            <option></option>
+                                        </select>
+                                        <span class="display-data" id="edrf_ff_room_value_0"></span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row row-2">
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned From:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edrf_ff_assifrom_textbox_0" readonly />
+                                                <div class="calendar-edrf-fulfil-date" id="calendar-edrf-fulfil-date_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edrf_ff_assifromTime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edrf_ff_assifromsec_textbox_0" maxlength="3" value="">
+                                                <!--<select type="text" class="selectbox" id="edrf_ff_assifromsec_textbox_0">
+                                                    <option>00</option>
+                                                </select>-->
+                                            </div>
+                                            <span class="display-data" id="edrf_ff_assifrom_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned To:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edrf_ff_assito_textbox_0" readonly />
+                                                <div class="calendar-edrf-fulfil-to-date" id="calendar-edrf-fulfil-to-date_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edrf_ff_assitotime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edrf_ff_assitosec_textbox_0" maxlength="3" value="">
+                                                <!--<select type="text" class="selectbox" id="edrf_ff_assitosec_textbox_0">
+                                                    <option>00</option>
+                                                </select>-->
+                                            </div>
+                                            <span class="display-data" id="edrf_ff_assito_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addbutton-container"> <span class="button-add button-addeditior">+ add additional editor</span> </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="cols cols-9 form-group">
+                                <label class="label label-display">Fulfiller Comments</label>
+                                <div class="display-data1">
+                                    <textarea class="textarea-comment cols-12" id="edrf_ff_comments" maxlength="1000"></textarea>
+
+                                </div>
+
+                                <div class="button-blue-container">
+                                    <span class="button-bule-mail">Confirmation Email</span>
+                                    <!--<span class="button-bule-mail">Save As Draft</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subpage-content subpage-ER-fullfilment" id="ERPostEditPage">
+                    <h1 class="page-title">Post Edit Confirmation</h1>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display">Post Edit Final Air Date:</label>
+                                <div class="display-dataform">
+                                    <input type="text" class="selectbox" id="edrf_posteditairdate" readonly />
+                                    <span class="icon-datepicker" id="edrf_posteditairdate_icon"></span>
+                                    <div class="calendar-edrf_posteditairdate"></div>
+                                </div>
+                            </div>
+                            <div class="cols cols-4-5 form-group">
+                                <div class="cols-12">
+                                    <label class="label label-display">Actual Length:</label>
+                                    <div class="display-dataform">
+                                        <div class="">
+                                            <input type="text" class="selectbox textbox-small" maxlength="3" id="edrf_actleng_min_textbox" style="width:55px"> <strong class="lab-text">Minutes</strong> <input type="text" class="selectbox textbox-small" maxlength="3" id="edrf_actleng_sec_textbox" style="width:55px"><strong class="lab-text">Seconds</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row">
+
+                            <div class="cols cols-4 form-group">
+                                <div class="cols-12">
+                                    <label class="label label-display">Assigned To:</label>
+                                    <div class="display-dataform">
+                                        <div class="cols-5" style="float:left">
+                                            <input type="text" class="selectbox datepicker-textbox" id="edrf_post_assito" readonly />
+                                            <div class="calendar-edrf-postedit-to-date"></div>
+                                        </div>
+                                        <div class="cols-4" style="float:left">
+                                            <select type="text" class="selectbox" id="edrf_post_assito_time">
+                                                <option>12:00am</option>
+                                            </select>
+                                        </div>
+                                        <div class="cols-2" style="float:left">
+                                            <select type="text" class="selectbox" id="edrf_post_assito_sec">
+                                                <option>00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!-- <div class="row">
+                             <div class="cols cols-8 form-group">
+                                 <label class="label label-display">Fulfiller Comments</label>
+                                 <div class="display-data1">
+                                     <textarea class="textarea-comment cols-12" id="edrf_Fulfiller_Comments" maxlength="1000"></textarea>
+                                 </div>
+                             </div>
+                         </div>-->
+
+                        <div class="row row-postedit-echeckbox">
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">Was rough cut completed by Producer?</label>
+                                <div class="display-data1">
+                                    <input type="checkbox" id="edrf_postcut_chkbx" />
+                                </div>
+                            </div>
+                            <div class="cols cols-2 form-group">
+                                <label class="label label-display">Piece was killed?</label>
+                                <div class="display-data1">
+                                    <input type="checkbox" id="edrf_killed_chkbx" />
+                                </div>
+                            </div>
+                            <div class="cols cols-3 form-group">
+                                <label class="label label-display">Post Edit Confirmation Completed?</label>
+                                <div class="display-data1">
+                                    <input type="checkbox" id="edrf_confirm_chkbx" />
+                                </div>
+                            </div>
+                            <div class="cols cols-3 form-group formgroup-actualedit">
+                                <label class="label label-display">Actual # of b-rolls edited:</label>
+                                <div class="display-data1">
+                                    <input id="edrf_confirm_brolls" type="text" class="selectbox textbox-small2" style="width:55px" maxlength="5" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-postedit-comments">
+                            <div class="cols cols-12 form-group" style="margin-bottom:25px;">
+                                <label class="label label-display">Post Edit Comments: </label>
+                                <div class="display-data1" style="width:87%;">
+                                    <textarea class="textarea-comment cols-12" id="edrf_postcomment" maxlength="1000"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--<div class="row">
+                            <div class="cols cols-12 button-group button-group-status">
+                                <label class="label label-display label-status">
+                                    Request Status <sup class="mandatory">*</sup> <br>
+                                    <small><i>Select the status of <br />request</i></small>
+                                </label>
+                                <div class="display-fullwidth">
+                                    <div class="cols-2 buttons-cols"><a title="New" class="button button-new active">New</a></div>
+                                    <div class="cols-2 buttons-cols"><a title="Revised" class="button button-revised">Revised</a></div>
+                                    <div class="cols-2 buttons-cols"><a title="Booked" class="button button-booking">Booked</a></div>
+
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+
+                <p class="footer-version">
+                    Created at 6/8/2016 5:08 PM bt Koss, Mitch (78632783)<br>
+                    Last modified at 6/8/2016 5:08 PM by Workflow on behalf of Koss, Mitch<br>
+                </p>
+        </section>
+        <div id="valideditsection" class="valid-msg valid-msg-error" style="display: none;">Please save the edit section</div>
+        <div class="button-bottom-next"><span id="btn-print" title="Print" class="button-next">Print</span><span id="btn-submit" title="Submit" class="button-next">Submit</span><span id="btn-cancel" title="Cancel" class="button-next">Cancel</span> </div>
+    </div>
+</div>

@@ -1,0 +1,2419 @@
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    body {
+        overflow-x: hidden;
+        font-size: 13px !important;
+    }
+
+    .wrapper {
+        font-size: 13px;
+    }
+
+    #ms-designer-ribbon {
+        display: none;
+    }
+
+    #contentBox {
+        min-width: 100%;
+    }
+
+    #s4-workspace {
+        width: 100% !important;
+    }
+
+    #s4-ribbonrow {
+        display: none !important;
+    }
+
+    #suiteBarLeft {
+        display: none;
+    }
+
+    #suiteBar {
+        display: inherit !important;
+        float: left;
+        width: 100%;
+    }
+
+    #DeltaSuiteBarRight.ms-core-deltaSuiteBarRight {
+        width: 100%;
+        float: left;
+    }
+
+    .display-dataform .sp-peoplepicker-userSpan {
+        white-space: inherit;
+    }
+
+    .display-dataform .ms-entity-resolved {
+        display: inline;
+    }
+
+    #suiteBarRight {
+        float: left;
+        width: 100%;
+    }
+
+    #welcomeMenuBox {
+        float: left;
+    }
+
+    #suiteBarButtons {
+        float: right;
+    }
+
+    #s4-titlerow {
+        display: none !important;
+    }
+
+    .sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer {
+        width: 100% !important;
+    }
+
+    .button-remove-sp-cls {
+        right: -31px;
+    }
+
+    #peoplePickerAdditionRequestDiv {
+        width: calc(100% - 25px) !important;
+    }
+
+    #whoPage .form-container-horizontal .cols .display-dataform-mobile {
+        width: 100%;
+    }
+
+    .button-bottom-next, .subpage-content-container .button-bottom-next {
+        position: fixed;
+        float: right;
+        margin-bottom: 0;
+        margin-top: 0;
+        bottom: 0;
+        z-index: 1000;
+        background-color: #0b2751;
+        width: 100%;
+        height: 50px;
+        display: block;
+    }
+
+    .button-next:first-child {
+        border-left: 0;
+    }
+
+    .button-edit {
+        font-size: 0;
+        width: 30px;
+        height: 30px;
+        background: url(../images/icon-edit.png) no-repeat center / 100%;
+        display: inline-block;
+    }
+
+    .button-next {
+        border-radius: 0;
+        float: left;
+        width: 50%;
+        height: 100%;
+        box-shadow: none;
+        margin: 0;
+        border-left: 1px solid #fff;
+        line-height: 50px;
+    }
+
+    .subpage-content-container .button-bottom-next .button-next {
+        width: 33.33%;
+    }
+
+    #ui-id-1.ui-autocomplete.ui-menu {
+        width: calc(100% - 30px) !important;
+    }
+
+    .label {
+        margin-bottom: 5px;
+    }
+
+    .navigation {
+        display: block;
+        position: relative;
+        width: 220px;
+        margin-top: 70px;
+        height: auto;
+        padding-bottom: 0;
+        background-color: #11356b;
+        overflow: auto;
+        left: -220px;
+        /*z-index: 1000;*/
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+        .navigation:before {
+            background-color: #11356b;
+            height: 100%;
+            position: fixed;
+            width: 220px;
+            left: -220px;
+            content: '';
+            z-index: -1;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .navigation.active, .navigation.active:before {
+            left: 0;
+        }
+
+    .nav-button {
+        display: block;
+        padding: 11px 8px;
+        width: 42px;
+        height: 38px;
+        margin: 16px 15px 16px 0;
+    }
+
+        .nav-button.active {
+            background-color: #1b54aa;
+        }
+
+    #BureauCamera .nav-button {
+        display: none;
+    }
+
+    .icon-bar {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+    }
+
+    .nav-button.active .icon-bar:nth-child(1) {
+        transform: rotate(45deg);
+        top: 8px;
+        left: -1px;
+    }
+
+    .nav-button.active .icon-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-button.active .icon-bar:nth-child(3) {
+        transform: rotate(-45deg);
+        top: -8px;
+    }
+
+    .sidebar {
+        width: 100%;
+        background-color: transparent;
+    }
+
+        .sidebar::before {
+            display: none;
+        }
+
+    .content-container {
+        margin-left: 0;
+        padding: 70px 15px 60px 15px;
+        float: left;
+        position: relative;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        left: 0;
+        display: block;
+    }
+
+    .row-dynamic .form-group {
+        margin-bottom: 0;
+    }
+
+    h1.page-title, .page-title {
+        margin: 0 -15px;
+        font-size: 20px;
+        padding: 8px 15px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #dedede;
+        margin-bottom: 15px;
+        position: relative;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .content-container.active {
+        left: 220px;
+    }
+
+    .active-mobile {
+        display: block;
+    }
+
+    .content-section {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .label br {
+        display: none;
+    }
+
+    .sidebar-header {
+        position: fixed;
+        height: 70px;
+        z-index: 1000;
+    }
+
+    .sidebar .ms-siteicon-a, .header .ms-siteicon-a {
+        float: left;
+        margin: 17px 0 18px 15px;
+    }
+
+    .sidebar-header .title, .header .sidebar-header .sidebar .title {
+        width: auto;
+        font-size: 16px;
+        float: none;
+        display: inline-block;
+        height: 50px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        background-position: right 25px;
+        background-size: 20px;
+    }
+
+    .sidebar .ms-siteicon-a img {
+        width: 60px;
+        float: left;
+    }
+
+    .footer {
+        position: relative;
+        display: block;
+        z-index: 1000;
+        left: -220px;
+        width: 220px;
+        bottom: 0;
+        padding: 20px 0;
+        /*top:420px;*/
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .sidebar {
+        width: 220px;
+        position: absolute;
+    }
+
+    .footer div {
+        float: left;
+        width: 100%;
+    }
+
+    .footer.active {
+        left: 0;
+        z-index: 999;
+    }
+
+    .subpage-content-container {
+        padding-top: 0;
+    }
+
+    .page-title .button-edit {
+        float: right;
+    }
+
+    .form-container {
+        margin: 0;
+        font-size: inherit;
+    }
+
+    .row {
+        margin: 0 -15px;
+    }
+
+    .cols {
+        padding: 0 15px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-container-horizontal .cols .label {
+        float: left;
+        margin-bottom: 7px;
+        width: auto;
+        position: relative;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .display-dataform .selectbox {
+        width: calc(100% - 17px);
+    }
+
+    .form-container {
+        position: relative;
+    }
+
+    .form-container-horizontal .cols-3-5 {
+        width: 50%;
+    }
+
+    .form-container-horizontal .cols .display-data1-new, .form-container-horizontal .cols .display-dataform, .form-container-horizontal .cols .display-data1-edr-summary-signin
+    
+     {
+        width: 100%;
+        float: left;
+    }
+    .FLN-summary-form-group-contact,.FLN-summary-form-group-email{
+
+        width:100% !important;
+       
+    }
+    .FLN-summary-form-group-producer-requestor {
+        margin-bottom:0 !important
+    }
+
+    .form-container-horizontal .cols .display-dataform-edr-summary-contact {
+        padding-left: 0 !important;
+        width: 100%;
+        float: left;
+    }
+    .FLN-summary-form-group-airdate,.FLN-summary-form-group-locaton-edit {
+        width:62.66%;
+    }
+    .FLN-summary-form-group-tbd, .FLN-summary-form-group-asap {
+        width:auto;
+        padding:0;
+        margin:35px 0 0 0;
+    }
+    .page-section-FLN-summary .btn-FLN .button-next{
+        width:100%;
+    }
+    .edr-summary-form-group-contact {
+        width: 100% !important;
+        float: left;
+    }
+    .FLN-form-group-quantity,.FLN-form-group-device,{
+        width:100%;
+    }
+    .FLN-device-camera-form {
+        margin-right:0;
+        width:100%;
+    }
+    .box-edr-craft-checkbox, .box-edr-producer-produer, .box-edr-LNGF-producer-produer {
+        width:100%;
+    }
+    .addbutton-qty {
+        padding-left:20px;
+        padding-right:20px;
+        margin-bottom:15px;
+    }
+    .othertxt {
+        width:95% !important;
+    }
+        .FLN-form-group-quantity .display-dataform-FLN-summary-slug {
+            padding-left:0
+        }
+    .edr-summary-form-group-email {
+        width: 100% !important;
+        float: left;
+    }
+
+    .form-container-horizontal .cols .display-dataform-edr-summary-producer {
+        width: 100% !important;
+        float: left;
+    }
+
+    .form-container-horizontal .cols .display-dataform-edr-summary-email {
+        width: 100% !important;
+        float: left;
+    }
+
+    .form-container-horizontal .cols .display-dataform-edr-summary-senior-Producer {
+        width: 100% !important;
+        float: left;
+    }
+
+    .form-edit-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        width: auto;
+        padding: 0;
+        z-index: 10;
+        margin-bottom: 0;
+    }
+
+    .form-container-horizontal-768 .cols .display-data-chekbox {
+        width: 100%;
+    }
+
+    .form-container-horizontal-768 .cols .label {
+        width: 240px;
+    }
+
+    .selectbox-mini {
+        width: 100%;
+        padding: 0 7px;
+        font-size: inherit;
+    }
+
+    select.selectbox-mini {
+        padding: 0;
+    }
+
+    .additionrequest {
+        margin: -5px 0 10px 0;
+    }
+
+    .form-group-attach .field-input .text-box {
+        width: calc(100% - 25px);
+        height: 28px;
+    }
+
+    .model-form-group {
+        padding: 0;
+        border: none;
+    }
+
+    .popupscreen {
+        display: block;
+        top: inherit;
+    }
+
+    .popupscreen-thanks {
+        display: none;
+    }
+
+    .model-form-container {
+        top: 70px;
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        background-color: #fff;
+    }
+
+        .model-form-container h1.page-title, .model-form-container .page-title {
+            font-size: 20px;
+            padding: 0 15px;
+            margin-bottom: 30px;
+        }
+
+        .model-form-container.model-form-container h1.page-title, .model-form-container.model-form-container .page-title {
+            background: transparent;
+            border-bottom: none;
+            margin-top: -84px !important;
+            width: 100%;
+            float: left;
+            font-size: 20px;
+            text-align: center;
+        }
+
+    .overlay {
+        display: none;
+    }
+
+    .model-form-group .form-group {
+        width: 100%;
+        box-shadow: none;
+        /*height: 150px;*/
+        margin: 0;
+        padding: 5px 10px;
+    }
+
+    .model-form-container .form-group .label, .model-form-container .form-group .label-disable {
+        height: 100%;
+        padding: 10px 15px;
+        border-radius: 5px;
+        word-wrap: normal;
+        white-space: normal;
+        word-break: break-strict;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .mandatory {
+        position: absolute;
+        right: 3px;
+        top: 8px;
+    }
+
+    .form-assignment .mandatory {
+        right: 24px;
+        top: 6px;
+    }
+
+    .cols-whatpage .label {
+        width: auto !important;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .form-attach-container .field-input {
+        width: 46%;
+    }
+
+
+    .cols-whatpage .field-input {
+        width: 100%;
+    }
+
+    .cols-shoot .form-shoot {
+        width: 50%;
+    }
+
+    .cols-shoot .field-input {
+        width: 100% !important;
+    }
+
+    .form-talent, .form-budget {
+        width: 50%;
+        padding: 0 0;
+    }
+
+    .cols-showunit .form-showunit, .cols-showunit .form-budget {
+        width: 50%;
+    }
+
+    .cols-whatpage .form-shoot .field-input, .cols-whatpage .form-talent .field-input, .cols-whatpage .form-showunit .field-input, .cols-whatpage .form-budget .field-input, .cols-whatpage .form-group-upload .field-input {
+        width: 100% !important;
+    }
+
+    .form-shoot, .form-showunit {
+        padding-right: 7px;
+    }
+
+    .form-talent .forms-add-conatiner, .form-budget {
+        position: relative;
+        padding-left: 7px;
+    }
+
+    .button-remove-talent, .button-remove-showunit {
+        right: -8px;
+    }
+
+    .form-group-upload {
+        width: 100%;
+    }
+
+        .form-group-upload .field-input {
+            width: 122px !important;
+        }
+
+    .form-group-attach {
+        width: 100%;
+        padding: 0 0;
+    }
+
+    .cols-whatpage .form-group-attach .field-input {
+        width: 100%;
+    }
+
+    .cols-contact-form .form-Bureau {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .form-Bureau .field-input {
+        width: 100%;
+    }
+
+    .cols-contact-form .label {
+        width: auto;
+        position: relative;
+    }
+
+    .form-address .field-input {
+        width: 100%;
+    }
+
+    .cols-contact-form .field-input {
+        width: 100%;
+    }
+
+    .cols-contact-form .form-city, .cols-contact-form .form-state, .cols-contact-form .form-zip, .cols-contact-form .form-country {
+        width: 50%;
+        padding: 0;
+    }
+
+    .address-group {
+        float: none;
+        margin: 0 -10px;
+        width: initial;
+    }
+
+        .address-group .form-group {
+            padding: 0 10px !important;
+        }
+
+    .date-picker-cols .field-input {
+        width: 100% !important;
+    }
+
+    .date-picker-cols .label, .time-zone-cols .label {
+        width: auto;
+        position: relative;
+    }
+
+    .time-zone-cols .form-group {
+        margin-bottom: 10px;
+    }
+
+    .time-zone-cols .field-input {
+        width: 100% !important;
+    }
+
+    .time-zone-cols .text-box-mini {
+        width: 30.5%;
+    }
+
+    .form-shoot-conatainer {
+        margin-bottom: 0;
+    }
+
+        .form-shoot-conatainer .form-group .field-input {
+            width: 100%;
+        }
+
+        .form-shoot-conatainer .label {
+            width: auto;
+            position: relative;
+        }
+
+            .form-shoot-conatainer .label br {
+                display: none;
+            }
+
+        .form-shoot-conatainer .form-group {
+            margin: 0;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+
+    .sdControl .shoot-textbox {
+        width: calc(100% - 135px);
+    }
+
+    .icon-close {
+        background-size: 100% auto;
+        height: 20px;
+        right: -26px !important;
+        top: 7px;
+        width: 20px;
+        z-index: 10;
+    }
+
+    .resource-title .step5-box {
+        font-size: 16px;
+    }
+
+    .selectbox-full-large .shoot-selected {
+        width: 100%;
+    }
+
+    .container-725 {
+        width: 100%;
+        float: left;
+        margin: 0;
+    }
+
+    .resource-title {
+        margin-bottom: 0;
+        padding: 0 0;
+        margin-top: -1px;
+    }
+
+    .step5-container {
+        padding: 15px 15px 0px 15px;
+        background-color: #d8d8d8;
+    }
+
+        .step5-container .form-group {
+            margin: 0 0 15px 0;
+        }
+
+            .step5-container .form-group .label, .form-group-step5 .sug-text {
+                width: auto;
+                width: calc(100% - 70px);
+            }
+
+    .estimate-laborcost-conatiner {
+        margin: 0;
+    }
+
+    .form-container-override .form-group .field-input {
+        width: 100% !important;
+        padding-right: 15px;
+    }
+
+    .sug-text {
+        font-size: 14px;
+    }
+
+    .form-container-horizontal .cols .display-dataform-mobile {
+        width: 90%;
+    }
+
+    #bns-whoPage .form-container-horizontal .cols .display-dataform-mobile {
+        width: 100%;
+    }
+
+    .model-form-container {
+        padding: 0;
+    }
+
+    .info-address {
+        float: none;
+        width: auto;
+    }
+
+    .model-form-container {
+        display: table;
+    }
+
+        .model-form-container .model-form-group {
+            display: table-cell;
+            vertical-align: middle;
+            float: none;
+        }
+
+    .form-need-contaier {
+        margin-bottom: 0;
+    }
+
+    .container-725 .cols {
+        margin-bottom: 10px;
+    }
+
+    .text-box {
+        padding: 0 7px;
+    }
+
+    .browfe-info {
+        background-size: 11px;
+        padding-left: 17px;
+    }
+
+    .form-container-override {
+        margin-bottom: 0;
+    }
+
+    .header .container-fluid, .container-fluid .header {
+        padding: 0;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    .header-right-booked {
+        display: none;
+    }
+
+    .addtional-info-container {
+        position: static;
+    }
+
+    .additional-info {
+        left: 0;
+        z-index: 10;
+    }
+
+    .cols-whatpage, .Corrs-cols-whatpage, .bns-cols-whatpage {
+        padding-right: 15px !important;
+    }
+
+    .ms-core-overlay {
+        background-color: transparent;
+    }
+
+    #peoplePickerAdditionalUsersbnsDiv {
+        width: 90% !important;
+    }
+
+    #BreakingNews .label {
+        width: auto !important;
+    }
+
+    #BreakingNews #bns-whatPage .field-input {
+        width: 100% !important;
+    }
+
+    #BreakingNews #bns-whatPage .mandatory {
+        position: relative;
+        top: -0.5em;
+        ;
+        left: inherit;
+    }
+
+    #BreakingNews #bns-whatPage .bns-forms-add-conatiner {
+        width: 70%;
+    }
+
+    #BreakingNews #bns-whatPage .bns-addbutton-container {
+        margin-top: 35px;
+    }
+
+    #BreakingNews #bns-whatPage .bns-forms-add-conatiner.active {
+        margin-right: 0;
+    }
+
+    #BreakingNews #bns-whatPage .bns-form-showunit, #BreakingNews #bns-whatPage .bns-form-budget {
+        width: 50%;
+    }
+
+    #BreakingNews #bns-whatPage .bns-form-group-attach {
+    }
+
+        #BreakingNews #bns-whatPage .bns-form-group-attach .field-input .text-box {
+            width: 100% !important;
+        }
+
+    #BreakingNews #bns-whatPage .bns-form-group-upload {
+        margin-top: 15px !important;
+    }
+
+    #BreakingNews #bns-wherePage .cols-contact-form .form-Bureau {
+        margin-bottom: 0;
+    }
+
+    .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #BreakingNews .bns-time-zone-cols .label {
+        width: 95px !important;
+    }
+
+    #BreakingNews .bns-time-zone-cols .field-input {
+        width: calc(100% - 95px);
+    }
+
+    #BreakingNews .form-group-camera-BRN .field-input, #BreakingNews .form-group-audio-BRN .field-input {
+        width: auto;
+    }
+
+    .bns-cols-whatpage .form-group {
+        margin-bottom: 30px !important;
+    }
+
+    .Corrs-cols-showunit .Corrs-button-remove-showunit, .bns-cols-showunit .bns-button-remove-showunit {
+        top: 0;
+        right: 0;
+    }
+
+    .BRC-addbutton-container {
+        padding-left: 0;
+    }
+
+    .BRC-additionrequest .BRC-addbutton-container {
+        float: left;
+        margin-bottom: 0;
+    }
+
+    .button-remove-sp-bc {
+        right: -30px;
+    }
+
+    .BRC-form-assignment {
+        margin-top: 20px !important;
+    }
+
+    .BRCform-container-horizontal .BRC-cols-whatpage .BRC-form-story .field-input,
+    .BRCform-container-horizontal .BRC-cols-whatpage .BRC-form-assignment .field-input {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .BRC-form-assignment .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .BRC-cols-showunit .BRC-form-showunit, .BRC-cols-showunit .BRC-form-budget {
+        width: 50%;
+    }
+
+    .BRC-button-addsu {
+        left: 0;
+    }
+
+    .row-BRC-showunit {
+        margin-bottom: 0 !important;
+    }
+
+    .BRC-button-remove-showunit {
+        position: absolute;
+        right: 0;
+    }
+
+    .BRC-Time-container .field-input {
+        width: 100% !important;
+        float: left;
+    }
+
+    .BRC-Time-container .cols .field-input {
+        width: 100% !important;
+    }
+
+    .BRC-cols-whatpage .BRC-form-group {
+        margin-bottom: 0 !important;
+    }
+
+    .BRC-form-group-shoot .sdControl {
+        width: 100%;
+    }
+
+    .Corrs-cols-whatpage .field-input {
+        width: 100% !important;
+    }
+
+    .Corrs-cols-whatpage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .Corrs-addbutton-container {
+        margin-top: 32px;
+    }
+
+    .Corrs-forms-add-conatiner.active {
+        margin-right: 0;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .label {
+        width: 100px;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .field-input {
+        width: calc(100% - 100px);
+    }
+
+    .display-dataform-new {
+        width: 100% !important;
+        float: left;
+    }
+
+    .display-dataform-edr-summary-location .selectbox {
+        width: 100% !important;
+    }
+
+    .edr-summary-form-group-airdate {
+        width: 66.66% !important;
+    }
+
+    .edr-summary-form-group-tbd {
+        width: 33.33% !important;
+        margin-top: 33px;
+        padding-left: 0 !important;
+        text-align: left;
+    }
+
+    .edr-summary-form-group-slug .display-dataform-edr-summary-slug {
+        width: 100% !important;
+    }
+
+    .display-dataform-edr-summary-slug .selectbox {
+        width: 100% !important;
+    }
+
+    .display-dataform-edr-summary-showunit .selectbox.edr-summary-showunit {
+        width: 100% !important;
+    }
+
+    .edr-summary-form-group-show-unit, .edr-summary-form-group-budget-code {
+        width: 50% !important;
+        margin: 0 !important;
+    }
+
+    .edit-remove-BC {
+        margin-top: -27px !important;
+    }
+
+    .edr-summary-form-group-correspondent .selectbox,
+    .edr-summary-form-group-storyname .selectbox,
+    .edr-summary-form-group-attachcrewID .selectbox {
+        width: 100% !important;
+    }
+
+    .edr-summary-form-group-craft-Edit,
+    .edr-summary-form-group-Producer-Edit {
+        width: 50%;
+    }
+
+        .edr-summary-form-group-craft-Edit .label,
+        .edr-summary-form-group-Producer-Edit .label {
+            white-space: normal !important;
+        }
+
+    .edr-craft-craft-form .edr-craft-producer-form-group.edr-craft-mobile-fullwidth, .edr-craft-producer-form .edr-craft-mobile-fullwidth,
+    .edr-producer-form .edr-producer-mobile-fullwidth,.edr-producer-est-mobile-fullwidth{
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .label-estimated {
+        width: auto;
+    }
+
+    .edr-craft-craft-form .edr-craft-producer-form-group:first-child .label {
+        position: static;
+    }
+
+    .edr-craft-craft-form .edr-craft-mobile-seconds, .edr-craft-craft-form .edr-craft-mobile-mints,
+    .edr-craft-producer-form .edr-craft-mobile-seconds, .edr-craft-producer-form .edr-craft-mobile-mints
+  
+     {
+        width: 120px;
+    }
+      .edr-producer-form .edr-producer-mobile-mints,.edr-producer-form .edr-producer-mobile-seconds,
+    .edr-producer-est-mobile-mints{width:auto;padding-right:10px}
+    .edr-craft-craft-form .edr-craft-mobile-version{padding-left:0;}
+    .edr-craft-craft-form .edr-craft-mobile-version, .edr-craft-producer-form .edr-craft-mobile-version {
+        width: 212px;
+        float: left;
+        margin-top: 10px;
+    }
+
+        .edr-craft-craft-form .edr-craft-mobile-version .label {
+            width: 150px;
+            padding-right: 0;
+            font-size: 13px;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .edr-craft-producer-form .edr-craft-mobile-version .label {
+            font-size: 13px;
+        }
+
+    .edr-craft-craft-form .edr-craft-mobile-tbd,.edr-craft-craft-form .edr-producer-mobile-tbd {
+        width: auto;
+        position: relative;
+    }
+
+        .edr-craft-craft-form .edr-craft-mobile-seconds .label, .edr-craft-craft-form .edr-craft-mobile-mints .label, .edr-craft-craft-form .edr-craft-mobile-tbd .label,
+        .edr-craft-producer-form .edr-craft-mobile-seconds .label, .edr-craft-producer-form .edr-craft-mobile-mints .label, .edr-craft-producer-form .edr-craft-mobile-tbd .label,
+        .edr-producer-form .edr-producer-mobile-mints .label,.edr-producer-form .edr-producer-mobile-seconds .label,.edr-producer-form .edr-producer-mobile-tbd .label
+        .edr-producer-form-field .label, .edr-LNGF-producer-form-field .label ,.edr-producer-form-field .edr-producer-mobile-tbd .label,
+        .edr-producer-form .edr-producer-est-mobile-mints .label,edr-producer-form .edr-producer-est-mobile-mints .label,edr-producer-form .edr-producer-est-mobile-mints .label
+        
+        {
+            padding-right: 0;
+            font-size: 13px;
+            width: auto;
+        }
+
+    .edr-craft-craft-form .edr-craft-producer-form-field,
+    .edr-producer-form-field, .edr-LNGF-producer-form-field
+     {
+        width: 50px;
+        float: left;
+        position: relative;
+        /*top:25px;*/
+    }
+
+    .edr-craft-craft-form .edr-craft-checkall-form {
+        display: none;
+    }
+
+    .edr-craft-craft-form .edr-craft-additional-requirments {
+        display: none;
+    }
+
+    .form-group-craft-editor {
+        width: 100%;
+    }
+
+        .form-group-craft-editor .form-group-coldopen, .form-group-craft-editor .form-group-updates, .form-group-craft-editor .form-group-pretapes {
+            width: 33.33% !important;
+        }
+
+            .form-group-craft-editor .form-group-coldopen .label, .form-group-craft-editor .form-group-updates .label, .form-group-craft-editor .form-group-pretapes .label {
+                font-size: 11px;
+                white-space: normal;
+            }
+
+    .display-data1-edr-tdy-wtdy-signin {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .form-container-horizontal .cols .display-dataform-edr-tdy-wtdy-contact {
+        padding-left: 0 !important;
+    }
+
+    .edr-tdy-wtdy-form-group-contact, .edr-tdy-wtdy-form-group-email {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .form-container-horizontal-768 .cols.edr-tdy-wtdy-form-group-show-unit .label {
+        width: auto !important;
+        font-size: 11px;
+    }
+
+    .edr-tdy-wtdy-form-group-show-unit .edr-tdy-wtdy-showunit .selectbox {
+        width: 100%;
+    }
+
+    .form-group-craft-editor-2 {
+        width: 100%;
+    }
+
+        .form-group-craft-editor-2 .form-group-revisionBRoll, .form-group-craft-editor-2 .form-group-tease, .form-group-craft-editor-2 .form-group-RevisionsSpots {
+            width: 33.33%;
+        }
+
+            .form-group-craft-editor-2 .form-group-revisionBRoll .label, .form-group-craft-editor-2 .form-group-tease .label, .form-group-craft-editor-2 .form-group-RevisionsSpots .label {
+                white-space: normal;
+                font-size: 12px;
+            }
+
+    .form-group-craft-editor-3 {
+        width: 100%;
+    }
+
+        .form-group-craft-editor-3 .form-group-ShowFixes, .form-group-craft-editor-3 .form-group-CrashPieces, .form-group-craft-editor-3 .form-group-NewB-roll {
+            width: 33.33% !important;
+        }
+
+            .form-group-craft-editor-3 .form-group-ShowFixes .label, .form-group-craft-editor-3 .form-group-CrashPieces .label, .form-group-craft-editor-3 .form-group-NewB-roll .label {
+                white-space: normal;
+                font-size: 11px;
+            }
+
+
+
+    .textarea-comment-tdy {
+        width: 100% !important;
+    }
+
+    #edr-msnbc-shortform-page .display-data1-new {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .edr-msnbc-shortform-form-group-contact,
+    .edr-msnbc-shortform-form-group-email {
+        width: 100% !important;
+    }
+
+    .edr-msnbc-shortform-form-group-producer-requestor {
+        width: 100% !important;
+    }
+
+    .display-data-edr-msnbc-shortform-chekbox {
+        width: 100% !important;
+        float: left;
+    }
+
+        .display-data-edr-msnbc-shortform-chekbox .selectbox {
+            width: 100% !important;
+        }
+
+    #edr-msnbc-shortform-page .form-container-horizontal-768 .cols .label {
+        width: auto;
+    }
+
+    .edr-msnbc-shortform-form-group-airdate {
+        width: 66.66% !important;
+    }
+
+    .edr-msnbc-shortform-form-group-tbd {
+        width: 33.33% !important;
+        margin-top: 17px !important;
+    }
+
+    .cols-msnbc-edr-producer .cols {
+        width: 50% !important;
+    }
+
+    .cols-msnbc-edr-producer {
+        padding-left: 0 !important;
+    }
+
+    .textarea-msnbc {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cols-msnbc-edr-producer input[type=checkbox] {
+        float: left;
+    }
+
+    .cols-msnbc-edr-producer .label-checkbox-msnbc {
+        margin-top: -5px;
+    }
+
+     
+    .edr-craft-startdate-form-group,.edr-craft-sessionstart-form-group{width:50%; float:left}
+     .edr-craft-startdate-form-group .label,.edr-craft-sessionstart-form-group .label{
+         font-size:13px;
+     }
+     .edr-craft-startdate-form-field,.edr-craft-session-form-field{width:100% !important;}
+     #edr-RequestedEditSection{width:100% !important}
+     .edr-summary-startdate{width:77% !important}
+     .edr-craft-checkall-form-contaier{width:100%; }
+     .edr-craft-checkall-form-contaier-odd{width:100%;}
+     .edr-craft-checkall-form-contaier-even{margin-left:0; width:100%;}
+     .edr-craft-check-form-group .label-checkbox-edit{width:calc(100% - 20px);float:right; text-align:left;}
+     .edr-craft-checkbx-form-field{width:20px; float:left; }
+     .edr-craft-comment-form{width:100%; margin-left:0}
+     .edr-producer-form-container, .edr-LNGF-producer-form-container{
+         padding-left:0;
+         width:100%;
+     }
+     .button-close{line-height:25px}
+    .FLN-form-group-quantity {
+        width:100% !important;
+    }
+    .FLN-form-group-quantity .display-dataform-new{  width:100% !important; padding-right:0}
+     .FLN-form-group-quantity .display-dataform-new .fi-Quantity{  width:100% !important;}
+     .mainrow{padding:0 7px; padding:0 7px;}
+    .fi-removebutton {
+        padding:0 20px;
+        margin-bottom:15px;
+    }
+    .FLN-additional-info {
+        width:100%;
+        float:left;
+    }
+    .FLN-additional-info .form-container-horizontal .cols .label{
+        white-space:inherit;
+    }
+   .FLN-additional-info .form-container {
+       font-size:15px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+
+    .sidebar, .footer, .sidebar::before {
+        width: 200px;
+    }
+    .sidebar .ms-siteicon-a{margin-bottom:0}
+    .sidebar .ms-siteicon-a img{width:100px;}
+    .sidebar-header .title {
+        font-size: 19px;
+        /*background-position: 158px 27px*/
+    }
+
+    .content-container {
+        margin-left: 200px;
+    }
+
+    .navigation {
+        font-size: 21px;
+    }
+
+    .selectbox-mini {
+        width: 70px;
+    }
+
+    .row {
+        margin: 0 -7px;
+    }
+
+    .cols {
+        padding: 0 7px;
+    }
+
+    .cols-4-5 {
+        width: 40%;
+    }
+
+    .cols-3-5 {
+        width: 28%;
+    }
+
+    .form-edit-button {
+        position: absolute;
+        right: -80px;
+    }
+
+    .cols-contact-form .form-Bureau {
+        width: 100%;
+    }
+
+    .cols-contact-form .mandatory {
+        top: -0.5em;
+        position: relative;
+    }
+
+    .text-box-mini {
+        width: 28%;
+        font-size: 15px;
+    }
+
+    .label {
+        font-size: 15px;
+    }
+
+    #ui-id-1.ui-autocomplete.ui-menu {
+        width: 365px !important;
+    }
+
+    .form-group-deskphone {
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+
+    .sidebar, .footer, .sidebar::before {
+        width: 200px;
+    }
+
+    .sidebar-header .title {
+        font-size: 21px;
+        /*background-position: 158px 27px*/
+    }
+
+    .content-container {
+        margin-left: 200px;
+    }
+
+    .navigation {
+        font-size: 21px;
+    }
+
+    .form-container-horizontal .form-group {
+        min-height: 56px;
+    }
+
+    .form-container-horizontal .cols .label {
+        /*width: 100%;*/
+        float: left;
+        margin-bottom: 5px;
+        position: relative;
+        width: auto;
+    }
+
+    .form-container-horizontal .cols .display-data1, .form-container-horizontal .cols .display-dataform {
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+    .form-container-horizontal .cols .label-producer-requestor {
+        width: auto;
+    }
+
+    .selectbox-mini {
+        width: 50px;
+    }
+
+    .row {
+        margin: 0 -7px;
+    }
+
+    .cols {
+        padding: 0 7px;
+    }
+
+    .label br {
+        display: none;
+    }
+
+    .mandatory {
+        position: absolute;
+        right: 0;
+        top: 0.5em;
+    }
+
+    #BreakingNews #bns-whatPage .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .label {
+        position: relative;
+    }
+
+    .cols-whatpage {
+        width: 68%;
+    }
+
+        .cols-whatpage .mandatory {
+            position: relative;
+            top: 0;
+        }
+
+    .cols-contact-form .form-Bureau {
+        width: 100%;
+    }
+
+    .cols-contact-form .mandatory {
+        top: -0.5em;
+        position: relative;
+    }
+
+    .text-box-mini {
+        width: 28%;
+    }
+
+    .date-picker-cols .mandatory {
+        position: relative;
+    }
+
+    .date-picker-cols .label {
+        width: 39.33%;
+    }
+
+    .date-picker-cols .field-input {
+        width: 60.667%;
+    }
+
+    #BreakingNews #bns-whenPage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    #BreakingNews #bns-whenPage .bns-time-zone-cols .label {
+        width: auto;
+    }
+
+    #BreakingNews #bns-whenPage .bns-time-zone-cols .field-input {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1024px) {
+
+    .sidebar, .footer, .sidebar::before {
+        width: 200px;
+    }
+
+    .sidebar-header .title {
+        font-size: 21px;
+      
+    }
+
+    .content-container {
+        margin-left: 200px;
+    }
+
+    .navigation {
+        font-size: 21px;
+    }
+
+    .form-container-horizontal .form-group {
+        min-height: 56px;
+    }
+
+    .form-container-horizontal-768 .form-group {
+        min-height: 28px;
+    }
+
+    .form-container-horizontal .cols .label {
+        float: left;
+        margin-bottom: 5px;
+        position: relative;
+        width: auto;
+    }
+
+     .form-container-horizontal .cols .display-data1, .form-container-horizontal .cols .display-dataform, .form-container-horizontal .cols .display-data-chekbox, .display-data1-bn, .display-data1-new, .display-dataform-new, .display-data-chekbox-new
+    {
+        width: 100%;
+        float: left;
+        display: block;
+    }
+    .edr-summary-form-group-requester{width:50% !important;}
+    .edr-summary-form-group-contact{width:50% !important;}
+     .edr-summary-form-group-email{width:100%;}
+
+    .form-container-horizontal .cols .display-data1-new.display-data1-edr-tdy-wtdy-signin,
+    .form-container-horizontal .cols .display-dataform-edr-tdy-wtdy-contact,
+    .form-container-horizontal .cols .display-dataform-edr-tdy-wtdy-email,
+    .form-container-horizontal .cols .edr-tdy-wtdy-showunit,
+    .form-container-horizontal .cols .display-dataform-edr-tdy-amform-airdate {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .form-group-coldopen, .form-group-updates, .form-group-pretapes {
+        width: 100% !important;
+    }
+
+    .form-group-revisionBRoll, .form-group-tease, .form-group-RevisionsSpots {
+        width: 100% !important;
+    }
+
+    .form-group-craft-editor, .form-group-craft-editor-2, .form-group-craft-editor-3 {
+        width: 33.33%;
+    }
+
+    .edr-tdy-wtdy-cold-open, .edr-tdy-wtdy-cold-open, .edr-tdy-wtdy-Pre-Tapes {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .form-group-ShowFixes, .form-group-CrashPieces, .form-group-NewB-roll {
+        width: 100% !important;
+    }
+
+    .form-container-horizontal .cols .label-producer-requestor {
+        width: auto;
+    }
+
+    .selectbox-mini {
+        width: 63px;
+    }
+
+    .row {
+        margin: 0 -7px;
+    }
+
+    .checkbox-edr-tdy-new01 .cols {
+        width: 33.33% !important;
+    }
+
+    .checkbox-edr-tdy-new01 {
+        width: 100%;
+    }
+
+    .cols {
+        padding: 0 7px;
+    }
+
+    .label br {
+        display: none;
+    }
+
+    .cols-4-5 {
+        width: 42%;
+    }
+
+    .form-edit-button {
+        width: 6%;
+        white-space: nowrap;
+    }
+   
+    .button-bottom-next {
+        position: static;
+        width: 100%;
+        float: right;
+    }
+
+    .form-group-special .valid-msg {
+        white-space: nowrap;
+    }
+
+    .cols-whatpage {
+        width: 74%;
+    }
+
+        .cols-whatpage .mandatory {
+            position: relative;
+            top: -0.5em;
+        }
+
+    .form-Bureau .field-input {
+        width: calc(100% - 223px);
+    }
+
+    .cols-contact-form .form-Bureau {
+        width: 100%;
+    }
+
+    .cols-contact-form .mandatory {
+        top: -0.5em;
+        position: relative;
+    }
+
+    .date-picker-cols .field-input {
+        width: 100%;
+    }
+
+    .date-picker-cols .label {
+        width: auto;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .time-zone-cols .label {
+        width: auto;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .time-zone-cols .field-input {
+        width: 100%;
+    }
+
+    .time-zone-cols small.cols {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .container-725 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .ms-dlgContent {
+        border: none;
+        left: 0 !important;
+        position: absolute;
+        top: 65px !important;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    .ms-dlgFrameContainer {
+        padding: 0 !important;
+    }
+
+        .ms-dlgFrameContainer iframe {
+            width: 100% !important;
+        }
+
+    .ms-dlgBorder {
+        width: 100% !important;
+    }
+
+    .ms-dlgTitle {
+        cursor: default !important;
+        padding: 0 !important;
+    }
+
+    .ms-dlgTitleBtns {
+        background-color: #f5f5f5;
+        float: right;
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    #ui-id-1.ui-autocomplete.ui-menu {
+        width: 316px !important;
+    }
+
+    .mandatory {
+        position: absolute;
+        right: 0;
+        top: 6px;
+    }
+
+    .form-need-contaier .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .additional-info {
+        z-index: 10;
+    }
+
+    .bns-cols-whatpage {
+        padding-right: 0 !important;
+        width: 100%;
+    }
+
+    .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group {
+        padding-right: 18px !important;
+    }
+
+        .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group .label {
+            width: auto;
+        }
+
+        .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group .field-input {
+            width: 100%;
+        }
+
+    #BreakingNews .form-group-transmission {
+        width: 66.667%;
+    }
+
+        #BreakingNews .form-group-transmission .field-input {
+            width: calc(100% - 170px);
+        }
+
+    #BreakingNews #bns-whenPage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    #BreakingNews #bns-whatPage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    #ui-id-2.ui-autocomplete.ui-menu {
+        width: 31% !important;
+    }
+
+    .BRC-Time-container .text-box-mini {
+        width: 27%;
+    }
+
+    .date-legend {
+        float: left;
+        padding-right: 7px;
+    }
+
+    .BRC-additionrequest .BRC-addbutton-container {
+        width: 48% !important;
+        float: left;
+    }
+
+    .BRC-form-showunit .BRC-addbutton-container {
+        width: 100% !important;
+        float: left;
+        padding-left: 0;
+    }
+
+    .BRC-button-addsu {
+        left: 0;
+    }
+
+    .button-remove-sp-bc {
+        right: -10px;
+    }
+
+    .BRC-form-assignment .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .BRC-form-showunit .label {
+        margin-right: 10px !important;
+    }
+
+    .BRC-form-group.BRC-form-assignment, .BRC-form-group.BRC-form-story {
+        width: 100%;
+    }
+
+    .form-container-horizontal .BRC-cols-showunit .form-group {
+        min-height: 30px;
+    }
+
+    .BRCform-container-horizontal .BRC-cols-whatpage .field-input {
+        width: 30% !important;
+    }
+
+    .BRC-Time-container .cols .field-input {
+        width: 100%;
+    }
+
+    .BRC-form-group-shoot .field-input {
+        width: 74%;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .label {
+        width: 110px;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .field-input {
+        width: calc(100% - 110px);
+    }
+
+    .Corrs-cols-whatpage {
+        width: 100%;
+    }
+
+        .Corrs-cols-whatpage .label .mandatory {
+            position: relative;
+            top: -0.5em;
+        }
+
+    .page-section-edr-msnbc-shortform .display-data1-new, .page-section-edr-msnbc-shortform .display-dataform-new, .page-section-edr-msnbc-shortform .display-data-chekbox-new {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .edr-msnbc-shortform-form-group-tbd {
+        margin-top: 33px !important;
+    }
+    /*.FLN-summary-form-group-requester,.FLN-summary-form-group-contact {
+        width:50%;
+    }
+    .FLN-summary-form-group-email {
+        width:50%;
+    }*/
+    
+
+     .display-data-FLN-summary-chekbox {
+        width:auto !important;
+    }
+    .FLN-summary-form-group-producer, .FLN-summary-form-group-Senior-producer {
+        width:50% !important
+    }
+    .FLN-summary-form-group-airdate {
+        width:33.33% !important;
+    }
+    .FLN-summary-form-group-tbd, .FLN-summary-form-group-asap {
+        width:auto !important;
+        margin-top:33px;
+    }
+    .FLN-form-group-quantity .display-dataform-FLN-summary-slug {
+        padding:0 !important
+    }
+    .FLN-form-group-quantity .display-dataform-FLN-summary-slug input{
+        width:100% !important;
+    }
+    .fi-removebutton{margin-top:34px;}
+    .addbutton-qty {
+        margin-top:10px;
+    }
+    .FLN-device-camera-form {
+        float:left;
+        width:50%;
+        margin-right:0;
+        padding-right:15px;
+    }
+    .box-edr-craft-produer.box-edr-craft-checkbox {
+        float:right;
+        width:50%;
+    }
+    .FLN-additional-info .display-dataform-new{
+        width:100% !important;
+        float:left;
+    }
+    .display-dataform-FLN-mateiral br{
+        display:none;
+    }
+    .FLN-additional-info .cols-4.form-group{
+        width:50%;
+    }
+     .FLN-additional-info .label{
+         white-space:normal !important
+     }
+    .othertxt {
+        width:90%;
+    }
+    .page-section {
+        margin:15px 0;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 989px) {
+
+    .sidebar, .footer, .sidebar::before {
+        width: 180px;
+    }
+
+    .sidebar-header .title {
+        font-size: 18px;
+        /*background-position: 132px 27px*/
+    }
+
+    .content-container {
+        margin-left: 180px;
+    }
+
+    .navigation {
+        font-size: 18px;
+    }
+
+    .form-container-horizontal .form-group {
+        min-height: 56px;
+    }
+
+    .form-container-horizontal .cols .label {
+        float: left;
+        margin-bottom: 5px;
+        position: relative;
+        width: auto;
+    }
+    .form-container-horizontal .cols .display-data1, .form-container-horizontal .cols .display-dataform, .form-container-horizontal .cols .display-data-chekbox, .display-data1-bn, .display-data1-new, .display-dataform-new, .display-data-chekbox-new
+    {
+        width: 100%;
+        float: left;
+        display: block;
+    }
+    .edr-summary-form-group-requester{width:50% !important;}
+    .edr-summary-form-group-contact{width:50% !important;}
+     .edr-summary-form-group-email{width:100%;}
+     .form-container-horizontal .cols .display-dataform-edr-summary-email{width:100% !important; float:left;}
+     
+     .edr-summary-form-group-producer,.edr-summary-form-group-Senior-producer{width:50% !important}
+     .sp-peoplepicker-topLevel, .sp-peoplepicker-topLevelDisabled, .sp-peoplepicker-autoFillContainer{
+         width:100% !important;
+     }
+     .edr-summary-form-group-airdate{width:40%;}
+     .edr-summary-form-group-tbd{margin-top:35px;}
+     .display-dataform-edr-summary-slug{width:100% !important}
+    .form-container-horizontal .cols .label-producer-requestor {
+        width: auto;
+    }
+
+    .selectbox-mini {
+        width: 100%;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .form-container-horizontal .display-data-chekbox {
+        width: 50px !important;
+    }
+
+    .form-container-horizontal-768 .form-group {
+        min-height: 28px;
+    }
+
+    .row {
+        margin: 0 -7px;
+    }
+
+    .cols {
+        padding: 0 7px;
+    }
+
+    .form-container {
+        font-size: 13px;
+    }
+
+    .label br {
+        display: none;
+    }
+
+    .mandatory {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .cols-4-5 {
+        width: 45%;
+    }
+
+    .form-edit-button {
+        position: absolute;
+        right: -35px;
+    }
+
+    .form-container-horizontal-768 .cols {
+        width: 50%;
+    }
+
+    .button-bottom-next {
+        position: static;
+        width: 100%;
+        float: right;
+    }
+
+    .cols-whatpage {
+        width: 74%;
+    }
+
+        .cols-whatpage .mandatory {
+            position: relative;
+            top: -0.5em;
+        }
+
+    h1.page-title, .page-title {
+        font-size: 25px;
+    }
+
+    .cols-whatpage {
+        width: 100%;
+    }
+
+    .form-group-attach .field-input .text-box {
+        width: 73%;
+    }
+
+    .button-remove-talent, .button-remove-showunit {
+        margin-left: 0;
+    }
+
+    .cols-whatpage .form-shoot .label, .cols-whatpage .form-talent .label, .cols-whatpage .form-showunit .label, .cols-whatpage .form-budget .label, .cols-whatpage .form-group-upload .label {
+        width: 127px !important;
+    }
+
+    .cols-whatpage .form-shoot .field-input, .cols-whatpage .form-talent .field-input, .cols-whatpage .form-showunit .field-input, .cols-whatpage .form-budget .field-input, .cols-whatpage .form-group-upload .field-input {
+        width: calc(100% - 127px) !important;
+    }
+
+    .form-talent, .form-budget, .form-group-attach {
+        padding-left: 40px;
+    }
+
+    .form-group-attach {
+        padding-left: 0;
+    }
+
+    .form-Bureau .field-input {
+        width: calc(100% - 223px);
+    }
+
+    .cols-contact-form .form-Bureau {
+        width: 100%;
+    }
+
+    .cols-contact-form .mandatory {
+        top: -0.5em;
+        position: relative;
+    }
+
+    .date-picker-cols .field-input {
+        width: 100%;
+    }
+
+    .text-box-mini {
+        width: 28%;
+    }
+
+    .date-picker-cols .label {
+        width: auto;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .time-zone-cols .label {
+        width: auto;
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .time-zone-cols .field-input {
+        width: 100%;
+    }
+
+    .time-zone-cols small.cols {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .address-group .label {
+        margin-bottom: 5px;
+    }
+
+    .address-group .field-input {
+        width: 100%;
+    }
+
+    .container-725 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .step5-container {
+        padding: 0 15px;
+    }
+
+    .resource-title .step5-box {
+        font-size: 15px;
+    }
+
+    .estimate-laborcost-conatiner {
+        margin-top: -5px;
+    }
+
+    .cost-labor-values {
+        margin: 5px 0;
+    }
+
+    .form-need-contaier .form-group .label {
+        margin-bottom: 5px;
+    }
+
+    .form-need-contaier .form-group .field-input {
+        width: 100%;
+    }
+
+    .ms-dlgContent {
+        display: none;
+        border: none;
+        left: 0 !important;
+        position: absolute;
+        top: 65px !important;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    .ms-dlgFrameContainer {
+        padding: 0 !important;
+    }
+
+        .ms-dlgFrameContainer iframe {
+            width: 100% !important;
+        }
+
+    .ms-dlgTitle {
+        cursor: default !important;
+        padding: 0 !important;
+    }
+
+    .ms-dlgBorder {
+        width: 100% !important;
+    }
+
+    .ms-dlgTitleBtns {
+        background-color: #f5f5f5;
+        float: right;
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .mandatory {
+        position: absolute;
+        right: 0;
+        top: 6px;
+    }
+
+    .form-need-contaier .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .additional-info {
+        z-index: 10;
+    }
+
+    #BreakingNews #bns-whenPage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .bns-cols-whatpage {
+        padding-right: 0 !important;
+        width: 100%;
+    }
+
+    .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group {
+        padding-right: 18px !important;
+    }
+
+        .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group .label {
+            width: auto;
+        }
+
+        .Corrs-time-zone-cols .Corrs-form-group, .bns-time-zone-cols .bns-form-group .field-input {
+            width: 100%;
+        }
+
+    #BreakingNews .form-group-transmission {
+        width: 66.667%;
+    }
+
+        #BreakingNews .form-group-transmission .field-input {
+            width: calc(100% - 170px);
+        }
+
+    #BreakingNews #bns-whatPage .label .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    #ui-id-1.ui-autocomplete.ui-menu {
+        width: 50% !important;
+    }
+
+    #whatPage .cols-whatpage .label, .Corrs-cols-whatpage .label, .bns-cols-whatpage .label {
+        width: 149px;
+    }
+
+    #whatPage .cols-whatpage .field-input, .Corrs-cols-whatpage .field-input, .bns-cols-whatpage .field-input {
+        width: calc(100% - 149px);
+    }
+
+    .cols-whatpage, .Corrs-cols-whatpage, .bns-cols-whatpage {
+        padding-right: 0 !important;
+    }
+
+    .date-legend {
+        float: left;
+        padding-right: 7px;
+    }
+
+    .BRC-additionrequest .BRC-addbutton-container {
+        width: 48% !important;
+        float: left;
+    }
+
+    .BRC-form-showunit .BRC-addbutton-container {
+        width: 100% !important;
+        float: left;
+        padding-left: 0;
+    }
+
+    .BRC-button-addsu {
+        left: 0;
+    }
+
+    .button-remove-sp-bc {
+        right: -10px;
+    }
+
+    .BRC-form-assignment .mandatory {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .BRC-form-showunit .label {
+        margin-right: 10px !important;
+    }
+
+    .BRC-form-group.BRC-form-assignment, .BRC-form-group.BRC-form-story {
+        width: 100%;
+    }
+
+    .form-container-horizontal .BRC-cols-showunit .form-group {
+        min-height: 30px;
+    }
+
+    .BRCform-container-horizontal .BRC-cols-whatpage .field-input {
+        width: 30% !important;
+    }
+
+    .BRC-Time-container .cols .field-input {
+        width: 100%;
+    }
+
+    .BRC-form-group-shoot .field-input {
+        width: 74%;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .label {
+        width: 110px;
+    }
+
+    #CLSwhenPage .Corrs-time-zone-cols .field-input {
+        width: calc(100% - 110px);
+    }
+
+    .Corrs-cols-whatpage {
+        width: 100%;
+    }
+
+        .Corrs-cols-whatpage .label .mandatory {
+            position: relative;
+            top: -0.5em;
+        }
+
+    #CLSwhenPage .form-need-contaier .form-group-transmission {
+        width: 100%;
+    }
+
+    #CLSwhenPage .form-need-contaier .form-group .field-input {
+        width: calc(100% - 170px);
+    }
+
+    .display-data1-edr-tdy-wtdy-signin, .display-dataform-edr-tdy-wtdy-contact, .display-dataform-edr-tdy-wtdy-email {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .edr-tdy-wtdy-showunit, .display-dataform-edr-tdy-amform-airdate {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .page-section-edr-msnbc-shortform .display-data1-new, .page-section-edr-msnbc-shortform .display-dataform-new, .page-section-edr-msnbc-shortform .display-data-chekbox-new {
+        width: 100% !important;
+        float: left !important;
+    }
+
+    .edr-msnbc-shortform-form-group-tbd {
+        margin-top: 33px !important;
+    }
+
+    .form-container-horizontal-768 .edr-msnbc-shortform-form-group-producer-requestor,
+    .form-container-horizontal-768 .edr-msnbc-shortform-form-group-show-unit,
+    .form-container-horizontal-768 .edr-msnbc-shortform-form-group-budget-code {
+        width: 33.33% !important;
+    }
+
+    .cols-msnbc-edr-producer {
+        padding-left: 0 !important;
+    }
+
+        .cols-msnbc-edr-producer .label {
+            float: none !important;
+        }
+
+        .cols-msnbc-edr-producer .edr-msnbc-shortform-form-group-fixes {
+            width: 20%;
+        }
+
+        .cols-msnbc-edr-producer .edr-msnbc-shortform-form-group-open {
+            width: 30%;
+        }
+
+    .edr-msnbc-shortform-form-group-airdate {
+        width: 50% !important;
+    }
+
+    .edr-msnbc-shortform-form-group-tbd {
+        width: 33%;
+    }
+
+    .checkbox-edr-tdy-new01 .cols {
+        width: 50% !important;
+    }
+.display-data-FLN-summary-chekbox {
+        width:auto !important;
+    }
+    .FLN-summary-form-group-producer, .FLN-summary-form-group-Senior-producer {
+        width:50% !important
+    }
+    .FLN-summary-form-group-airdate {
+        width:33.33% !important;
+    }
+    .FLN-summary-form-group-tbd, .FLN-summary-form-group-asap {
+        width:auto !important;
+        margin-top:33px;
+    }
+    .FLN-form-group-quantity .display-dataform-FLN-summary-slug {
+        padding:0 !important
+    }
+    .FLN-form-group-quantity .display-dataform-FLN-summary-slug input{
+        width:100% !important;
+    }
+    .fi-removebutton{margin-top:34px;}
+    .addbutton-qty {
+        margin-top:10px;
+    }
+    .FLN-device-camera-form {
+        float:left;
+        width:50%;
+        margin-right:0;
+        padding-right:15px;
+    }
+    .box-edr-craft-produer.box-edr-craft-checkbox {
+        float:right;
+        width:50%;
+    }
+    .FLN-additional-info .display-dataform-new{
+        width:100% !important;
+        float:left;
+    }
+    .display-dataform-FLN-mateiral br{
+        display:none;
+    }
+    .FLN-additional-info .cols-4.form-group{
+        width:50%;
+    }
+     .FLN-additional-info .label{
+         white-space:normal !important
+     }
+    .othertxt {
+        width:90%;
+    }
+     .page-section {
+        margin:15px 0;
+    }
+}

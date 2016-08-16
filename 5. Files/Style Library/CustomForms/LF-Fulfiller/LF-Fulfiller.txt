@@ -1,0 +1,861 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/css/style-new-LFrequestfullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/css/style-LFrequestfullfiller.css" media="screen,print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/css/responsive-LFrequestfullfiller.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/css/print-LFrequestfullfiller.css" media="print">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/css/daterangepicker.css">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/EditRequest/js/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/LFFulfiller.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/NBCU.LFFulfiller.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/NBCU.LFFulfiller.Summary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/NBCU.LFFulfiller.Craft.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/NBCU.LFFulfiller.Producer.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/LF-Fulfiller/js/NBCU.LFFulfiller.ASEditor.js"></script>
+
+<script>
+    $(function () {
+        $('#btn-print').click(function () {
+            window.print();
+        });
+    });
+</script>
+<div class="wrapper" id="LongformRequest-fulfiller">
+    <header class="header">
+        <div class="container-fluid ">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">Long Form Edit Request</h1>
+                <div class="header-right-booked">
+                    <div class="button button-booked active-booking" id="edLF-header-status">Booked</div>
+                    <div class="book-id">ER201612335</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="show-date-container">
+        <div class="showdate"> <span class="date-label">Edit Start Date:</span> <span class="value-field" id="er-header-startdate">04/08/16</span> </div>
+        <div class="showdate"> <span class="date-label">Slug:</span> <span class="value-field slugname" id="er-header-slug">Name of Slug here</span> </div>
+        <div class="showdate"> <span class="date-label">Request Status:</span> <span class="value-field" id="er-header-shootstatus">Firm</span> </div>
+        <div class="showdate"> <span class="date-label">Show:</span> <span class="value-field" id="er-header-showimg">TDY/ 7&amp;8</span> </div>
+    </div>
+    <div class="subpage-content-container">
+        <section class="content-section">
+            <div class="subpage-content subpage-LF-SummaryEdit" id="LFSummaryEditPage">
+                <h1 class="page-title">Summary <span class="button-edit" title="Summary">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                    <div class="display-data1">
+                                        <div id="erLF_peoplePickerRequesterDiv" class="textbox"></div>
+
+
+                                        <span class="display-data" id="erLF_Requester_value">FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group form-group-contact-print">
+                                    <label class="label label-display">Contact #</label>
+                                    <div class="display-dataform">
+                                        <input type="text" class="textbox" value="+1 (555) 555-5555" maxlength="21" placeholder="(XXX) XXX-XXXX" id="edLF_contact_textbox">
+                                        <span class="display-data" id="erLF_contact_value">+1 (555) 555-5555</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3-5 form-group form-group-print">
+                                    <label class="label label-display">Email</label>
+                                    <div class="display-dataform">
+                                        <input type="text" class="textbox" id="erLF_email_textbox">
+                                        <span class="display-data" id="erLF_email_value"></span>
+                                        <div class="valid-msg valid-msg-error">Invalid Email Format.</div>
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="row">
+                                
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">
+                                        Producer/ <sup class="mandatory">*</sup><br>
+                                        Field Contact
+                                    </label>
+                                    <div class="display-dataform">
+                                        <div id="erLF_peoplePickerProducerDiv" class="textbox"></div>
+                                        <span class="display-data" id="erLF_Producer_value"> FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-5 form-group">
+                                    <label class="label label-display">
+                                        Senior Producer/Approver <sup class="mandatory">*</sup>
+                                    </label>
+                                    <div class="display-dataform">
+                                        <div id="erLF_SeniorProducerDiv" class="textbox"></div>
+                                        <span class="display-data" id="erLF_SeniorProducer_value"> FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                </div>
+                            <div class="row">
+                                <div class="cols cols-3-5 form-group form-group-LFSummary-Slug">
+                                    <label class="label label-display">
+                                        Slug <sup class="mandatory">*</sup>
+                                    </label>
+                                    <div class="display-dataform">
+                                        <input type="text" id="erLF_summary_slug_textbox" class="textbox">
+                                        <span class="display-data" id="erLF_summary_slugname_value"> Slug Name example will go here</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-2 form-group form-group-sum-airdate">
+                                    <label class="label label-display">
+                                        Air Date
+                                    </label>
+                                    <div class="display-dataform">
+                                        <input type="text" disabled="" id="erLF_summary_txtairdate_textbox" class="textbox ProducerField">
+                                        <span id="erLF-summary-airdate" class="icon-datepicker textbox"></span>
+                                        <div class="calendar-erLF-summary-airdate"></div>
+                                        <span class="display-data" id="erLF_summary_txtairdate_value">06/08/16</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="cols cols-1-5 form-group" id="edLF-summary-tbd">
+                                    <label class="label label-display">TBD</label>
+                                    <div class="display-data1">
+                                        <input id="edLF-summarybd" type="checkbox" style="display: none;">
+                                        <span class="display-data" id="edLF_summary_tbd_value" style="display: block;">No</span>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">
+                                        Assistant Producer
+                                    </label>
+                                    <div class="display-data1">
+                                        <div class="textbox" id="erLF_peopleasst_proDiv"></div>
+                                        <span class="display-data" id="erLF_peopleasst_value">FirstName LastName (SSO Number)</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div id="erLF_showunit" class="row">
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div id="edLF_showunit" class="cols cols-12">
+                                    <div class="colsshowunit">
+									 <div class="cols cols-3 form-group form-group-location">
+                                            <label class="label label-display">Location of edit <sup class="mandatory">*</sup></label>
+                                            <div class="display-dataform">
+                                                <select type="text" class="selectbox textbox" id="edLF_summary_location">
+													<option></option>
+												</select>
+                                                <span id="edLF_summary_location_value" class="display-data">
+                                                </span>
+												<div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3 form-group form-group-business">
+                                            <label class="label label-display">Business <sub class="mandatory"></sub></label>
+                                            <div class="display-dataform">
+                                                <input value="" class="textbox edLF_summary_business_textbox" id="edLF-summary_business" style="display: none;" readonly>
+                                                <span id="edLF_summary_business_value" class="display-data">
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3 form-group form-group-showunit">
+                                            <label class="label label-display">Show Unit<sup class="mandatory">*</sup></label>
+                                            <div class="display-dataform">
+                                                <input value="" class="textbox edLF_summary_showunit_textbox" id="edLF-summary-showunit_0" style="display: none;">
+                                                <span id="edLF_summary_showunit_value_0" class="display-data" edLF_showunit_id_0="">
+                                                </span>
+												<div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-3 form-group form-group-budcode">
+                                            <label class="label label-display">
+                                                Budget Code
+                                            </label>
+                                            <div class="display-dataform">
+                                                <input value="" class="textbox edLF_summary_budgetcode_textbox" id="edLF-summary-budgetcode_0" style="display: none;">
+                                                <span id="edLF_summary_budgetcode_value_0" class="display-data"></span>
+                                                <div class="valid-msg valid-msg-error">
+                                                    Showunit and budgetcode is duplicated
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="subpage-content subpage-LF-craftEdit" id="LFcraftEditPage">
+                <h1 class="page-title">Craft Edit <span class="button-edit" title="Craft">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="row">
+                                <div class="cols cols-3-5 form-group" id="edLF-craft-length">
+                                    <label class="label label-display">Length of Piece </label>
+                                    <div class="display-data1">
+                                        <div class="textbox">
+                                            <input id="edLF-PieceMinutes" type="text" maxlength="3" class="textbox-small">hours <input id="edLF-PieceSeconds" type="text" maxlength="3" class="textbox-small">minutes
+                                        </div>
+                                        <span class="display-data" id="edLF_length_time_value">6 hours 30 minutes</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-1-5 form-group" id="edLF-craft-tbd">
+                                    <label class="label label-display">TBD</label>
+                                    <div class="display-data1">
+                                        <input id="edLF-Piecetbd" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edLF_tbd_value">No</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group" id="edLF-craft-noofacts">
+                                    <label class="label label-display">Number of Acts </label>
+                                    <div class="display-data1">
+                                        <input id="edLF-noofacts-textbox" type="text" maxlength="3" class="textbox textbox-small">
+                                        <span class="display-data" id="edLF_noofacts_value">3</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display">Craft Edit time needed</label>
+                                    <div class="display-data1">
+                                        <div class="textbox">
+                                            <input id="edLF_PieceDays_textbox" type="text" maxlength="3" class="textbox-small">weeks <input id="edLF_PieceHrs_textbox" type="text" maxlength="3" class="textbox-small">days <input id="edLF_PieceMin_textbox" type="text" maxlength="3" class="textbox-small">hours
+                                        </div>
+                                        <span class="display-data" id="edLF_craftedit-time_value">1 day 2 hours 3 minutes</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group form-group-editdate">
+                                    <label class="label label-display">Edit Start Date</label>
+                                    <div class="display-data1">
+
+                                        <input class="edLFcraft-startdate textbox" type="text" disabled="" id="edLF_craft_startdate_textbox">
+                                        <span id="edLF-craft-start-date" class="icon-datepicker"></span>
+                                        <div class="calender-conatainer-edLF-craft"></div>
+                                        <span class="display-data" id="edLF_craft_startdate_value">6/8/16</span>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-2 form-group" id="edLF-crash-tbd">
+                                    <label class="label label-display">Is this a crash edit?</label>
+                                    <div class="display-data1">
+                                        <input id="edLF-crashedit" type="checkbox" style="display:none">
+                                        <span class="display-data" id="edLF_crashedit_value">No</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-1 form-group form-group-noofeditors">
+                                    <label class="label label-display">Number of Editors:</label>
+                                    <div class="display-data1">
+                                        <input class="textbox textbox-small" id="edLF-noof-editor" maxlength="3">
+                                        <span class="display-data" id="edLF_noof_editor_value">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cols cols-4-5 form-group form-group-desktopeditshifts">
+                                    <label class="label label-display">Number of Desktop Edit Shifts</label>
+                                    <div class="display-data1">
+                                        <input id="edLF-IsCrashEdit" type="text" style="display:none" class="textbox textbox-small" maxlength="3">
+                                        <span class="display-data" id="edLF_edittime_value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">
+                                        Estimated Move to <br />Edit Room
+                                    </label>
+                                    <div class="display-data1">
+                                        <input id="edLf-est-editroom" disabled="" type="text" style="display:none" class="textbox edr-LNGF-estimate-startdate">
+                                        <span id="edLF-est-editroom-start-date" class="icon-datepicker"></span>
+                                        <div class="calender-conatainer-est-editroom"></div>
+                                        <span class="display-data" id="edLF_est_editroom_value">6/8/16</span>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-3 form-group">
+                                    <label class="label label-display">
+                                        Date of 1st <br />Screening
+                                    </label>
+                                    <div class="display-data1">
+                                        <input id="edLf-st-screen" disabled="" type="text" style="display:none" class="textbox edr-LNGF-craft-start-date-screen">
+                                        <span id="edLF-st-screen-start-date" class="icon-datepicker"></span>
+                                        <div class="calender-conatainer-st-screen"></div>
+                                        <span class="display-data" id="edLF_st_screen_value">6/8/16</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+
+                                <div class="cols cols-12 form-group">
+                                    <label class="label label-display">Comments: </label>
+                                    <div class="display-data1 edLF_CraftEditComments-div">
+                                        <textarea maxlength="1000" id="edLF_CraftEditComments" class="textarea-comment textbox"></textarea>
+                                        <span class="display-data" id="edLF_CraftEditComments_value"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subpage-content subpage-LF-ProducerEdit" id="LFProducerEditPage">
+                <h1 class="page-title">Producer Edit <span class="button-edit" title="Producer">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display">What are you editing?</label>
+                            <div class="display-data1">
+                                <div class="box-edLF-producer-produer" style="display:none">
+                                    <div class="form-edLF-producer-producer">
+                                        <div class="form-group">
+                                            <label class="label label-display">Spot</label>
+                                            <div class="form-filed-edLF-producer">
+                                                <input type="text" value="0" class="edLF-producer-textbox" id="edLF-Spot" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Rough Cut</label>
+                                            <div class="form-filed-edLF-producer">
+                                                <input type="text" value="0" class="edLF-producer-textbox" id="edLF-RoughCut" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Web Piece</label>
+                                            <div class="form-filed-edLF-producer">
+                                                <input type="text" value="0" class="edLF-producer-textbox" id="edLF-WebPiece" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">B-Roll/Teases</label>
+                                            <div class="form-filed-edLF-producer">
+                                                <input type="text" value="0" class="edLF-producer-textbox" id="edLF-BRollTeases" maxlength="3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label label-display">Awards</label>
+                                            <div class="form-filed-edLF-producer">
+                                                <input type="text" value="0" class="edLF-producer-textbox" id="edLF-Awards" maxlength="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="display-data" id="edLF_addRequirements_value">Spot 1,Rough Cut 4, Web Piece 6</span>
+                            </div>
+                        </div>
+                        <div style="padding-right:0" class="cols cols-3-5 form-group">
+                            <label class="label label-display">Length of Piece </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input type="text" class="textbox-small" maxlength="3" id="edLF_producer_PieceMinutes_textbox">hours <input type="text" class="textbox-small" maxlength="3" id="edLF-producer-PieceSeconds">minutes
+                                </div>
+                                <span id="edLF_producer_PieceMinutes_value" class="display-data">6 minutes 30 seconds</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div style="padding-left:0" class="cols cols-2-5 form-group" id="edLF-producers-tbd-new">
+                            <label class="label label-display">TBD</label>
+                            <div class="display-data1">
+                                <input type="checkbox" id="edLF_producer_Piecetbd_textbox" style="display:none">
+                                <span id="edLF_producer_Piecetbd_value" class="display-data">No</span>
+                            </div>
+                        </div>
+
+                        <div style="padding-right:0" class="cols cols-4 form-group">
+                            <label class="label label-display">
+                                Estimated Producer<br />
+                                Edit Time
+                            </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input id="edLF_producer_crafttimedays_textbox" type="text" maxlength="3" class="textbox-small">days <input id="edLF_producer_crafttimehrs_textbox" type="text" maxlength="3" class="textbox-small">hrs <input id="edLF_producer_crafttimemin_textbox" type="text" maxlength="3" class="textbox-small">mintues
+                                </div>
+                                <span id="edLF_producer_crafttime_value" class="display-data">1 day 2 hours 3 minutes</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subpage-content subpage-LF-AssistantEditorEdit" id="LFAssistantEditorEditPage">
+                <h1 class="page-title">Assistant Editor Edit <span class="button-edit" title="Assistant Editor">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-12 form-group">
+                            <label class="label label-display">Assignment Needed</label>
+                            <div class="display-data1">
+
+                                <div class="form-edLF-LNGF-AssEditor-Edit">
+                                    <div class="form-group">
+                                        <div class="form-filed-edLF-LNGF-Checkbox">
+                                            <input type="checkbox" id="checkbox-Ingest" class="edr-LNGF-AssEditor-checkbox">
+                                        </div>
+                                        <label class="label label-display">Ingest</label>
+
+                                        <div class="LNGF-AssEditor-editor-show" style="display: none;">
+                                            <div class="form-gorup-lngf-edit-show">
+                                                <label class="label">File Or Tape?</label>
+                                                <select id="LNGF-FileTape">
+                                                      <option>File</option>
+                                            <option>Tape</option>
+                                                </select>
+                                            </div>
+                                    <div class="form-gorup-lngf-edit-show newFileIngest">
+                                        <a href="/sites/bcast_prodreq/Pages/Home.aspx?Type=FileIngest" title="New File Ingest Request">New File Ingest</a>
+                                    </div>
+                                            <div class="form-gorup-lngf-edit-show">
+                                                <label class="label">How much material do you have to Ingest?</label>
+                                            </div>
+                                            <div class="form-gorup-lngf-edit-show">
+                                                <input type="text" maxlength="3" id="LNGF-IngestHours">
+                                                <label class="label">Hours</label>
+                                            </div>
+                                            <div class="form-gorup-lngf-edit-show">
+                                                <input type="text" maxlength="3" id="LNGF-IngestMinutes">
+                                                <label class="label">Minutes</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-filed-edLF-LNGF-Checkbox">
+                                            <input type="checkbox" maxlength="2" class="edr-LNGF-AssEditor-RadioCut">
+                                        </div>
+                                        <label class="label label-display">Radio Cut</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-filed-edLF-LNGF-Checkbox">
+                                            <input type="checkbox" maxlength="2" class="edr-LNGF-AssEditor-additionalelement">
+                                        </div>
+                                        <label class="label label-display">Additional Elements</label>
+
+                                        <div class="show-LF-lngf-checkbox-assignment">
+                                            <label class="label"><sub class="mandatory">*</sub></label>
+                                            <textarea maxlength="1000" id="txtarea-additional-elemments" class="lngf-textarea-show"></textarea>
+                                            <div style="display: none;" class="valid-msg valid-msg-error">Please complete the required field</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-filed-edLF-LNGF-Checkbox">
+                                            <input type="checkbox" class="edr-LNGF-AssEditor-other">
+                                        </div>
+                                        <label class="label label-display">Other</label>
+										<div class="show-LF-lngf-checkbox-assignment-other">
+                                            <label class="label"><sub class="mandatory">*</sub></label>
+                                            <textarea maxlength="1000" id="txtarea-other-elemments" class="lngf-textarea-show"></textarea>
+                                            <div style="display: none;" class="valid-msg valid-msg-error">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="edLF_assignment_value" class="display-data"></span>
+                            </div>
+                        </div>
+                        <div style="padding-right:0" class="cols cols-3-5 form-group form-group-lengthofpiece">
+                            <label class="label label-display">Length of Piece </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input type="text" class="textbox-small" maxlength="3" id="edLF_editor_PieceMinutes_textbox">hours <input type="text" class="textbox-small" maxlength="3" id="edLF-editor-PieceSeconds">minutues
+                                </div>
+                                <span id="edLF_editor_PieceMinutes_value" class="display-data">6 minutes 30 seconds</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div style="padding-left:0" class="cols cols-2-5 form-group form-group-editor-tbd-new" id="edLF-editor-tbd-new">
+                            <label class="label label-display">TBD</label>
+                            <div class="display-data1">
+                                <input type="checkbox" id="edLF_editor_Piecetbd_textbox" style="display:none">
+                                <span id="edLF_editor_Piecetbd_value" class="display-data">No</span>
+                            </div>
+                        </div>
+
+                        <div style="padding-right:0" class="cols cols-3 form-group form-group-ass-editor">
+                            <label class="label label-display">
+                                Asst. Editor Time
+                                <br />
+                                Needed
+                            </label>
+                            <div class="display-data1">
+                                <div class="textbox">
+                                    <input id="edLF_asst_timeneed_textbox" type="text" maxlength="3" class="textbox-small">days <input id="edLF_asst_editortimehrs_textbox" type="text" maxlength="3" class="textbox-small">hours
+                                </div>
+                                <span id="edLF_asst_timeneed_value" class="display-data">1 day 2 hours 3 minutes</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-3-5 form-group form-group-date-needed">
+                            <label class="label label-display">
+                                Date Needed
+                            </label>
+                            <div class="display-dataform">
+                                <input type="text" disabled="" id="erLF_editor_txtdate_textbox" class="textbox edr-LNGF-estimate-startdate">
+                                <span id="erLF-editor-date" class="icon-datepicker"></span>
+                                <div class="calendar-erLF-editor-date"></div>
+                                <span class="display-data" id="erLF_editor_txtdate_value">06/08/16</span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subpage-content subpage-LF-fullfilment" id="LFFullfilmentPage">
+                <h1 class="page-title">Fulfillment section<span class="button-edit" title="Fulfillment">edit</span></h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="add-fullfillment-container">
+                        <div class="additonal-editor">
+                            <div class="row">
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Editor Assigned:</label>
+                                    <div class="display-dataform">
+                                        <div id="edLF_editor_LF_assign_textbox_0" class="textbox"></div>
+                                        <span class="display-data" id="edLF_editor_LF_assign_value_0">Editor Name </span>
+                                    </div>
+
+                                </div>
+
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned From:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edLF_LF_assifrom_textbox_0" readonly />
+                                                <div class="calendar-edLF-fulfil-date" id="calendar-edLF-fulfil-date_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edLF_LF_assifromTime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edLF_LF_assifromsec_textbox_0" maxlength="3" value="">
+
+                                            </div>
+                                            <span class="display-data" id="edLF_LF_assifrom_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned To:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edLF_LF_assito_textbox_0" readonly />
+                                                <div class="calendar-edLF-fulfil-to-date" id="calendar-edLF-fulfil-to-date_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edLF_LF_assitotime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edLF_LF_assitosec_textbox_0" maxlength="3" value="">
+
+                                            </div>
+                                            <span class="display-data" id="edLF_LF_assito_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addbutton-container"> <span class="button-add button-addeditior">+ add additional editor</span> </div>
+                        </div>
+                        <div class="additonal-editor2">
+                            <!--<div class="row">
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Additional Editors:</label>
+                                    <div class="display-dataform">
+                                        <div id="edLF_editor_LF_asst_textbox_0" class="textbox"></div>
+                                        <span class="display-data" id="edLF_editor_LF_asst_value_0"></span>
+                                    </div>
+
+                                </div>
+                            </div>-->
+                            <div class="row">
+                                <div class="cols cols-4 form-group">
+                                    <label class="label label-display">Asst. Assigned:</label>
+                                    <div class="display-dataform">
+                                        <div id="edLF_editor_LF_asst2_textbox_0" class="textbox"></div>
+                                        <span class="display-data" id="edLF_editor_LF_asst2_value_0"></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned From:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edLF_LF_asstfrom_textbox_0" readonly />
+                                                <div class="calendar-edLF-fulfil-date" id="calendar-edLF-fulfil-asstfromdate_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edLF_LF_asstfromTime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edLF_LF_asstfromsec_textbox_0" maxlength="3" value="">
+
+                                            </div>
+                                            <span class="display-data" id="edLF_LF_asstfromsec_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="cols cols-4 form-group">
+                                    <div class="cols-12">
+                                        <label class="label label-display">Assigned To:</label>
+                                        <div class="display-dataform">
+                                            <div class="cols-6" style="float:left">
+                                                <input type="text" class="selectbox textbox datepicker-textbox" id="edLF_LF_asstto_textbox_0" readonly />
+                                                <div class="calendar-edLF-fulfil-to-date" id="calendar-edLF-fulfil-asstto-date_0"></div>
+                                            </div>
+                                            <div class="cols-4" style="float:left">
+                                                <select type="text" class="selectbox textbox" id="edLF_ff_assttotime_textbox_0">
+												<option></option>
+                                                    <option>1 AM</option>
+                                                    <option>2 AM</option>
+                                                    <option>3 AM</option>
+                                                    <option>4 AM</option>
+                                                    <option>5 AM</option>
+                                                    <option>6 AM</option>
+                                                    <option>7 AM</option>
+                                                    <option>8 AM</option>
+                                                    <option>9 AM</option>
+                                                    <option>10 AM</option>
+                                                    <option>11 AM</option>
+                                                    <option>12 AM</option>
+                                                    <option>1 PM</option>
+                                                    <option>2 PM</option>
+                                                    <option>3 PM</option>
+                                                    <option>4 PM</option>
+                                                    <option>5 PM</option>
+                                                    <option>6 PM</option>
+                                                    <option>7 PM</option>
+                                                    <option>8 PM</option>
+                                                    <option>9 PM</option>
+                                                    <option>10 PM</option>
+                                                    <option>11 PM</option>
+                                                    <option>12 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="cols-2" style="float:left">
+                                                <input type="text" class="edr-editor-textbox textbox" id="edLF_ff_assttoec_textbox_0" maxlength="3" value="">
+
+                                            </div>
+                                            <span class="display-data" id="edLF_ff_assttoec_value_0"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addbutton-container2"> <span class="button-add button-addeditior2">+ add additional asst. editor</span> </div>
+                        </div>
+                        <div class="row">
+                            <div class="cols cols-9 form-group">
+                                <label class="label label-display">Fulfiller Comments</label>
+                                <div class="display-data1">
+                                    <textarea maxlength="1000" class="textarea-comment cols-12" id="edLF_LF_comments"></textarea>
+
+                                </div>
+
+                                <div class="button-blue-container">
+                                    <span class="button-bule-mail">Confirmation Email</span>
+                                    <!--<span class="button-bule-mail">Save As Draft</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="subpage-content subpage-LF-postpage" id="LFPostEditPage">
+                <h1 class="page-title">Post Edit Confirmation</h1>
+                <div class="form-container form-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-4-5 form-group">
+                            <label class="label label-display">Was rough cut completed by:</label>
+                            <div class="display-data1">
+                                <input type="checkbox" id="edLF_postcut_producer_chkbx" /> Producer
+
+                                <input type="checkbox" id="edLF_postcut_Asst_Editor_chkbx" /> Asst. Editor
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group form-group-act-length">
+                            <label class="label label-display">Actual Length in hours:</label>
+                            <div class="display-data1">
+                                <input type="text" id="edLF_acthrs_txtbx" class="textbox-small" maxlength="3" />
+                            </div>
+                        </div>
+
+                        <div class="cols cols-3 form-group form-group-postedit-rooms">
+                            <label class="label label-display">#Edit Shifts in Rooms:</label>
+                            <div class="display-data1">
+                                <input type="text" id="edLF_shtroom_chkbx" class="textbox-small" maxlength="3"  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-3 form-group form-group form-group-postedit-desktop">
+                            <label class="label label-display">#Edit Shifts on desktops:</label>
+                            <div class="display-data1">
+                                <input type="text" id="edLF_shftdsktp_txtbx" class="edr-editor-textbox" maxlength="3"  />
+                            </div>
+                        </div>
+                        <div class="cols cols-3 form-group form-group-postedit-noofeditors">
+                            <label class="label label-display">Final # of Editors:</label>
+                            <div class="display-data1">
+                                <input type="text" id="edLF_fnledt_txtbx" class="edr-editor-textbox" maxlength="3"  />
+                            </div>
+                        </div>
+
+                        <div class="cols cols-3 form-group form-group-postedit-Finairdate">
+                            <label class="label label-display">Final Air Date:</label>
+                            <div class="display-data1">
+                                <input type="text" id="edLF_finalairdate_txtbx" class="selectbox datepicker-textbox" readonly />
+                                <div class="calendar-edLF_finalairdate" id="calendar-edLF_finalairdate"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="cols cols-3 form-group form-group-postedit-confirmation">
+                            <label class="label label-display">Post Edit Confirmation Completed?</label>
+                            <div class="display-data1">
+                                <input type="checkbox" id="edLF_psotcomment_box" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="cols cols-12 form-group form-group-post-comments-box" style="margin-bottom:25px;">
+                            <label class="label label-display">Post Edit Comments: </label>
+                            <div class="display-data1" style="width:87%;">
+                                <textarea maxlength="1000" class="textarea-comment cols-12" id="edLF_postcomment"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="cols cols-12 button-group button-group-status">
+                            <label class="label label-display label-status">
+                                Request Status <sup class="mandatory">*</sup> <br>
+                                <small><i>Select the status of <br />request</i></small>
+                            </label>
+                            <div class="display-fullwidth">
+                                <div class="cols-2 buttons-cols"><a title="New" class="button button-new active">New</a></div>
+                                <div class="cols-2 buttons-cols"><a title="Revised" class="button button-revised">Revised</a></div>
+                                <div class="cols-2 buttons-cols"><a title="Booked" class="button button-booking">Booked</a></div>
+
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <p class="footer-version">
+                Created at 6/8/2016 5:08 PM bt Koss, Mitch (78632783)<br>
+                Last modified at 6/8/2016 5:08 PM by Workflow on behalf of Koss, Mitch<br>
+            </p>
+        </section>
+        <div id="valideditsection" class="valid-msg valid-msg-error" style="display: none;">Please save the edit section</div>
+        <div class="button-bottom-next"><span id="btn-print" title="Print" class="button-next">Print</span><span id="btn-submit" title="Submit" class="button-next">Submit</span><span id="btn-cancel" title="Cancel" class="button-next">Cancel</span> </div>
+    </div>
+</div>

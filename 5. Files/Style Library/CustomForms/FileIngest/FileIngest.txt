@@ -1,0 +1,469 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/css/normalize.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/css/style-fineingest.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/css/responsive-fineingest.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/jquery-ui.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/daterangepicker.css" media="screen">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/NBCU.FileIngest.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/NBCU.FileIngest.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/NBCU.FileIngest.Summary.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/NBCU.FileIngest.Device.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/js/NBCU.FileIngest.Additional.js"></script>
+
+<div class="wrapper" id="FileIngest">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/FileIngest/images/nbc-news-fileingest-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">File Ingest  Request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation FLNNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span action="Summary" title="Summary">Summary</span></li>
+                    <li><span action="Device" title="FLN-Device and camera type">Device and camera type</span></li>
+                    <li><span action="Additional" title="FLN-Additional info">Additional info</span></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-FLN-summary" id="FLN-Summary-page" style="display:none;">
+                <h1 class="page-title">Summary</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group FLN-summary-form-group-requester">
+                                <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                <div class="display-data1-new display-data1-FLN-summary-signin" id="FLN-summary-requester"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequesterDiv" style="display:none"> </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group FLN-summary-form-group-contact">
+                                <label class="label label-display">Contact # <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-contact">
+                                    <input type="text" class="textbox" value="" id="FLN-summary-contact" placeholder="(XXX) XXX-XXXX" maxlength="21">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group FLN-summary-form-group-email">
+                                <label class="label label-display">Email </label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-email">
+                                    <input type="text" class="textbox" value="" id="FLN-summary-email">
+                                    <span class="display-data"></span>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please enter valid email id</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-New button-edit-New-summary">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group FLN-summary-form-group-producer-requestor">
+                                <label class="label label-producer-requestor">Producer same as Requestor?</label>
+                                <div class="display-data-chekbox-new display-data-FLN-summary-chekbox">
+                                    <select class="selectbox-mini" id="FLN-summary-producerasrequestor">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group FLN-summary-form-group-producer">
+                                <label class="label label-display label-producer"> Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-producer">
+                                    <div class="display-data" id="FLNProducer" style="display:none;"> </div>
+                                    <div class="display-data" id="peoplePickerProducerFLNDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-5 form-group FLN-summary-form-group-Senior-producer">
+                                <label class="label label-display label-producer"> Senior Producer <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-senior-Producer">
+                                    <div class="display-data" id="peoplePickerApproverFLNDiv"> </div>
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-line">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-6 form-group FLN-summary-form-group-slug">
+                                <label class="label label-display"> Slug <sup class="mandatory">*</sup> </label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-slug">
+                                    <input class="selectbox-full" type="text" id="FLN-summary-slug">
+                                    <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group">
+                                <div class="row">
+                                    <div class="cols cols-3 FLN-summary-form-group-airdate">
+                                        <label class="label label-display"> Air Date</label>
+                                        <div class="display-dataform-new display-dataform-FLN-summary-airdate">
+                                            <input class="selectbox ProducerField" type="text" id="FLN-summary-txtairdate" disabled>
+                                            <span class="icon-datepicker" id="FLN-summary-airdate"></span>
+                                            <div class="calender-conatainer-FLNairdate"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="cols cols-2 FLN-summary-form-group-tbd">
+                                        <input type="checkbox" id="FLN-airdateTBD">
+                                        TBD
+                                    </div>
+                                    <div class="cols cols-4 FLN-summary-form-group-locaton-edit">
+                                        <label class="label label-display"> Date Needed By </label>
+                                        <div class="display-dataform-new display-dataform-FLN-summary-location">
+                                            <input class="selectbox-full" type="text" id="FLN-dateneed-txtairdate" disabled>
+                                            <span class="icon-datepicker" id="FLN-dateneed-airdate"></span>
+                                            <div class="calender-conatainer-FLNdateneed"></div>
+                                        </div>
+                                    </div>
+                                    <div class="cols cols-3 FLN-summary-form-group-asap">
+                                        <input id="FLN-summary-asap" type="checkbox">
+                                        ASAP
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-12 form-group">
+                                <div class="row">
+                                    <div class="cols-12">
+                                        <div class="cols cols-4  FLN-summary-form-group-Work-Group">
+                                            <label class="label label-display"> Workgroup <sup class="mandatory">*</sup> </label>
+                                            <div class="display-dataform-new display-dataform-FLN-summary-showunit">
+                                                <select class="selectbox-full FLN-summary-WorkGroup">
+                                                    <option></option>
+                                                    <option>01</option>
+                                                    <option>02</option>
+                                                    <option>04</option>
+                                                    <option>06</option>
+                                                    <option>Peacock Productions</option>
+                                                </select>
+                                                <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-4  FLN-summary-form-group-show-unit">
+                                            <label class="label label-display"> Show Unit <sup class="mandatory">*</sup> </label>
+                                            <div class="display-dataform-new display-dataform-FLN-summary-showunit">
+                                                <input class="selectbox-full FLN-summary-showunit">
+                                                <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-4  FLN-summary-form-group-budget-code">
+                                            <label class="label label-display"> Budget Code </label>
+                                            <div class="display-dataform-new display-dataform-FLN-summary-budgetcode">
+                                                <input class="selectbox-full FLN-summary-budgetcode" type="text">
+                                                <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="addbutton-container"> <span class="button-add1 button-budgetcode">+ add budget code</span> </div>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-5 form-group FLN-summary-form-group-correspondent">
+                                <label class="label label-display"> Correspondent</label>
+                                <div class="display-dataform-new display-dataform-edr-summary-correspondent">
+                                    <input class="selectbox-full" type="text" id="edr-summary-correspondent">
+                                </div>
+                            </div>
+                            <div class="cols cols-4 form-group FLN-summary-form-group-attachcrewID">
+                                <label class="label label-display"> Attach Edit Request ID </label>
+                                <div class="display-dataform-new display-dataform-FLN-summary-attachcrewID">
+                                    <input class="selectbox-full" type="text" id="FLN-summary-attachcrewID">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next  button-bottom-static  btn-FLN">
+                    <span title="Next" class="button-next" action="Device">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="FLN-Device-Camera" style="display:none;">
+                <h1 class="page-title">Device and Camera type</h1>
+                <section class="content-section">
+                    <div class="FLN-device-camera-form-container">
+                        <div class="FLN-device-camera-form">
+                            <div class="form-container form-container-horizontal">
+                                <div class="row">
+                                    <div class="cols cols-12 form-group FLN-form-group-device">
+                                        <label class="label label-display"> Device Type:<sup class="mandatory">*</sup> </label>
+                                        <div class="display-dataform-new display-dataform-FLN-summary-slug">
+                                            <select class="selectbox-full fi-DeviceType">
+                                                <option></option>
+                                                <option>(None)</option>
+                                                <option>COMPACT FLASH CARD (CF CARD)</option>
+                                                <option>HARD DRIVE</option>
+                                                <option>MICRO SD CARD</option>
+                                                <option>OTHER</option>
+                                                <option>P2 CARD</option>
+                                                <option>PRODUCER MAILBOX</option>
+                                                <option>SD CARD</option>
+                                                <option>SXS CARD</option>
+                                                <option>THUMB DRIVE</option>
+                                                <option>XDCAM DISC</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-container form-container-horizontal">
+                                <div class="row">
+                                    <div class="cols cols-2-5 form-group FLN-form-group-quantity">
+                                        <label class="label label-display"> Quantity: </label>
+                                        <div class="display-dataform-new display-dataform-FLN-summary-slug">
+                                            <input class="selectbox-full fi-Quantity" type="text" style="width:75px">
+                                            <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                        </div>
+                                    </div>
+									
+									<div class="addbutton-container addbutton-qty" style="">
+                                <span class="button-add1 button-addDevice" style="float:left">
+                                    + add additional device type
+                                </span>
+                            </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="box-edr-craft-produer box-edr-craft-checkbox">
+                            <h2 class="title-edr-craft-title">
+                                Camera Type:
+                                <small class="info-title">Check all that apply</small>
+                            </h2>
+
+                            <div class="form-FLN-camera-type ">
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Canon 5D Mark II and Mark III</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Canon C300 Mark I and Mark II</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Canon XF205(DJ Camera)</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony F3</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony FS7</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony F5</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony F55</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony Various PMW series</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Sony Action Cam</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Panasonic GH4</label>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Panasonic AJ-PX5000</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Panasonic AJ-PX270</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">Panasonic Vericam</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">GoPro Hero 2</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">GoPro Hero 3</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left">
+                                    <label class="label label-display">GoPro Hero 4</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="AdditionalRequirements" class="checkbx-left otherchange">
+                                    <label class="label label-display">Other</label>
+                                    <textarea class="othertxt" style="display:none;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <div class="button-bottom-next button-bottom-static btn-edr">
+                    <span title="Back" class="button-next" action="Summary">Back</span>
+                    <span title="Next" class="button-next" action="Additional">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="FLN-Additional" style="display:none;">
+                <h1 class="page-title">Additional Info</h1>
+                <section class="content-section">
+                    <div class="FLN-additional-info">
+                        <div class="form-container form-container-horizontal">
+                            <div class="row">
+                                <div class="cols cols-6  form-group">
+                                    <label class="label label-display">Content Description:<sup class="mandatory">*</sup></label>
+                                    <div class="display-dataform-new display-dataform-FLN-addinfo-des">
+                                        <textarea class="textarea-description" id="fi-contentDesc"></textarea>
+                                        <div class="valid-msg valid-msg-error" style="display: none;">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-4  form-group">
+								<label class="label label-display">Attach instructions :</label>
+								<div class="display-dataform-new display-dataform-attach-file">
+                                    <input id="getFile" type="file"><br>
+                                    <input id="addFileButton" type="button" value="Upload" class="file-attach ms-heroCommandLink">
+                                    <small class="browfe-info"></small>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-container form-container-horizontal">
+                            <div class="row">
+                                <div class="cols cols-6  form-group">
+                                    <label class="label label-display">Crew/Shooter:</label>
+                                    <div class="display-dataform-new display-dataform-FLN-crew-shoot">
+                                        <input class="selectbox-full" type="text" id="fi-crewShooter">
+
+                                    </div>
+                                </div>
+                                <div class="cols cols-4  form-group">
+                                    <label class="label label-display">Crew Request ID:</label>
+                                    <div class="display-dataform-new display-dataform-FLN-addinfo-des">
+                                        <input class="selectbox-full" type="text" id="fi-crewRequestID">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-container form-container-horizontal">
+                            <div class="row">
+                                <div class="cols cols-6  form-group">
+                                    <label class="label label-display">
+                                        Additional and <br>
+                                        Alternate Emails:
+                                    </label>
+                                    <div class="display-dataform-new display-dataform-FLN-crew-shoot">
+                                        <input class="selectbox-full" type="text" id="fi-alternateEmails">
+
+                                    </div>
+                                </div>
+                                <div class="cols cols-4  form-group">
+                                    <label class="label">
+                                        Need Material consolidated<br />
+                                        to an external hard drive?
+                                    </label>
+                                    <div class="display-dataform-new display-dataform-FLN-mateiral">
+                                        <input type="radio" name="exteranlHD" value="Yes" /> Yes<br />
+                                        <input type="radio" name="exteranlHD" value="No" /> No
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-container form-container-horizontal">
+                            <div class="row">
+                                <div class="cols cols-6  form-group">
+                                    <label class="label label-display">
+                                        Comments:
+                                    </label>
+                                    <div class="display-dataform-new display-dataform-FLN-comments">
+                                        <textarea class="textarea-description" id="fi-comments"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="cols cols-4  form-group workgroupYes" style="display:none">
+                                    <label class="label">
+                                        If YES, workgroup:
+                                    </label>
+                                    <div class="display-dataform-new display-dataform-FLN-mateiral">
+                                        <select class="selectbox-full" type="text">
+                                            <option></option>
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>04</option>
+                                            <option>06</option>
+                                            <option>Peacock Productions</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <div class="button-bottom-next  btn-edr">
+                    <span title="Back" class="button-next" action="Device">Back</span>
+                    <span title="Submit" class="button-next successPage" action="Submit">Submit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popupscreen popupscreen-thanks" id="thanksScreen">
+    <div class="overlay"></div>
+    <div class="model-form-container model-form-thanksmsg">
+        <div class="model-form-group">
+            <h3 class="page-title">Thank you for Submitting a File Ingest Request</h3>
+
+            <div class="button-close">Close</div>
+        </div>
+    </div>
+</div>

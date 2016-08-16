@@ -1,0 +1,130 @@
+﻿<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    
+
+    $(function () {
+        //SP.SOD.executeOrDelayUntilScriptLoaded(getUserProperties("i:0#.w|tfayd\\206480712"), 'SP.UserProfiles.js');
+        //ExecuteOrDelayUntilScriptLoaded(getUserProperties("i:0#.w|tfayd\\206480713"), "sp.js");
+
+		$.ajax({
+            url: "https://samurai.cnbc.com/Search/?format=brief&maxReturn=10&wireInclude=LU&scope=headline&query=trum*",
+            data: "{}",
+            type: "GET",
+            async: false,
+            contentType: "application/javascript",
+            dataType: "json",
+            error: function (data) {
+                alert("Story API Failed")
+				console.log("Story API Failed")
+            },
+            success: function (data) {
+                alert("Story API success - "+ data.length)
+				console.log("Story API success")
+            }
+        });
+
+		$.ajax({
+            url: "http://test-samurai.acquiremedia.com/Search/?format=brief&wireInclude=NC&maxReturn=25&query=penn*&scope=all&status=all",
+            data: "{}",
+            type: "GET",
+            async: false,
+            contentType: "application/javascript",
+            dataType: "json",
+            error: function (data) {
+                alert("test Story API Failed")
+				console.log("Story API Failed")
+            },
+            success: function (data) {
+                alert("tes Story API success - "+ data.length)
+				console.log("Story API success")
+            }
+        });
+
+    });
+
+  
+
+    function getUserProperties(targetUser) {
+        SP.SOD.executeFunc('userprofile', 'SP.UserProfiles.PeopleManager', function () {
+            // Replace the placeholder value with the target user's credentials.
+            //var targetUser = "domainName\\userName";
+
+            // Get the current client context and PeopleManager instance.
+            var clientContext = new SP.ClientContext.get_current();
+            var peopleManager = new SP.UserProfiles.PeopleManager(clientContext);
+
+            // Get user properties for the target user.
+            // To get the PersonProperties object for the current user, use the
+            // getMyProperties method.
+            personProperties = peopleManager.getPropertiesFor(targetUser);
+
+            // Load the PersonProperties object and send the request.
+            clientContext.load(personProperties);
+            clientContext.executeQueryAsync(onRequestSuccess, onRequestFail);
+        });
+    }
+
+    function onRequestSuccess() {
+        //alert(email);
+        phoneNo = personProperties.get_userProfileProperties()['CellPhone'];
+        email = personProperties.get_userProfileProperties()['WorkEmail'];
+        alert(email);
+
+        //// Get a property directly from the PersonProperties object.
+        //var messageText = " \"DisplayName\" property is "
+        //    + personProperties.get_displayName();
+
+        //// Get a property from the UserProfileProperties property.
+        //messageText += "<br />\"Department\" property is "
+        //    + personProperties.get_userProfileProperties()['Department'];
+        //$get("results").innerHTML = messageText;
+    }
+
+    function onRequestFail(sender, args) {
+        alert('fail');
+    }
+
+    function getWebUserData() {
+        SP.SOD.executeFunc('userprofile', 'SP.UserProfiles.PeopleManager', function () {
+            context = new SP.ClientContext.get_current();
+            web = context.get_web();
+            currentUser = web.get_currentUser();
+            currentUser.retrieve();
+
+            peopleManager = new SP.UserProfiles.PeopleManager(context);
+            personProperties = peopleManager.getMyProperties();
+
+            context.load(web);
+            context.load(personProperties);
+
+            context.executeQueryAsync(Function.createDelegate(this, this.onSuccessMethod), Function.createDelegate(this, this.onFailureMethod));
+        });
+    }
+
+    function onSuccessMethod(sender, args) {
+
+        var userObject = web.get_currentUser();
+        loginName = userObject.get_loginName();
+        //loginName = userObject.get_email();
+
+
+        /*requestorname = userObject.get_title();
+        requestoremail1 = userObject.get_email();
+        workphone = personProperties.get_userProfileProperties()['WorkPhone'];
+        mobilephone = personProperties.get_userProfileProperties()['CellPhone'];
+        UserName = personProperties.get_userProfileProperties()['UserName'];
+
+        requestor[0].value = requestorname;
+        requestorcontact[0].value = workphone;
+        requestoremail[0].value = requestoremail1;
+        requestorsso[0].value = UserName;
+        requestorcellphone[0].value = mobilephone;*/
+
+
+    }
+
+    function onFailureMethod(sender, args) {
+        alert('request failed ' + args.get_message() + '\n' + args.get_stackTrace());
+    }
+
+</script>

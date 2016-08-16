@@ -1,0 +1,226 @@
+﻿@media only screen and (min-width: 0px) and (max-width: 767px) {
+   
+body {
+	overflow-x: hidden;
+	font-size: 13px !important;
+    
+}
+.ms-siteicon-a img{width:57px;}
+.wrapper{font-size:13px}
+#ms-designer-ribbon{display:none}
+    #contentBox {
+        min-width:100%;
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+#s4-workspace{
+    width:100% !important;
+}
+#s4-ribbonrow{
+    display:none !important;
+}
+    #suiteBarLeft {
+        display:none;
+    }
+
+#suiteBar{
+    display:inherit !important;
+    float:left;
+    width:100%;
+}
+/*#suiteBarButtons{
+    float:right !important;
+}*/
+#DeltaSuiteBarRight.ms-core-deltaSuiteBarRight{
+    width:100%; float:left;
+}
+
+#suiteBarRight{
+    float:left;
+    width:100%;
+}
+#welcomeMenuBox {
+    float:left;
+}
+#suiteBarButtons{
+    float:right;
+}
+#s4-titlerow{
+    display:none !important;
+}
+.dashboard-container{
+    margin:-19px 0 0 0;
+}
+    .header-dropdown-container {
+        width: 83%;
+    }
+    .header-dashboard{
+        height:auto;
+    }
+    .edit-Cont, .long-Cont{width:100%;}
+    .edit-Cont .dashboard-drp-show{
+        margin-right:0;
+        margin-left:0;
+        width:65%;
+        padding-right:15px;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+    }
+    .edit-Cont .dashboard-drp-show:nth-child(even){
+        padding-right:0;
+        width:35%;
+    }
+    .navi-dropdwon{width:100%; padding-right:25px;}
+    .button-dashborad{
+        margin-left:0;
+        margin-right:2px;
+    }
+   
+.dashboard-tab-container{display:block;}
+.button-dashboard-container{
+    margin-top:5px;
+}
+
+.grid-title{
+  
+    box-sizing:border-box;
+    padding:3px 6px 6px 15px;
+    font-size:17px;
+}
+.viewed-by-date{width:auto; box-sizing:border-box; padding:0 15px; float:right; }
+.value-state-view{width:auto; padding:0 7px;}
+
+.dash-form-right{
+    width:100%;
+    padding:0 15px;
+    box-sizing:border-box;
+    float:left;
+}
+.grid-search{
+    width:100%;
+     padding:0 15px;
+    box-sizing:border-box;
+    margin-top:10px;
+}
+.grid-search .searchbox{  width:100% !important;}
+  .tab-content-container .ui-jqgrid.ui-widget-content {
+        width: 100% !important;
+    }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view {
+            width: 100% !important;
+        }
+
+            .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-hdiv, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-bdiv {
+                width: 100% !important;
+            }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-hbox, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-bbox {
+            width: 100% !important;
+        }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-htable, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-btable {
+            width: 100% !important;
+        }
+         .table-scroll-mobile{
+             width:100%;
+             overflow:scroll;
+         }
+    .table-scroll-mobile #gbox_EditRequestGrid,.table-scroll-mobile #gbox_LongFormGrid,.table-scroll-mobile #gbox_MSNBCGrid,.table-scroll-mobile #gbox_TDYGrid{
+        width:400% !important;
+    }
+    .request-value{
+        position: absolute;
+    top: -9px;
+    left:-7px;
+    background: #ff6428;
+    height: 25px;
+    line-height: 25px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+      border-radius: 10px;
+    min-width: 15px;
+    line-height: 25px;
+    font-size:10px;
+    padding:0 3px;
+    z-index:1;
+    }
+    .dashboard-tab li.tab-li{
+        font-size:10px;
+        font-weight:normal;
+        padding:3px 15px;
+        line-height:12px;
+    }
+    .dashboard-tab li.tab-li.tab-EDR{ padding:3px 17px;}
+    .dashboard-tab li.tab-li.active{
+       line-height:12px;
+        padding-top:8px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1024px) {
+    .dashboard-tab li.tab-li {
+        font-size: 15px;
+    }
+
+    .searchbox {
+        width: 105px !important;
+    }
+
+    .tab-content-container .ui-jqgrid.ui-widget-content {
+        width: 100% !important;
+    }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view {
+            width: 100% !important;
+        }
+
+            .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-hdiv, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-bdiv {
+                width: 100% !important;
+            }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-hbox, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-bbox {
+            width: 100% !important;
+        }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-htable, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-btable {
+            width: 100% !important;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 989px) {
+    .dashboard-tab li.tab-li {
+        font-size: 15px;
+    }
+
+    .searchbox {
+        width: 105px !important;
+    }
+
+    .tab-content-container .ui-jqgrid.ui-widget-content {
+        width: 100% !important;
+    }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view {
+            width: 100% !important;
+        }
+
+            .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-hdiv, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-bdiv {
+                width: 100% !important;
+            }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-hbox, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-bbox {
+            width: 100% !important;
+        }
+
+        .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-htable, .tab-content-container .ui-jqgrid.ui-widget-content .ui-jqgrid-view .ui-jqgrid-btable {
+            width: 100% !important;
+        }
+}

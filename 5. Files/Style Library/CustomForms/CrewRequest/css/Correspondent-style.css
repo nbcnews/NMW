@@ -1,0 +1,102 @@
+#CorrespondentLiveShot .footer{
+    position:fixed;
+}
+.Corrs-cols-whatpage .Corrs-form-talent .label, .Corrs-cols-whatpage .Corrs-form-group-upload .label {
+	width: 137px;
+}
+.Corrs-forms-add-conatiner {
+	/*width: 60%;*/
+	float: left;
+	padding-right:15px;
+}
+.Corrs-form-talent .addbutton-container {
+	/*width: 40%*/
+}
+.Corrs-cols-whatpage .Corrs-forms-add-conatiner .field-input{
+	width: calc(100% - 137px)
+	}
+.Corrs-addbutton-container{float:left; width:auto !important; margin-left:0; margin-top:5px;	}
+.Corrs-forms-add-conatiner.active{margin-right:25px;}
+.Corrs-cols-whatpage {
+	padding-right: 60px;
+}
+.Corrs-cols-whatpage .label {
+	width: 185px;
+}
+.Corrs-cols-whatpage .field-input {
+	width: calc(100% - 185px);
+}
+
+.Corrs-cols-whatpage .Corrs-cols-showunit .Corrs-form-showunit .label,.Corrs-cols-whatpage .Corrs-cols-showunit .Corrs-form-showunit .label {
+	width: 137px;
+}
+.Corrs-cols-whatpage .Corrs-cols-showunit  .Corrs-form-showunit .field-input ,.Corrs-cols-whatpage .Corrs-cols-budget  .Corrs-form-budget .field-input {
+	width: calc(100% - 137px);
+}
+/*.Corrs-addbutton-container {
+	float: left;
+	margin-top: 0;
+	width: 100%;
+	padding-left: 0;
+}*/
+
+.Corrs-button-addsu,.Corrs-button-addt {
+	color: #1c9fd0;
+	cursor: pointer;
+	font-weight: bold;
+}
+.Corrs-time-zone-cols .Corrs-form-group select.text-box-mini {
+    padding:0 3px;
+}
+
+.Corrs-button-remove-talent {
+	background-color: transparent;
+	border: medium none;
+	color: #1c9fd0;
+	cursor: pointer;
+	padding-right: 4px;
+}
+
+.Corrs-button-remove-talent {
+	margin-left: 140px;
+	line-height: 28px;
+	position: absolute;
+	margin-left: 10px;
+}
+
+.Corrs-time-zone-cols small.cols {
+	margin-top: 5px;
+}
+.Corrs-time-zone-cols{width:100%; float:left; margin-top:10px;}
+.time-zone-cols .form-group,.Corrs-time-zone-cols .Corrs-form-group {
+	margin: 0 0 13px 0;
+	width: 100%;
+	float: left;
+}
+.Corrs-time-zone-cols .Corrs-form-group{width:33.33%; padding-right:35px;}
+
+.Corrs-form-group-attach .field-input .text-box {
+	border: 1px solid #979797;
+	border-radius: 3px;
+	width: 75%;
+}
+
+.Corrs-form-group-attach {
+	left: 50px;
+	padding-right:50px;
+	margin-bottom: 0 !important;
+}
+.Corrs-cols-whatpage .Corrs-form-group-attach .field-input{
+	width: calc(100% - 200px);
+}
+.Corrs-form-talent .Corrs-forms-add-conatiner {
+	margin-bottom: 15px;
+}
+.Corrs-cols-whatpage .form-group{margin:0 0 20px 0}
+.Corrs-cols-showunit {
+    position:relative;
+}
+.Corrs-cols-showunit .Corrs-button-remove-showunit{
+    position:absolute;
+
+}

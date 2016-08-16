@@ -1,0 +1,310 @@
+<style>
+    .pop-CR {
+        float: left;
+        padding: 15px 15px;
+        width: 170px;
+        height: 170px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-left: -15px;
+    }
+
+    .navi-box {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        float: left;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+
+        .navi-box:hover .icon-img {
+            transform: scale(1.1);
+        }
+
+        .navi-box:first-child {
+            margin-left: 0;
+        }
+
+    .navi-ncr {
+        background-color: rgba(246,135,31,0.5);
+    }
+
+        .navi-ncr:hover {
+            background-color: rgba(246,135,31,0.65);
+        }
+
+    .icon-img {
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        max-width: 80px;
+        max-height: 60px;
+    }
+
+    .navi-box:hover .icon-img {
+        transform: scale(1.1);
+    }
+
+    .navi-text {
+        float: left;
+        font-size: 11px;
+        color: #fff;
+        background-color: rgba(0,0,0,0.2);
+        width: 100%;
+        line-height: 24px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .navi-icon {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 160px;
+    }
+
+    .ms-dlgTitle {
+        padding-bottom: 0 !important;
+    }
+
+    .ms-dlgFrameContainer h1.page-title, .page-title {
+        margin-top: 0;
+    }
+</style>
+<link href="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/css/dataTables-style.css" rel="stylesheet" />
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    function openBasicDialog(tUrl, tTitle) {
+        var options = {
+            url: tUrl,
+            title: tTitle,
+            width: 1200,
+            dialogReturnValueCallback: CloseCallback
+        };
+        //SP.UI.ModalDialog.showModalDialog(options);
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+    }
+    function CloseCallback(strReturnValue, result, target)
+    {
+        //var crewRequestData = ReadList("", "CrewRequest", "?$select=Id,Title,RequestStatus,CrewStatus,AssignmentSlug,CrewAddress,StoryName,Requester&$filter=CrewStatus eq 'Step5' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend'&$orderby=ID desc");
+        var crewRequestData = ReadList("", "CrewRequest", "?$select=Id,Title,RequestStatus,CrewRequestID,CrewStatus,AssignmentSlug,CrewAddress,StoryName,Requester,CrewType&$filter=(((CrewStatus eq 'Step5' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and CrewType eq 'General Crew Request') or ((CrewStatus eq 'Step4' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and (CrewType eq 'Breaking News' or CrewType eq 'Correspondent Live Shot')) or ((CrewStatus eq 'Step1' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and CrewType eq 'Bureau Camera'))&$orderby=ID desc");
+		if(crewRequestData.length > 0){
+			$('#MyRequestGrid').dataTable().fnClearTable();
+			$('#MyRequestGrid').dataTable().fnAddData(crewRequestData);
+		}
+		var editRequestData = ReadList("", "EditRequest", "?$select=Id,Title,EditStatus,EditType,EditRequestID,Slug,RequestorName&$filter=EditStatus eq 'FormSubmit' &$orderby=ID desc");
+		if (editRequestData.length > 0) {
+		    $('#EditRequestGrid').dataTable().fnClearTable();
+		    $('#EditRequestGrid').dataTable().fnAddData(editRequestData);
+		}
+
+		var fileIngestData = ReadList("", "FileIngest", "?$select=Id,Title,RequestorName,FileIngestID,Slug,Workgroup,IngestStatus&$filter=IngestStatus eq 'FormComplete' &$orderby=ID desc");
+		if (fileIngestData.length > 0) {
+		    $('#FileIngestGrid').dataTable().fnClearTable();
+		    $('#FileIngestGrid').dataTable().fnAddData(fileIngestData);
+		}
+    }
+    $(function () {
+        $('#DeltaPlaceHolderPageTitleInTitleArea').text("Producer Request");
+        $('#crewRequest').click(function () {
+            if ($(window).width() >= 1200) {
+                openBasicDialog("/sites/bcast_prodreq/Pages/Crew-Request.aspx", " ");
+            }
+            else {
+                location.href = "/sites/bcast_prodreq/Pages/Crew-Request.aspx";
+            }
+        });
+
+		$('#editRequest').click(function () {
+			if ($(window).width() >= 1200) {
+				openBasicDialog("/sites/bcast_prodreq/Pages/Edit-Request.aspx", " ");
+			}
+			else {
+                location.href = "/sites/bcast_prodreq/Pages/Edit-Request.aspx";
+            }
+        });
+		//fileIngest
+
+		$('#fileIngest').click(function () {
+			if ($(window).width() >= 1200) {
+				openBasicDialog("/sites/bcast_prodreq/Pages/File-Ingest.aspx", " ");
+			}
+			else {
+                location.href = "/sites/bcast_prodreq/Pages/File-Ingest.aspx";
+            }
+        });
+
+        //var crewRequestData = ReadList("", "CrewRequest", "?$select=Id,Title,RequestStatus,CrewStatus,AssignmentSlug,CrewAddress,StoryName,Requester&$filter=CrewStatus eq 'Step5' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend'&$orderby=ID desc");
+		var crewRequestData = ReadList("", "CrewRequest", "?$select=Id,Title,RequestStatus,CrewStatus,AssignmentSlug,CrewRequestID,CrewAddress,StoryName,Requester,CrewType&$filter=(((CrewStatus eq 'Step5' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and CrewType eq 'General Crew Request') or ((CrewStatus eq 'Step4' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and (CrewType eq 'Breaking News' or CrewType eq 'Correspondent Live Shot')) or ((CrewStatus eq 'Step1' or CrewStatus eq 'Save' or CrewStatus eq 'SaveRevise' or CrewStatus eq 'SaveSend') and CrewType eq 'Bureau Camera'))&$orderby=ID desc");
+		var editRequestData = ReadList("", "EditRequest", "?$select=Id,Title,EditStatus,EditType,EditRequestID,Slug,RequestorName&$filter=EditStatus eq 'FormSubmit' &$orderby=ID desc");
+		var fileIngestData = ReadList("", "FileIngest", "?$select=Id,Title,RequestorName,FileIngestID,Slug,Workgroup,IngestStatus&$filter=IngestStatus eq 'FormComplete' &$orderby=ID desc");
+        //EditRequestGrid
+		$('#FileIngestGrid').DataTable({
+		    "dom": '<"heading-datatable">frtip',
+		    data: fileIngestData,
+		    "bLengthChange": false,
+		    columns: [
+                {
+                    "render": function (data, type, full, meta) {
+                        return '<img class="editIcon fiEdit" src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/images/edit_icon.png" alt="' + full.ID + '">';
+                    }
+                },
+                { data: "Id", title: "Id", "visible": false },
+                { data: "Title", title: "Title", "visible": false },
+                { data: "FileIngestID", title: "File Ingest ID" },
+                { data: "Workgroup", title: "Workgroup" },
+                { data: "Slug", title: "Slug" },
+                { data: "RequestorName", title: "Requestor Name" }
+		    ]
+		});
+
+		$('#EditRequestGrid').DataTable({
+		    "dom": '<"heading-datatable">frtip',
+		    data: editRequestData,
+		    "bLengthChange": false,
+		    columns: [
+                {
+                    "render": function (data, type, full, meta) {
+                        return '<img class="editIcon editEdit" src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/images/edit_icon.png" alt="' + full.ID + '">';
+                    }
+                },
+                { data: "Id", title: "Id", "visible": false },
+                { data: "Title", title: "Title", "visible": false },
+                { data: "EditRequestID", title: "Status" },
+                { data: "EditType", title: "EditType" },
+                { data: "Slug", title: "Slug" },
+                { data: "RequestorName", title: "RequestorName" }
+		    ]
+
+		});
+        $('#MyRequestGrid').DataTable({
+            "dom": '<"heading-datatable">frtip',
+            data: crewRequestData,
+            "bLengthChange" : false,
+            columns: [
+                {
+                    "render": function (data, type, full, meta) {
+                        return '<img class="editIcon crewEdit" src="/sites/bcast_prodreq/Style%20Library/CustomForms/ProducerRequest/images/edit_icon.png" alt="' + full.ID + '">';
+                    }
+                },
+                { data: "Id", title: "Id", "visible": false },
+                { data: "Title", title: "Title", "visible": false },
+                { data: "RequestStatus", title: "Status" },
+                { data: "CrewType", title: "Crew Type" },
+                { data: "AssignmentSlug", title: "Slug" },
+                { data: "CrewRequestID", title: "CrewRequestID" },
+                { data: "StoryName", title: "Story" },
+                { data: "Requester", title: "Requester" }
+            ]
+
+        });
+        $("div.heading-datatable").html('My Current Request');
+
+        $(document).on("click", ".fiEdit", function () {
+            openBasicDialog("/sites/bcast_prodreq/Pages/FileIngest-Fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+        });
+
+        $(document).on("click", ".crewEdit", function () {
+            openBasicDialog("/sites/bcast_prodreq/Pages/fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+        });
+        //editEdit
+        $(document).on("click", ".editEdit", function () {
+            //openBasicDialog("/sites/bcast_prodreq/Pages/fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+            //alert('');
+            if ($(this).closest('tr').children().eq(2).text() == "Edit Request") {
+                openBasicDialog("/sites/bcast_prodreq/Pages/ER-Fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+            }
+            else if ($(this).closest('tr').children().eq(2).text() == "Long Form Edit Request") {
+                openBasicDialog("/sites/bcast_prodreq/Pages/LF-Fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+            }
+            else if ($(this).closest('tr').children().eq(2).text() == "MSNBC Short Form") {
+                openBasicDialog("/sites/bcast_prodreq/Pages/MSNBC-Fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+            }
+            else if ($(this).closest('tr').children().eq(2).text() == "TDY/WTDY AM Form") {
+                openBasicDialog("/sites/bcast_prodreq/Pages/TdyWtdy-Fulfiller.aspx?CRID=" + $(this).attr('alt'), " ");
+            }
+        });
+
+        if (getUrlVars()["Type"] == "FileIngest") {
+            if ($(window).width() >= 1200) {
+                openBasicDialog("/sites/bcast_prodreq/Pages/File-Ingest.aspx", " ");
+            }
+            else {
+                location.href = "/sites/bcast_prodreq/Pages/File-Ingest.aspx";
+            }
+        }
+    });
+
+    function getUrlVars() {
+        var vars = [], hash;
+        try {
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+
+    function ReadList(url, listName, query) {
+        var serverurl = "/sites/bcast_prodreq";
+        var results = [];
+        $.ajax({
+            url: serverurl + "/_api/Web/Lists/GetByTitle('" + listName + "')/items" + query,
+            method: "GET",
+            headers: { "Accept": "application/json; odata=verbose" },
+            async: false,
+            success: function (data) {
+                results = data.d.results;
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+        return results;
+    }
+
+</script>
+<div class="pop-CR" id="crewRequest">
+    <div class="navi-box navi-ncr">
+        <i class="navi-icon icon-ncr"><img class="icon-img" src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/icon-ncr.png"></i>
+        <div class="navi-text">Crew Request</div>
+    </div>
+</div>
+
+<div class="pop-CR" id="editRequest">
+    <div class="navi-box navi-ncr">
+        <i class="navi-icon icon-ncr"><img class="icon-img" src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/icon-ncr.png"></i>
+        <div class="navi-text">Edit Request</div>
+    </div>
+</div>
+
+<div class="pop-CR" id="fileIngest">
+    <div class="navi-box navi-ncr">
+        <i class="navi-icon icon-ncr"><img class="icon-img" src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/icon-ncr.png"></i>
+        <div class="navi-text">File Ingest</div>
+    </div>
+</div>
+
+
+<table id="MyRequestGrid" class="display data-table-contanier" width="100%"></table>
+<br />
+<table id="EditRequestGrid" class="display data-table-contanier" width="100%"></table>
+<br />
+<table id="FileIngestGrid" class="display data-table-contanier" width="100%"></table>

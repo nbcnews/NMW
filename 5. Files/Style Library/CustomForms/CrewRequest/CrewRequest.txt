@@ -1,0 +1,1359 @@
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/normalize.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/style-new.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/bns-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/bureau-camera-style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/responsive.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/jquery-ui.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/css/daterangepicker.css" media="screen">
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-1.10.2.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery-ui.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/moment.min.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/js/jquery.daterangepicker.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/limitkeyPress.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/Namespace.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/CrewRequest.Master.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.Who.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.What.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.where.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.When.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.Resources.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.Helper.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.BreakingNews.Who.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.BreakingNews.What.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.BreakingNews.Where.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.BreakingNews.When.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/NBCU.CrewRequest.BureauCamera.js"></script>
+<script src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/scripts/mobie-navi.js"></script>
+<div class="popupscreen" title="" id="welcomeScreen">
+    <div class="overlay"></div>
+    <div class="model-form-container">
+        <div class="model-form-group">
+            <h3 class="page-title">What kind of crew do you need?</h3>
+            <div class="form-group cols cols-12"> <span class="label" title="General Crew Request">General Crew Request</span> </div>
+            <div class="form-group cols cols-12"> <span class="label" title="Breaking News">Breaking News</span> </div>
+            <div class="form-group cols cols-12"> <span class="label" title="Bureau Camera">Bureau Camera</span> </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" id="GeneralCrewRequest">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBCU News Media Workflow" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">crew request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation gcrNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span title="Who" action="Who">Who</span></li>
+                    <li><span title="What" action="What">What</span></li>
+                    <li><span title="Where" action="Where">Where</span></li>
+                    <li><span title="When" action="When">When</span></li>
+                    <li><span title="Resources" action="Resources">Resources</span></li>
+                </ul>
+            </nav>
+            <footer class="footer">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section" id="whoPage">
+                <h1 class="page-title">Who is requesting?</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                <div class="display-data1" id="requester"> FirstName LastName (SSO Number) </div>
+                                <div class="display-data1" id="peoplePickerrequesterDiv" style="display:none"> </div>
+
+                            </div>
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="requestermobile"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group form-group-deskphone">
+                                <label class="label label-display">Desk Phone </label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="requesterdesk"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-gcr">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-producer-requestor">Producer same as Requestor?</label>
+                                <div class="display-data-chekbox">
+                                    <select class="selectbox-mini" id="isproducer">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-producer-requestor">Is there an onsite Producer?</label>
+                                <div class="display-data-chekbox">
+                                    <div class="display-data-chekbox">
+                                        <select class="selectbox-mini" id="isonsite">
+                                            <option></option>
+                                            <option selected>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display label-producer">
+                                    Producer/ <sup class="mandatory">*</sup><br />Field Contact
+
+                                </label>
+                                <div class="display-dataform">
+                                    <!--<input class="selectbox ProducerField" type="text" id="producer">
+                                                      <span class="icon-search"></span>-->
+                                    <div class="display-data1" id="producer" style="display:none;">  </div>
+                                    <div id="peoplePickerProducerDiv"></div>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="producermobile"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group form-group-deskphone">
+                                <label class="label label-display">Desk Phone </label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="producerdesk"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-gcr">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display label-producer">
+                                    Senior <sup class="mandatory">*</sup><br />Producer/<br />Approver<br>
+
+
+                                </label>
+                                <div class="display-dataform">
+                                    <!--<input class="selectbox ProducerField" type="text" id="seniorproducer">
+                                                      <span class="icon-search"></span>-->
+                                    <div id="peoplePickerApproverDiv"></div>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="additionrequest"> Add additional users to crew request: </div>
+                            <div class="row row-dynamic additionrequestDiv" style="display:none">
+                                <div class="cols cols-4-5 form-group">
+                                    <label class="label label-display label-producer">
+                                        Additional<br>
+                                        Users <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">Please add additional users who should be notified of this request or would need to view information in the producer view</div>
+                                        </div>
+                                    </label>
+                                    <div class="display-dataform display-dataform-mobile">
+                                        <div id="peoplePickerAdditionRequestDiv"></div>
+                                        <span class="remove-button button-remove-sp"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addbutton-container"> <span class="button-add-app">+ add users</span> </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next">
+                    <span title="Back" class="button-next button-welcome" back="Who">Back</span>
+                    <span title="Next" class="button-next" next="What">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="whatPage">
+                <h1 class="page-title">What type of crew do you need?</h1>
+                <section class="content-section">
+                    <div class="form-container">
+                        <div class="row">
+                            <div class="cols cols-7 cols-whatpage">
+                                <div class="cols-12 form-group">
+                                    <label class="label label-display">Production Type <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full" id="productiontype">
+                                            <option></option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols-12 form-group form-story">
+                                    <label class="label label-display">
+                                        Story Name
+                                        <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">If Story Name exists in NewsConnect or other system search and include it here, this will help searching later on!</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input type="text" class="selectbox-full" id="txtStoryName">
+                                        <small class="label-info">if Known or existing</small>
+                                    </div>
+                                </div>
+                                <div class="cols-12 form-group form-assignment">
+                                    <label class="label label-display">
+                                        Assignment Slug <sup class="mandatory">*</sup>
+                                        <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">Please be specific to this shoot/assignment within your larger story (ex: "Dolphin Trainer, Orlando Sitdown", or "X-Talk Aviation Expert")</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input class="selectbox-full" type="text" id="assignmentslug">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols-12 cols-shoot">
+                                    <div class="cols-5 form-group form-shoot">
+                                        <label class="label label-display">Shoot Status <sup class="mandatory">*</sup></label>
+                                        <div class="field-input">
+                                            <select class="selectbox-full" id="shootstatus">
+                                                <option>Firm</option>
+                                                <option>Tent</option>
+                                                <option>CXLD</option>
+                                            </select>
+                                            <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                    <div class="cols-7 form-group form-talent">
+                                        <div class="forms-add-conatiner">
+                                            <label class="label label-display">Talent (On Site) <sup class="mandatory">*</sup> </label>
+                                            <div class="field-input">
+                                                <input type="text" class="selectbox-full talent-sel" id="talent_0" talentid_0="">
+                                                <!--<select class="selectbox-full talent-sel" data-placeholder="None on Site" id="talent_0"></select>-->
+                                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                                <div class="valid-msg valid-msg-error">It's duplicated</div>
+                                            </div>
+                                        </div>
+                                        <div class="addbutton-container"> <span class="button-add1 button-addt">+ add talent</span> </div>
+                                    </div>
+                                </div>
+                                <div class="cols-12 cols-showunit">
+                                    <div class="cols-5 form-group form-showunit">
+                                        <div class="forms-add-conatiner">
+                                            <label class="label label-display">Show Unit <sup class="mandatory">*</sup> </label>
+                                            <div class="field-input">
+                                                <input type="text" class="selectbox-full" id="txtUnit_0" txtUnitid_0="">
+                                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                                <div class="valid-msg valid-msg-error">It's duplicated</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cols-7 form-group form-budget">
+                                        <label class="label label-display">Budget Code <sup class="mandatory">*</sup></label>
+                                        <div class="field-input">
+                                            <input type="text" class="selectbox-full bdjCodeDiv" id="txtBucode_0">
+                                            <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="addbutton-container"> <span class="button-add1 button-addsu">+ add show unit</span> </div>
+                                <div class="form-attach-container">
+
+                                    <div class="cols-12 form-group form-group-attach">
+                                        <label class="label label-display">Attach Edit Request ID </label>
+                                        <div class="field-input">
+                                            <input type="text" class="text-box" id="requestid">
+                                        </div>
+                                    </div>
+
+                                    <div class="cols-12 form-group form-group-upload">
+                                        <label class="label label-display">
+                                            Add file <br>
+                                            Attachment
+                                            <div class="addtional-info-container">
+                                                <span class="icon-info">i</span>
+                                                <div class="additional-info">Include any attachments that may (1) help the crew better envision and imagine your shoot (similar shoots, ideas, etc) or (2) help the crew desk plan with logistics (maps, layouts, etc)</div>
+                                            </div>
+                                        </label>
+                                        <div class="field-input">
+                                            <!--<span class="ms-heroCommandLink"
+                                                  onclick="NewItem2(event, '/_layouts/15/Upload.aspx?itemId=10&amp;List={348BF32E-7948-45A0-9FF9-84641B9BFB20}&amp;RootFolder='); return false;">
+                                                <input type="button" class="file-attach" value="Browse">
+                                            </span>-->
+                                            <!--<input type="button" class="file-attach ms-heroCommandLink" value="Browse">-->
+                                            <input id="getFile" type="file" /><br />
+                                            <input id="addFileButton" type="button" value="Upload" class="file-attach ms-heroCommandLink" />
+                                            <small class="browfe-info"></small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next"><span title="Back" class="button-next" back="Who">Back</span><span title="Next" class="button-next" next="Where">Next</span> </div>
+            </div>
+            <div class="page-section" id="wherePage">
+                <h1 class="page-title">Where is the crew going?</h1>
+                <section class="content-section">
+                    <div class="row">
+                        <div class="cols cols-12 cols-contact-form">
+                            <div class="form-group form-Bureau">
+                                <label class="label label-display">
+                                    Bureau Location/
+
+                                    Frequently Used Locations
+                                </label>
+                                <div class="field-input">
+                                    <select class="selectbox-full bureau-select" id="bureaulocation">
+                                        <optgroup label="Bureau Location">
+                                            <option></option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" form-group form-address">
+                                <label class="label label-display">Address <sup class="mandatory">*</sup></label>
+                                <div class="field-input">
+                                    <input class="selectbox-full" type="text" id="address1">
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class=" form-group form-address">
+                                <label class="label label-display"> Address Notes <small class="info-address">Apt,Suite,Notes</small> </label>
+                                <div class="field-input">
+                                    <input class="selectbox-full" type="text" id="addressnotes">
+                                </div>
+                            </div>
+                            <div class="address-group">
+                                <div class="form-group form-city">
+                                    <label class="label label-display">City, Town or Area <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <input id="city-text" class="selectbox-full" type="text">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-state">
+                                    <label class="label label-display">State <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <select id="state-select" class="selectbox-full ">
+                                            <option value=""></option>
+                                            <option value="New York">New York</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-zip">
+                                    <label class="label label-display">Zip <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <input type="text" id="zip-text" class="selectbox-full">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-country">
+                                    <label class="label label-display">Country <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <select id="country-select" class="selectbox-full">
+                                            <option value=""></option>
+                                            <option value="USA">United States of America</option>
+                                            <option>Canada</option>
+                                            <option>Africa</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next"><span title="Back" class="button-next" back="What">Back</span><span title="Next" class="button-next" next="When">Next</span> </div>
+            </div>
+            <div class="page-section" id="whenPage">
+                <h1 class="page-title">When is the shoot?</h1>
+                <section class="content-section">
+                    <div class="row">
+                        <div class="cols cols-4">
+                            <div class="calender-conatainer"></div>
+                        </div>
+                        <div class="cols cols-4">
+                            <div class="date-picker-cols">
+                                <div class="form-group">
+                                    <label class="label cols-7">Start Date (inc travel) <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-5">
+                                        <input class="selectbox-full" type="text" id="StartDate">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label cols-7">End Date (inc travel) <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-5">
+                                        <input class="selectbox-full" type="text" id="EndDate">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-total-days">
+                                    <label class="label cols-7">#  of days in shoot <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-5">
+                                        <input class="selectbox-full selectbox-mini" type="text" value="0" id="shootdays">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="date-legend-container">
+                                    <div class="date-legend"> <span class="date-legend-color date-legend-color-start"></span>Start Date </div>
+                                    <div class="date-legend"> <span class="date-legend-color date-legend-color-end"></span>End Date </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cols cols-4">
+                            <div class="time-zone-cols">
+                                <div class="form-group">
+                                    <label class="label cols-4">Time Zone <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-8">
+                                        <select class="selectbox-full textboxotimezone" id="timezone">
+                                            <option value="ET" selected>ET</option>
+                                            <option value="CT">CT</option>
+                                            <option value="MT">MT</option>
+                                            <option value="PT">PT</option>
+                                            <option value="GMT">GMT</option>
+                                            <option value="AKT">AKT</option>
+                                            <option value="BST">BST</option>
+                                            <option value="MSK">MSK</option>
+                                            <option value="CST(Beljing)">CST(Beljing)</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label cols-4">Meet Time <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="00" id="meettime-hr" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="meettime-min" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="meettime-select">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label cols-4">Roll Time <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="00" id="rolltime-hr" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="rolltime-min" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="rolltime-select">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label cols-4">End Time </label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="00" id="endtime-hr" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="endtime-min" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id='endtime-select'>
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-shoot-conatainer">
+                            <div class="form-group form-group-shoot">
+                                <label class="label">
+                                    Shoot <br>
+                                    Description
+                                </label>
+                                <div class="field-input cols-11 sdControl gcrSDControl">
+                                    <div class="selectbox-full-large selectbox-full-large-single ">
+                                        <!--<input class="selectbox-full" type="text">-->
+                                        <div class="shoot-selected gcrShoot" style=" width:100% ; height:122px">
+										<textarea  class="shoot-textbox descShoot initialdesc" style="margin:2px 0" maxlength="1000"></textarea>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-specialgear ">
+                                <label class="label">
+                                    Special Gear<br>
+                                </label>
+                                <div class="field-input">
+                                    <input class="selectbox-full" type="text" id="specialgear" maxlength="200">
+                                </div>
+                                <div class="label-info">(including camera/audio or special formats)</div>
+                            </div>
+                            <div class="form-need-contaier">
+                                <div class="cols-4 form-group form-group-audio">
+                                    <label class="label">Audio Needs <sup class="mandatory">*</sup> </label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full" id="audioneed">
+                                            <option></option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols-4 form-group form-group-special">
+                                    <label class="label label-display">Special Conditions <sup class="mandatory">*</sup> </label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full" id="specialcondition">
+                                            <option></option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols-4 form-group form-group-transmission">
+                                    <label class="label">Transmission Type </label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full" id="transmissiontype">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next button-bottom-static"><span title="Back" class="button-next" back="Where">Back</span><span title="Next" class="button-next" next="Resources">Next</span> </div>
+            </div>
+            <div class="page-section" id="resourcesPage">
+                <h1 class="page-title">How many crew resources do you need?</h1>
+                <section class="content-section">
+                    <div class="row">
+                        <div class="container-725">
+                            <div class="cols cols-6">
+                                <div class="resources-container-new">
+                                    <div class="resource-title">
+                                        <div class="step5-box">
+                                            <span class="sug-text">
+                                                Suggested number
+                                                of resources :
+                                            </span> <span class="total-amount">5</span>
+                                        </div>
+                                    </div>
+                                    <!--<div class="resource-title">
+                                                        <div class="step5-box"> <span class="sug-text"> Number
+                                                          of resources  requested:</span> <span class="total-amount">5</span> </div>
+                                                      </div>-->
+                                    <!--<h4 class="title-05">Select amount of resources needed for each category</h4>-->
+                                    <div class="step5-container">
+                                        <div class="form-group form-group-step5">
+                                            <label class="label label-display">Camera</label>
+                                            <div class="field-input">
+                                                <select type="number" class="myNumber" id="numCamera">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3" selected>3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-step5">
+                                            <label class="label label-display">Audio</label>
+                                            <div class="field-input">
+                                                <select type="number" class="myNumber" id="numAudio">
+                                                    <option value="1">1</option>
+                                                    <option value="2" selected>2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-step5">
+                                            <label class="label label-display">Utilities</label>
+                                            <div class="field-input">
+                                                <select type="number" class="myNumber" id="numUtilities">
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-step5">
+                                            <div class="step5-box">
+                                                <span class="sug-text">
+                                                    Number
+                                                    of <br>
+                                                    resources you <br>
+                                                    have selected:
+                                                </span> <span class="total-amount">5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cols cols-6">
+                                <div class="estimate-laborcost-conatiner">
+                                    <h4 class="title-crew">Crew Calculator</h4>
+                                    <div class="estimate-laborcost">
+                                        <div class="cost-labor-values">
+                                            <label class="label-estimate">Labor :</label>
+                                            <div class="label-estimate estimate-cost-labor"><span class="icon-dollar">$</span>3,000</div>
+                                            <small>(Based on 10hr day)</small>
+                                        </div>
+                                        <div class="cost-labor-values">
+                                            <label class="label-estimate">Gear :</label>
+                                            <div class="label-estimate estimate-cost-gear"><span class="icon-dollar">$</span>2,000</div>
+                                            <small>(Base gear package if Freelance crew required)</small>
+                                        </div>
+                                        <div class="cost-labor-values">
+                                            <label class="label-Travel">Travel Expenses :</label>
+                                            <div class="label-estimate estimate-cost-travelexpenses"><span class="icon-dollar">$</span>TBD</div>
+                                            <small>(air/hotel/other if necessary)</small>
+                                        </div>
+                                        <div class="cost-labor-values">
+                                            <label class="label-estimate-total">Estimated Cost :</label>
+                                            <div class="label-estimate-total estimate-cost-total"><span class="icon-dollar">$</span>10,000 - <span class="icon-dollar">$</span>11,000</div>
+                                            <small>
+                                                **Disclaimer: estimate to be used for planning purpose only,
+                                                actuals billed at conclusion of shoot
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cols cols-12">
+                                <div class="form-container-override" style="display:none">
+                                    <div class="message-error"> ** Requested Resources are greater than suggested resources, please provide resource information below - Sr Producer/Approver will need to approve in order to firm book.</div>
+                                    <div class="row">
+                                        <div class="cols cols-5">
+                                            <div class="form-group">
+                                                <label class="label label-display">
+                                                    Resource
+                                                    Reason
+                                                </label>
+                                                <div class="field-input">
+                                                    <select class="selectbox-full" id="selectreason">
+                                                        <option>AUDIO NEEDS</option>
+                                                        <option>LOCATION CHALLENGES</option>
+                                                        <option>TIME CONSTRAINTS</option>
+                                                        <option>SAFETY</option>
+                                                        <option>OTHER</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cols cols-7">
+                                            <div class="form-group form-group-override">
+                                                <label class="label label-override">
+                                                    Resource
+                                                    Description<sup class="mandatory">*</sup>
+                                                </label>
+                                                <div class="field-input">
+                                                    <textarea class="textarea" id="resourcedescription" maxlength="1000"></textarea>
+                                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                </section>
+                <div class="button-bottom-next button-bottom-static"><span class="button-next" title="Back" back="When">Back</span><!--<span class="button-next" title="Save + Revise" href="#" id="Save-button">Save + Revise</span>--><span class="button-next" title="submit" href="#" id="submit-button">Submit</span> </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="wrapper" id="BreakingNews" style="display:none">
+
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="NBC" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">crew request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <nav class="navigation bnsNav">
+                <ul class="navi">
+                    <li class="active-inprogress"><span title="bns-whoPage" action="bns-whoPage">Who</span></li>
+                    <li><span title="bns-whatPage" action="bns-whatPage">What</span></li>
+                    <li><span title="bns-wherePage" action="bns-wherePage">Where</span></li>
+                    <li><span title="bns-whenPage" action="bns-whenPage">When</span></li>
+
+                </ul>
+            </nav>
+            <footer class="footer">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <div class="page-section page-section-bns" id="bns-whoPage">
+                <h1 class="page-title">Breaking News - Who</h1>
+                <section class="content-section">
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                                <div class="display-data1 display-data1-login" id="BNrequester"> FirstName LastName (SSO Number) </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="BNrequestermobile"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group form-group-deskphone">
+                                <label class="label label-display">Desk Phone </label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="BNrequesterdesk"></span>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-bn">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal form-container-horizontal-768">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-producer-requestor">Producer Same as Requestor?</label>
+                                <div class="display-data-chekbox">
+                                    <select id="isproducerBN" class="selectbox-mini">
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-producer-requestor">Is there an onsite Producer?</label>
+                                <div class="display-data-chekbox">
+                                    <div class="display-data-chekbox">
+                                        <select id="isonsiteBN" class="selectbox-mini">
+                                            <option></option>
+                                            <option selected>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+                        <div class="row">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display label-producer">
+                                    Producer/ <sup class="mandatory">*</sup><br>
+                                    Field Contact
+                                </label>
+                                <div class="display-dataform">
+                                    <div class="display-data1" id="bnsproducer" style="display:none;">  </div>
+                                    <div class="people-picker" id="peoplePickerProducerbnsDiv"> </div>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group">
+                                <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="BNproducermobile"></span>
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="cols cols-3-5 form-group form-group-deskphone">
+                                <label class="label label-display">Desk Phone </label>
+                                <div class="display-dataform">
+                                    <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                    <span class="display-data" id="BNproducerdesk"></span>
+                                </div>
+                            </div>
+                            <div class="cols cols-1 form-edit-button"> <span class="button-edit-bn">edit</span> </div>
+                        </div>
+                    </div>
+                    <div class="form-container form-container-horizontal">
+
+                        <div class="additionrequest"> Add additional users to crew request: </div>
+                        <div class="row row-dynamic" style="display:none;">
+                            <div class="cols cols-4-5 form-group">
+                                <label class="label label-display label-producer">
+                                    Additional<br> Users
+
+                                    <div class="addtional-info-container">
+                                        <span class="icon-info">i</span>
+                                        <div class="additional-info">Please add additional users who should be notified of this request or would need to view information in the producer view</div>
+                                    </div>
+
+                                </label>
+                                <div class="display-dataform display-dataform-mobile">
+                                    <div class="people-picker" id="peoplePickerAdditionalUsersbnsDiv"> </div>
+                                    <span class="remove-button button-remove-sp-bns"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addbutton-container">
+                            <span class="button-add-app-bns">+ add users</span>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next btn-bn">
+                    <span title="bnBack" class="button-next button-welcome" back="Home">Back</span><span title="bnNext" class="button-next" next="bns-whatPage">Next</span>
+                </div>
+            </div>
+            <div class="page-section" id="bns-whatPage" style="display:none;">
+                <h1 class="page-title">Breaking News - What</h1>
+                <section class="content-section">
+                    <div class="form-container">
+                        <div class="row">
+                            <div class="cols cols-7 bns-cols-whatpage">
+                                <div class="cols-12 form-group bns-form-story">
+                                    <label class="label label-display">
+                                        Story Name
+                                        <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">If Story Name exists in NewsConnect or other system search and include it here, this will help searching later on!</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input type="text" class="selectbox-full" id="txtStoryName-bns">
+                                    </div>
+                                </div>
+                                <div class="cols-12 form-group bns-form-assignment">
+                                    <label class="label label-display">
+                                        Assignment Slug <sup class="mandatory">*</sup>
+                                        <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">Please be specific to this shoot/assignment within your larger story (ex: "Dolphin Trainer, Orlando Sitdown", or "X-Talk Aviation Expert")</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input class="selectbox-full" type="text" id="assignmentslug-bns" value="News:">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols-12 form-group bns-form-talent">
+                                    <div class="cols-8  bns-forms-add-conatiner">
+                                        <label class="label label-display">Talent (On Site) <sup class="mandatory">*</sup> </label>
+                                        <div class="field-input">
+                                            <input type="text" class="selectbox-full talent-sel-bns" id="talent_bns_0" talent_bns-id_0="">
+                                            <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                            <div class="valid-msg valid-msg-error">It's duplicated</div>
+                                            <!--<select class="selectbox-full talent-data" data-placeholder="None on Site" style="display:none;">
+
+                                            </select>-->
+                                        </div>
+                                    </div>
+                                    <div class="bns-addbutton-container"> <span class="button-add1 bns-button-addt">+ add talent</span> </div>
+                                </div>
+                                <div class="addbutton-container"> <span class="button-add1 bns-button-addsu">+ add show unit</span> </div>
+                                <div class="form-attach-container">
+                                    <div class="cols-12 form-group bns-form-group-attach">
+                                        <label class="label label-display">Attach Edit Request ID </label>
+                                        <div class="field-input">
+                                            <input type="text" class="text-box" id="requestid-bns">
+                                        </div>
+                                    </div>
+                                    <div class="cols-12 form-group bns-form-group-upload">
+                                        <label class="label label-display">
+                                            Add file <br>
+                                            Attachment
+
+                                            <div class="addtional-info-container">
+                                                <span class="icon-info">i</span>
+                                                <div class="additional-info">Include any attachments that may (1) help the crew better envision and imagine your shoot (similar shoots, ideas, etc) or (2) help the crew desk plan with logistics (maps, layouts, etc)</div>
+                                            </div>
+                                        </label>
+                                        <div class="field-input">
+                                            <input id="getFile-bns" type="file" /><br />
+                                            <input id="addFileButton-bns" type="button" class="file-attach ms-heroCommandLink" value="Upload">
+                                            <small class="browse-info-bns"></small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next"><span title="bnBack" class="button-next" back="bns-whoPage">Back</span><span title="bnNext" class="button-next" next="bns-wherePage">Next</span> </div>
+
+            </div>
+            <div class="page-section" id="bns-wherePage" style="display:none;">
+                <h1 class="page-title">Breaking News - Where</h1>
+                <section class="content-section">
+                    <div class="row">
+                        <div class="cols cols-12 cols-contact-form">
+                            <div class="form-group form-Bureau">
+                                <label class="label label-display">
+                                    Bureau Location/<br>
+
+                                    Frequently Used Locations
+                                </label>
+                                <div class="field-input">
+                                    <select class="selectbox-full bureau-select-bns" id="bureaulocation-bns">
+                                        <optgroup label="Bureau Location">
+                                            <option></option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form-address">
+                                <label class="label label-display">Address <sup class="mandatory">*</sup></label>
+                                <div class="field-input">
+                                    <input id="address-text-bns" class="selectbox-full" type="text">
+                                    <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                </div>
+                            </div>
+                            <div class="form-group form-address">
+                                <label class="label label-display">
+                                    Address Notes
+                                    <small class="info-address">Apt,Suite,Notes</small>
+                                </label>
+                                <div class="field-input">
+                                    <input id="address-text-bns2" class="selectbox-full" type="text">
+                                </div>
+                            </div>
+                            <div class="address-group">
+                                <div class="form-group form-city">
+                                    <label class="label label-display">City, Town or Area <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <input id="city-text-bns" class="selectbox-full" type="text">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-state">
+                                    <label class="label label-display">State <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <select id="state-select-bns" class="selectbox-full ">
+                                            <option value=""></option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-zip">
+                                    <label class="label label-display">Zip <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <input type="text" id="zip-text-bns" class="selectbox-full">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-country">
+                                    <label class="label label-display">Country <sup class="mandatory">*</sup></label>
+                                    <div class="field-input">
+                                        <select id="country-select-bns" class="selectbox-full">
+                                            <option value=""></option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next"><span title="bnBack" class="button-next" back="bns-whatPage">Back</span><span title="bnNext" class="button-next" next="bns-whenPage">Next</span> </div>
+
+            </div>
+            <div class="page-section" id="bns-whenPage" style="display:none;">
+                <h1 class="page-title">Breaking News - When</h1>
+                <section class="content-section">
+                    <div class="row">
+                        <div class="cols cols-12">
+                            <div class="bns-time-zone-cols">
+                                <div class="bns-form-group">
+                                    <label class="label cols-4">Meet Time <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="8" id="meettime-hr-bns" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="meettime-min-bns" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="meettime-select-bns">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                        <div class="valid-msg valid-msg-error">Please enter valid hours/min</div>
+                                    </div>
+                                </div>
+                                <div class="bns-form-group">
+                                    <label class="label cols-4">Roll Time</label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="9" id="rolltime-hr-bns" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="rolltime-min-bns" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="rolltime-select-bns">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="bns-form-group">
+                                    <label class="label cols-4">End Time</label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="6" id="endtime-hr-bns" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="endtime-min-bns" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="endtime-select-bns">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 form-shoot-conatainer">
+                            <div class="form-group form-group-shoot">
+                                <label class="label">
+                                    Shoot <br>
+                                    Description
+                                </label>
+                                <div class="field-input cols-11 sdControl">
+                                    <div class="selectbox-full-large selectbox-full-large-single ">
+                                        <!--<input class="selectbox-full" type="text">-->
+                                        <div class="shoot-selected" style="height:28px; width:100%">
+                                            <!--<div class="date-shoot"><span class="shoot-label intialDate">[]</span></div>
+                                            <div class="description-shoot"><span class="shoot-label">Description:</span></div>-->
+                                            <input type="text" class="shoot-textbox" style="margin: 2px 0" id="shootdesc-bns" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-specialgear ">
+                                <label class="label">
+                                    Special Gear<br>
+                                </label>
+                                <div class="field-input">
+                                    <input class="selectbox-full" type="text" id="specialgear-bns">
+                                </div>
+                                <div class="label-info">(including camera/audio or special formats)</div>
+                            </div>
+                            <div class="form-need-contaier">
+                                <div class="cols-4 form-group form-group-transmission">
+                                    <label class="label">Transmission Type </label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full" id="transmissiontype-bns">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-number-resources">
+                                <div class="step5-box">
+                                    <span class="sug-text">
+                                        Number
+                                        of <br>
+                                        resources :
+                                    </span> <span class="total-amount">2</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-camera-BRN">
+                                <label class="label label-display">Camera</label>
+                                <div class="field-input">
+                                    <select id="numcamera-bns" class="myNumber" type="number" disabled>
+                                        <option selected="" value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-audio-BRN">
+                                <label class="label label-display">Audio</label>
+                                <div class="field-input">
+                                    <select id="numaudio-bns" class="myNumber" type="number" disabled>
+                                        <option selected="" value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <div class="button-bottom-next"><span title="bnBack" class="button-next" back="bns-wherePage">Back</span><a title="bnNext" class="button-next successPage" next="sucess">Submit</a> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper" id="BureauCamera" style="display:none;">
+    <div class="container-fluid ">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span title="index.html" class="ms-siteicon-a"><img src="/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/nbc-news-group-logo.png" alt="nbc-news-group-logo.png"></span>
+                <h1 class="title">crew request</h1>
+                <div class="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </div>
+            </div>
+            <footer class="footer">
+                <div class="footer-title">National Crew Desk</div>
+                <div>212.664.2739</div>
+                <div class="footer-infomail"> <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a> </div>
+                <div>DC Crew Desk 202.885.4200</div>
+                <div>LA Crew Desk 818.684.3459</div>
+                <div>London Crew Desk +44.207.843.8777</div>
+                <div class="footer-feedback">
+                    Have feedback? Let us know!<br>
+                    <a href="mailto:info@crewdesk@nbcuni.com" title="crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+                </div>
+            </footer>
+        </aside>
+        <div class="content-container">
+            <h1 class="page-title">Bureau Camera</h1>
+            <section class="content-section">
+                <div class="form-container form-container-horizontal  BRCform-container-horizontal">
+                    <div class="row">
+                        <div class="cols cols-4-5 BRC-form-group">
+                            <label class="label label-display">Requester <sup class="mandatory">*</sup></label>
+                            <div class="display-data1 display-data1-bc" id="BCrequester"> FirstName LastName (SSO Number) </div>
+                        </div>
+                        <div class="cols cols-3-5 BRC-form-group">
+                            <label class="label label-display">Mobile Phone <sup class="mandatory">*</sup></label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                <span class="display-data" id="BCrequestermobile"></span>
+                                <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-3-5 BRC-form-group form-group-deskphone">
+                            <label class="label label-display">Desk Phone</label>
+                            <div class="display-dataform">
+                                <input type="text" class="textbox" value="" maxlength="21" placeholder="(XXX) XXX-XXXX">
+                                <span class="display-data" id="BCrequesterdesk"></span>
+                                <div class="valid-msg valid-msg-error">Please enter valid phone no</div>
+                            </div>
+                        </div>
+                        <div class="cols cols-1 form-edit-button"> <span class="button-edit-bc">edit</span> </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 BRC-form-group">
+                            <div class="additionrequest BRC-additionrequest">
+                                <label class="label label-display">
+                                    Add additional users to crew request:
+                                    <div class="addtional-info-container">
+                                        <span class="icon-info">i</span>
+                                        <div class="additional-info">Please add additional users who should be notified of this request or would need to view information in the producer view</div>
+                                    </div>
+                                </label>
+                                <div class="addbutton-container BRC-addbutton-container">
+                                    <div class="cols-12 form-group" style="display:none">
+                                        <label class="label label-display label-producer">
+                                            Additional<br> Users
+                                        </label>
+                                        <div class="display-dataform display-dataform-mobile">
+                                            <div class="display-data" id="peoplePickerAdditionalUsersbcDiv"> </div>
+                                            <span class="remove-button button-remove-sp-bc"></span>
+                                        </div>
+                                    </div>
+                                    <span class="BRC-button-add-app">+ add users</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 BRC-cols-whatpage">
+                            <div class="row">
+                                <div class="cols cols-6 BRC-form-group BRC-form-story">
+                                    <label class="label label-display">
+                                        Story Name <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">If Story Name exists in NewsConnect or other system search and include it here, this will help searching later on!</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input type="text" class="selectbox-full" id="txtStoryName-bc">
+                                        <!--<small class="label-info">if Known or existing</small>-->
+                                    </div>
+                                </div>
+                                <div class="cols cols-6 BRC-form-group BRC-form-assignment">
+                                    <label class="label label-display">
+                                        Assignment Slug <sup class="mandatory">*</sup>
+                                        <div class="addtional-info-container">
+                                            <span class="icon-info">i</span>
+                                            <div class="additional-info">Please be specific to this shoot/assignment within your larger story (ex: "Dolphin Trainer, Orlando Sitdown", or "X-Talk Aviation Expert")</div>
+                                        </div>
+                                    </label>
+                                    <div class="field-input">
+                                        <input class="selectbox-full" type="text" id="assignmentslug-bc" value="Guest:">
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 BRC-form-group BRC-form-showunit">
+                            <div class="additionrequest BRC-additionrequest">
+                                <label class="label label-display"> Add an additional show unit:</label>
+                                <div class="addbutton-container BRC-addbutton-container"><span class="BRC-button-addsu">+ add show unit</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-7 BRC-cols-whatpage">
+                            <div class="row">
+                                <div class="cols cols-7 BRC-form-group BRC-form-assignment">
+                                    <label class="label label-display">Bureau Location <sup class="mandatory">*</sup> </label>
+                                    <div class="field-input">
+                                        <select class="selectbox-full bureau-select" id="bureaulocation-bc">
+                                            <optgroup label="Bureau Location">
+                                                <option></option>
+                                            </optgroup>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12  BRC-Time-container">
+                            <div class="row">
+                                <div class="cols cols-4 BRC-form-group">
+                                    <label class="label cols-4">Meet Time <sup class="mandatory">*</sup></label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="0" id="meettime-hr-bc" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="meettime-min-bc" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="meettime-select-bc">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                        <div class="valid-msg valid-msg-error">Please complete the required field</div>
+                                    </div>
+                                </div>
+                                <div class="cols cols-4 BRC-form-group">
+                                    <label class="label cols-4">Roll Time</label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="0" id="rolltime-hr-bc" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="rolltime-min-bc" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="rolltime-select-bc">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="cols cols-4 BRC-form-group">
+                                    <label class="label cols-4">End Time</label>
+                                    <div class="field-input cols-8">
+                                        <input class="text-box-mini hour-box" type="text" value="0" id="endtime-hr-bc" maxlength="2">
+                                        :
+                                        <input class="text-box-mini minite-box" type="text" value="00" id="endtime-min-bc" maxlength="2">
+                                        :
+                                        <select class="text-box-mini 12-box" id="endtime-select-bc">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cols cols-12 BRC-form-group BRC-form-group-shoot">
+                            <label class="label">
+                                Shoot <br>
+                                Description
+                            </label>
+                            <div class="field-input cols-11 sdControl">
+                                <div class="selectbox-full-large selectbox-full-large-single ">
+                                    <!--<input class="selectbox-full" type="text">-->
+                                    <div class="shoot-selected" style="height:28px; width:100%">
+                                        <!--  <div class="date-shoot"><span class="shoot-label intialDate">[04/08] </span></div>
+                                                                <div class="description-shoot"><span class="shoot-label"> Description:</span></div>-->
+                                        <input type="text" class="shoot-textbox" style="margin:2px 0" id="shootdesc-bc" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="button-bottom-next button-bottom-static">
+                <span title="bcBack" class="button-next button-welcome">Back</span>
+                <span title="bcSubmit" class="button-next successPage">Submit</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popupscreen popupscreen-thanks" id="thanksScreen">
+    <div class="overlay"></div>
+    <div class="model-form-container model-form-thanksmsg">
+        <div class="model-form-group">
+            <h3 class="page-title">Thank you for Submitting a crew request</h3>
+            <div class="call-popup">
+                Any Questions / feedback call 212-664-2739<br>
+                Or Email <a href="mailto:crewdesk@nbcuni.com">crewdesk@nbcuni.com</a>
+            </div>
+            <div class="button-close">Close</div>
+        </div>
+    </div>
+</div>

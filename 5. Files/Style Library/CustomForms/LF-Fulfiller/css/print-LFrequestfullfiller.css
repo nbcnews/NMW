@@ -1,0 +1,315 @@
+@media print {
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+}
+h1.page-title, .page-title {
+	font-size: 28px;
+	letter-spacing: 1.53px;
+	font-weight: bold;
+	color: #1c9fd0;
+	text-transform: uppercase;
+	margin: 21px 0 19px 0;
+}
+.ms-siteicon-a img {
+	width: 92px;
+}
+.mandatory {
+	color: #ff0000;
+}
+.sidebar-header .title{text-transform:uppercase; font-size:33px !important;}
+.header {
+	background-color: #172852;
+	height: 136px;
+	text-align: center;
+	width: 100%;
+}
+.subpage-content-container {
+	padding: 0 0!important;
+	margin: 0;
+}
+.show-date-container {
+	font-size: 80%;
+	border-bottom-width: 1px;
+	text-align: left;
+	padding-left: 0;
+	padding-right: 0;
+	float: none;
+	display: table;
+	padding-left: 0
+}
+.showdate {
+	width: 25%;
+	float: none;
+	display: table-cell;
+}
+.subpage-LF-SummaryEdit .textbox, .subpage-LF-craftEdit .textbox, .subpage-LF-ProducerEdit .textbox, .subpage-LF-AssistantEditorEdit .textbox, .subpage-LF-fullfilment .textbox, .subpage-LF-postpage .textbox {
+	display: none;
+}
+.valid-msg {
+	display: none;
+}
+.value-field img {
+	width: 80%;
+}
+.subpage-content-container .form-container {
+	font-size: 85%;
+	height: auto;
+}
+.row {
+	margin: 0 -7px;
+	clear: both;
+}
+.row-dynamic {
+	margin-top: 15px;
+}
+.cols {
+	float: left;
+	padding: 0 7px;
+}
+.cols-12 {
+	width: 100%;
+}
+.cols-11 {
+	width: 91.6667%;
+}
+.cols-10 {
+	width: 83.3333%;
+}
+.cols-9 {
+	width: 75%;
+}
+.cols-8 {
+	width: 66.6667%;
+}
+.cols-8-5 {
+	width: 63%;
+}
+.cols-7 {
+	width: 58.3333%;
+}
+.cols-6 {
+	width: 50%;
+}
+.cols-5 {
+	width: 41.6667%;
+}
+.cols-4 {
+	width: 33.3333%;
+}
+.cols-4-5 {
+	width: 41.667%;
+}
+.cols-3 {
+	width: 25%;
+}
+.cols-3-5 {
+	width: 26%;
+}
+.cols-2 {
+	width: 16.6667%;
+}
+.cols-1 {
+	width: 8.33333%;
+}
+.label {
+	color: #0b2751;
+	padding-right: 10px;
+	font-weight: bold;
+ padding-right:;
+	text-decoration: none;
+}
+.form-container-horizontal .cols .label {
+	float: left;
+}
+.form-container-horizontal .cols .display-data1, .form-container-horizontal .cols .display-dataform, .form-container-horizontal .cols .display-data-chekbox {
+	display: table-cell;
+}
+.subpage-content-who .cols-3-5 {
+	width: 29.5%;
+}
+.subpage-content-who .cols-4-5 {
+	width: 41%;
+}
+.subpage-content-who .cols-10 .cols-6 {
+	width: 52%;
+}
+.subpage-content-what .row:first-child .cols-3 {
+	width: 33.33%;
+}
+.subpage-content-what .row:first-child .cols-3:nth-child(2) {
+	width: 25%;
+}
+.row-5-status .form-print-shoot {
+	width: 15%;
+}
+.row-5-status .form-print-talent {
+	width: 23%;
+}
+.row-5-status .form-print-showunit {
+	width: 24%;
+}
+.row-5-status .form-print-budgetcode {
+	width: 18%;
+}
+.row-5-status .form-print-editrequest {
+	width: 20%;
+}
+.subpage-resource-form input, .subpage-resource-form select, .subpage-resource-form textarea {
+	display: none;
+}
+.subpage-resource-form .form-container-horizontal .cols-11 {
+	float: left;
+}
+.subpage-resource-form .form-container-horizontal .cols-11 .cols-2 {
+	width: 25%
+}
+.subpage-resource-form .form-container-horizontal .cols-11 .cols-2 .label {
+	line-height: 35px;
+}
+.subpage-resource-form .form-container-horizontal .cols-11 .cols-2 .total-amount {
+	text-align: center;
+}
+.subpage-resource-form .form-container-horizontal .display-data1 {
+	width: 100% !important;
+}
+.subpage-resource-form .selectbox {
+	width: 100% !important;
+}
+.subpage-crewinfo .row:nth-child(3) .display-data1 .selectbox {
+	width: 130px !important;
+}
+.subpage-crewinfo .row:nth-child(5) .display-data1 .selectbox, .subpage-crewinfo .row:nth-child(5) .display-fullwidth select.selectbox {
+	width: 130px !important;
+}
+.subpage-crewinfo .crew-desk {
+	width: 1000px !important;
+}
+.attachment-file {
+	font-size: 45% !important;
+}
+.subpage-content-revision .revision-box .selectbox-crewdesk {
+	width: 580px;
+	clear: both;
+}
+/*.subpage-content {
+	page-break-after: always;
+}*/
+.button-group-status .button {
+	font-size: 90%;
+}
+.cols-6-5 {
+	width: 65%;
+	white-space: nowrap;
+}
+.cols-5-5 {
+	width: 35%;
+	padding-left: 55px;
+	white-space: nowrap;
+}
+.form-container-horizontal .form-group {
+	min-height: 23px;
+}
+.button-next {
+	text-align: center;
+	background-color: #0b2751;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	height: 33px;
+	letter-spacing: 1px;
+	line-height: 35px;
+	margin-right: 15px;
+	min-width: 117px;
+	padding: 0 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.print-button-container {
+	width: 100%;
+	float: left;
+	text-align: right;
+	cursor: pointer;
+	color: #2ea7d4;
+}
+.icon-bottom {
+	display: inline-block;
+	text-align: center;
+	width: 55px;
+	height: 55px;
+	line-height: 120px;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+.icon-print {
+	background-image: url(../images/icon-print.png);
+}
+.icon-exit {
+	background-image: url(../images/icon-exit.png)
+}
+.form-group-print .display-dataform {
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.form-group-act-length .display-data1 input, .form-group-postedit-rooms input, .form-group-postedit-desktop input, .form-group-postedit-noofeditors input {
+	width: 34px !important;
+}
+.form-group-postedit-Finairdate input {
+	width: 75px !important;
+}
+.form-group-postedit-confirmation input#edLF_psotcomment_box {
+	width: 13px !important;
+}
+#edLF_LF_comments {
+	width: 500px !important;
+}
+#edLF_postcomment {
+	width: 700px !important
+}
+.form-edLF-LNGF-AssEditor-Edit {
+	display: none
+}
+.edrf_CraftEditComments_value {
+
+width:450px;
+display:inline;
+}
+.textarea-comment {
+	width: 450px;
+	display: inline;
+	margin-top: -10px;
+}
+/*.button-blue-container{width:150px; display:inline-block; position:static; margin-left:7px; }*/
+
+.button-blue-container {
+	width: 150px;
+	display: inline-block;
+	position: static;
+	margin-left: 7px;
+}
+.button-blue-container .button-bule-mail {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	color: #fff;
+	background-color: #1767b7;
+	height: 25px;
+	width: 150px;
+	line-height: 25px;
+	
+	text-align: center;
+	margin-bottom: 3px;
+	cursor: pointer;
+	display: inline-block;
+}
+}

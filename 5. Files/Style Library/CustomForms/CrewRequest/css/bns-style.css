@@ -1,0 +1,282 @@
+.cols-3-5.bns-form-group-contact .display-dataform, .cols-3-5.bns-form-group-email .display-dataform {
+	padding-left: 25px;
+}
+.form-group-slug .label {
+	width: 50px;
+}
+.bns-form-group-slug .display-dataform {
+	width: 93% !important;
+}
+.icon-datepicker {
+	width: 21px;
+	height: 24px;
+	background: url('/sites/bcast_prodreq/Style%20Library/CustomForms/CrewRequest/images/icon-date.png') no-repeat center;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.bns-form-group-craft-Edit.cols {
+	padding-right: 0 !important
+}
+.bns-form-group-craft-Edit .display-dataform, .bns-form-group-Producer-Edit .display-dataform {
+	width: 92px !important;
+}
+.bns-version-form-group {
+	float: left;
+}
+.bns-producer-form-group-tbd {
+	margin-top: 5px;
+	width: 140px
+}
+.bns-version-form-group .label-minutes {
+	width: 170px;
+}
+.bns-version-form-group .label-info {
+	margin-top: 0;
+	font-style: italic;
+	font-size: 11px;
+	color: #3d5475;
+}
+.bns-form-group-craft-Edit .display-dataform .selectbox, .bns-form-group-Producer-Edit .display-dataform .selectbox {
+	width: 100%;
+}
+.label-startdate {
+	width: 165px;
+}
+.divider-line {
+	width: 100%;
+	float: left;
+	border: 1px solid #cccccc;
+	background-color: #cccccc;
+	margin: 30px 0 25px 0;
+}
+.bns-form-group-tbd {
+	width: 9.66%;
+	color: #0b2751;
+	font-weight: bold
+}
+.bns-form-group-craft-Edit, .bns-form-group-Producer-Edit {
+	margin-top: 25px;
+}
+.bns-craft-form-group {
+	float: left;
+}
+.bns-craft-form-group .selectbox {
+	width: auto !important;
+}
+.box-bns-produer {
+	width: 240px;
+	float: left;
+	background-color: #a0dcf2;
+}
+.title-bns-producer {
+	font-style: italic;
+	color: #1c3c64;
+	padding: 12px 15px 0 25px;
+ `
+}
+.form-bns-producer {
+	width: 100%;
+	float: left;
+	padding: 12px 15px 0 25px;
+}
+.form-filed-bns-producer {
+	float: right;
+}
+.bns-producer-textbox {
+	width: 33px;
+	border: 1px solid #0b2751;
+	height: 20px;
+	text-align: center;
+}
+.bns-producer-form-container {
+	width: calc(100% - 240px);
+	float: left;
+	padding-left: 60px;
+}
+.bns-producer-form {
+	width: 100%;
+	float: left;
+	margin: 55px 0 0 0
+}
+.bns-producer-form-group, .bns-producer-form-group-tbd {
+	float: left;
+}
+.bns-producer-form-field {
+	width: 67px;
+	height: 25px;
+	float: left;
+	padding-right: 10px;
+}
+.bns-producer-form-group-tbd .label {
+	color: #0b2751;
+	font-weight: bold;
+	float: none
+}
+.bns-producer-form-field input {
+	width: 100%;
+	border: 1px solid #979797;
+	border-radius: 3px;
+	color: #000;
+	font-size: 12px;
+	height: 28px;
+	padding: 0 7px;
+}
+.label-estimated {
+	width: 165px;
+}
+.label-minutes {
+	width: 90px;
+}
+.label-seconds {
+	width: 90px;
+}
+.bns-form-group-airdate .selectbox {
+	width: 83%;
+}
+.bns-form-group-contact .display-data, .bns-form-group-email .display-data {
+	white-space: nowrap;
+}
+.bns-startdate-form-group .bns-startdate-form-field {
+	float: left;
+	height: 25px;
+	padding-right: 10px;
+	width: 135px;
+}
+.bns-startdate-form-field input {
+	border: 1px solid #979797;
+	border-radius: 3px;
+	color: #000;
+	font-size: 12px;
+	height: 28px;
+	padding: 0 7px;
+	width: 79%;
+}
+.bns-startdate-form-group {
+	float: left;
+	width: 165px;
+}
+.bns-startdate-form-group {
+	width: 322px;
+}
+.bns-sessionstart-form-group {
+	float: left;
+}
+.bns-session-form-field {
+	width: 105px;
+	float: left;
+}
+.bns-session-form-field input {
+	border: 1px solid #979797;
+	border-radius: 3px;
+	color: #000;
+	font-size: 12px;
+	height: 28px;
+	padding: 0 7px;
+	width: 79%;
+}
+.bns-checkall-form {
+	width: 100%;
+	float: left;
+}
+.bns-check-form-group {
+	margin-bottom: 15px;
+}
+.bns-checkall-form-contaier {
+	width: 630px;
+	float: left;
+	margin-top: 32px;
+}
+.bns-checkall-form-contaier-odd {
+	width: 265px;
+	float: left;
+}
+.bns-checkall-form-contaier-even {
+	width: 330px;
+	float: left;
+	margin-left: 25px;
+}
+.bns-checkbx-form-field {
+	float: left;
+}
+.bns-checkall-form-contaier-odd .label-checkbox-edit {
+	width: 200px;
+}
+.bns-checkall-form-contaier-even .label-checkbox-edit {
+	width: 292px;
+}
+.title-bns-title {
+	color: #0e2b54;
+	font-size: 16px;
+	padding: 12px 15px 0 25px;
+	font-weight: bold;
+}
+.info-title {
+	font-size: 13px;
+	font-style: italic;
+	font-weight: normal;
+	color: #0b2751
+}
+.checkbx-left {
+	float: left;
+	margin: 7px 10px 0 0;
+}
+.box-bns-checkbox .info-title {
+	float: left;
+	width: 100%;
+}
+.selectbox {
+	text-transform: none;
+}
+.box-bns-checkbox {
+	width: 265px;
+}
+.box-bns-checkbox .form-bns-producer {
+	padding-bottom: 20px;
+	padding-left:50px;
+}
+.textarea-comment {
+	width: 100%;
+	border-radius: 3px;
+	border: 1px solid #979797;
+	height: 222px;
+	min-width: 100%;
+	max-width: 100%;
+	max-height: 222px;
+	min-height: 222px;
+}
+.bns-comment-form {
+	width: 330px;
+	float: left;
+	margin-left: 25px;
+}
+.bns-comment-form-field {
+	width: 100%;
+}
+.box-bns-checkbox .title-bns-title {
+	padding-left: 13px;
+	padding-right: 13px;
+}
+.box-bns-checkbox .form-bns-producer .form-group {
+	min-height: inherit;
+	float: left;
+	width: 100%;
+}
+.calender-conatainer-bns, .calender-conatainer-airdate {
+	position: absolute;
+	z-index: 1;
+	
+}
+.calender-conatainer-bns .date-picker-wrapper, .calender-conatainer-airdate {
+	border-radius: 3px;
+	border: 1px solid #979797 !important;
+	
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+
+    .bns-form-group-Producer-Edit{
+        padding-left:35px !important;
+
+    }
+}
